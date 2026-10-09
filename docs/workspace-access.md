@@ -6,7 +6,7 @@ Recorded 2026-10-09. This workspace continues Gustavo Canepa's GT4 matching deco
 
 - `upstream`: https://github.com/gustavocanepa/gt4-decomp
 - `origin`: https://github.com/veldrift/gt4-decomp
-- `codex/mcardata-matches`: the contribution branch, based on upstream `f0b3e403`, containing commit `c792b68b` with 20 native methods and seven lookup/selection helpers. Every function passes the exact-match judge; the full build preserves the original code and data hashes.
+- `feat/mcardata-matches`: the contribution branch, based on upstream `f0b3e403`, containing commit `c792b68b` with 20 native methods and seven lookup/selection helpers. Every function passes the exact-match judge; the full build preserves the original code and data hashes.
 - `dev`: the user's development branch, including the contribution plus the six earlier unrelated matching sources and these workspace/research notes.
 
 The remotes are configured in both checkouts. Pull author changes from `upstream/master` and push personal branches to `origin`. The sections below preserve earlier setup checkpoints. Game inputs and ignored build outputs remain local. Seven unfinished CarData drafts remain in the container's ignored `build/auto/mcardata/manual/` directory.

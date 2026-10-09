@@ -2,7 +2,7 @@
 
 User request: fetch and merge upstream. Checked 2026-10-09 in the Windows checkout and Linux dev container.
 
-Subsequent publication: the author's repository is now named `upstream` and the user's fork https://github.com/veldrift/gt4-decomp is named `origin` in both checkouts. The CarData batch is committed and pushed as `c792b68b` on `codex/mcardata-matches`; `dev` tracks the remaining source additions and project notes. Earlier uncommitted-state statements below are historical.
+Subsequent publication: the author's repository is now named `upstream` and the user's fork https://github.com/veldrift/gt4-decomp is named `origin` in both checkouts. The CarData batch is committed and pushed as `c792b68b` on `feat/mcardata-matches`; `dev` tracks the remaining source additions and project notes. Earlier uncommitted-state statements below are historical.
 
 ## Latest upstream sync
 

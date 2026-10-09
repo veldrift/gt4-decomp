@@ -2,7 +2,7 @@
 
 Recorded 2026-10-09. Work paused at the user's request after read-only investigation of additional reconstruction targets. No new function implementations were made during this investigation.
 
-**Publication checkpoint:** the 27 accepted additions were committed as `c792b68b` on `codex/mcardata-matches` and pushed to https://github.com/veldrift/gt4-decomp. All 27 passed a fresh judge check and source policy check. The final full build reproduces code and data, with all 27 directly linked. Project notes and the six earlier unrelated sources are tracked separately on `dev`. No PR has been opened. Statements about uncommitted work below refer to earlier checkpoints.
+**Publication checkpoint:** the 27 accepted additions were committed as `c792b68b` on `feat/mcardata-matches` and pushed to https://github.com/veldrift/gt4-decomp. All 27 passed a fresh judge check and source policy check. The final full build reproduces code and data, with all 27 directly linked. Project notes and the six earlier unrelated sources are tracked separately on `dev`. No PR has been opened. Statements about uncommitted work below refer to earlier checkpoints.
 
 **Resumed later on 2026-10-09:** the user authorized all nine helper candidates and the six unfinished methods. Both checkouts were fast-forwarded to upstream `f0b3e403` (library matches and block-copy tooling), with no overlap with the CarData additions. Four new helper reconstructions now pass the individual judge: `001305A0`, `00447CA0`, `00448AD0`, and `004443A8`. The statements below describe the earlier pause unless updated explicitly. The expanded scope is 32 additional targets (23 methods plus nine helpers), alongside the original two-method pair.
 
