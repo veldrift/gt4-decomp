@@ -1,0 +1,2 @@
+typedef struct CarModel {char pad[0x50];float fade;char gap[12];int counter;float velocity;} CarModel;
+extern "C" void func_00154330(CarModel *self,int enable) {if(enable){self->fade=1.0f;self->velocity=0x1.11111p-7f;}else{self->fade=0.0f;self->velocity=-0x1.11111p-7f;}self->counter=0;}

@@ -1,0 +1,2 @@
+typedef struct Entry {short delta,index;void (*fn)(void *,int);} Entry;typedef struct Sub {int pad;Entry *vt;} Sub;typedef struct Face {char pad[0x2A4];Sub *model;char gap[12];int debug;} Face;
+extern "C" void func_0013ACC8(Face *self,int value) {self->debug=value;Sub *sub=self->model;if(sub){Entry *e=(Entry *)((char *)sub->vt+0x1E0);void (*fn)(void *,int)=e->fn;fn((char *)sub+e->delta,value);}}
