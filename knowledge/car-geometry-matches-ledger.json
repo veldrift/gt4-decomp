@@ -1,0 +1,579 @@
+{
+  "previous_revision": "70a2ca4cbf17a1d158334e2e1dc46dc0f2e1c854",
+  "upstream": "52c09e083d4a7720161a32a9b62a1971f8acf983",
+  "previous_count": 103,
+  "sources": [
+    {
+      "address": "0038DB30",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__structor_0.cpp",
+      "source_sha256": "048b80042fa264952595a1e5bb7c9111c8547ae312e698c19550f9bb9ef58676",
+      "matched_instruction_bytes": 100
+    },
+    {
+      "address": "0038DB98",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__structor_1.cpp",
+      "source_sha256": "654151454504702105766941e1b4ed707da425b708d968b841127769af0f6f1a",
+      "matched_instruction_bytes": 104
+    },
+    {
+      "address": "0038DCD8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_00.cpp",
+      "source_sha256": "b8f793c0b74fbbd5a5d90062c202bf90c66c8cdb5ed72949adea8d782aef8556",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038DD98",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_04.cpp",
+      "source_sha256": "f61666f47f8b10eb1e69ee2bf3590f7f4e8b6fe3cf01a25cc3641c2cf388e11e",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038DDC8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_05.cpp",
+      "source_sha256": "4348deb9893a53057c70157bf7c8477f8b34fde9eb813216a8b94bc9da0895e6",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038DDF8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_06.cpp",
+      "source_sha256": "537ca3132614a294ea9c68d22bfc71a19edb77d60c4c89fd21b7a216760f7c3c",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038DE28",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_07.cpp",
+      "source_sha256": "ca5b67422bc19af64b7745020469114dd3515217c73f004288ecf6dd2c3df734",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038DE58",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_08.cpp",
+      "source_sha256": "f73a358cba13d829d7e83662ead66a95d0f88de4e5b7631a467ef2fee5138c9e",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038DE88",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_09.cpp",
+      "source_sha256": "291fd6e89ffbe17d5869b4e34798d0caa3aa8bfd0a20e8feec200fc785538038",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E098",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_20.cpp",
+      "source_sha256": "d0a96fc6dda73e2ab4fb0222899fe1fcd520d4264d67e5c7464f914a44fa1170",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E0C8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_21.cpp",
+      "source_sha256": "e57d39b2d1950fa8a7e5a29b25738371f7b674d538cdac657594330bb2d8fe92",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E0F8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_22.cpp",
+      "source_sha256": "2174cd243dffc3b36126d1dc1f01d4ad8def68bb8a09c9247c6acdae8498900f",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E128",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_23.cpp",
+      "source_sha256": "576a048855d9138b073ef9baa2df9eef1569b6f66b59ce510730109878f1e57e",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E158",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_24.cpp",
+      "source_sha256": "ecf02f484a747c07c1204f5d6bb490cfcc19d1694a0915f3d9fc424fcafa3912",
+      "matched_instruction_bytes": 208
+    },
+    {
+      "address": "0038E228",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_25.cpp",
+      "source_sha256": "46d12832d96300b782e338be8e2f743c1fe9fb26e28b07385709df35b08bebb9",
+      "matched_instruction_bytes": 216
+    },
+    {
+      "address": "0038E300",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_26.cpp",
+      "source_sha256": "482f721123c2bfcbbb578d1c94cf1a7b7083a44d7857fee25dd60a073ed8fd3b",
+      "matched_instruction_bytes": 216
+    },
+    {
+      "address": "0038E3D8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_27.cpp",
+      "source_sha256": "c6f2819bc324f6c9f15b0253e2b9b7bb119085488839db62b8aca85b3ca842aa",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E408",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_28.cpp",
+      "source_sha256": "35f24910bb9f3f48f34ac6f80051e49ea305b724b285a774ee0063176941096e",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E438",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_29.cpp",
+      "source_sha256": "aeb39eb5f340d8ed7aa5c87e239c288b69836497f769fb6bd00f204f6f5552ed",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E498",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_30.cpp",
+      "source_sha256": "cf324534339560376a045976b1ab77f59021f176ab07633a7027ec667007e53b",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E4C8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_32.cpp",
+      "source_sha256": "c452d7939d0e98de86eaeeaabdde1b69dbe13c99c8269e9cfba1ef3b53cccf6d",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E4F8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_33.cpp",
+      "source_sha256": "c3bf32380fa738e5561d52761f03292e84e09477a440314fe0bda6f4363eb5b9",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E528",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_34.cpp",
+      "source_sha256": "7ca0c8b67f7fcd9f7b47459df32fca88e14dead1c7b66ed3e3199f2835531c5a",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E558",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_35.cpp",
+      "source_sha256": "bc6a9fc22e38c40ebdc63bfb394d292c16626edec1b0e7e366b5d22ab3ca16fc",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E588",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_36.cpp",
+      "source_sha256": "db930fd550f8cf1307c5695965f2be1ecc4e906bdd634714270ff0e1d5a8cf10",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E5B8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_37.cpp",
+      "source_sha256": "5195f2915dbac19e53e213c9d53e2bd55bd83cc3b2cc98efc7eb94b4cf054fb3",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E5E8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_38.cpp",
+      "source_sha256": "60abde654b09cd58846cd33b2d57be8ccd8d6262ad91ca406514394cf0fffd19",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E618",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_39.cpp",
+      "source_sha256": "dea84b6575ec66c018aaf3d9966297dc5dc21177b0281f49850c8909ff572d64",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E648",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_40.cpp",
+      "source_sha256": "c2a7a166b27931dbc46e0a2a50f850bf7fa43160aaa0bf725a17071ef4a5b6d8",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E678",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_41.cpp",
+      "source_sha256": "0d1824b7cc4a1ec65fee16ace85c535a541bd480d46560210e9566dfdcbf7e72",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E6A8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_42.cpp",
+      "source_sha256": "aba8c4a74838f7d74b55255b22b0c2079ed69b650b62cd547a8a1edbb0f53ea2",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E6D8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_43.cpp",
+      "source_sha256": "75e06e6a789cf9028623bcc28426a871d23fe4cc5fc1806b2cc7c8ddd14ad4a1",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E708",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_44.cpp",
+      "source_sha256": "6c6e64f806102711f121a1830f17b9847cca22109e359fb3a1b47074457183ae",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E798",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_47.cpp",
+      "source_sha256": "2e5c8234f5f697e77f67e9f5adace023d8449ff43cf582261f8d0b7130721316",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038D0D8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/NormalCarGeometry__virtual_00.cpp",
+      "source_sha256": "a864c8258bce8dab17e3509d074243d66d99b95422d59cbb1c047d4efb2cc720",
+      "matched_instruction_bytes": 88
+    },
+    {
+      "address": "0033CE40",
+      "path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_16.cpp",
+      "source_sha256": "a71d9cb6e41ce58dc7fef4c2e7f263cde010d857554fde1cd776b456b8859a1a",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0033CCF0",
+      "path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_79.c",
+      "source_sha256": "6d0fa85cad4f6bc137dd5ca111952e986621b175cb947a7949ac46a0e275c12a",
+      "matched_instruction_bytes": 44
+    },
+    {
+      "address": "00390ED8",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_04.cpp",
+      "source_sha256": "01de66ad3519b0d78afc88c44666d940f8d66dabc741dea206a5527266e43aa2",
+      "matched_instruction_bytes": 80
+    },
+    {
+      "address": "00390478",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_15.cpp",
+      "source_sha256": "e6583caab09850918969b1970bce2ee874799f0ed58467f845f20b15279515fc",
+      "matched_instruction_bytes": 112
+    },
+    {
+      "address": "00391128",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_31.cpp",
+      "source_sha256": "8bfc52b73ee2894a70047b9815dba52ede1058b493df3137e3d7cd76c389c9e5",
+      "matched_instruction_bytes": 72
+    },
+    {
+      "address": "00391170",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_39.cpp",
+      "source_sha256": "5558f3a89b71b6d8b945f9cb375458d72850a3caf275a5705f0ed9694ef816cd",
+      "matched_instruction_bytes": 96
+    },
+    {
+      "address": "0038FFC8",
+      "path": "src/race/RaceCarModel/func_0038FFC8.cpp",
+      "source_sha256": "ec9817b8e9295cb4ae06b39037b2a9508cf877565ea4ec91d3a35219c6d1b85e",
+      "matched_instruction_bytes": 108
+    },
+    {
+      "address": "003A1F98",
+      "path": "src/race/RaceDisplay/func_003A1F98.cpp",
+      "source_sha256": "9b5c1ee6a9c81a9d082bee240622c6a66e1d397583f3408e5a6e8d4e41b07e3d",
+      "matched_instruction_bytes": 16
+    },
+    {
+      "address": "00338548",
+      "path": "src/race/RaceLanBattle/RaceLanBattle__virtual_57.cpp",
+      "source_sha256": "6ea119b9094083cc39599b3e53839a25040402b10b5d256941378e5fca131e65",
+      "matched_instruction_bytes": 44
+    },
+    {
+      "address": "003A4650",
+      "path": "src/race/RaceLapTimesDisplay/func_003A4650.c",
+      "source_sha256": "03569d9ac76b9cf6189088cf32a20c17d47433f185969f02bf785485d945cfa8",
+      "matched_instruction_bytes": 12
+    },
+    {
+      "address": "003BC5A8",
+      "path": "src/race/RaceLicense/func_003BC5A8.cpp",
+      "source_sha256": "16a2ff72706715f6f3b697721128e3839a0a323a57f1afb5c58fa7d403e6a2c6",
+      "matched_instruction_bytes": 40
+    },
+    {
+      "address": "003AC8C8",
+      "path": "src/race/RaceMTRGravityMeter/func_003AC8C8.c",
+      "source_sha256": "a50aac4e4d19e0f7bdba807b8951bf786ab10d8f58f7e493f66f361359a5a84d",
+      "matched_instruction_bytes": 12
+    },
+    {
+      "address": "00339288",
+      "path": "src/race/RaceNetBattle/RaceNetBattle__virtual_76.cpp",
+      "source_sha256": "8a31b123b8b5b75f9fbf4348f58d4c27a427b58fd875a65f195b185caf4a44e8",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038C868",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_03.cpp",
+      "source_sha256": "3a450f5609cfa87bc584e0b44ef7d6c7ef842127539d9f0bfe0c59f1b7f7ab65",
+      "matched_instruction_bytes": 72
+    },
+    {
+      "address": "0038C8B0",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_04.cpp",
+      "source_sha256": "ee33a76efacf0cd69df5a210a82616a2d103c549b147a106b3cc56d6851bf8f1",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038C8E0",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_05.cpp",
+      "source_sha256": "08981525cc66bb23baa1d092cd5d6b6473a0a504b36bcd84c8c50d5eeba91220",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038C910",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_06.cpp",
+      "source_sha256": "22b7e31506293cf4547d904b405075ff93878ebccd4ba840c79433c802983395",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038CB48",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_27.cpp",
+      "source_sha256": "79798191ac5e5d0316d8ef8550f89f60b366470d4ae63de0284e6f7d84af13d3",
+      "matched_instruction_bytes": 72
+    },
+    {
+      "address": "00345BA8",
+      "path": "src/race/unit_00343220/func_00345BA8.c",
+      "source_sha256": "65e215c886d3a0b2c49fdbf95624760cf52c724b2776a1d17efbd4516aa5b924",
+      "matched_instruction_bytes": 12
+    },
+    {
+      "address": "00346A28",
+      "path": "src/race/unit_00343220/func_00346A28.cpp",
+      "source_sha256": "4a7da18e2adf6a434f2a4336d1f6d6b63f15f855a563341603b8053428a7636d",
+      "matched_instruction_bytes": 24
+    },
+    {
+      "address": "0035BFC0",
+      "path": "src/race/unit_0034E9A0/func_0035BFC0.c",
+      "source_sha256": "d23ad6670c1e4ac9d35d603767b793b25f26aeec2ec4640a01a547564198007e",
+      "matched_instruction_bytes": 36
+    },
+    {
+      "address": "00375E48",
+      "path": "src/race/unit_00374E90/func_00375E48.cpp",
+      "source_sha256": "cbb975b44df5f9fd4aef26d8425a0837bf83fe2c2df9d84d8e639c961c214385",
+      "matched_instruction_bytes": 36
+    },
+    {
+      "address": "003847B0",
+      "path": "src/race/unit_00378778/func_003847B0.cpp",
+      "source_sha256": "e250965fa9499421a449788efa7b52c294ee0a58a61add6674d783e1c874dacc",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038CE98",
+      "path": "src/race/unit_0038CDE8/func_0038CE98.cpp",
+      "source_sha256": "537b59b68399cd80ff0681cd9249677d5ce12e53d6cf2c18ba2a4b16073d40c6",
+      "matched_instruction_bytes": 156
+    },
+    {
+      "address": "0038CF38",
+      "path": "src/race/unit_0038CDE8/func_0038CF38.cpp",
+      "source_sha256": "855acb2bcd14b93a00efb256067d84cb841a7452998fb5fcf143efb954a6249b",
+      "matched_instruction_bytes": 156
+    },
+    {
+      "address": "00396288",
+      "path": "src/race/unit_00394D48/func_00396288.cpp",
+      "source_sha256": "270ab286d95cb96df8ab07502afbdadc7970ebf3c65d7d79218233fb1e64aea6",
+      "matched_instruction_bytes": 16
+    },
+    {
+      "address": "003A3900",
+      "path": "src/race/unit_003A3900/func_003A3900.cpp",
+      "source_sha256": "14ad31b646c7d794225dd2a3d0299b088298490cce2cbe69c151e34ed2c86ab6",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "003AA378",
+      "path": "src/race/unit_003A9D80/func_003AA378.cpp",
+      "source_sha256": "932ac50b283ac18502ebb6b69f53b8eba198a196a9849d77c57f1c4bcd5cf125",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "003B70E0",
+      "path": "src/race/unit_003B70C8/func_003B70E0.cpp",
+      "source_sha256": "1458e59c3efc7f43ec2d6e3929fc608b00bc2419b710105d07e9534c1dfca2fc",
+      "matched_instruction_bytes": 12
+    },
+    {
+      "address": "003DE5B8",
+      "path": "src/race/unit_003DDA58/func_003DE5B8.cpp",
+      "source_sha256": "f9dcd293132de0b54fe899da34f5541b741667170457d067994da13e2efcbeed",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "003DE708",
+      "path": "src/race/unit_003DDA58/func_003DE708.cpp",
+      "source_sha256": "fa4a13040bbb651485442cb85534dd2317a8126252e7f9b77c66603439b5abde",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "003DE800",
+      "path": "src/race/unit_003DDA58/func_003DE800.cpp",
+      "source_sha256": "3582492063c550ba1058899b6fd79ade5bba4a9a3ce6466f697219b5848a1df4",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "003DE9D0",
+      "path": "src/race/unit_003DDA58/func_003DE9D0.cpp",
+      "source_sha256": "28822048a9e5aa618357552e850174a65c12877ab3a295d5315236c765f9da2d",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "003EF330",
+      "path": "src/race/unit_003EF1E8/func_003EF330.cpp",
+      "source_sha256": "264828b998286b962f60846a6c960da90b278a61163639fd567bcedf4dd8e7d2",
+      "matched_instruction_bytes": 20
+    },
+    {
+      "address": "003F16D0",
+      "path": "src/race/unit_003F1660/func_003F16D0.cpp",
+      "source_sha256": "b4f3308627da06082da1cede7a62001b9828d5c45281980a11b1750c1ee0e549",
+      "matched_instruction_bytes": 44
+    },
+    {
+      "address": "00400EB0",
+      "path": "src/race/unit_003F7150/func_00400EB0.cpp",
+      "source_sha256": "f28e6b4f3e1e50c1fd7d374fbc6df09e6a127fae00d871b2b6ae5602a9b28ee2",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "004271E8",
+      "path": "src/race/unit_004271E8/func_004271E8.c",
+      "source_sha256": "3f8bb0b58b206c6682fa86563098a5d1187dfb31c9f75e7c62db316cb0220d44",
+      "matched_instruction_bytes": 12
+    },
+    {
+      "address": "0042C818",
+      "path": "src/race/unit_004271E8/func_0042C818.c",
+      "source_sha256": "30ba81f78e9347b326293bc98b5041d168dab7c759ed1438679ed04ba691b1e5",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "004386C8",
+      "path": "src/race/unit_004271E8/func_004386C8.cpp",
+      "source_sha256": "caed1f0479e66ed2c29c76359af81e7087f7d27332a75c6e4fb089928176531d",
+      "matched_instruction_bytes": 36
+    },
+    {
+      "address": "004468E0",
+      "path": "src/race/unit_004271E8/func_004468E0.cpp",
+      "source_sha256": "23d31483c468984ad7b283d9f908af7d06237eb3a86f1b7a0bc21326b6a42884",
+      "matched_instruction_bytes": 24
+    },
+    {
+      "address": "0044A1E0",
+      "path": "src/race/unit_004271E8/func_0044A1E0.cpp",
+      "source_sha256": "285202bc3f916604b4dbce89f7bdca0e7c77793d79fe6978378bbb99f711538b",
+      "matched_instruction_bytes": 36
+    }
+  ],
+  "upstream_retained": [
+    {
+      "address": "0038DA08",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/NormalCarGeometry__virtual_32.c"
+    },
+    {
+      "address": "0038C238",
+      "upstream_path": "src/race/MTRGeometry/MTRGeometry__virtual_07.c"
+    },
+    {
+      "address": "0033C3E8",
+      "upstream_path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_89.c"
+    },
+    {
+      "address": "00342370",
+      "upstream_path": "src/race/RaceBGMPS2_RacePS2Base/func_00342370.c"
+    },
+    {
+      "address": "003A6638",
+      "upstream_path": "src/race/RaceCarIconDisplay/RaceCarIconDisplay__virtual_09.c"
+    },
+    {
+      "address": "00390570",
+      "upstream_path": "src/race/RaceCarModel/RaceCarModel__virtual_32.c"
+    },
+    {
+      "address": "0038FEB0",
+      "upstream_path": "src/race/RaceCarModel/func_0038FEB0.cpp"
+    },
+    {
+      "address": "0038FEF0",
+      "upstream_path": "src/race/RaceCarModel/func_0038FEF0.c"
+    },
+    {
+      "address": "00337090",
+      "upstream_path": "src/race/RaceLanBattle/RaceLanBattle__virtual_85.c"
+    },
+    {
+      "address": "00335FD8",
+      "upstream_path": "src/race/RaceLanControlManager/RaceLanControlManager__virtual_02.c"
+    },
+    {
+      "address": "003AD5E8",
+      "upstream_path": "src/race/RaceMTRMultiFunctionDisplay/RaceMTRMultiFunctionDisplay__virtual_09.c"
+    },
+    {
+      "address": "003BE0B0",
+      "upstream_path": "src/race/RaceMachineTest/RaceMachineTest__virtual_87.c"
+    },
+    {
+      "address": "003A4AA8",
+      "upstream_path": "src/race/RaceMessageDisplay/RaceReplayModeDisplay__virtual_09.c"
+    },
+    {
+      "address": "003C7668",
+      "upstream_path": "src/race/RacePhotoMode/func_003C7668.c"
+    },
+    {
+      "address": "00377F30",
+      "upstream_path": "src/race/RacePhotoModeCameraManager/RacePhotoModeCameraManager__virtual_58.c"
+    },
+    {
+      "address": "00398718",
+      "upstream_path": "src/race/unit_00394D48/func_00398718.c"
+    },
+    {
+      "address": "003C8060",
+      "upstream_path": "src/race/unit_003C7F78/RacePhotoModeCameraManager__virtual_02.c"
+    },
+    {
+      "address": "00418A58",
+      "upstream_path": "src/race/unit_00415E90/func_00418A58.c"
+    },
+    {
+      "address": "00427600",
+      "upstream_path": "src/race/unit_004271E8/func_00427600.c"
+    },
+    {
+      "address": "0042C848",
+      "upstream_path": "src/race/unit_004271E8/func_0042C848.c"
+    },
+    {
+      "address": "00433618",
+      "upstream_path": "src/race/unit_004271E8/func_00433618.c"
+    },
+    {
+      "address": "00434980",
+      "upstream_path": "src/race/unit_004271E8/func_00434980.c"
+    },
+    {
+      "address": "00437EB8",
+      "upstream_path": "src/race/unit_004271E8/func_00437EB8.cpp"
+    },
+    {
+      "address": "0043B5D8",
+      "upstream_path": "src/race/unit_004271E8/func_0043B5D8.c"
+    },
+    {
+      "address": "004434E8",
+      "upstream_path": "src/race/unit_004271E8/func_004434E8.c"
+    },
+    {
+      "address": "00443770",
+      "upstream_path": "src/race/unit_004271E8/func_00443770.c"
+    },
+    {
+      "address": "00447A50",
+      "upstream_path": "src/race/unit_004271E8/func_00447A50.c"
+    }
+  ],
+  "verified_count": 76,
+  "matched_instruction_bytes": 4436,
+  "hashes": {
+    ".text": "28422e7e20a6298224294255355487b9a22cef31",
+    ".data": "c28c833f9716467545bf362f321e9acc876c3603"
+  }
+}
