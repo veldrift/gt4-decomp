@@ -595,6 +595,73 @@ def mut_callee_ret(ctx):
             yield "callee:ret", ctx.body[:m.start(1)] + "void" + ctx.body[m.end(1):]
 
 
+def deterministic_edits(source):
+    """Conservative batch rules: no calls/volatile stores are reordered.
+
+    Store rules require a simple flat struct with four-byte int/pointer fields at
+    distinct offsets, all accessed through the same base. Unknown layouts decline.
+    """
+    if re.search(r'\bvolatile\b', source):
+        return
+    # A void callee in an early-return branch can use GCC's explicit void tail return.
+    void_calls = set(re.findall(r'(?:extern "C" )?void (\w+)\([^;{}]*\);', source))
+    for m in re.finditer(r'\bif\s*\([^{};]*\)\s*\{\s*(\w+\([^;{}]*\));\s*return;\s*\}', source):
+        if m[1].split('(')[0] in void_calls:
+            yield 'tailcall:void', source[:m.start()] + m[0].replace(m[1] + ';', 'return ' + m[1] + ';').replace(' return;', '') + source[m.end():]
+    for m in re.finditer(r'\bif\s*\([^{};]*\)\s*(\w+\([^;{}]*\));\s*else\s*\{', source):
+        if m[1].split('(')[0] in void_calls:
+            yield 'tailcall:void', source[:m.start(1)] + 'return ' + source[m.start(1):]
+    # Equivalent select form with a fresh local (integer operands only).
+    for m in re.finditer(r'return (\w+) < (\d+) \? \1 : \2;', source):
+        value, bound = m[1], m[2]
+        if re.search(r'\bint\s+' + re.escape(value) + r'\b', source) and '__match_select' not in source:
+            text = f'int __match_select = {bound}; if ({value} < {bound}) __match_select = {value}; return __match_select;'
+            yield 'select:explicit-clamp', source[:m.start()] + text + source[m.end():]
+    # Infer only simple four-byte fields and char padding; decline every other layout.
+    fields = {}
+    for struct in re.finditer(r'struct (\w+)\s*\{([^{}]*)\};', source):
+        offset = 0
+        members = {}
+        valid = True
+        for decl in struct[2].split(';'):
+            decl = decl.strip()
+            if not decl:
+                continue
+            pad = re.fullmatch(r'char\s+\w+\[(0x[\da-fA-F]+|\d+)\]', decl)
+            field = re.fullmatch(r'(?:int|unsigned int|\w+\s*\*)\s*(\w+)', decl)
+            if pad:
+                offset += int(pad[1], 0)
+            elif field:
+                offset = (offset + 3) & ~3
+                members[field[1]] = offset
+                offset += 4
+            else:
+                valid = False
+                break
+        if valid:
+            fields[struct[1]] = members
+    bases = {}
+    for typ, members in fields.items():
+        for param in re.finditer(r'\b' + re.escape(typ) + r'\s*\*\s*(\w+)', source):
+            bases[param[1]] = members
+    value = r'(?:-?(?:0x[\da-fA-F]+|\d+)|[A-Za-z_]\w*)'
+    scalar_names = set(re.findall(r'\b(?:int|unsigned int)\s+(\w+)\s*[,)]', source))
+    scalar_names |= set(re.findall(r'extern "C" char (\w+)\[\];', source))
+    def safe_value(text):
+        return bool(re.fullmatch(r'-?(?:0x[\da-fA-F]+|\d+)', text)) or text in scalar_names
+    for m in re.finditer(r'(\w+)->(\w+) = (\w+)->(\w+) = (' + value + r');', source):
+        base, first, other, second, rhs = m.groups()
+        members = bases.get(base, {})
+        if base == other and first != second and first in members and second in members and safe_value(rhs):
+            yield 'store:split-chain', source[:m.start()] + f'{base}->{first} = {rhs};\n    {base}->{second} = {rhs};' + source[m.end():]
+    pattern = r'(\w+)->(\w+) = (' + value + r');\s*(\w+)->(\w+) = (' + value + r');'
+    for m in re.finditer(pattern, source):
+        base, first, rhs1, other, second, rhs2 = m.groups()
+        members = bases.get(base, {})
+        if base == other and first != second and first in members and second in members and safe_value(rhs1) and safe_value(rhs2):
+            yield 'store:independent-order', source[:m.start()] + f'{base}->{second} = {rhs2}; {base}->{first} = {rhs1};' + source[m.end():]
+
+
 def simple_stmt(line):
     s = line.strip()
     return s.endswith(";") and not s.startswith(("return", "goto", "if", "while", "for", "do", "case")) \

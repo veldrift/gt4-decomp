@@ -5,8 +5,8 @@
                                                  refill the queue if it runs low (new picks first)
     agent_step.py claim N                        take the next N functions from the queue
     agent_step.py prompt ADDR                    the rules + everything known about ADDR
-    agent_step.py try ADDR FILE                  judge FILE; on a match keep it and copy it to the
-                                                 function's duplicates; prints MATCH or the diff
+    agent_step.py try ADDR FILE                  judge FILE; on a fully checked match save at its
+                                                 canonical path; prints MATCH or the diff
     agent_step.py giveup ADDR ATTEMPTS           record a function as deferred
     agent_step.py release ADDR                   give a claimed function back untried
     agent_step.py stats                          progress
@@ -26,6 +26,7 @@ import autoloop
 import inventory
 import match
 import project
+import matching_candidates as candidates
 
 ROOT = match.ROOT
 AUTO = autoloop.AUTO
@@ -120,9 +121,14 @@ def cmd_try(addr, path):
               "intrinsics (e.g. sqrt.s) may be inline asm. If the function cannot be written in C, "
               f"run `python tools/agent_step.py giveup {addr:x} 4`.")
         return
-    ok, out = autoloop.check(addr, path)
-    if ok:
-        shutil.copy(path, os.path.join(ROOT, "src", f"func_{addr:08X}.cpp"))
+    candidate = candidates.Candidate(addr, src, os.path.splitext(path)[1], ('agent',))
+    checked = candidates.check(candidate, os.path.join(AUTO, 'agent'))
+    out = checked['output']
+    if checked['state'] == 'match':
+        result = candidates.promote(candidate, os.path.join(AUTO, 'agent'))
+        if result['state'] not in ('match', 'existing'):
+            print(result.get('output', result['state']))
+            return
         # Copies are propagated later, in one batch, by tools/dedup_all.py (a group can hold
         # hundreds of functions, too many to check while the worker waits).
         log({"addr": f"{addr:08x}", "bytes": size(addr), "matched": True, "effort": "agent",
