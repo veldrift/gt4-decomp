@@ -98,12 +98,22 @@ in the contribution.
 
 ## Remaining work and review boundary
 
-None of the initial 32 or the six additions remain unresolved. A fresh class-wide
-scan leaves CarGeometry slots 24, 25 and 26 at `0038E158`, `0038E228` and `0038E300`
-(208, 216 and 216 inventory bytes). They are outside this contribution; this batch
-does not claim to have solved or attempted them.
+None of the initial 32 or the six additions remain unresolved. The subsequent
+extension also recovered CarGeometry slots 24, 25 and 26 at `0038E158`, `0038E228`
+and `0038E300`. They test three virtual query results for zero and otherwise repeat
+the selected query; their respective defaults are 0, 0.5 and -3. These larger
+methods still dispatch to the underlying implementation. All three passed MATCH.
 
-The future PR should contain only these 38 sources and this focused note. Because
-the requested branch retains `dev` ancestry, an upstream-base diff also includes
-the earlier pending contributions. Review the intended base or isolate the batch
-for an independent upstream PR without losing the preserved development history.
+Three nearby helpers also matched: MTRGeometry slot 07 at `0038C238`, and geometry
+queries at `0038CE98` and `0038CF38`. The geometry contribution now contains 44
+functions: the original 38, three larger dispatch methods and three helpers.
+The lookup at `0038CFD8` and initialization support at `0038DC30` remain unmatched;
+their drafts stay outside `src/`.
+
+The user subsequently requested at least 100 functions, including easy race methods.
+The final 103-function build passed both hashes and directly linked every accepted
+address. See [race-interface-matches.md](race-interface-matches.md) for the complete
+expanded scope, verification, and unresolved work. This note preserves the details
+of the initial 38-function checkpoint. Because the branch retains `dev` ancestry,
+an upstream-base diff also includes earlier pending contributions; review the
+intended base before creating an independent upstream PR.
