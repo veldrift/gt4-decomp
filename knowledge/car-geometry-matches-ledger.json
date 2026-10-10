@@ -1,7 +1,51 @@
 {
-  "previous_revision": "70a2ca4cbf17a1d158334e2e1dc46dc0f2e1c854",
-  "upstream": "52c09e083d4a7720161a32a9b62a1971f8acf983",
-  "previous_count": 103,
+  "upstream": "b3ef5b7070e1fbc196dc365a31bb24d6677afe29",
+  "previous_revision": "6725d280efcab437468679d616324e17494aa3a3",
+  "previous_count": 76,
+  "verified_count": 66,
+  "matched_instruction_bytes": 4148,
+  "upstream_retained": [
+    {
+      "address": "0038DDC8",
+      "path": "src/func_0038DDC8.cpp"
+    },
+    {
+      "address": "0038E438",
+      "path": "src/func_0038E438.cpp"
+    },
+    {
+      "address": "0033CCF0",
+      "path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_79.c"
+    },
+    {
+      "address": "003A4650",
+      "path": "src/race/RaceLapTimesDisplay/func_003A4650.c"
+    },
+    {
+      "address": "003AC8C8",
+      "path": "src/race/RaceMTRGravityMeter/func_003AC8C8.c"
+    },
+    {
+      "address": "0038C868",
+      "path": "src/func_0038C868.cpp"
+    },
+    {
+      "address": "00345BA8",
+      "path": "src/race/unit_00343220/func_00345BA8.c"
+    },
+    {
+      "address": "00396288",
+      "path": "src/race/unit_00394D48/func_00396288.c"
+    },
+    {
+      "address": "003B70E0",
+      "path": "src/race/unit_003B70C8/func_003B70E0.c"
+    },
+    {
+      "address": "004271E8",
+      "path": "src/race/unit_004271E8/func_004271E8.c"
+    }
+  ],
   "sources": [
     {
       "address": "0038DB30",
@@ -25,12 +69,6 @@
       "address": "0038DD98",
       "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_04.cpp",
       "source_sha256": "f61666f47f8b10eb1e69ee2bf3590f7f4e8b6fe3cf01a25cc3641c2cf388e11e",
-      "matched_instruction_bytes": 48
-    },
-    {
-      "address": "0038DDC8",
-      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_05.cpp",
-      "source_sha256": "4348deb9893a53057c70157bf7c8477f8b34fde9eb813216a8b94bc9da0895e6",
       "matched_instruction_bytes": 48
     },
     {
@@ -109,12 +147,6 @@
       "address": "0038E408",
       "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_28.cpp",
       "source_sha256": "35f24910bb9f3f48f34ac6f80051e49ea305b724b285a774ee0063176941096e",
-      "matched_instruction_bytes": 48
-    },
-    {
-      "address": "0038E438",
-      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_29.cpp",
-      "source_sha256": "aeb39eb5f340d8ed7aa5c87e239c288b69836497f769fb6bd00f204f6f5552ed",
       "matched_instruction_bytes": 48
     },
     {
@@ -220,12 +252,6 @@
       "matched_instruction_bytes": 48
     },
     {
-      "address": "0033CCF0",
-      "path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_79.c",
-      "source_sha256": "6d0fa85cad4f6bc137dd5ca111952e986621b175cb947a7949ac46a0e275c12a",
-      "matched_instruction_bytes": 44
-    },
-    {
       "address": "00390ED8",
       "path": "src/race/RaceCarModel/RaceCarModel__virtual_04.cpp",
       "source_sha256": "01de66ad3519b0d78afc88c44666d940f8d66dabc741dea206a5527266e43aa2",
@@ -268,34 +294,16 @@
       "matched_instruction_bytes": 44
     },
     {
-      "address": "003A4650",
-      "path": "src/race/RaceLapTimesDisplay/func_003A4650.c",
-      "source_sha256": "03569d9ac76b9cf6189088cf32a20c17d47433f185969f02bf785485d945cfa8",
-      "matched_instruction_bytes": 12
-    },
-    {
       "address": "003BC5A8",
       "path": "src/race/RaceLicense/func_003BC5A8.cpp",
       "source_sha256": "16a2ff72706715f6f3b697721128e3839a0a323a57f1afb5c58fa7d403e6a2c6",
       "matched_instruction_bytes": 40
     },
     {
-      "address": "003AC8C8",
-      "path": "src/race/RaceMTRGravityMeter/func_003AC8C8.c",
-      "source_sha256": "a50aac4e4d19e0f7bdba807b8951bf786ab10d8f58f7e493f66f361359a5a84d",
-      "matched_instruction_bytes": 12
-    },
-    {
       "address": "00339288",
       "path": "src/race/RaceNetBattle/RaceNetBattle__virtual_76.cpp",
       "source_sha256": "8a31b123b8b5b75f9fbf4348f58d4c27a427b58fd875a65f195b185caf4a44e8",
       "matched_instruction_bytes": 48
-    },
-    {
-      "address": "0038C868",
-      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_03.cpp",
-      "source_sha256": "3a450f5609cfa87bc584e0b44ef7d6c7ef842127539d9f0bfe0c59f1b7f7ab65",
-      "matched_instruction_bytes": 72
     },
     {
       "address": "0038C8B0",
@@ -320,12 +328,6 @@
       "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_27.cpp",
       "source_sha256": "79798191ac5e5d0316d8ef8550f89f60b366470d4ae63de0284e6f7d84af13d3",
       "matched_instruction_bytes": 72
-    },
-    {
-      "address": "00345BA8",
-      "path": "src/race/unit_00343220/func_00345BA8.c",
-      "source_sha256": "65e215c886d3a0b2c49fdbf95624760cf52c724b2776a1d17efbd4516aa5b924",
-      "matched_instruction_bytes": 12
     },
     {
       "address": "00346A28",
@@ -364,12 +366,6 @@
       "matched_instruction_bytes": 156
     },
     {
-      "address": "00396288",
-      "path": "src/race/unit_00394D48/func_00396288.cpp",
-      "source_sha256": "270ab286d95cb96df8ab07502afbdadc7970ebf3c65d7d79218233fb1e64aea6",
-      "matched_instruction_bytes": 16
-    },
-    {
       "address": "003A3900",
       "path": "src/race/unit_003A3900/func_003A3900.cpp",
       "source_sha256": "14ad31b646c7d794225dd2a3d0299b088298490cce2cbe69c151e34ed2c86ab6",
@@ -380,12 +376,6 @@
       "path": "src/race/unit_003A9D80/func_003AA378.cpp",
       "source_sha256": "932ac50b283ac18502ebb6b69f53b8eba198a196a9849d77c57f1c4bcd5cf125",
       "matched_instruction_bytes": 48
-    },
-    {
-      "address": "003B70E0",
-      "path": "src/race/unit_003B70C8/func_003B70E0.cpp",
-      "source_sha256": "1458e59c3efc7f43ec2d6e3929fc608b00bc2419b710105d07e9534c1dfca2fc",
-      "matched_instruction_bytes": 12
     },
     {
       "address": "003DE5B8",
@@ -430,12 +420,6 @@
       "matched_instruction_bytes": 56
     },
     {
-      "address": "004271E8",
-      "path": "src/race/unit_004271E8/func_004271E8.c",
-      "source_sha256": "3f8bb0b58b206c6682fa86563098a5d1187dfb31c9f75e7c62db316cb0220d44",
-      "matched_instruction_bytes": 12
-    },
-    {
       "address": "0042C818",
       "path": "src/race/unit_004271E8/func_0042C818.c",
       "source_sha256": "30ba81f78e9347b326293bc98b5041d168dab7c759ed1438679ed04ba691b1e5",
@@ -460,118 +444,6 @@
       "matched_instruction_bytes": 36
     }
   ],
-  "upstream_retained": [
-    {
-      "address": "0038DA08",
-      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/NormalCarGeometry__virtual_32.c"
-    },
-    {
-      "address": "0038C238",
-      "upstream_path": "src/race/MTRGeometry/MTRGeometry__virtual_07.c"
-    },
-    {
-      "address": "0033C3E8",
-      "upstream_path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_89.c"
-    },
-    {
-      "address": "00342370",
-      "upstream_path": "src/race/RaceBGMPS2_RacePS2Base/func_00342370.c"
-    },
-    {
-      "address": "003A6638",
-      "upstream_path": "src/race/RaceCarIconDisplay/RaceCarIconDisplay__virtual_09.c"
-    },
-    {
-      "address": "00390570",
-      "upstream_path": "src/race/RaceCarModel/RaceCarModel__virtual_32.c"
-    },
-    {
-      "address": "0038FEB0",
-      "upstream_path": "src/race/RaceCarModel/func_0038FEB0.cpp"
-    },
-    {
-      "address": "0038FEF0",
-      "upstream_path": "src/race/RaceCarModel/func_0038FEF0.c"
-    },
-    {
-      "address": "00337090",
-      "upstream_path": "src/race/RaceLanBattle/RaceLanBattle__virtual_85.c"
-    },
-    {
-      "address": "00335FD8",
-      "upstream_path": "src/race/RaceLanControlManager/RaceLanControlManager__virtual_02.c"
-    },
-    {
-      "address": "003AD5E8",
-      "upstream_path": "src/race/RaceMTRMultiFunctionDisplay/RaceMTRMultiFunctionDisplay__virtual_09.c"
-    },
-    {
-      "address": "003BE0B0",
-      "upstream_path": "src/race/RaceMachineTest/RaceMachineTest__virtual_87.c"
-    },
-    {
-      "address": "003A4AA8",
-      "upstream_path": "src/race/RaceMessageDisplay/RaceReplayModeDisplay__virtual_09.c"
-    },
-    {
-      "address": "003C7668",
-      "upstream_path": "src/race/RacePhotoMode/func_003C7668.c"
-    },
-    {
-      "address": "00377F30",
-      "upstream_path": "src/race/RacePhotoModeCameraManager/RacePhotoModeCameraManager__virtual_58.c"
-    },
-    {
-      "address": "00398718",
-      "upstream_path": "src/race/unit_00394D48/func_00398718.c"
-    },
-    {
-      "address": "003C8060",
-      "upstream_path": "src/race/unit_003C7F78/RacePhotoModeCameraManager__virtual_02.c"
-    },
-    {
-      "address": "00418A58",
-      "upstream_path": "src/race/unit_00415E90/func_00418A58.c"
-    },
-    {
-      "address": "00427600",
-      "upstream_path": "src/race/unit_004271E8/func_00427600.c"
-    },
-    {
-      "address": "0042C848",
-      "upstream_path": "src/race/unit_004271E8/func_0042C848.c"
-    },
-    {
-      "address": "00433618",
-      "upstream_path": "src/race/unit_004271E8/func_00433618.c"
-    },
-    {
-      "address": "00434980",
-      "upstream_path": "src/race/unit_004271E8/func_00434980.c"
-    },
-    {
-      "address": "00437EB8",
-      "upstream_path": "src/race/unit_004271E8/func_00437EB8.cpp"
-    },
-    {
-      "address": "0043B5D8",
-      "upstream_path": "src/race/unit_004271E8/func_0043B5D8.c"
-    },
-    {
-      "address": "004434E8",
-      "upstream_path": "src/race/unit_004271E8/func_004434E8.c"
-    },
-    {
-      "address": "00443770",
-      "upstream_path": "src/race/unit_004271E8/func_00443770.c"
-    },
-    {
-      "address": "00447A50",
-      "upstream_path": "src/race/unit_004271E8/func_00447A50.c"
-    }
-  ],
-  "verified_count": 76,
-  "matched_instruction_bytes": 4436,
   "hashes": {
     ".text": "28422e7e20a6298224294255355487b9a22cef31",
     ".data": "c28c833f9716467545bf362f321e9acc876c3603"
