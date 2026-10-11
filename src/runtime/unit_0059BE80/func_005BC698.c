@@ -3,10 +3,10 @@
 #include "types.h"
 void *memcpy(void *, const void *, unsigned int);
 
-s32 func_00575DA0();                            /* extern */
+s32 free();                            /* extern */
 
 void func_005BC698(s32 arg0) {
     if (arg0 != 0) {
-        func_00575DA0();
+        free();
     }
 }

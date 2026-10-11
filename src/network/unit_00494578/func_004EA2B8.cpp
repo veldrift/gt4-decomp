@@ -1,17 +1,17 @@
 /* compiler: ee-gcc2.96-no-strict-aliasing */
 /* pdistd-http: reset a connection: clear the request string (second basic_string<char>
- * instantiation: replace func_005D2C20) and the header map (an SGI _Rb_tree: clear() with
+ * instantiation: replace strobe__Any__setMember) and the header map (an SGI _Rb_tree: clear() with
  * _M_erase func_0060D830 inline), then reopen. */
 typedef unsigned int u32;
 
 extern "C" u32 func_0057F260(const char *s);
 
 struct String2;
-extern "C" String2 *func_005D2C20(String2 *str, u32 pos, u32 n1, const char *s, u32 n2);
+extern "C" String2 *strobe__Any__setMember(String2 *str, u32 pos, u32 n1, const char *s, u32 n2);
 
 struct String2 {
     char *dat;
-    String2 &replace(u32 pos, u32 n1, const char *s, u32 n2) { return *func_005D2C20(this, pos, n1, s, n2); }
+    String2 &replace(u32 pos, u32 n1, const char *s, u32 n2) { return *strobe__Any__setMember(this, pos, n1, s, n2); }
     String2 &assign(const char *s, u32 n) { return replace(0, (u32)-1, s, n); }
     String2 &assign(const char *s) { return assign(s, func_0057F260(s)); }
     String2 &operator=(const char *s) { return assign(s); }
@@ -46,7 +46,7 @@ struct Tree {
 };
 
 extern char D_006BFF28[];
-extern "C" int func_00575DC8(int);
+extern "C" int malloc(int);
 extern "C" void func_004EB830(void *);
 extern "C" void func_004EB7D0(void *);
 
@@ -73,7 +73,7 @@ extern "C" int func_004EA2B8(Http *h) {
     h->fE4 = 0;
     h->request = D_006BFF28;
     h->headers.clear();
-    h->buffer = func_00575DC8(h->heap);
+    h->buffer = malloc(h->heap);
     if (h->keep_alive == 0) {
         func_004EB830(h);
         return 1;

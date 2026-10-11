@@ -3,14 +3,14 @@
 #define _Balloc func_005AC4D8
 #define _Bfree func_005AC580
 #define __assert func_005A2E98
-#define __errno func_0056FFC0
+#define func_005A3130 func_0056FFC0
 #define __mcmp func_005ACDC8
 #define __mdiff func_005ACE30
 #define __mprec_bigtens D_006D22E8
 #define __mprec_tens D_006D2220
 #define __mprec_tinytens D_006D2310
 #define __muldi3 __muldi3
-#define __sccl func_005AA958
+#define func_00596420 func_005AA958
 #define __sclose func_005A5CD0
 #define __sflags func_005AC2A0
 #define __sfmoreglue func_005A34B8
@@ -31,7 +31,7 @@
 #define __umoddi3 __umoddi3
 #define _b2d func_005AD090
 #define _close_r func_005AADB0
-#define _ctype_ D_006D0E78
+#define _ctype_ _ctype_
 #define _d2b func_005AD228
 #define _exit D_00100220
 #define _fwalk func_005A43A8
@@ -39,7 +39,7 @@
 #define _getpid_r func_005A44C8
 #define _hi0bits func_005AC7E8
 #define _i2b func_005AC928
-#define _impure_ptr D_00658288
+#define _impure_ptr _impure_ptr
 #define _lo0bits func_005AC868
 #define _lseek_r func_005AC440
 #define _lshift func_005ACC70
@@ -56,7 +56,7 @@
 #define _setlocale_r func_005AC358
 #define _snprintf_r func_005A5998
 #define _strtoul_r func_005A6F38
-#define _times D_00575DA0
+#define _times free
 #define _user_strerror func_00559AD8
 #define abort func_005A2E68
 #define abs func_005A2E80
@@ -74,14 +74,14 @@
 #define errno D_006D62F8
 #define exit func_005A3140
 #define fabsf func_005A2E20
-#define fclose func_005A31F0
-#define fflush func_005A32F0
+#define fclose fclose
+#define fflush fflush
 #define fileno func_005A3408
 #define finite func_005A2E48
 #define fputs func_005A3948
 #define fread func_005A3998
-#define fseek func_005A3AB8
-#define fwrite func_005A4440
+#define fseek fseek
+#define fwrite fwrite
 #define isinf func_005AD550
 #define isnan func_005AD598
 #define labs func_005A44E0
@@ -89,8 +89,8 @@
 #define lflush func_005A5668
 #define localtime func_005ADB90
 #define memchr func_005A4644
-#define memcpy func_005A4724
-#define memmove func_005A47D4
+#define memcpy memcpy
+#define memmove memmove
 #define func_005A48D8 func_005A48D8
 #define puts func_005A4BD8
 #define qsort func_005A4BF8
@@ -695,7 +695,7 @@ extern	__IMPORT _CONST char	_ctype_[];
 
 /* errno is not a global variable, because that would make using it
    non-reentrant.  Instead, its address is returned by the function
-   __errno.  */
+   func_005A3130.  */
 
 #ifndef _SYS_ERRNO_H_
 #ifdef __cplusplus
@@ -4675,8 +4675,8 @@ void _reclaim_reent _PARAMS ((struct _reent *));
 #endif 
 
 #ifndef _REENT_ONLY
-#define errno (*__errno())
-extern int *__errno _PARAMS ((void));
+#define errno (*func_005A3130())
+extern int *func_005A3130 _PARAMS ((void));
 #endif
 
 extern __IMPORT _CONST char * _CONST _sys_errlist[];

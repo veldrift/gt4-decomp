@@ -21,7 +21,7 @@ void func_0046F400(struct func_0046F400_arg0 *arg0, s32 arg1, s32 arg2) {
         arg0->unk18 = 1;
         return;
     }
-    func_005A4724(arg0->unk10, arg1, arg2);
+    memcpy(arg0->unk10, arg1, arg2);
     arg0->unk10 = (s32) (arg0->unk10 + arg2);
     arg0->unk8 = (s32) (arg0->unk8 + arg2);
 }

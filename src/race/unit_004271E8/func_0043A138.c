@@ -2,11 +2,11 @@
 #define NULL 0
 void *memcpy(void *, const void *, unsigned int);
 
-void func_003557E8(s32);
+void AutomobileControl__clearPacket(s32);
 void func_0043A138(s32 *arg0) {
     s32 i;
     if (arg0[0] != 0) {
-        func_003557E8(arg0[0]);
+        AutomobileControl__clearPacket(arg0[0]);
     }
     arg0[1] = 0;
     for (i = 3; i >= 0; i--) {

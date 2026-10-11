@@ -17,6 +17,6 @@ s32 func_005786A8(s32 arg0, s32 arg1) {
     }
     func_00575018((void *) arg0, 2);
     if (var_s0 != 0) {
-        func_00575DA0(var_s0);
+        free(var_s0);
     }
 }

@@ -10,7 +10,7 @@
 extern "C" void *func_00326750(int size, int align, const char *name);
 extern "C" void func_00326798(void *p, int size, int align, const char *name);
 extern "C" void *func_00575E60(int heap, int size);
-extern "C" void func_00575DA0(void *p);
+extern "C" void free(void *p);
 
 /* gcc 2.96's type_info: the name first, the vtable pointer after it */
 struct TypeInfo {
@@ -39,7 +39,7 @@ public:
         return n == 0 ? 0 : (T *)func_00575E60(0x10, n * sizeof(T));
     }
     void deallocate(T *p, size_type n) {
-        func_00575DA0(p);
+        free(p);
     }
     size_type max_size() const throw() { return size_t(-1) / sizeof(T); }
     void construct(T *p, const T &v) { new (p) T(v); }
@@ -53,7 +53,7 @@ struct Rep {
     int sel;
 };
 
-extern "C" char *func_005D2B58(Rep *rep);
+extern "C" char *strobe__toUpper(Rep *rep);
 
 /* the game's string with the second allocator (knowledge/gt4.md, SGI STL section) */
 struct Str2 {
@@ -63,7 +63,7 @@ struct Str2 {
         Rep *r = (Rep *)(q - 0x10);
         int d = q;
         if (r->sel != 0) {
-            d = (int)func_005D2B58(r);
+            d = (int)strobe__toUpper(r);
         } else {
             r->ref = r->ref + 1;
         }
@@ -72,7 +72,7 @@ struct Str2 {
     ~Str2() {
         Rep *r = (Rep *)(*(int *)&p - 0x10);
         if (--r->ref == 0) {
-            func_00575DA0(r);
+            free(r);
         }
     }
 };

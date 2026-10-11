@@ -3,9 +3,9 @@
 #include "types.h"
 void *memcpy(void *, const void *, unsigned int);
 
-s32 func_00575DC8(s32);                         /* extern */
+s32 malloc(s32);                         /* extern */
 s32 func_005BEC48(s32, s32);                    /* extern */
 
 void func_005BECB0(s32 arg0) {
-    func_005BEC48(arg0, func_00575DC8(0x18));
+    func_005BEC48(arg0, malloc(0x18));
 }

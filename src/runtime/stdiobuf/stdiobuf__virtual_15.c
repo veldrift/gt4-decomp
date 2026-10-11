@@ -4,9 +4,9 @@
 #include "gt4/stdiobuf.h"
 void *memcpy(void *, const void *, unsigned int);
 
-s32 func_005A31F0(s32);                         /* extern */
+s32 fclose(s32);                         /* extern */
 
 void stdiobuf__virtual_15(struct stdiobuf *arg0) {
-    func_005A31F0(arg0->unk58);
+    fclose(arg0->unk58);
     arg0->unk58 = 0;
 }

@@ -14,7 +14,7 @@ void *func_005FD4A0(void *arg0, void *arg1, void *arg2) {
     void *var_a0;
 
     temp_s0 = (arg0 + (((struct func_005FD4A0_arg0 *)arg0)->unk80 * 4)) - arg2;
-    func_005A47D4(arg1, arg2, temp_s0);
+    memmove(arg1, arg2, temp_s0);
     temp_v1 = arg1 + temp_s0;
     temp_v0 = arg0 + (((struct func_005FD4A0_arg0 *)arg0)->unk80 * 4);
     var_a0 = temp_v1;

@@ -4,7 +4,7 @@
 #include <stl_tree.h>
 
 extern "C" void *func_00575E60(int heap, int size);
-extern "C" void func_00575DA0(void *p);
+extern "C" void free(void *p);
 
 
 struct Rep {
@@ -19,7 +19,7 @@ struct HeapName {
 };
 
 extern "C" int func_00608D98(const void *self, const void *other, unsigned int pos, unsigned int n);
-extern "C" char *func_005D2B58(Rep *rep);
+extern "C" char *strobe__toUpper(Rep *rep);
 
 
 /* the game's string: libstdc++ v2 basic_string (knowledge/runtime-types.md); the pointer is read and
@@ -31,7 +31,7 @@ struct Str2 {
         Rep *r = (Rep *)(q - 0x10);
         int d = q;
         if (r->sel != 0) {
-            d = (int)func_005D2B58(r);
+            d = (int)strobe__toUpper(r);
         } else {
             r->ref = r->ref + 1;
         }
@@ -41,7 +41,7 @@ struct Str2 {
         Rep *r = (Rep *)(*(int *)&p - 0x10);
         if (--r->ref == 0) {
             int size = r->cap + 0x10;
-            func_00575DA0(r);
+            free(r);
         }
     }
     bool operator<(const Str2 &o) const { return func_00608D98(this, &o, 0, (unsigned int)-1) < 0; }
@@ -76,7 +76,7 @@ public:
         return (T *)func_00575E60(0x10, n * sizeof(T));
     }
     void deallocate(T *p, size_type n) {
-        func_00575DA0(p);
+        free(p);
     }
     size_type max_size() const throw() { return size_t(-1) / sizeof(T); }
     void construct(T *p, const T &v) { new (p) T(v); }

@@ -3,9 +3,9 @@
 #include "types.h"
 void *memcpy(void *, const void *, unsigned int);
 
-s32 func_00596F40(s8, s32);                     /* extern */
+s32 _IO_putc(s8, s32);                     /* extern */
 
 s32 **func_006142E8(s32 **arg0, s8 arg1) {
-    func_00596F40(arg1, **arg0);
+    _IO_putc(arg1, **arg0);
     return arg0;
 }

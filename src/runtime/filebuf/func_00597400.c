@@ -3,8 +3,8 @@
 #include "types.h"
 void *memcpy(void *, const void *, unsigned int);
 
-s32 func_0059ACA8();                                /* extern */
+s32 _IO_file_close_it();                                /* extern */
 
 s32 func_00597400(s32 arg0) {
-    return (func_0059ACA8() != 0) ? 0 : arg0;
+    return (_IO_file_close_it() != 0) ? 0 : arg0;
 }
