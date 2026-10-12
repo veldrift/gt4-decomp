@@ -1,0 +1,3 @@
+typedef struct Vec3 {float x,y,z;} Vec3;typedef struct Model {char pad[0x14];float defaults[6];float values[4];Vec3 movement;float extra;float state,fade;char gap[12];float counter,velocity;} Model;typedef struct Settings {char pad[8];float values[6];} Settings;
+static inline void set_vector(Vec3 *p,float x,float y,float z){p->x=x;p->y=y;p->z=z;}
+extern "C" void func_00153B50(Model *self,Settings *input) {self->values[0]=input->values[0];self->values[1]=input->values[1];self->values[2]=input->values[2];self->values[3]=input->values[3];set_vector(&self->movement,0.0f,0.0f,input->values[4]);self->extra=input->values[5];self->fade=1.0f;self->state=0.0f;self->counter=0.0f;self->velocity=0x1.11111p-7f;}
