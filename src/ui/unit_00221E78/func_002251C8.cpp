@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,7 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -75,39 +75,39 @@ extern char D_006982C8[];
 extern char D_006982D8[];
 extern char D_006982E8[];
 extern char D_0082DB28[];
-extern "C" void func_00221F38(void);
-extern "C" void func_002225E8(void);
-extern "C" void func_00222738(void);
-extern "C" void func_00221FA8(void);
-extern "C" void func_00222058(void);
-extern "C" void func_002227F0(void);
-extern "C" void func_00222940(void);
-extern "C" void func_002229F8(void);
-extern "C" void func_00222B48(void);
-extern "C" void func_00222C00(void);
-extern "C" void func_00222D50(void);
-extern "C" void func_002220E8(void);
-extern "C" void func_00222198(void);
-extern "C" void func_00222E08(void);
-extern "C" void func_00222F58(void);
-extern "C" void func_00223010(void);
-extern "C" void func_00223160(void);
-extern "C" void func_00222228(void);
-extern "C" void func_002222D8(void);
-extern "C" void func_00223218(void);
-extern "C" void func_00223368(void);
-extern "C" void func_00223420(void);
-extern "C" void func_002234D0(void);
-extern "C" void func_00222368(void);
-extern "C" void func_00222418(void);
-extern "C" void func_00223550(void);
-extern "C" void func_002236A0(void);
-extern "C" void func_00223758(void);
-extern "C" void func_002238A8(void);
-extern "C" void func_002224A8(void);
-extern "C" void func_00222558(void);
-extern "C" void func_00223960(void);
-extern "C" void func_00223A10(void);
+extern "C" void MNetConf__global_0082DB28(void);
+extern "C" void MNetConf__get_nickname(void);
+extern "C" void MNetConf__set_nickname(void);
+extern "C" void MNetConf__get_use_dhcp(void);
+extern "C" void MNetConf__set_use_dhcp(void);
+extern "C" void MNetConf__get_ip(void);
+extern "C" void MNetConf__set_ip(void);
+extern "C" void MNetConf__get_netmask(void);
+extern "C" void MNetConf__set_netmask(void);
+extern "C" void MNetConf__get_gateway(void);
+extern "C" void MNetConf__set_gateway(void);
+extern "C" void MNetConf__get_use_auto_dns(void);
+extern "C" void MNetConf__set_use_auto_dns(void);
+extern "C" void MNetConf__get_dns0(void);
+extern "C" void MNetConf__set_dns0(void);
+extern "C" void MNetConf__get_dns1(void);
+extern "C" void MNetConf__set_dns1(void);
+extern "C" void MNetConf__get_use_proxy(void);
+extern "C" void MNetConf__set_use_proxy(void);
+extern "C" void MNetConf__get_proxy(void);
+extern "C" void MNetConf__set_proxy(void);
+extern "C" void MNetConf__get_proxy_port(void);
+extern "C" void MNetConf__set_proxy_port(void);
+extern "C" void MNetConf__get_use_auth(void);
+extern "C" void MNetConf__set_use_auth(void);
+extern "C" void MNetConf__get_auth_username(void);
+extern "C" void MNetConf__set_auth_username(void);
+extern "C" void MNetConf__get_auth_password(void);
+extern "C" void MNetConf__set_auth_password(void);
+extern "C" void MNetConf__get_auto_connect(void);
+extern "C" void MNetConf__set_auto_connect(void);
+extern "C" void MNetConf__get_phy_config(void);
+extern "C" void MNetConf__set_phy_config(void);
 extern "C" void MNetConf__InitYncf(void);
 extern "C" void MNetConf__GetList(void);
 extern "C" void MNetConf__GetNetListEntry(void);
@@ -154,8 +154,8 @@ extern "C" void func_002251C8(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00309CC0());
-    func_00306780(arg0, D_0082DB28, func_00221F38);
+    func_002F3A30(arg0, hObject__GetClassID());
+    func_00306780(arg0, D_0082DB28, MNetConf__global_0082DB28);
     {
         Str *ps = &s;
         const char *src = D_00698108;
@@ -169,7 +169,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002225E8, func_00222738);
+        func_002F3860(arg0, &s, MNetConf__get_nickname, MNetConf__set_nickname);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -191,7 +191,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00221FA8, func_00222058);
+        func_002F3860(arg0, &s, MNetConf__get_use_dhcp, MNetConf__set_use_dhcp);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -213,7 +213,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002227F0, func_00222940);
+        func_002F3860(arg0, &s, MNetConf__get_ip, MNetConf__set_ip);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -235,7 +235,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002229F8, func_00222B48);
+        func_002F3860(arg0, &s, MNetConf__get_netmask, MNetConf__set_netmask);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -257,7 +257,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00222C00, func_00222D50);
+        func_002F3860(arg0, &s, MNetConf__get_gateway, MNetConf__set_gateway);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -279,7 +279,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002220E8, func_00222198);
+        func_002F3860(arg0, &s, MNetConf__get_use_auto_dns, MNetConf__set_use_auto_dns);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -301,7 +301,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00222E08, func_00222F58);
+        func_002F3860(arg0, &s, MNetConf__get_dns0, MNetConf__set_dns0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -323,7 +323,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00223010, func_00223160);
+        func_002F3860(arg0, &s, MNetConf__get_dns1, MNetConf__set_dns1);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -345,7 +345,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00222228, func_002222D8);
+        func_002F3860(arg0, &s, MNetConf__get_use_proxy, MNetConf__set_use_proxy);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -367,7 +367,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00223218, func_00223368);
+        func_002F3860(arg0, &s, MNetConf__get_proxy, MNetConf__set_proxy);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -389,7 +389,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00223420, func_002234D0);
+        func_002F3860(arg0, &s, MNetConf__get_proxy_port, MNetConf__set_proxy_port);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -411,7 +411,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00222368, func_00222418);
+        func_002F3860(arg0, &s, MNetConf__get_use_auth, MNetConf__set_use_auth);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -433,7 +433,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00223550, func_002236A0);
+        func_002F3860(arg0, &s, MNetConf__get_auth_username, MNetConf__set_auth_username);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -455,7 +455,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00223758, func_002238A8);
+        func_002F3860(arg0, &s, MNetConf__get_auth_password, MNetConf__set_auth_password);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -477,7 +477,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002224A8, func_00222558);
+        func_002F3860(arg0, &s, MNetConf__get_auto_connect, MNetConf__set_auto_connect);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -499,7 +499,7 @@ extern "C" void func_002251C8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00223960, func_00223A10);
+        func_002F3860(arg0, &s, MNetConf__get_phy_config, MNetConf__set_phy_config);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

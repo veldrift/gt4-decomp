@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,8 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_002A0EC8(void);
+extern "C" int mImageFace__GetClassID(void);
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -59,7 +60,7 @@ extern char D_00697FC8[];
 extern char D_00697FD0[];
 extern char D_00697FE0[];
 extern char D_0082D668[];
-extern "C" void func_0021DF48(void);
+extern "C" void MMovieFace__global_0082D668(void);
 extern "C" void MMovieFace__initialize(void);
 extern "C" void MMovieFace__terminate(void);
 extern "C" void MMovieFace__preload(void);
@@ -67,18 +68,18 @@ extern "C" void MMovieFace__loadIpic(void);
 extern "C" void MMovieFace__expandAlpha(void);
 extern "C" void MMovieFace__asyncSound(void);
 extern "C" void MMovieFace__setPause(void);
-extern "C" void func_0021E030(void);
-extern "C" void func_0021E118(void);
+extern "C" void MMovieFace__get_movie_name(void);
+extern "C" void MMovieFace__set_movie_name(void);
 extern "C" void MMovieFace__reserveName(void);
 extern "C" void MMovieFace__setFrameHook(void);
 extern "C" void MMovieFace__setUnUpdate(void);
 extern "C" void MMovieFace__refOther(void);
 extern "C" void MMovieFace__load(void);
 extern "C" void MMovieFace__unload(void);
-extern "C" void func_0021E4D0(void);
-extern "C" void func_0021E5C0(void);
-extern "C" void func_005DA508(void);
-extern "C" void func_005DA530(void);
+extern "C" void MMovieFace__get_AC3(void);
+extern "C" void MMovieFace__get_audio_track(void);
+extern "C" void MMovieFace__get_interlace(void);
+extern "C" void MMovieFace__set_interlace(void);
 
 extern "C" void func_0021E6A8(Obj *arg0) {
     Str s;
@@ -107,8 +108,8 @@ extern "C" void func_0021E6A8(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_002A0EC8());
-    func_00306780(arg0, D_0082D668, func_0021DF48);
+    func_002F3A30(arg0, mImageFace__GetClassID());
+    func_00306780(arg0, D_0082D668, MMovieFace__global_0082D668);
     {
         Str *ps = &s;
         const char *src = D_00697F00;
@@ -276,7 +277,7 @@ extern "C" void func_0021E6A8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0021E030, func_0021E118);
+        func_002F3860(arg0, &s, MMovieFace__get_movie_name, MMovieFace__set_movie_name);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -430,7 +431,7 @@ extern "C" void func_0021E6A8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0021E4D0, func_0021E4D0);
+        func_002F3860(arg0, &s, MMovieFace__get_AC3, MMovieFace__get_AC3);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -452,7 +453,7 @@ extern "C" void func_0021E6A8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0021E5C0, func_0021E5C0);
+        func_002F3860(arg0, &s, MMovieFace__get_audio_track, MMovieFace__get_audio_track);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -474,7 +475,7 @@ extern "C" void func_0021E6A8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_005DA508, func_005DA530);
+        func_002F3860(arg0, &s, MMovieFace__get_interlace, MMovieFace__set_interlace);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

@@ -1,3 +1,18 @@
-struct Obj { float x; float y; float z; int fieldC; char inner[4]; };
-extern "C" void func_00421D30(void *, float, float, float);
-extern "C" void func_00418A58(Obj *obj) { func_00421D30(obj->inner, obj->x, obj->y, obj->z); }
+#include "types.h"
+#define NULL 0
+void *memcpy(void *, const void *, unsigned int);
+
+extern "C" {
+s32 func_00421D30(s32, f32, f32, f32);          /* extern */
+
+struct func_00418A58_arg0 {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+};
+
+void func_00418A58(char *arg0) {
+    func_00421D30((s32)(arg0 + 0x10), ((struct func_00418A58_arg0 *)arg0)->unk0, ((struct func_00418A58_arg0 *)arg0)->unk4, ((struct func_00418A58_arg0 *)arg0)->unk8);
+}
+
+}

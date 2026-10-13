@@ -65,20 +65,20 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void MCarData__IsStrange(s32 *arg0, s32 arg1, VObj **arg2) {
+extern "C" void func_0012F0D8(s32 *arg0, s32 arg1, VObj **arg2) {
     if (arg1 > 0) {
         s32 dest[8];
-        s32 success;
         U u;
         U *pu;
+        s32 r;
         s32 newVal;
         s32 oldVal;
 
         pu = &u;
         vcall(pu, *arg2);
-        success = func_004487D8(c_str(&pu->s), dest);
+        r = func_004487D8(c_str(&pu->s), dest);
         release(&pu->s);
-        if (success) {
+        if (r != 0) {
             func_002FE278(pu, func_00448948(dest) != 0);
             if (arg0 != pu->h) {
                 newVal = pu->h[0];

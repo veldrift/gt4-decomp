@@ -228,7 +228,7 @@
 #define externalSubset1 func_004D7870
 #define findEncoding func_004E6870
 #define findEncodingNS func_004E6A90
-#define free D_00575DA0
+#define free free
 #define getAttributeId func_004D4EE8
 #define getContext func_004D5180
 #define getElementType func_004D6FB0
@@ -295,11 +295,11 @@
 #define little2_toUtf8 func_004DD178
 #define little2_updatePosition func_004E1488
 #define lookup func_004D60D8
-#define malloc D_00575DC8
+#define malloc malloc
 #define memcmp D_0057F188
-#define memcpy D_005A4724
-#define memmove D_005A47D4
-#define memset D_005A48D8
+#define memcpy memcpy
+#define memmove memmove
+#define func_005A48D8 D_005A48D8
 #define moveToFreeBindingList func_004CEC70
 #define namePages D_006BB600
 #define namingBitmap D_006BB000
@@ -430,7 +430,7 @@ typedef SHIM_PTRDIFF_T ptrdiff_t;
 
 void *memcpy(void *, const void *, size_t);
 void *memmove(void *, const void *, size_t);
-void *memset(void *, int, size_t);
+void *func_005A48D8(void *, int, size_t);
 int memcmp(const void *, const void *, size_t);
 size_t strlen(const char *);
 char *strcpy(char *, const char *);
@@ -484,7 +484,7 @@ typedef SHIM_PTRDIFF_T ptrdiff_t;
 
 void *memcpy(void *, const void *, size_t);
 void *memmove(void *, const void *, size_t);
-void *memset(void *, int, size_t);
+void *func_005A48D8(void *, int, size_t);
 int memcmp(const void *, const void *, size_t);
 size_t strlen(const char *);
 char *strcpy(char *, const char *);
@@ -2522,7 +2522,7 @@ parserInit(XML_Parser parser, const XML_Char *encodingName)
   declNotationPublicId = NULL;
   declAttributeIsCdata = XML_FALSE;
   declAttributeIsId = XML_FALSE;
-  memset(&position, 0, sizeof(POSITION));
+  func_005A48D8(&position, 0, sizeof(POSITION));
   errorCode = XML_ERROR_NONE;
   eventPtr = NULL;
   eventEndPtr = NULL;

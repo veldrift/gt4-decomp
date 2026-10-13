@@ -1,12 +1,25 @@
-struct VEntry { short delta; short index; void *(*fn)(void *); };
-struct Obj { char pad0[8]; VEntry *vtbl; char padC[0x1660]; int field166C; };
-extern "C" void func_00458238(void *);
-extern "C" void func_00452FA0(void *, void *, void *);
+typedef int s32;
+typedef short s16;
 
-extern "C" void func_0038FFC8(Obj *arg0, void *arg1) {
-    if (arg1 != 0) func_00458238(arg1);
-    VEntry *entry = (VEntry *)((char *)arg0->vtbl + 0x38);
-    void *geometry = entry->fn((char *)arg0 + entry->delta);
-    func_00452FA0((char *)arg0 + 0x18, geometry, arg1);
-    arg0->field166C = 1;
+extern "C" void func_00458238(s32 *arg0);
+extern "C" void func_00452FA0(void *arg0, s32 arg1, s32 arg2);
+
+struct VEntry_38 { s16 delta; s16 index; s32 (*fn)(void *); };
+
+/* the object's table pointer sits at +8; the virtual entry is at +0x38 */
+static inline s32 vcall_38(char *o) {
+    VEntry_38 *e = (VEntry_38 *)(*(char **)(o + 8) + 0x38);
+    return e->fn(o + e->delta);
+}
+
+extern "C" void func_0038FFC8(void *arg0, s32 *arg1) {
+    char *self = (char *)arg0;
+    s32 r;
+
+    if (arg1 != 0) {
+        func_00458238(arg1);
+    }
+    r = vcall_38(self);
+    func_00452FA0(self + 0x18, r, (s32)arg1);
+    *(s32 *)(self + 0x166C) = 1;
 }

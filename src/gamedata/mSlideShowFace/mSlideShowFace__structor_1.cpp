@@ -1,0 +1,19 @@
+#include "gt4/mSlideShowFace.h"
+typedef int s32;
+
+extern "C" void func_001C7228(void *arg0, s32 arg1);
+extern "C" void func_001C6B10(void *arg0, s32 arg1);
+extern "C" void mWidget__structor_1(void *arg0, s32 arg1);
+extern "C" void func_00326798(void *arg0, s32 arg1, s32 arg2, const char *arg3);
+
+extern void *mSlideShowFace__vtable;
+
+extern "C" void mSlideShowFace__structor_1(void *arg0, s32 arg1) {
+    ((struct mSlideShowFace *)arg0)->unk4_pvoid = &mSlideShowFace__vtable;
+    func_001C7228((char *)arg0 + 0x1E9C, 2);
+    func_001C6B10((char *)arg0 + 0xBC, 2);
+    mWidget__structor_1(arg0, 0);
+    if (arg1 & 1) {
+        return func_00326798(arg0, 0x1F54, 4, "RefCounter");
+    }
+}

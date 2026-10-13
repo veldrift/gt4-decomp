@@ -1,38 +1,37 @@
-extern "C" {
-    extern char D_0067D7C0[];
-    extern char D_0067DC70[];
-    extern char D_0067DAE0[];
-    extern char D_0067D950[];
-}
+/* compiler: ee-gcc2.96-no-strict-aliasing */
+extern char CarGeometry__vtable[];
+extern char MTRGeometry__vtable[];
+extern char SpecialCarGeometry__vtable[];
+extern char NormalCarGeometry__vtable[];
 
-struct SpecialGeometry {
+struct SubA {
     void *vtbl;
-    int state;
-};
-struct NormalGeometry {
-    void *vtbl;
-    void *context;
-    void *geometry;
-};
-struct CarGeometry {
-    void *vtbl;
-    SpecialGeometry special;
-    void *baseVtbl;
-    NormalGeometry normal;
-    void *implementation;
+    int m4;
+    void init() { vtbl = MTRGeometry__vtable; m4 = 0; }
 };
 
-extern "C" int func_0038DC30(CarGeometry *, void *, void *, void *);
+struct SubB {
+    void *vtbl;
+    int m4;
+    int m8;
+    void init() { vtbl = NormalCarGeometry__vtable; m8 = 0; }
+};
 
-extern "C" int CarGeometry__structor_0(CarGeometry *arg0, void *arg1, void *arg2) {
-    arg0->vtbl = D_0067D7C0;
-    SpecialGeometry *special = &arg0->special;
-    special->vtbl = D_0067DC70;
-    special->state = 0;
-    arg0->baseVtbl = D_0067DAE0;
-    NormalGeometry *normal = &arg0->normal;
-    normal->vtbl = D_0067D950;
-    normal->geometry = 0;
-    arg0->implementation = 0;
-    return func_0038DC30(arg0, arg1, 0, arg2);
+struct Geo {
+    void *vtbl;
+    SubA a;
+    void *vtblC;
+    SubB b;
+    int m1C;
+};
+
+extern "C" void func_0038DC30(Geo *self, int a, int b, int c);
+
+extern "C" void CarGeometry__structor_0(Geo *self, int a, int c) {
+    self->vtbl = CarGeometry__vtable;
+    self->a.init();
+    self->vtblC = SpecialCarGeometry__vtable;
+    self->b.init();
+    self->m1C = 0;
+    return func_0038DC30(self, a, 0, c);
 }

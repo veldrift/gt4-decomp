@@ -1,5 +1,4 @@
 typedef int s32;
-typedef short s16;
 
 struct Rep {
     s32 len;
@@ -14,125 +13,89 @@ struct S00659988 {
 
 struct Str {
     char *p;
+    char pad[0xC];
 };
 
-union U {
-    Str s;
-    s32 h[4];
+struct Handle {
+    void *p;
+    char pad[0xC];
 };
-
-struct VEntry {
-    short delta;
-    short index;
-    void (*fn)(void *, void *);
-};
-
-struct VObj {
-    char pad0[4];
-    VEntry *vtbl;
-};
-
-extern char D_0068E7F8[];
-
-extern "C" struct S00659988 *func_005C11A8(void);
-extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_004487D8(const char *arg0, s32 *dest);
-extern "C" s16 func_00448868(s32 *arg0);
-extern "C" void func_002FE278(void *arg0, s32 arg1);
-extern "C" void func_002FC870(void *arg0, int arg1);
-extern "C" void func_003285A8(s32 arg0);
-extern "C" void func_003285F8(s32 arg0);
-
-static inline void vcall(void *ret, VObj *o) {
-    VEntry *e = (VEntry *)((char *)o->vtbl + 0x18);
-    e->fn(ret, (char *)o + e->delta);
-}
-
-static inline const char *c_str(Str *s) {
-    s32 len = ((Rep *)s->p)[-1].len;
-    if (len == 0) {
-        return D_0068E7F8;
-    }
-    s->p[len] = 0;
-    return s->p;
-}
-
-static inline void release(Str *s) {
-    Rep *q = (Rep *)(s->p - 0x10);
-    if (--q->ref == 0) {
-        s32 cap = q->cap + 0x10;
-        func_00326798(q, cap, 4, func_005C11A8()->name);
-    }
-}
-
 
 extern Rep D_00659FA8;
-extern char D_0068E830[], D_0068E838[];
-extern "C" char *func_005C2560(Rep *arg0);
-extern "C" s32 func_0057F260(const char *arg0);
-extern "C" void func_005C2630(Str *arg0, s32 pos, s32 n, const char *text, s32 length);
-extern "C" void func_00314B20(void *arg0, Str *arg1);
-extern "C" void func_00312318(void *arg0, s32 arg1);
+extern char D_0068E7F8[];
+extern char D_0068E800[];
+
+extern "C" void func_00312318(void *arg0, int arg1);
 extern "C" void func_00312370(void *arg0, void *arg1);
-extern "C" const char *func_00314AD8(s32 arg0);
-static inline void empty(Str *s) {
-    Rep *q = &D_00659FA8;
-    char *p;
-    if (q->sel != 0) {
-        p = func_005C2560(q);
-    } else {
-        q->ref = q->ref + 1;
-        p = (char *)(q + 1);
+extern "C" Str *func_00314920(void *arg0);
+extern "C" void func_00314B20(void *arg0, void *arg1);
+extern "C" const char *func_00447E18(const char *s);
+extern "C" void func_003285A8(void *p);
+extern "C" void func_003285F8(void *p);
+extern "C" char *func_005C2560(Rep *r);
+extern "C" s32 func_0057F260(const char *s);
+extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
+extern "C" struct S00659988 *func_005C11A8(void);
+extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
+
+static inline void str_release(Str *s) {
+    Rep *q = (Rep *)(s->p - 0x10);
+    if (--q->ref == 0) {
+        s32 size = q->cap + 0x10;
+        func_00326798(q, size, 4, func_005C11A8()->name);
     }
-    s->p = p;
 }
 
-extern char D_0068E800[], D_0068E828[];
-extern "C" Str *func_00314920(s32);
-extern "C" const char *func_00447E18(const char *);
-extern "C" void func_002FC8C8(void *, void *);
-extern "C" s32 func_002FE250(s32);
-extern "C" unsigned int func_00448540(s32, char *, s32);
-extern "C" s32 func_00447BB8(const char *);
-extern "C" void func_0057DA20(char *, const char *, ...);
-extern "C" void func_005A5AD8(const char *, const char *, ...);
-extern "C" void func_004481B8(long long, char *);
-extern "C" void func_00448200(const char *, char *);
-extern "C" void func_00448278(const char *, char *);
-extern "C" void func_005A48D8(void *, s32, s32);
-struct Seed { long long a; s32 b; } __attribute__((packed));
-extern Seed D_0068E818;
+static inline const char *c_str(Str *t) {
+    s32 len = *(s32 *)(t->p - 0x10);
+    if (len == 0) return D_0068E7F8;
+    t->p[len] = 0;
+    return t->p;
+}
 
-extern "C" void MCarData__GetCarLabel(s32 *arg0, s32 arg1, void *arg2) {
+extern "C" void func_0012D7A8(void **arg0, s32 arg1, void *arg2) {
     if (arg1 > 0) {
-        U input;
-        U u;
-        Str str;
-        U *pu;
+        Handle h0;
+        Handle h;
+        Str s;
         Str *ps;
-        const char *value;
-        s32 newVal, oldVal;
-        func_00312370(&input, arg2);
-        value = func_00447E18(c_str(func_00314920(input.h[0])));
-        ps = &str;
-        if (!value) value = D_0068E800;
-        empty(ps);
-        func_005C2630(ps, 0, -1, value, func_0057F260(value));
-        pu = &u;
-        func_00314B20(pu, ps);
-        if (arg0 != pu->h) {
-            newVal = pu->h[0];
-            if (newVal != 0) {
-                func_003285A8(newVal);
+        func_00312370(&h0, arg2);
+        {
+            Str *t = func_00314920(h0.p);
+            const char *c = c_str(t);
+            const char *name = func_00447E18(c);
+            ps = &s;
+            if (name == 0) {
+                name = D_0068E800;
             }
-            oldVal = *arg0;
-            if (oldVal != 0) {
-                func_003285F8(oldVal);
+            {
+                char *d;
+                if (D_00659FA8.sel != 0) {
+                    d = func_005C2560(&D_00659FA8);
+                } else {
+                    d = (char *)(&D_00659FA8 + 1);
+                    D_00659FA8.ref++;
+                }
+                ps->p = d;
             }
-            *arg0 = newVal;
+            func_005C2630(ps, 0, -1, name, func_0057F260(name));
+            {
+                Handle *ph = &h;
+                func_00314B20(ph, ps);
+                if ((void *)arg0 != (void *)ph) {
+                    void *p = ph->p;
+                    if (p != 0) {
+                        func_003285A8(p);
+                    }
+                    if (*arg0 != 0) {
+                        func_003285F8(*arg0);
+                    }
+                    *arg0 = p;
+                }
+                func_00312318(ph, 2);
+            }
+            str_release(ps);
         }
-        func_00312318(pu, 2);
-        release(ps);
-        func_00312318(&input, 2);
+        func_00312318(&h0, 2);
     }
 }

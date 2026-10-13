@@ -12,7 +12,7 @@ struct Obj {
 };
 
 extern "C" void func_001240D8(void *arg0, int arg1);
-extern "C" void func_00124130(void *arg0);
+extern "C" void func_00124130(void *arg0, s32 arg1);
 extern "C" s32 func_00127BD8(s32 arg0, s32 arg1);
 extern "C" void func_002FC870(void *arg0, int arg1);
 extern "C" void func_002FE278(void *arg0, s32 arg1);
@@ -26,7 +26,7 @@ extern "C" void MQuickWork__getWeight(s32 *arg0, s32 arg1, s32 n, Obj **args) {
     s32 newVal;
     s32 oldVal;
     s32 v;
-    func_00124130(tmp);
+    func_00124130(tmp, arg1);
     v = 0;
     if (n > 0) {
         Obj *o = *args;

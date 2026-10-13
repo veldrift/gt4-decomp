@@ -1,3 +1,6 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
+#include "gt4/mWidget.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +36,7 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_00255260(void);
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -46,12 +47,12 @@ extern char D_00692DC0[];
 extern char D_00692DD0[];
 extern char D_00692DD8[];
 extern char D_008261C0[];
-extern "C" void func_005CE1B0(void);
+extern "C" void MSlideShowFace__global_008261C0(void);
 extern "C" void MSlideShowFace__doPlay(void);
 extern "C" void MSlideShowFace__doStop(void);
 extern "C" void MSlideShowFace__isPlaying(void);
-extern "C" void func_001AA460(void);
-extern "C" void func_001AA548(void);
+extern "C" void MSlideShowFace__get_shuffle(void);
+extern "C" void MSlideShowFace__set_demo(void);
 
 extern "C" void func_001AA5B0(Obj *arg0) {
     Str s;
@@ -80,8 +81,8 @@ extern "C" void func_001AA5B0(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00255260());
-    func_00306780(arg0, D_008261C0, func_005CE1B0);
+    func_002F3A30(arg0, mWidget__GetClassID());
+    func_00306780(arg0, D_008261C0, MSlideShowFace__global_008261C0);
     {
         Str *ps = &s;
         const char *src = D_00692DB0;
@@ -161,7 +162,7 @@ extern "C" void func_001AA5B0(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_001AA460, func_001AA460);
+        func_002F3860(arg0, &s, MSlideShowFace__get_shuffle, MSlideShowFace__get_shuffle);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -183,7 +184,7 @@ extern "C" void func_001AA5B0(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, 0, func_001AA548);
+        func_002F3860(arg0, &s, 0, MSlideShowFace__set_demo);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

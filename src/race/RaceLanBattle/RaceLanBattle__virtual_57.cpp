@@ -1,3 +1,13 @@
-struct Obj { char pad[0x1AA0]; int state; };
-extern "C" void func_00346DA0(void *, void *, int);
-extern "C" void RaceLanBattle__virtual_57(void *obj, Obj *other) { other->state = 1; func_00346DA0((char *)obj + 0xF258, other, 1); }
+typedef int s32;
+
+struct Obj {
+    char pad[0x1AA0];
+    s32 unk1AA0;
+};
+
+extern "C" void AutomobileControlRecord__Manager__save(s32 arg0, struct Obj *arg1, s32 arg2);
+
+extern "C" void RaceLanBattle__virtual_57(s32 arg0, struct Obj *arg1) {
+    arg1->unk1AA0 = 1;
+    AutomobileControlRecord__Manager__save(arg0 + 0xF258, arg1, 1);
+}

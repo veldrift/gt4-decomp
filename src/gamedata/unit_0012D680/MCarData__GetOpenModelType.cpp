@@ -37,7 +37,7 @@ extern char D_0068E7F8[];
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 extern "C" int func_004487D8(const char *arg0, s32 *dest);
-extern "C" s32 func_00448968(s32 *arg0);
+extern "C" unsigned char func_00448968(s32 *arg0);
 extern "C" void func_002FE278(void *arg0, s32 arg1);
 extern "C" void func_002FC870(void *arg0, int arg1);
 extern "C" void func_003285A8(s32 arg0);
@@ -65,20 +65,20 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void MCarData__GetOpenModelType(s32 *arg0, s32 arg1, VObj **arg2) {
+extern "C" void func_0012E5A8(s32 *arg0, s32 arg1, VObj **arg2) {
     if (arg1 > 0) {
         s32 dest[8];
-        s32 success;
         U u;
         U *pu;
         s32 newVal;
         s32 oldVal;
+        s32 found;
 
         pu = &u;
         vcall(pu, *arg2);
-        success = func_004487D8(c_str(&pu->s), dest);
+        found = func_004487D8(c_str(&pu->s), dest);
         release(&pu->s);
-        if (success) {
+        if (found != 0) {
             func_002FE278(pu, func_00448968(dest));
             if (arg0 != pu->h) {
                 newVal = pu->h[0];

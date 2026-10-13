@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,7 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F36E0(Obj *arg0, void *arg1, void (*arg2)(void));
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
@@ -49,14 +49,14 @@ extern char D_0069DC30[];
 extern char D_0069DC40[];
 extern char D_0083F010[];
 extern char D_0083F008[];
-extern "C" void func_00304A08(void);
-extern "C" void func_00304A80(void);
+extern "C" void Module__global_0083F010(void);
+extern "C" void Module__global_0083F008(void);
 extern "C" void Module__load(void);
 extern "C" void Module__defined(void);
 extern "C" void Module__defineStatic(void);
 extern "C" void Module__removeStatic(void);
 extern "C" void Module__clearStatic(void);
-extern "C" void func_00304850(void);
+extern "C" void Module__get_name(void);
 
 extern "C" void func_00304D48(Obj *arg0) {
     Str s;
@@ -85,9 +85,9 @@ extern "C" void func_00304D48(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00309CC0());
-    func_00306780(arg0, D_0083F010, func_00304A08);
-    func_002F36E0(arg0, D_0083F008, func_00304A80);
+    func_002F3A30(arg0, hObject__GetClassID());
+    func_00306780(arg0, D_0083F010, Module__global_0083F010);
+    func_002F36E0(arg0, D_0083F008, Module__global_0083F008);
     {
         Str *ps = &s;
         const char *src = D_0069DC00;
@@ -211,7 +211,7 @@ extern "C" void func_00304D48(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_00304850, func_00304850);
+        func_002F3860(arg0, &s, Module__get_name, Module__get_name);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

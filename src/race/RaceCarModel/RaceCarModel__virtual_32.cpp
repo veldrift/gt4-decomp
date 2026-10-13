@@ -1,8 +1,11 @@
-struct Obj { void *field0; };
-extern "C" void func_004595C8(void *);
-extern "C" void func_00459610(void *, float);
+#include "types.h"
+#define NULL 0
+void *memcpy(void *, const void *, unsigned int);
 
-extern "C" void RaceCarModel__virtual_32(Obj *arg0, float value) {
-    func_004595C8(arg0->field0);
-    func_00459610(arg0->field0, value);
+s32 func_004595C8(s32);                         /* extern */
+s32 func_00459610(s32, f32);                    /* extern */
+
+void RaceCarModel__virtual_32(s32 *arg0, f32 fparg0) {
+    func_004595C8(*arg0);
+    func_00459610(*arg0, fparg0);
 }

@@ -141,6 +141,7 @@ class MatchingToolsTests(unittest.TestCase):
              patch.object(cpu_solve.match, 'gnu_asm', return_value='same'), \
              patch.object(cpu_solve, 'draft', return_value=body), \
              patch.object(cpu_solve, 'prepared', side_effect=lambda addr,text,path:text), \
+             patch.object(cpu_solve, 'full_length', return_value=12), \
              patch.object(cpu_solve, 'variants', side_effect=lambda addr,text,*args:[('original',text)]), \
              patch.object(cpu_solve, 'judge', side_effect=judge):
             result = cpu_solve.attempt(0x5678, out=directory, apply=False)

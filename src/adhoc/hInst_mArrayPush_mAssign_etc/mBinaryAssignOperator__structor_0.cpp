@@ -1,0 +1,21 @@
+extern int RefCounter__structor_0(void *arg0);
+extern char mBinaryAssignOperator__vtable[];
+
+struct P8 {
+    int a;
+    int b;
+};
+
+struct S0031A988 {
+    int unk0;                      /* 0x00 */
+    int unk4;                      /* 0x04 - vtable pointer */
+    int unk8;                      /* 0x08 */
+    struct P8 unkC;                /* 0x0C, 8 bytes copied from arg2 */
+};
+
+int mBinaryAssignOperator__structor_0(struct S0031A988 *arg0, int *arg1, struct P8 *arg2) {
+    RefCounter__structor_0(arg0);
+    arg0->unk4 = (int)mBinaryAssignOperator__vtable;
+    arg0->unk8 = *arg1;
+    arg0->unkC = *arg2;
+}

@@ -5,7 +5,12 @@ through this table, so sources may call functions and globals by their real name
 
 Names come from:
   config/symbol_addrs.txt   tools/rtti.py: Class__virtual_NN, Class__structor_N, Class__tf (code)
-                            and Class__vtable (data), as `name = 0xADDR; // type:func|data`
+                            and Class__vtable (data), as `name = 0xADDR; // type:func|data`;
+                            tools/gthd_names.py --apply: Class__method names from Gran Turismo
+                            HD, tagged `// type:func gthd`, in a block of their own
+  config/libs/*_symbols.txt tools/libmatch.py's libraries: real (C and mangled C++) names of library
+                            functions and data, e.g. libio's `tellg__7istream`; like stl_symbols.txt
+                            they resolve but never name an address
   config/adhoc_methods.txt  tools/registration.py: `Class method 0xADDR`, the native methods the
                             script engine registers, used as Class__method
 
@@ -15,8 +20,8 @@ function), `method__NClass...` (member of Class, also Q2-nested names), `__NClas
 (constructor and destructor): they resolve through Class__method, Class__ctor, Class__dtor.
 
 The canonical name of an address (`name_of`) is the script-engine method name when there is one
-(what scripts call), else the RTTI name: a constructor/destructor over a vtable slot over the
-type_info function, and when several classes claim the same function, the class that is an
+(what scripts call), else the RTTI name: a constructor/destructor over a GT HD name over a
+vtable slot over the type_info function, and when several classes claim the same function, the class that is an
 ancestor of the others (else the first by name). Addresses without a name stay func_ADDR / D_ADDR.
 
     symbols.py NAME|ADDR...     what each resolves to, with every alias
@@ -31,6 +36,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SYMBOL_ADDRS = os.path.join(ROOT, "config", "symbol_addrs.txt")
 ADHOC = os.path.join(ROOT, "config", "adhoc_methods.txt")
 STL = os.path.join(ROOT, "config", "stl_symbols.txt")  # tools/stl.py: mangled names of STL instantiations
+# tools/libmatch.py: names of third-party library functions and data (libio's mangled C++ names)
+LIB_SYMBOLS = os.path.join(ROOT, "config", "libs")
 CLASSES = os.path.join(ROOT, "config", "classes.json")
 
 # func_ADDR / D_ADDR / jtbl_ADDR, with an optional C++ mangling suffix (func_00100230__Fv).
@@ -40,7 +47,7 @@ TOKEN = re.compile(r"\b(func|D|jtbl)_([0-9A-Fa-f]{8})\b(?!\w)")
 STRING = r'"(?:[^"\\\n]|\\.)*"'
 CHAR = r"'(?:[^'\\\n]|\\.)*'"
 RTTI_SUFFIX = re.compile(r"^(.+?)__(virtual_\d+|structor_\d+|tf|vtable\d*)$")
-_RANK = {"structor": 0, "virtual": 1, "tf": 2, "vtable": 3}
+_RANK = {"structor": 0, "gthd": 0.5, "virtual": 1, "tf": 2, "vtable": 3}
 
 _table = None
 
@@ -63,19 +70,26 @@ def _load():
         for cname, c in json.load(open(CLASSES)).items():
             bases[cname] = list(c.get("bases", []))
     rtti = {}
-    for path in (SYMBOL_ADDRS, STL):
+    gthd = set()  # names from Gran Turismo HD (tools/gthd_names.py): above Class__virtual_NN
+    libs = sorted(os.path.join(LIB_SYMBOLS, f) for f in os.listdir(LIB_SYMBOLS)
+                  if f.endswith("_symbols.txt")) if os.path.isdir(LIB_SYMBOLS) else []
+    for path in [SYMBOL_ADDRS, STL] + libs:
         if not os.path.exists(path):
             continue
         for line in open(path):
-            m = re.match(r"\s*([A-Za-z_]\w*)\s*=\s*0x([0-9A-Fa-f]+)\s*;.*type:(func|data)", line)
+            m = re.match(r"\s*([A-Za-z_$][\w$]*)\s*=\s*0x([0-9A-Fa-f]+)\s*;.*type:(func|data)", line)
             if m:
                 addr, kind = int(m.group(2), 16), m.group(3)
                 t.names[m.group(1)] = (addr, kind)
                 t.kinds[addr] = kind
-                if path == STL:  # mangled template names resolve, but never name an address (or a file)
+                # mangled template/library names resolve but never name an address (or a file); plain C
+                # library names (memcpy, strlen...) do, so sources keep calling them by name
+                if path != SYMBOL_ADDRS and ("__" in m.group(1) or "$" in m.group(1) or path == STL):
                     continue
                 t.by_addr.setdefault(addr, []).append(m.group(1))
                 rtti.setdefault(addr, []).append(m.group(1))
+                if re.search(r"type:func gthd\b", line):
+                    gthd.add(m.group(1))
     if os.path.exists(ADHOC):
         for line in open(ADHOC):
             p = line.split()
@@ -108,6 +122,8 @@ def _load():
         return out
 
     def rank(name):
+        if name in gthd:
+            return (_RANK["gthd"], "", name)
         m = RTTI_SUFFIX.match(name)
         cls, suffix = (m.group(1), m.group(2)) if m else (name, "")
         kind = re.sub(r"\d+", "", suffix).rstrip("_")
@@ -142,6 +158,9 @@ def _demangled(sym):
     m = re.match(r"^_[$.]_(\d+)(\w+)$", sym)         # destructor: _$_10MCarGarage
     if m and len(m.group(2)) >= int(m.group(1)):
         out.append(m.group(2)[:int(m.group(1))] + "__dtor")
+    m = re.match(r"^_vt[$.](\d+)(\w+)$", sym)        # vtable: _vt$10MCarGarage (real C++ ctors)
+    if m and len(m.group(2)) == int(m.group(1)):
+        out.append(m.group(2) + "__vtable")
     for m in re.finditer(r"__(?=[FH])", sym):        # plain function: name__Fv
         out.append(sym[:m.start()])
     for m in re.finditer(r"__(?=Q\d|\d)", sym):      # member: method__10MCarGarageiPv
@@ -160,6 +179,8 @@ def _demangled(sym):
             pos += ln
         if parts and method:
             out.append("::".join(parts) + "__" + method)
+            if len(parts) > 1:  # GT HD names nested classes Outer__Inner__method
+                out.append("__".join(parts) + "__" + method)
             out.append(parts[-1] + "__" + method)
     return out
 
@@ -237,6 +258,14 @@ def generic(sym):
     return f"D_{addr:08X}" if kind_of(sym) == "data" else f"func_{addr:08X}"
 
 
+# Functions gcc expands as builtins when called by these names (a constant memcpy becomes inline
+# loads/stores): a source's spelling (the name, or func_ADDR to force a real call) decides the
+# code, so renaming tools never rewrite these names or the addresses they stand for.
+BUILTINS = {"memcpy", "memset", "memcmp", "memmove", "strcpy", "strncpy", "strcmp", "strncmp",
+            "strlen", "strcat", "strchr", "strrchr", "abs", "fabs", "fabsf", "sqrt", "sqrtf",
+            "bzero", "bcopy", "bcmp", "alloca", "abort", "exit"}
+
+
 def rename_text(text, lookup=None):
     """Source text with every func_/D_ token replaced by its canonical name, string and character
     literals untouched. lookup(addr, kind) -> name or None; default: name_of."""
@@ -247,6 +276,8 @@ def rename_text(text, lookup=None):
         if not m.group(1) or m.group(1) == "jtbl":
             return m.group(0)
         new = lookup(int(m.group(2), 16), "func" if m.group(1) == "func" else "data")
+        if new in BUILTINS:  # func_ADDR here forces a real call: keep it
+            return m.group(0)
         return new or m.group(0)
     return pattern.sub(sub, text)
 
@@ -260,7 +291,7 @@ def generic_text(text):
 
     def sub(m):
         name = m.group(0)
-        if name in t.names:
+        if name in t.names and name not in BUILTINS:
             addr, kind = t.names[name]
             return f"func_{addr:08X}" if kind == "func" else f"D_{addr:08X}"
         return name

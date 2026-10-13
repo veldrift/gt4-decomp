@@ -1,20 +1,18 @@
 extern "C" {
-typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;
-typedef int s32; typedef unsigned int u32; typedef long long s64; typedef unsigned long long u64;
-typedef float f32; typedef double f64;
-typedef int s128 __attribute__((mode(TI))); typedef unsigned int u128 __attribute__((mode(TI)));
+#include "types.h"
 #define NULL 0
-#define M2C_FIELD(expr, type_ptr, offset) (*(type_ptr)((s8 *)(expr) + (offset)))
-typedef int M2C_UNK;
-typedef signed char M2C_UNK8;
-typedef short M2C_UNK16;
-typedef int M2C_UNK32;
-typedef long long M2C_UNK64;
-void func_00437EF0();                            /* extern */
-void func_00437F58();                            /* extern */
+void *memcpy(void *, const void *, unsigned int);
 
-void func_00437EB8(void *arg0) {
-    if (M2C_FIELD(arg0, u8 *, 6) == 0) {
+s32 func_00437EF0(...) throw();
+s32 func_00437F58(...) throw();
+
+struct func_00437EB8_arg0 {
+    char pad0[0x6];
+    u8 unk6;
+};
+
+void func_00437EB8(char *arg0) {
+    if (((struct func_00437EB8_arg0 *)arg0)->unk6 == 0) {
         func_00437EF0();
         return;
     }

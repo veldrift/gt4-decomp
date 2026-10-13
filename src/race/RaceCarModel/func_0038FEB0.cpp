@@ -1,9 +1,19 @@
-extern "C" void func_00450AB0(void *, void *);
-extern "C" void func_00450AD0(void *);
-extern "C" void func_003EDA10(int);
+extern "C" {
+#include "types.h"
+#define NULL 0
+void *memcpy(void *, const void *, unsigned int);
 
-extern "C" void func_0038FEB0(void *arg0, void *arg1) {
-    if (arg1 != 0) return func_00450AB0((char *)arg0 + 0x18, arg1);
-    func_00450AD0((char *)arg0 + 0x18);
+s32 func_003EDA10(...) throw();
+s32 func_00450AB0(...) throw();
+s32 func_00450AD0(...) throw();
+
+void func_0038FEB0(s32 arg0, s32 arg1) {
+    if (arg1 != 0) {
+        func_00450AB0(arg0 + 0x18);
+        return;
+    }
+    func_00450AD0(arg0 + 0x18);
     func_003EDA10(0);
+}
+
 }

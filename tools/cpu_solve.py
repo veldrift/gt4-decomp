@@ -37,12 +37,28 @@ OUT = os.path.join(ROOT, "build", "auto", "cpu")
 RESULTS = os.path.join(OUT, "results.jsonl")
 M2C = autoloop.M2C
 MACROS = open(os.path.join(os.path.dirname(M2C), "m2c_macros.h")).read()
-PRELUDE = ("typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;\n"
-           "typedef int s32; typedef unsigned int u32; typedef long long s64; typedef unsigned long long u64;\n"
-           "typedef float f32; typedef double f64;\n"
-           "typedef int s128 __attribute__((mode(TI))); typedef unsigned int u128 __attribute__((mode(TI)));\n"
+# Every draft starts with this: the sized types and m2c's macros come from include/ (types.h,
+# m2c_macros.h; every compile command has -Iinclude), not pasted into each source.
+PRELUDE = ('#include "types.h"\n'
            "#define NULL 0\n"
-           "void *memcpy(void *, const void *, unsigned int);\n" + MACROS + "\n")
+           "void *memcpy(void *, const void *, unsigned int);\n"
+           '#include "m2c_macros.h"\n\n')
+# What drafts written before 2026-10-10 start with (the same declarations, pasted).
+LEGACY_PRELUDE = ("typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16;\n"
+                  "typedef int s32; typedef unsigned int u32; typedef long long s64; typedef unsigned long long u64;\n"
+                  "typedef float f32; typedef double f64;\n"
+                  "typedef int s128 __attribute__((mode(TI))); typedef unsigned int u128 __attribute__((mode(TI)));\n"
+                  "#define NULL 0\n"
+                  "void *memcpy(void *, const void *, unsigned int);\n" + MACROS.replace("\r\n", "\n") + "\n")
+
+
+def strip_prelude(text, prelude=None):
+    """A draft without its prelude (the current or the legacy one), or None if it has neither."""
+    for pre in ((prelude,) if prelude else (PRELUDE, LEGACY_PRELUDE)):
+        if text.startswith(pre):
+            return text[len(pre):]
+    return None
+
 
 FLOAT = re.compile(r"(?<![\w.])(\d+\.\d*(?:[eE][-+]?\d+)?|\d+[eE][-+]?\d+)(f?)(?![\w.])")
 
@@ -174,9 +190,16 @@ def compile_fix(addr, body, errors):
         f = re.match(r"too (?:few|many) arguments to function `(\w+)'", msg)
         if f:
             for i, line in enumerate(lines):
-                if re.match(r"^[^(]*\b%s\(" % f.group(1), line) and line.rstrip().endswith(("*/", ";")):
+                # the prototype only (a declaration at column 0), never a call site
+                if re.match(r"^\w[\w ]*?\**\s*\b%s\([^()]*\);" % f.group(1), line):
                     lines[i] = re.sub(r"\b(%s)\([^)]*\)" % f.group(1), r"\1()", line, count=1)
                     changed = True
+            continue
+        if re.match(r"invalid operands to binary [-+]$", msg) and 0 <= n < len(lines):
+            new = _byte_arithmetic(lines[n], msg[-1])
+            if new:
+                lines[n] = new
+                changed = True
             continue
         void = "void value not ignored" in msg or "invalid use of void expression" in msg
         if void and 0 <= n < len(lines):
@@ -193,36 +216,211 @@ def compile_fix(addr, body, errors):
             lhs = re.match(r"\s*(\w+) = \*\(", lines[n])
             kind = "s32"
             if lhs:
-                d = re.search(r"^\s+([\w ]+?) \**%s;" % lhs.group(1), body, re.M)
-                kind = d.group(1) if d else kind
-            new = re.sub(r"(?<![\w)\]])\*\((?!\w+ \*\))", f"*({kind} *)(", lines[n])
+                d = re.search(r"^\s+([\w ]+? \**)%s;" % lhs.group(1), body, re.M)
+                kind = d.group(1).strip() if d else kind
+                kind = "s32" if kind == "void" else kind
+            # m2c's own `*(void *)x`: the access through a pointer of the assigned type
+            new = re.sub(r"(?<![\w)\]])\*\(void \*\)", f"*({kind} *)", lines[n])
+            new = re.sub(r"(?<![\w)\]])\*\((?!\w+ \*\))", f"*({kind} *)(", new)
             new = re.sub(r"(?<![\w)\]])\*(?=[a-z_]\w*\b)", f"*({kind} *)", new)
             if new != lines[n]:
                 lines[n] = new
                 changed = True
     out = "\n".join(lines)
+    # the head in the edited text: earlier edits (void -> M2C_UNK prototypes) moved it
+    head = re.search(r"^\w[^\n]*\bfunc_%08X\([^)]*\)\s*\{$" % addr, out, re.M)
     if declared and head:
-        at = head.end() + 1 + (out[:head.end()].count("\n") - body[:head.end()].count("\n"))
+        at = head.end() + 1
         out = out[:at] + "".join(f"    s32 {d};\n" for d in declared) + out[at:]
         changed = True
     return out if changed else None
 
 
-def differs_by(res):
-    """(0 for a match, else the number of differing instructions, 10**6 if it did not compile)."""
+def _operand(text, i, step):
+    """End (step -1, scanning left from i) or start (step 1, right from i) of the postfix
+    expression next to a binary operator: a name, a parenthesised group, calls, `[]`, `->`, `.`
+    (rightwards also prefix `*`/`&`/`-` and casts such as `(u8 *)`). None when there is none."""
+    pairs = {")": "(", "]": "["} if step < 0 else {"(": ")", "[": "]"}
+
+    def group(j):  # j at a bracket: the index just past its partner
+        depth = 0
+        while 0 <= j < len(text):
+            if text[j] in pairs:
+                depth += 1
+            elif text[j] in pairs.values():
+                depth -= 1
+                if depth == 0:
+                    return j + step
+            j += step
+        return None
+
+    def name(j):
+        while 0 <= j < len(text) and (text[j].isalnum() or text[j] == "_"):
+            j += step
+        return j
+
+    j = i
+    if step > 0:
+        while j < len(text):
+            if text[j] in "*&-" and text[j + 1:j + 2] not in ("", " ", "="):
+                j += 1
+                continue
+            cast = re.match(r"\((?:const |unsigned |signed |struct )*\w+ ?\**\) ?", text[j:])
+            if cast and re.match(r"[\w(*&]", text[j + cast.end():j + cast.end() + 1]):
+                j += cast.end()
+                continue
+            break
+        start, ok = j, False
+        while j < len(text):
+            if text[j] in "([":
+                j = group(j)
+                if j is None:
+                    return None
+            elif text[j].isalnum() or text[j] == "_":
+                j = name(j)
+            elif text.startswith("->", j) or text[j] == ".":
+                j += 2 if text[j] == "-" else 1
+                continue
+            else:
+                break
+            ok = True
+        return j if ok and j > start else None
+    ok = False
+    while j >= 0:
+        if text[j] in ")]":
+            j = group(j)
+            if j is None:
+                return None
+        elif text[j].isalnum() or text[j] == "_":
+            j = name(j)
+        else:
+            break
+        ok = True
+        if text[j - 1:j + 1] == "->":
+            j -= 2
+        elif j >= 0 and text[j] == ".":
+            j -= 1
+        elif j >= 0 and (text[j].isalnum() or text[j] == "_" or text[j] in ")]"):
+            continue  # a call's name before its argument list, or an index before `[`
+        else:
+            break
+    return j + 1 if ok else None
+
+
+def _byte_arithmetic(line, op):
+    """`a - b` (or `a + b`) that ee-gcc rejects (an integer minus a pointer, two pointers of
+    different types, a pointer plus a pointer) made plain 32-bit arithmetic, as the original's
+    subu/addu is: `(s32) a - (s32) b`. One operator per call, the first whose operands are not
+    both cast already and whose right side is not a literal (a pointer plus a constant is valid)."""
+    for m in re.finditer(r" \%s " % op, line):
+        r0 = m.end()
+        if re.match(r"(?:0x[0-9A-Fa-f]+|\d+)\b(?![\w(\[])", line[r0:]):
+            continue
+        l0, r1 = _operand(line, m.start() - 1, -1), _operand(line, r0, 1)
+        if l0 is None or r1 is None:
+            continue
+        left, right = line[l0:m.start()], line[r0:r1]
+        if line[:l0].endswith("(s32) ") and right.startswith("(s32) "):
+            continue
+        return (line[:l0] + "(s32) " + left + m.group(0) + "(s32) (" + right + ")" + line[r1:])
+    return None
+
+
+_full = {}
+
+
+def full_length(addr):
+    """The original function's instructions, padding aside (the judge's width for a complete draft)."""
+    if addr not in _full:
+        text_addr, text = match.load_text()
+        _full[addr] = len(match.trim_padding(match.words_at(text_addr, text, addr, match.function_span(addr))))
+    return _full[addr]
+
+
+def differs_by(res, addr=None):
+    """0 for a match, else the number of differing instructions, 10**6 if it did not compile.
+    With addr, the instructions of the original the judge left out are added: when a draft
+    returns where the original goes on, the judge trims the original to the draft's length
+    (a glued function may follow), so a draft that lost its tail (`--void`, a callee's result
+    or argument dropped, dead stores) scored better than a complete one and was kept: that is
+    what made 3.3 K of GT4's kept drafts shorter than their function."""
     if candidates.verdict(res.returncode, res.stdout + res.stderr)['state'] == 'match':
         return 0
     m = re.search(r"(\d+) of (\d+) instructions differ", res.stdout)
-    return int(m.group(1)) if m else 10 ** 6
+    if not m:
+        return 10 ** 6
+    n = int(m.group(1))
+    if addr is not None:
+        # twice per missing instruction: a draft that lost code is wrong, a complete draft
+        # with as many differing instructions still has everything the later tools work on
+        n += 2 * max(0, full_length(addr) - int(m.group(2)))
+    return n
+
+
+SIZES = {"s8": 1, "u8": 1, "s16": 2, "u16": 2, "s64": 8, "u64": 8, "f64": 8, "s128": 16, "u128": 16}
+UNK_TYPES = {"M2C_UNK": "s32", "M2C_UNK32": "s32", "M2C_UNK16": "s16", "M2C_UNK8": "s8", "M2C_UNK64": "s64"}
+
+
+def frame_extent(addr):
+    """The bytes of the stack frame below the callee-saved registers: the local area. The whole
+    frame when nothing is saved; None without a frame."""
+    words = match.m2c_asm(addr).splitlines()
+    frame, saved = None, []
+    for line in words[:40]:
+        m = re.search(r"\*/\s+addiu\s+\$sp, \$sp, (-?0x[0-9A-Fa-f]+|-?\d+)", line)
+        if m and frame is None:
+            frame = -int(m.group(1), 0)
+            continue
+        m = re.search(r"\*/\s+(?:sd|sq|sw)\s+\$(s[0-7]|ra|fp|gp)\s*,\s*(0x[0-9A-Fa-f]+|\d+)\(\$sp\)", line)
+        if m:
+            saved.append(int(m.group(2), 0))
+    if frame is None or frame <= 0:
+        return None
+    return min(saved) if saved else frame
+
+
+def stack_frame(addr, body):
+    """m2c's stack locals as one struct when the draft uses the frame's address (`sp`): the frame
+    is an object there (a class instance passed to callees, an array), and as separate scalars
+    the stores the callees read were dead and gcc dropped them, so the draft lost code (1.1 K of
+    GT4's 3.3 K short drafts). `sp` becomes `(s8 *)&sp_`, `spNN` becomes `sp_.spNN` at offset NN
+    (m2c's type; unknowns s32), the struct spans the local area (frame_extent)."""
+    if not re.search(r"\bsp\b", body.split("{", 1)[-1]):
+        return body
+    fields = {}
+
+    def take(m):
+        t = m.group(2).strip()
+        name = m.group(3)
+        fields[int(name[2:], 16)] = (UNK_TYPES.get(t, t), name)
+        return ""
+    body = re.sub(r"^( {4})(?!return\b)([A-Za-z_][\w ]*?\s*\**)\s*(sp[0-9A-F]+);[ \t]*\n", take, body, flags=re.M)
+    extent = frame_extent(addr) or 0x10
+    lines, pos, pad = [], 0, 0
+    for off in sorted(fields):
+        t, name = fields[off]
+        if off < pos:
+            continue  # overlaps the field before (m2c read the slot with two widths): keep the first
+        if off > pos:
+            lines.append(f"s8 pad{pad}[0x{off - pos:X}];")
+            pad += 1
+        lines.append(f"{t} {name};")
+        pos = off + SIZES.get(t.rstrip("* "), 4)
+    if pos < extent:
+        lines.append(f"s8 pad{pad}[0x{extent - pos:X}];")
+    decl = "    struct StackFrame_%08X { " % addr + " ".join(lines) + " } sp_;\n"
+    body = re.sub(r"(^\w[^\n]*\bfunc_%08X\([^)]*\)\s*\{\n)" % addr, lambda m: m.group(1) + decl, body, count=1, flags=re.M)
+    head, _, rest = body.partition(decl)
+    names = {name for _, name in fields.values()}
+    rest = re.sub(r"\b(sp[0-9A-F]+)\b", lambda m: f"sp_.{m.group(1)}" if m.group(1) in names else m.group(1), rest)
+    rest = re.sub(r"\bsp\b", "((s8 *)&sp_)", rest)
+    return head + decl + rest
 
 
 def prepared(addr, body, path):
-    """m2c's draft made compilable: local buffer for `sp`, exact floats, compiler errors fixed."""
-    # m2c names the address of a stack local `sp` when it cannot name the local itself: give it
-    # a local buffer so the draft compiles (the judge or the permuter takes it from there).
-    if re.search(r"\bsp\b", body.split("{", 1)[-1]):
-        body = re.sub(r"(^\w[^\n]*\bfunc_%08X\([^)]*\)\s*\{\n)" % addr,
-                      lambda m: m.group(1) + "    s8 sp[0x10];\n", body, count=1, flags=re.M)
+    """m2c's draft made compilable: the stack frame as one struct when its address is used,
+    exact floats, compiler errors fixed."""
+    body = stack_frame(addr, body)
     body = exact_floats(body)
     for _ in range(4):  # ee-gcc's error messages, fixed by rule until it compiles
         open(path, "w", newline="\n").write(PRELUDE + body)
@@ -249,10 +447,10 @@ def attempt(addr, context=None, out=OUT, plain=True, apply=True, frontends='both
     # the draft kept by an earlier run competes too, so a retry never makes a function farther
     if os.path.exists(path):
         old = open(path).read()
-        old = old[len(PRELUDE):] if old.startswith(PRELUDE) else None
+        old = strip_prelude(old)
         if old:
             res = judge(addr, path)
-            best = (differs_by(res), old, res, "kept", '.c')
+            best = (differs_by(res, addr), old, res, "kept", '.c')
     best_c = best
     gave_up = True
     for ee in namings:
@@ -282,11 +480,11 @@ def attempt(addr, context=None, out=OUT, plain=True, apply=True, frontends='both
                     if candidates.policy(candidate.source):
                         continue
                     res = judge(addr, trial)
-                    if candidate.extension == '.c' and (best_c is None or differs_by(res) < best_c[0]):
-                        best_c = (differs_by(res), candidate.source, res,
+                    if candidate.extension == '.c' and (best_c is None or differs_by(res, addr) < best_c[0]):
+                        best_c = (differs_by(res, addr), candidate.source, res,
                                   how + '+' + '+'.join(candidate.rules), '.c')
-                    if best is None or differs_by(res) < best[0]:
-                        best = (differs_by(res), candidate.source, res,
+                    if best is None or differs_by(res, addr) < best[0]:
+                        best = (differs_by(res, addr), candidate.source, res,
                                 how + '+' + '+'.join(candidate.rules), candidate.extension)
                     if best[0] == 0:
                         break
@@ -323,7 +521,7 @@ def attempt(addr, context=None, out=OUT, plain=True, apply=True, frontends='both
     m = re.search(r"(\d+) of (\d+) instructions differ \(original (\d+), mine (\d+)\)", res.stdout)
     if m:
         return dict(row, result="differs", differ=int(m.group(1)), of=int(m.group(2)),
-                    same_length=m.group(3) == m.group(4))
+                    same_length=m.group(3) == m.group(4), full=full_length(addr))
     return dict(row, result="does not compile")
 
 
@@ -340,6 +538,9 @@ def main():
     ap.add_argument("--shard", default="0/1", help="K/N: only every N-th function, starting at K")
     ap.add_argument("--context", choices=["protos", "types"],
                     help="also draft with tools/types_db.py's context (known prototypes, or everything)")
+    ap.add_argument("--only", metavar="FILE",
+                    help="only these functions (hex addresses, one per line), retried whatever their last "
+                         "result says: e.g. those whose context a new type database changed")
     ap.add_argument("--context-only", action="store_true",
                     help="with --context --retry: keep the earlier draft, add only the context drafts "
                          "(half the work); functions whose last result already used this context are skipped")
@@ -363,13 +564,17 @@ def main():
                  if (a.draft_only or not r.get('draft_only')) and
                  (not (a_retry and r["result"] in ("differs", "does not compile", "m2c could not decompile it"))
                   or (a.context_only and r.get("ctx") == a.context))} | recent
+    only = None
+    if a.only:
+        only = {int(x, 16) for x in open(a.only).read().split() if x.strip()}
+        tried = set()
     done = autoloop.done_addrs()
     asm_only = inventory.asm_functions()
     text_addr, text = match.load_text()
     todo = []
     for r in csv.DictReader(open(match.FUNCTIONS)):
         addr = int(r["address"], 16)
-        if addr in done or addr in asm_only or f"{addr:08x}" in tried:
+        if addr in done or addr in asm_only or f"{addr:08x}" in tried or (only is not None and addr not in only):
             continue
         words = match.trim_padding(match.words_at(text_addr, text, addr, int(r["max_size"])))
         if len(words) * 4 > a.max_bytes or autoloop.other_compiler(words):

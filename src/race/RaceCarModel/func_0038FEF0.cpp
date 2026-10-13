@@ -1,12 +1,25 @@
-struct Obj { char pad[0x100]; void *field100; };
-struct Source { char pad[0x94]; void *field94; };
-extern "C" void func_0038FFC8(void *, void *);
-extern "C" void func_00575DA0(void *);
-extern "C" void func_005C1628(void *);
+#include "types.h"
+#define NULL 0
+void *memcpy(void *, const void *, unsigned int);
 
-extern "C" void func_0038FEF0(Obj *arg0, Source *arg1) {
-    void *resource = arg1->field94;
-    func_0038FFC8(arg0->field100, resource);
-    func_00575DA0(resource);
+s32 func_0038FFC8(s32, s32);                    /* extern */
+s32 free(s32);                         /* extern */
+s32 func_005C1628(void *);                      /* extern */
+
+struct func_0038FEF0_arg1 {
+    char pad0[0x94];
+    s32 unk94;
+};
+struct func_0038FEF0_arg0 {
+    char pad0[0x100];
+    s32 unk100;
+};
+
+void func_0038FEF0(void *arg0, void *arg1) {
+    s32 temp_s0;
+
+    temp_s0 = ((struct func_0038FEF0_arg1 *)arg1)->unk94;
+    func_0038FFC8(((struct func_0038FEF0_arg0 *)arg0)->unk100, temp_s0);
+    free(temp_s0);
     func_005C1628(arg0);
 }

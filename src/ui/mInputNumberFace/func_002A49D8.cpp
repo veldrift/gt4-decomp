@@ -1,3 +1,6 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
+#include "gt4/mWidget.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +36,7 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_00255260(void);
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
 extern char D_0069B8E8[];
@@ -44,15 +45,15 @@ extern char D_0069B908[];
 extern char D_0069B910[];
 extern char D_0069B918[];
 extern char D_00836EA0[];
-extern "C" void func_005E69F0(void);
-extern "C" void func_005E6A60(void);
-extern "C" void func_005E6A88(void);
-extern "C" void func_005E6AB0(void);
-extern "C" void func_005E6AD8(void);
-extern "C" void func_005E6B00(void);
-extern "C" void func_005E6B28(void);
-extern "C" void func_005E6B50(void);
-extern "C" void func_005E6B78(void);
+extern "C" void MInputNumberFace__global_00836EA0(void);
+extern "C" void MInputNumberFace__get_min(void);
+extern "C" void MInputNumberFace__set_min(void);
+extern "C" void MInputNumberFace__get_max(void);
+extern "C" void MInputNumberFace__set_max(void);
+extern "C" void MInputNumberFace__get_value(void);
+extern "C" void MInputNumberFace__set_value(void);
+extern "C" void MInputNumberFace__get_active(void);
+extern "C" void MInputNumberFace__set_active(void);
 
 extern "C" void func_002A49D8(Obj *arg0) {
     Str s;
@@ -81,8 +82,8 @@ extern "C" void func_002A49D8(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00255260());
-    func_00306780(arg0, D_00836EA0, func_005E69F0);
+    func_002F3A30(arg0, mWidget__GetClassID());
+    func_00306780(arg0, D_00836EA0, MInputNumberFace__global_00836EA0);
     {
         Str *ps = &s;
         const char *src = D_0069B900;
@@ -96,7 +97,7 @@ extern "C" void func_002A49D8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_005E6A60, func_005E6A88);
+        func_002F3860(arg0, &s, MInputNumberFace__get_min, MInputNumberFace__set_min);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -118,7 +119,7 @@ extern "C" void func_002A49D8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_005E6AB0, func_005E6AD8);
+        func_002F3860(arg0, &s, MInputNumberFace__get_max, MInputNumberFace__set_max);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -140,7 +141,7 @@ extern "C" void func_002A49D8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_005E6B00, func_005E6B28);
+        func_002F3860(arg0, &s, MInputNumberFace__get_value, MInputNumberFace__set_value);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -162,7 +163,7 @@ extern "C" void func_002A49D8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_005E6B50, func_005E6B78);
+        func_002F3860(arg0, &s, MInputNumberFace__get_active, MInputNumberFace__set_active);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

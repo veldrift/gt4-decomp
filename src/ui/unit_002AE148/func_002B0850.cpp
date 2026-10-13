@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,8 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_002D4670(void);
+extern "C" int mScrollable__GetClassID(void);
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -74,21 +75,21 @@ extern char D_0069C008[];
 extern char D_0069C018[];
 extern char D_0069C028[];
 extern char D_008380A0[];
-extern "C" void func_002B07E0(void);
-extern "C" void func_002AEDB8(void);
-extern "C" void func_002AEEB0(void);
-extern "C" void func_002B0460(void);
-extern "C" void func_002B0550(void);
-extern "C" void func_002AEFA0(void);
-extern "C" void func_002AF090(void);
-extern "C" void func_002AFDB8(void);
-extern "C" void func_002AF180(void);
-extern "C" void func_002AF270(void);
-extern "C" void func_002AF380(void);
-extern "C" void func_002AF470(void);
-extern "C" void func_002B0190(void);
-extern "C" void func_002B0280(void);
-extern "C" void func_002B0370(void);
+extern "C" void MListBox__global_008380A0(void);
+extern "C" void MListBox__get_focus_index(void);
+extern "C" void MListBox__get_drag_index(void);
+extern "C" void MListBox__get_step_min(void);
+extern "C" void MListBox__get_step_max(void);
+extern "C" void MListBox__get_interpolate_ratio(void);
+extern "C" void MListBox__get_magnify_ratio(void);
+extern "C" void MListBox__get_focus_active(void);
+extern "C" void MListBox__get_repeat(void);
+extern "C" void MListBox__get_alignment(void);
+extern "C" void MListBox__get_h_justify(void);
+extern "C" void MListBox__get_v_justify(void);
+extern "C" void MListBox__get_update_callback(void);
+extern "C" void MListBox__get_visible_callback(void);
+extern "C" void MListBox__get_focus_callback(void);
 extern "C" void MListBox__incIndex(void);
 extern "C" void MListBox__decIndex(void);
 extern "C" void MListBox__setItemTemplate(void);
@@ -135,8 +136,8 @@ extern "C" void func_002B0850(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_002D4670());
-    func_00306780(arg0, D_008380A0, func_002B07E0);
+    func_002F3A30(arg0, mScrollable__GetClassID());
+    func_00306780(arg0, D_008380A0, MListBox__global_008380A0);
     {
         Str *ps = &s;
         const char *src = D_0069BE18;
@@ -150,7 +151,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AEDB8, func_002AEDB8);
+        func_002F3860(arg0, &s, MListBox__get_focus_index, MListBox__get_focus_index);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -172,7 +173,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AEEB0, func_002AEEB0);
+        func_002F3860(arg0, &s, MListBox__get_drag_index, MListBox__get_drag_index);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -194,7 +195,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002B0460, func_002B0460);
+        func_002F3860(arg0, &s, MListBox__get_step_min, MListBox__get_step_min);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -216,7 +217,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002B0550, func_002B0550);
+        func_002F3860(arg0, &s, MListBox__get_step_max, MListBox__get_step_max);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -238,7 +239,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AEFA0, func_002AEFA0);
+        func_002F3860(arg0, &s, MListBox__get_interpolate_ratio, MListBox__get_interpolate_ratio);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -260,7 +261,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AF090, func_002AF090);
+        func_002F3860(arg0, &s, MListBox__get_magnify_ratio, MListBox__get_magnify_ratio);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -282,7 +283,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AFDB8, func_002AFDB8);
+        func_002F3860(arg0, &s, MListBox__get_focus_active, MListBox__get_focus_active);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -304,7 +305,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AF180, func_002AF180);
+        func_002F3860(arg0, &s, MListBox__get_repeat, MListBox__get_repeat);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -326,7 +327,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AF270, func_002AF270);
+        func_002F3860(arg0, &s, MListBox__get_alignment, MListBox__get_alignment);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -348,7 +349,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AF380, func_002AF380);
+        func_002F3860(arg0, &s, MListBox__get_h_justify, MListBox__get_h_justify);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -370,7 +371,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AF470, func_002AF470);
+        func_002F3860(arg0, &s, MListBox__get_v_justify, MListBox__get_v_justify);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -392,7 +393,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002AF470, func_002AF470);
+        func_002F3860(arg0, &s, MListBox__get_v_justify, MListBox__get_v_justify);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -414,7 +415,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002B0190, func_002B0190);
+        func_002F3860(arg0, &s, MListBox__get_update_callback, MListBox__get_update_callback);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -436,7 +437,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002B0280, func_002B0280);
+        func_002F3860(arg0, &s, MListBox__get_visible_callback, MListBox__get_visible_callback);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -458,7 +459,7 @@ extern "C" void func_002B0850(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002B0370, func_002B0370);
+        func_002F3860(arg0, &s, MListBox__get_focus_callback, MListBox__get_focus_callback);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

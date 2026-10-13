@@ -1,59 +1,35 @@
+typedef short s16;
 typedef int s32;
 
-struct Rep {
-    s32 len;
-    s32 cap;
-    s32 ref;
-    s32 sel;
-};
-
-struct S00659988 {
-    const char *name;
-};
-
-struct Str {
-    char *p;
-    s32 pad[3];
-};
-
 struct VEntry {
-    short delta;
-    short index;
-    void (*fn)(Str *, void *);
+    s16 delta;
+    s16 pad;
+    s32 (*fn)(void *);
 };
 
-struct Obj {
+struct ObjA {
     char pad0[4];
-    char *vtbl;
+    VEntry *vtbl;
 };
 
-extern "C" struct S00659988 *func_005C11A8(void);
-extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" void func_00137D60(void *arg0, int arg1);
-extern "C" void func_00137DB8(void *arg0);
-extern "C" void func_0013A3D8(s32 arg0, Str *arg1);
+struct Arg3 {
+    ObjA *obj;
+};
 
-extern "C" void MCarFace__setColorIndex(void *arg0, s32 arg1, s32 n, Obj **args) {
-    s32 tmp[4];
-    Str s;
-    Str *ps;
-    func_00137DB8(tmp);
-    {
-        Obj *o = *args;
-        s32 h;
-        VEntry *e;
-        ps = &s;
-        h = tmp[0];
-        e = (VEntry *)(o->vtbl + 0x18);
-        e->fn(ps, (char *)o + e->delta);
-        func_0013A3D8(h, ps);
-    }
-    {
-        Rep *q = (Rep *)(ps->p - 0x10);
-        if (--q->ref == 0) {
-            s32 cap = q->cap + 0x10;
-            func_00326798(q, cap, 4, func_005C11A8()->name);
-        }
-    }
-    func_00137D60(tmp, 2);
+extern "C" void func_00137D60(void *arg0, int arg1);
+extern "C" void func_00137DB8(void *arg0, void *arg1);
+extern "C" void func_0013A9A8(void *arg0, int arg1);
+
+extern "C" void MCarFace__set_car_color(s32 arg0, void *arg1, s32 arg2, Arg3 *arg3) {
+    s32 buf[4];
+    ObjA *obj;
+    VEntry *entry;
+    s32 result;
+
+    obj = arg3->obj;
+    entry = obj->vtbl + 11;
+    result = entry->fn((char *)obj + entry->delta);
+    func_00137DB8(buf, arg1);
+    func_0013A9A8((void *)buf[0], result);
+    func_00137D60(buf, 2);
 }

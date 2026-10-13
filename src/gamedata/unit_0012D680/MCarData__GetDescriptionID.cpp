@@ -36,8 +36,7 @@ extern char D_0068E7F8[];
 
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_004480D8(const char *arg0, s32 *dest);
-extern "C" s16 func_00448868(s32 *arg0);
+extern "C" s32 func_004480D8(const char *key, void *out);
 extern "C" void func_002FE278(void *arg0, s32 arg1);
 extern "C" void func_002FC870(void *arg0, int arg1);
 extern "C" void func_003285A8(s32 arg0);
@@ -65,7 +64,7 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void MCarData__GetDescriptionID(s32 *arg0, s32 arg1, VObj **arg2) {
+extern "C" void func_0012FEA8(s32 *arg0, s32 arg1, VObj **arg2) {
     if (arg1 > 0) {
         s32 dest[4];
         U u;

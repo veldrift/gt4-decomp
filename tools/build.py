@@ -2,7 +2,7 @@
 """Full build: link every matched function at its original address into one ELF and compare the
 result with the original executable, byte for byte.
 
-    build.py [--jobs 4] [--keep-going] [--limit N] [--compile-only]
+    build.py [--jobs 4] [--keep-going] [--limit N] [--compile-only] [--without LICENCE]
 
 Every function source under src/ (project.sources: flat src/func_ADDR.* or organized by
 tools/layout.py) is compiled with the game's compiler and linked, with the real addresses of
@@ -16,11 +16,12 @@ This closes the gap left by match.py, which compares one function at a time and,
 carry a relocation, only the opcode and registers: here every relocation is resolved by the linker,
 so a function that points at the wrong global fails.
 
-Outputs (all in build/full/): gt4.elf, report.json (per-function status) and, on the screen, a
+Outputs (all in build/full/): BASENAME.elf (project.toml), report.json (per-function status) and, on the screen, a
 summary plus every function that does not survive the link.
 """
 import argparse
 import csv
+import datetime
 import glob
 import hashlib
 import json
@@ -36,8 +37,9 @@ import symbols
 
 ROOT = match.ROOT
 OUT = os.path.join(ROOT, "build", "full")
-WSL_DIR = "$HOME/.local/share/gt4/full"
-ELF = os.path.join(ROOT, "orig", "SCUS-97328", "CORE.GT4.elf")
+WSL_DIR = f"$HOME/.local/share/{project.BASENAME}/full"
+ELF = project.path(project.CONFIG["game"]["elf"])
+IMAGE = f"{project.BASENAME}.elf"
 SYMBOL = symbols.GENERIC  # the generic names; symbols.address_of resolves the real names too
 # Sections a compiled function may bring along without changing the image.
 HARMLESS = {".text", ".reginfo", ".mdebug", ".mdebug.eabi64", ".comment", ".pdr", ".gnu.attributes",
@@ -133,15 +135,54 @@ def to_wsl(path):
 
 
 def wsl(script, check=True):
-    """Run a bash script in WSL and return its stdout."""
-    path = os.path.join(OUT, "step.sh")
-    open(path, "w", newline="\n").write("set -e\n" + script)
+    """Run a bash script in WSL (set -e and pipefail: a failing stage fails the step) and return
+    its stdout. The script file is named after this process, so two builds never share it."""
+    path = os.path.join(OUT, f"step_{os.getpid()}.sh")
+    open(path, "w", newline="\n").write("set -eo pipefail\n" + script)
     env = dict(os.environ, MSYS_NO_PATHCONV="1")
     cmd = ["wsl", "-d", "Ubuntu", "--", "bash", to_wsl(path)] if os.name == "nt" else ["bash", path]
-    res = subprocess.run(cmd, capture_output=True, text=True, env=env)
+    try:
+        res = subprocess.run(cmd, capture_output=True, text=True, env=env)
+    finally:
+        try:
+            os.remove(path)
+        except OSError:
+            pass
     if check and res.returncode:
         sys.exit(f"WSL step failed:\n{res.stdout[-3000:]}\n{res.stderr[-3000:]}")
     return res.stdout
+
+
+def source_problems():
+    """(orphans, duplicates) among the files under src/: sources no address claims (a file named
+    after a name the project does not know: config/adhoc_methods.txt or config/symbol_addrs.txt
+    out of date, a typo), which the build silently leaves out, and addresses with more than one
+    source, of which project.sources keeps only one. Both make the numbers wrong, so the build
+    reports them and fails on them (--keep-going still exits 0)."""
+    orphans, by_addr = [], {}
+    for dirpath, _, files in os.walk(project.SRC):
+        for name in files:
+            p = os.path.join(dirpath, name)
+            if os.path.splitext(name)[1] not in project.SOURCE_EXTS:
+                continue
+            addr = project.source_address(p)
+            if addr is None:
+                orphans.append(os.path.relpath(p, ROOT).replace(os.sep, "/"))
+            else:
+                by_addr.setdefault(addr, []).append(os.path.relpath(p, ROOT).replace(os.sep, "/"))
+    duplicates = {f"{a:08x}": sorted(ps) for a, ps in sorted(by_addr.items()) if len(ps) > 1}
+    return sorted(orphans), duplicates
+
+
+def git_state():
+    """(commit, dirty): the commit of HEAD and whether the tree the build reads differs from it."""
+    try:
+        head = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        status = subprocess.run(["git", "status", "--porcelain", "--", "src", "config", "include", "tools"],
+                                cwd=ROOT, capture_output=True, text=True, check=True).stdout
+        return head, bool(status.strip())
+    except (OSError, subprocess.CalledProcessError):
+        return None, True
 
 
 def segments():
@@ -167,8 +208,20 @@ def main():
     ap.add_argument("--compile-only", action="store_true", help="stop after the compile step")
     ap.add_argument("--incbin", action="store_true",
                     help="fill undecompiled code with raw bytes even if splat's assembly is there")
+    ap.add_argument("--without", action="append", default=[], metavar="LICENCE",
+                    help="leave out the sources marked `licence: LICENCE` (e.g. libio, see "
+                         "THIRD_PARTY.md): their functions come from splat's assembly and the "
+                         "image still matches; such a build is never published")
     a = ap.parse_args()
     os.makedirs(OUT, exist_ok=True)
+    # The previous proof goes first: a build that fails on the way leaves no report or image that
+    # a later step (tools/report.py, publish_progress.py) could take for this tree's. A
+    # --compile-only run writes no new one, so it keeps the last (publish_progress.py still
+    # refuses it once any source is newer than it).
+    if not a.compile_only:
+        for stale in ("report.json", IMAGE, "built_text.bin", "built_data.bin"):
+            if os.path.exists(os.path.join(OUT, stale)):
+                os.remove(os.path.join(OUT, stale))
 
     elf, segs = segments()
     (text_addr, text_off, text_size), (data_addr, data_off, data_size) = segs
@@ -176,6 +229,14 @@ def main():
     open(os.path.join(OUT, "data.bin"), "wb").write(elf[data_off:data_off + data_size])
 
     sources = project.sources(refresh=True)  # {address: path}
+    if a.without:
+        def licence(path):
+            with open(path, encoding="utf-8", errors="replace") as f:
+                m = re.search(r"licence: ([\w.+-]+)", "".join(f.readline() for _ in range(8)))
+            return m.group(1) if m else None
+        left_out = {addr for addr, path in sources.items() if licence(path) in a.without}
+        sources = {addr: path for addr, path in sources.items() if addr not in left_out}
+        print(f"  --without {', '.join(a.without)}: {len(left_out)} sources left out", flush=True)
     starts = set(sources)
     with open(match.FUNCTIONS) as f:
         for row in csv.DictReader(f):
@@ -186,25 +247,45 @@ def main():
     # another compiler (project.source_compiler) is compiled with that one. Objects are named by
     # address (obj/func_ADDR.o) whatever the source is called; only the function's own symbols
     # stay global (its file name and its address), so two objects never define the same name.
+    orphans, duplicates = source_problems()
+    for p in orphans:
+        print(f"  orphan source (no address claims it; is config/adhoc_methods.txt current?): {p}")
+    for key, ps in duplicates.items():
+        print(f"  duplicate sources for {key}: {', '.join(ps)}")
     print(f"compiling {len(sources)} functions...", flush=True)
     by_compiler = {}
     for addr, path in sources.items():
         rel = os.path.relpath(path, project.SRC).replace(os.sep, "/")
         stem = os.path.splitext(os.path.basename(path))[0]
-        by_compiler.setdefault(project.source_compiler(path), []).append(f"{rel} func_{addr:08X} {stem}")
+        digest = hashlib.sha1(open(path, "rb").read()).hexdigest()
+        by_compiler.setdefault(project.source_compiler(path), []).append(f"{rel} func_{addr:08X} {stem} {digest}")
+    # Only objects of sources that exist now take part: an object left by a source since deleted,
+    # renamed or re-addressed would otherwise be linked as if it were still proven.
+    expected = os.path.join(OUT, "objects_expected.txt")
+    open(expected, "w", newline="\n").write("".join(f"func_{addr:08X}.o\n" for addr in sorted(sources)))
     loops = []
     for name, lines in by_compiler.items():
         listing = os.path.join(OUT, f"sources_{name or 'default'}.txt")
         open(listing, "w", newline="\n").write("\n".join(sorted(lines)) + "\n")
+        # An object is reused only if obj/func_ADDR.src says it was made from this very source
+        # (path, compiler and content hash): objects are named by address, so a file renamed or
+        # re-addressed since would otherwise be linked from another function's code (seen on
+        # 2026-10-09; mtimes cannot tell). Per source: the old object and record go first, the
+        # source is copied afresh, and the new object exists only if the compile and the objcopy
+        # both succeeded (a failure removes what either left). Temporary names are per object.
         loops.append(f"""
-while read -r f o stem; do [ "../obj/$o.o" -nt "$f" ] || echo "$f $o $stem"; done < {to_wsl(listing)} > ../todo_all.txt
+while read -r f o stem h; do [ "$(cat "../obj/$o.src" 2>/dev/null)" = "$f {name or 'default'} $h" ] || echo "$f $o $stem $h"; done < {to_wsl(listing)} > ../todo_all.txt
 head -n {a.limit if a.limit else 1000000} ../todo_all.txt > ../todo.txt; echo "stale: $(wc -l < ../todo_all.txt), compiling: $(wc -l < ../todo.txt)"
-cat ../todo.txt | xargs -r -P{a.jobs} -L1 bash -c 'f="$0"; o="../obj/$1"; {project.compiler_command(name)} "$f" -o "$o.raw" 2>"$o.err" && mips-linux-gnu-objcopy {STRIP} --wildcard -G "$2*" -G "$1*" "$o.raw" "$o.o"; rm -f "$o.raw"; true'
+cat ../todo.txt | xargs -r -P{a.jobs} -L1 bash -c 'f="$0"; o="../obj/$1"; rm -f "$o.o" "$o.src"; cp -f "{to_wsl(project.SRC)}/$f" "$f" && {project.compiler_command(name)} "$f" -o "$o.raw" 2>"$o.err" && mips-linux-gnu-objcopy {STRIP} --wildcard -G "$2*" -G "$1*" "$o.raw" "$o.o" && echo "$f {name or 'default'} $3" > "$o.src" || rm -f "$o.o" "$o.src"; rm -f "$o.raw"; true'
 """)
     print(wsl(f"""
 d="{WSL_DIR}"; mkdir -p "$d/src" "$d/obj"
 cp -rup {to_wsl(project.SRC)}/. "$d/src/"
 cp -rup {to_wsl(os.path.join(ROOT, "include"))} "$d/src/"
+cd "$d/obj"
+ls | grep -E '^func_[0-9A-F]{{8}}\\.o$' | sort > ../have.txt || true
+sort {to_wsl(expected)} | comm -23 ../have.txt - > ../stale_objects.txt
+if [ -s ../stale_objects.txt ]; then echo "removing $(wc -l < ../stale_objects.txt) objects without a source"; sed 's/\\.o$//' ../stale_objects.txt | xargs -r -I{{}} rm -f {{}}.o {{}}.src {{}}.err; fi
 cd "$d/src"
 """ + "".join(loops)).strip(), flush=True)
     if a.compile_only:
@@ -387,10 +468,20 @@ mips-linux-gnu-as {project.CONFIG['cpu']['as_flags']} gaps.s -o gaps.o 2>&1 | gr
     wsl(f"""
 d="{WSL_DIR}"
 cd "$d"
-mips-linux-gnu-ld -EL -e 0x100008 -T link.ld -o gt4.elf --no-check-sections
-mips-linux-gnu-objcopy -O binary --only-section=.text gt4.elf built_text.bin
-mips-linux-gnu-objcopy -O binary --only-section=.data gt4.elf built_data.bin
-cp gt4.elf built_text.bin built_data.bin {to_wsl(OUT)}/
+# A template instantiation's code sits in .gnu.linkonce.t.<mangled name>, and ld keeps only the
+# first section of each such name: two objects matching the same template at two addresses (a
+# copy made by dedup.py) would lose the second body and shift everything after it. An object whose
+# .text is empty owns its first linkonce section, so that one becomes its .text (idempotent).
+for o in obj/*.o; do
+  s=$(mips-linux-gnu-objdump -h "$o" | awk '$2==".text" && !n++ {{print $3}}')
+  [ "$s" = "00000000" ] || continue
+  lo=$(mips-linux-gnu-objdump -h "$o" | awk '$2 ~ /^\\.gnu\\.linkonce\\.t\\./ && !n++ {{print $2}}')
+  if [ -n "$lo" ]; then mips-linux-gnu-objcopy -R .text --rename-section "$lo=.text" "$o"; fi
+done
+mips-linux-gnu-ld -EL -e 0x{project.load_image()[0]:x} -T link.ld -o {IMAGE} --no-check-sections
+mips-linux-gnu-objcopy -O binary --only-section=.text {IMAGE} built_text.bin
+mips-linux-gnu-objcopy -O binary --only-section=.data {IMAGE} built_data.bin
+cp {IMAGE} built_text.bin built_data.bin {to_wsl(OUT)}/
 """)
     built_text = open(os.path.join(OUT, "built_text.bin"), "rb").read()
     built_data = open(os.path.join(OUT, "built_data.bin"), "rb").read()
@@ -409,7 +500,15 @@ cp gt4.elf built_text.bin built_data.bin {to_wsl(OUT)}/
 
     linked_bytes = sum(objects[a] for a in objects if status[a] == "linked")
     data_sizes = {f"{a:08x}": parsed[a]["sections"][".rodata"] for a, _ in data_plan if status[a] == "linked"}
-    report = {"text_sha1": sha(built_text), "text_matches": text_ok, "data_matches": data_ok,
+    commit, dirty = git_state()
+    # Provenance first: when this build was made and the exact tree it proves, so a report built
+    # from it (tools/report.py, publish_progress.py) can say what it describes and refuse a stale
+    # or partial build.
+    report = {"generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "commit": commit, "dirty": dirty, "partial": bool(a.limit or a.without),
+              "sources": len(sources), "orphan_sources": orphans, "duplicate_sources": duplicates,
+              "text_sha1": sha(built_text), "data_sha1": sha(built_data),
+              "text_matches": text_ok, "data_matches": data_ok,
               "functions": {f"{a:08x}": s for a, s in sorted(status.items())},
               "linked_functions": sum(s == "linked" for s in status.values()),
               "linked_code_bytes": linked_bytes, "code_bytes": text_size,
@@ -432,7 +531,10 @@ cp gt4.elf built_text.bin built_data.bin {to_wsl(OUT)}/
     for addr, s in sorted(status.items()):
         if s != "linked":
             print(f"  {addr:08x}  {s}")
-    sys.exit(0 if (text_ok and data_ok) or a.keep_going else 1)
+    if orphans or duplicates:
+        print(f"SOURCES: {len(orphans)} orphan, {len(duplicates)} duplicated (listed above): the numbers leave them out")
+    print(f"build of {commit or 'no commit'}{' (uncommitted changes)' if dirty else ''} at {report['generated']}")
+    sys.exit(0 if (text_ok and data_ok and not orphans and not duplicates) or a.keep_going else 1)
 
 
 if __name__ == "__main__":

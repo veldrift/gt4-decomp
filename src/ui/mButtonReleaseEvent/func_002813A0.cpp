@@ -1,3 +1,5 @@
+#define GT4_CXX
+#include "gt4/hModule.h"
 typedef int s32;
 
 struct Rep {
@@ -13,12 +15,6 @@ struct S00659988 {
 
 struct Str {
     char *p;
-};
-
-struct VEntry {
-    short delta;
-    short index;
-    void (*fn)(void *, Str *);
 };
 
 struct Obj {
@@ -37,7 +33,7 @@ extern "C" int func_0027F2B8(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
 
 extern char D_00833860[];
-extern "C" void mButtonReleaseEvent__structor_1(void);
+extern "C" void MButtonReleaseEvent__global_00833860(void);
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
 
 extern "C" void func_002813A0(Obj *arg0) {
@@ -53,10 +49,7 @@ extern "C" void func_002813A0(Obj *arg0) {
     }
     ps->p = d;
     func_005C2630(ps, 0, -1, src, func_0057F260(src));
-    {
-        VEntry *e = (VEntry *)(arg0->vtbl + 0x190);
-        e->fn((char *)arg0 + e->delta, &s);
-    }
+    ((hModule *)(void *)arg0)->setName(&s);
     {
         Rep *q = (Rep *)(s.p - 0x10);
         if (--q->ref == 0) {
@@ -65,5 +58,5 @@ extern "C" void func_002813A0(Obj *arg0) {
         }
     }
     func_002F3A30(arg0, func_0027F2B8());
-    func_00306780(arg0, D_00833860, mButtonReleaseEvent__structor_1);
+    func_00306780(arg0, D_00833860, MButtonReleaseEvent__global_00833860);
 }

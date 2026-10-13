@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,8 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_002D4670(void);
+extern "C" int mScrollable__GetClassID(void);
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -50,9 +51,9 @@ extern char D_0069CC88[];
 extern char D_0069CCA0[];
 extern char D_0069CCA8[];
 extern char D_0083A9B0[];
-extern "C" void func_002D57E0(void);
-extern "C" void func_002D5850(void);
-extern "C" void func_002D58E8(void);
+extern "C" void MSelectBar__global_0083A9B0(void);
+extern "C" void MSelectBar__get_index(void);
+extern "C" void MSelectBar__set_index(void);
 extern "C" void MSelectBar__moveIndex(void);
 extern "C" void MSelectBar__incIndex(void);
 extern "C" void MSelectBar__decIndex(void);
@@ -89,8 +90,8 @@ extern "C" void func_002D5E88(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_002D4670());
-    func_00306780(arg0, D_0083A9B0, func_002D57E0);
+    func_002F3A30(arg0, mScrollable__GetClassID());
+    func_00306780(arg0, D_0083A9B0, MSelectBar__global_0083A9B0);
     {
         Str *ps = &s;
         const char *src = D_0069CC30;
@@ -104,7 +105,7 @@ extern "C" void func_002D5E88(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002D5850, func_002D58E8);
+        func_002F3860(arg0, &s, MSelectBar__get_index, MSelectBar__set_index);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

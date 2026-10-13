@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/mWidget.h"
 typedef int s32;
 
 struct Rep {
@@ -33,7 +35,6 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00255260(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
 
 extern char D_0069ABF8[];
@@ -43,9 +44,9 @@ extern char D_0069AC20[];
 extern char D_0069AC30[];
 extern char D_0069AC40[];
 extern char D_00834160[];
-extern "C" void func_005E4940(void);
-extern "C" void MColorFace__setAlpha(void);
-extern "C" void MColorFace__getAlpha(void);
+extern "C" void MColorFace__global_00834160(void);
+extern "C" void MColorFace__get_alpha(void);
+extern "C" void MColorFace__set_alpha(void);
 extern "C" void MColorFace__getColor(void);
 extern "C" void MColorFace__setColor(void);
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -79,8 +80,8 @@ extern "C" void func_00285078(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00255260());
-    func_00306780(arg0, D_00834160, func_005E4940);
+    func_002F3A30(arg0, mWidget__GetClassID());
+    func_00306780(arg0, D_00834160, MColorFace__global_00834160);
     {
         Str *ps = &s;
         const char *src = D_0069AC08;
@@ -94,7 +95,7 @@ extern "C" void func_00285078(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, MColorFace__setAlpha, MColorFace__getAlpha);
+        func_002F3860(arg0, &s, MColorFace__get_alpha, MColorFace__set_alpha);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -116,7 +117,7 @@ extern "C" void func_00285078(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, MColorFace__setAlpha);
+        func_002F3818(arg0, &s, MColorFace__get_alpha);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -138,7 +139,7 @@ extern "C" void func_00285078(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, MColorFace__getAlpha);
+        func_002F3818(arg0, &s, MColorFace__set_alpha);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,8 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_0028F690(void);
+extern "C" int mFBox__GetClassID(void);
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -47,8 +48,8 @@ extern char D_0069C738[];
 extern char D_0069C740[];
 extern char D_0069C750[];
 extern char D_008397B0[];
-extern "C" void func_002C7680(void);
-extern "C" void func_002C76F0(void);
+extern "C" void MOptionMenu__global_008397B0(void);
+extern "C" void MOptionMenu__get_index(void);
 extern "C" void MOptionMenu__setIndex(void);
 extern "C" void MOptionMenu__getItem(void);
 extern "C" void MOptionMenu__Count(void);
@@ -82,8 +83,8 @@ extern "C" void func_002C7BE8(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_0028F690());
-    func_00306780(arg0, D_008397B0, func_002C7680);
+    func_002F3A30(arg0, mFBox__GetClassID());
+    func_00306780(arg0, D_008397B0, MOptionMenu__global_008397B0);
     {
         Str *ps = &s;
         const char *src = D_0069C718;
@@ -97,7 +98,7 @@ extern "C" void func_002C7BE8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002C76F0, 0);
+        func_002F3860(arg0, &s, MOptionMenu__get_index, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

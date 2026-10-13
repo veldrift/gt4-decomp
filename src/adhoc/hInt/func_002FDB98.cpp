@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,7 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F36E0(Obj *arg0, void *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -71,10 +71,10 @@ extern char D_0083DF90[];
 extern char D_0083DFA0[];
 extern char D_0083DF88[];
 extern char D_0083E028[];
-extern "C" void func_002FDA00(void);
-extern "C" void func_002FDA70(void);
-extern "C" void func_002FDAD8(void);
-extern "C" void func_002FDB30(void);
+extern "C" void int__global_0083E050(void);
+extern "C" void int__global_0083E048(void);
+extern "C" void int__get_value(void);
+extern "C" void int__set_value(void);
 
 extern "C" void func_002FDB98(Obj *arg0) {
     Str s;
@@ -103,9 +103,9 @@ extern "C" void func_002FDB98(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00309CC0());
-    func_00306780(arg0, D_0083E050, func_002FDA00);
-    func_002F36E0(arg0, D_0083E048, func_002FDA70);
+    func_002F3A30(arg0, hObject__GetClassID());
+    func_00306780(arg0, D_0083E050, int__global_0083E050);
+    func_002F36E0(arg0, D_0083E048, int__global_0083E048);
     {
         Str *ps = &s;
         const char *src = D_0069D9F0;
@@ -119,7 +119,7 @@ extern "C" void func_002FDB98(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002FDAD8, func_002FDB30);
+        func_002F3860(arg0, &s, int__get_value, int__set_value);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

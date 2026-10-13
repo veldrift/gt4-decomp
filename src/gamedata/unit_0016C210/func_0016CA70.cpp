@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,7 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F36E0(Obj *arg0, void *arg1, void (*arg2)(void));
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
@@ -50,18 +50,18 @@ extern char D_006909F0[];
 extern char D_00690A00[];
 extern char D_00823940[];
 extern char D_00823938[];
-extern "C" void func_0016C2D0(void);
-extern "C" void func_0016C340(void);
+extern "C" void MGameStats__global_00823940(void);
+extern "C" void MGameStats__global_00823938(void);
 extern "C" void MGameStats__unpack(void);
 extern "C" void MGameStats__pack(void);
-extern "C" void func_0016C5A8(void);
-extern "C" void func_0016C6E0(void);
-extern "C" void func_0016C788(void);
-extern "C" void func_0016C820(void);
-extern "C" void func_0016C880(void);
-extern "C" void func_0016C918(void);
-extern "C" void func_0016C978(void);
-extern "C" void func_0016CA10(void);
+extern "C" void MGameStats__get_course(void);
+extern "C" void MGameStats__set_course(void);
+extern "C" void MGameStats__get_laps(void);
+extern "C" void MGameStats__set_laps(void);
+extern "C" void MGameStats__get_tournament_id(void);
+extern "C" void MGameStats__set_tournament_id(void);
+extern "C" void MGameStats__get_time_to_start(void);
+extern "C" void MGameStats__set_time_to_start(void);
 
 extern "C" void func_0016CA70(Obj *arg0) {
     Str s;
@@ -90,9 +90,9 @@ extern "C" void func_0016CA70(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00309CC0());
-    func_00306780(arg0, D_00823940, func_0016C2D0);
-    func_002F36E0(arg0, D_00823938, func_0016C340);
+    func_002F3A30(arg0, hObject__GetClassID());
+    func_00306780(arg0, D_00823940, MGameStats__global_00823940);
+    func_002F36E0(arg0, D_00823938, MGameStats__global_00823938);
     {
         Str *ps = &s;
         const char *src = D_006909D0;
@@ -150,7 +150,7 @@ extern "C" void func_0016CA70(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0016C5A8, func_0016C6E0);
+        func_002F3860(arg0, &s, MGameStats__get_course, MGameStats__set_course);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -172,7 +172,7 @@ extern "C" void func_0016CA70(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0016C788, func_0016C820);
+        func_002F3860(arg0, &s, MGameStats__get_laps, MGameStats__set_laps);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -194,7 +194,7 @@ extern "C" void func_0016CA70(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0016C880, func_0016C918);
+        func_002F3860(arg0, &s, MGameStats__get_tournament_id, MGameStats__set_tournament_id);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -216,7 +216,7 @@ extern "C" void func_0016CA70(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0016C978, func_0016CA10);
+        func_002F3860(arg0, &s, MGameStats__get_time_to_start, MGameStats__set_time_to_start);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

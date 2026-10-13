@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,8 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_0026B9A8(void);
+extern "C" int mWindowEvent__GetClassID(void);
 extern "C" void func_002F36E0(Obj *arg0, void *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern char D_0069A930[];
@@ -45,12 +46,12 @@ extern char D_0069A950[];
 extern char D_0069A958[];
 extern char D_0069A960[];
 extern char D_008333D8[];
-extern "C" void func_0027F748(void);
-extern "C" void func_0027F450(void);
-extern "C" void func_0027F4E8(void);
-extern "C" void func_0027F580(void);
-extern "C" void func_0027F618(void);
-extern "C" void func_0027F6B0(void);
+extern "C" void MButtonEvent__global_008333D8(void);
+extern "C" void MButtonEvent__get_x(void);
+extern "C" void MButtonEvent__get_y(void);
+extern "C" void MButtonEvent__get_button(void);
+extern "C" void MButtonEvent__get_state(void);
+extern "C" void MButtonEvent__get_port(void);
 
 extern "C" void func_0027F880(Obj *arg0) {
     Str s;
@@ -79,8 +80,8 @@ extern "C" void func_0027F880(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_0026B9A8());
-    func_002F36E0(arg0, D_008333D8, func_0027F748);
+    func_002F3A30(arg0, mWindowEvent__GetClassID());
+    func_002F36E0(arg0, D_008333D8, MButtonEvent__global_008333D8);
     {
         Str *ps = &s;
         const char *src = D_0069A940;
@@ -94,7 +95,7 @@ extern "C" void func_0027F880(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0027F450, 0);
+        func_002F3860(arg0, &s, MButtonEvent__get_x, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -116,7 +117,7 @@ extern "C" void func_0027F880(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0027F4E8, 0);
+        func_002F3860(arg0, &s, MButtonEvent__get_y, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -138,7 +139,7 @@ extern "C" void func_0027F880(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0027F580, 0);
+        func_002F3860(arg0, &s, MButtonEvent__get_button, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -160,7 +161,7 @@ extern "C" void func_0027F880(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0027F618, 0);
+        func_002F3860(arg0, &s, MButtonEvent__get_state, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -182,7 +183,7 @@ extern "C" void func_0027F880(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0027F6B0, 0);
+        func_002F3860(arg0, &s, MButtonEvent__get_port, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

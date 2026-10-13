@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,35 +35,24 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
-extern char D_00692098[];
-extern char D_006920B0[];
-extern char D_006920C0[];
-extern char D_006920D0[];
-extern char D_006920E0[];
-extern char D_006920F8[];
-extern char D_00692110[];
-extern char D_00692120[];
-extern char D_00692130[];
-extern char D_00692140[];
-extern "C" void adhoc__clearAnalogFunction(void);
-extern "C" void adhoc__unsetAnalogKey(void);
-extern "C" void adhoc__setAnalogConfig(void);
-extern "C" void adhoc__getAnalogConfig(void);
-extern "C" void adhoc__searchAnalogConfig(void);
-extern "C" void adhoc__clearButtonFunction(void);
-extern "C" void adhoc__unsetButtonKey(void);
-extern "C" void adhoc__setButtonConfig(void);
-extern "C" void adhoc__getButtonConfig(void);
-extern "C" void adhoc__searchButtonConfig(void);
+extern "C" void MOption__clearAnalogFunction(void);
+extern "C" void MOption__unsetAnalogKey(void);
+extern "C" void MOption__setAnalogConfig(void);
+extern "C" void MOption__getAnalogConfig(void);
+extern "C" void MOption__searchAnalogConfig(void);
+extern "C" void MOption__clearButtonFunction(void);
+extern "C" void MOption__unsetButtonKey(void);
+extern "C" void MOption__setButtonConfig(void);
+extern "C" void MOption__getButtonConfig(void);
+extern "C" void MOption__searchButtonConfig(void);
 
 extern "C" void func_00191C20(Obj *arg0) {
     Str s;
     {
         Str *ps = &s;
-        const char *src = D_00692098;
+        const char *src = "clearAnalogFunction";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -72,7 +63,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__clearAnalogFunction);
+        func_002F3818(arg0, &s, MOption__clearAnalogFunction);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -83,7 +74,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_006920B0;
+        const char *src = "unsetAnalogKey";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -94,7 +85,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__unsetAnalogKey);
+        func_002F3818(arg0, &s, MOption__unsetAnalogKey);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -105,7 +96,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_006920C0;
+        const char *src = "setAnalogConfig";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -116,7 +107,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__setAnalogConfig);
+        func_002F3818(arg0, &s, MOption__setAnalogConfig);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -127,7 +118,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_006920D0;
+        const char *src = "getAnalogConfig";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -138,7 +129,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__getAnalogConfig);
+        func_002F3818(arg0, &s, MOption__getAnalogConfig);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -149,7 +140,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_006920E0;
+        const char *src = "searchAnalogConfig";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -160,7 +151,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__searchAnalogConfig);
+        func_002F3818(arg0, &s, MOption__searchAnalogConfig);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -171,7 +162,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_006920F8;
+        const char *src = "clearButtonFunction";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -182,7 +173,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__clearButtonFunction);
+        func_002F3818(arg0, &s, MOption__clearButtonFunction);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -193,7 +184,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_00692110;
+        const char *src = "unsetButtonKey";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -204,7 +195,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__unsetButtonKey);
+        func_002F3818(arg0, &s, MOption__unsetButtonKey);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -215,7 +206,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_00692120;
+        const char *src = "setButtonConfig";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -226,7 +217,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__setButtonConfig);
+        func_002F3818(arg0, &s, MOption__setButtonConfig);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -237,7 +228,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_00692130;
+        const char *src = "getButtonConfig";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -248,7 +239,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__getButtonConfig);
+        func_002F3818(arg0, &s, MOption__getButtonConfig);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -259,7 +250,7 @@ extern "C" void func_00191C20(Obj *arg0) {
     }
     {
         Str *ps = &s;
-        const char *src = D_00692140;
+        const char *src = "searchButtonConfig";
         Rep *r = &D_00659FA8;
         char *d;
         if (r->sel != 0) {
@@ -270,7 +261,7 @@ extern "C" void func_00191C20(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3818(arg0, &s, adhoc__searchButtonConfig);
+        func_002F3818(arg0, &s, MOption__searchButtonConfig);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,16 +35,14 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F36E0(Obj *arg0, void *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern char D_00697528[];
 extern char D_00697538[];
 extern char D_0082AB18[];
-extern "C" void func_0020A758(void);
-extern "C" void func_0020A838(void);
+extern "C" void MDomNodeList__global_0082AB18(void);
+extern "C" void MDomNodeList__get_size(void);
 
 extern "C" void func_0020A9B0(Obj *arg0) {
     Str s;
@@ -71,8 +71,8 @@ extern "C" void func_0020A9B0(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00309CC0());
-    func_002F36E0(arg0, D_0082AB18, func_0020A758);
+    func_002F3A30(arg0, hObject__GetClassID());
+    func_002F36E0(arg0, D_0082AB18, MDomNodeList__global_0082AB18);
     {
         Str *ps = &s;
         const char *src = D_00697538;
@@ -86,7 +86,7 @@ extern "C" void func_0020A9B0(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_0020A838, 0);
+        func_002F3860(arg0, &s, MDomNodeList__get_size, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

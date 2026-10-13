@@ -1,21 +1,17 @@
-struct GeometryData {
-    char pad0[0x38];
-    float field38;
-    float field3C;
+struct State {
+    char pad[0x38];
+    float base;
+    float base2;
     char pad40[0x84];
-    float fieldC4;
-    float fieldC8;
-    float fieldCC;
+    float x;
+    float y;
+    float z;
 };
 
-extern "C" GeometryData *func_0038D0C0(void *);
+extern "C" State *func_0038D0C0(void *o);
 
-extern "C" float func_0038CF38(void *arg0) {
-    if (func_0038D0C0(arg0)->fieldC4 == 0x0p0f &&
-        func_0038D0C0(arg0)->fieldC8 == 0x0p0f &&
-        func_0038D0C0(arg0)->fieldCC == 0x0p0f) {
-        return 0x0p0f;
-    }
-    GeometryData *data = func_0038D0C0(arg0);
-    return data->fieldCC - func_0038D0C0(arg0)->field3C;
+extern "C" float func_0038CF38(void *o) {
+    if (func_0038D0C0(o)->x == 0.0f && func_0038D0C0(o)->y == 0.0f && func_0038D0C0(o)->z == 0.0f)
+        return 0.0f;
+    return func_0038D0C0(o)->z - func_0038D0C0(o)->base2;
 }

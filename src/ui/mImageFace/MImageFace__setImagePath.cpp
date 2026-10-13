@@ -1,37 +1,61 @@
 typedef int s32;
 
-extern "C" void func_002A0D20(void *arg0, s32 arg1);
-extern "C" void func_002A0D78(void *arg0);
-extern "C" s32 func_002A35F0(s32 arg0);
-extern "C" void func_00312318(s32 *arg0, s32 arg1);
-extern "C" void func_00314B20(s32 *arg0, s32 arg1);
-extern "C" void func_003285A8(s32 arg0);
-extern "C" void func_003285F8(s32 arg0);
+struct Rep {
+    s32 len;
+    s32 cap;
+    s32 ref;
+    s32 sel;
+};
 
-extern "C" void MImageFace__setImagePath(s32 *arg0) {
-    s32 sp[4];
-    s32 sp10[4];
-    s32 *p1;
-    s32 temp_a0;
-    s32 temp_s0;
+struct S00659988 {
+    const char *name;
+};
 
-    func_002A0D78(sp);
-    {
-        s32 t = func_002A35F0(sp[0]);
-        p1 = sp10;
-        func_00314B20(p1, t);
-    }
-    if (arg0 != p1) {
-        temp_s0 = *p1;
-        if (temp_s0 != 0) {
-            func_003285A8(temp_s0);
+struct Str {
+    char *p;
+    s32 pad[3];
+};
+
+struct VEntry {
+    short delta;
+    short index;
+    void (*fn)(Str *, void *);
+};
+
+struct Obj {
+    char pad0[4];
+    char *vtbl;
+};
+
+extern "C" struct S00659988 *func_005C11A8(void);
+extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
+extern "C" void func_002A0D20(void *arg0, int arg1);
+extern "C" void func_002A0D78(void *arg0, void *arg1);
+extern "C" void func_002A35F8(Obj *self, Str *src);
+
+extern "C" void func_002A1288(void *arg0, void *arg1, s32 n, Obj **args) {
+    s32 tmp[4];
+    Str s;
+    Str *ps;
+    s32 h;
+    if (n == 1) {
+        func_002A0D78(tmp, arg1);
+        {
+            Obj *o = *args;
+            VEntry *e;
+            h = tmp[0];
+            ps = &s;
+            e = (VEntry *)(o->vtbl + 0x18);
+            e->fn(ps, (char *)o + e->delta);
         }
-        temp_a0 = *arg0;
-        if (temp_a0 != 0) {
-            func_003285F8(temp_a0);
+        func_002A35F8((Obj *)h, ps);
+        {
+            Rep *q = (Rep *)(ps->p - 0x10);
+            if (--q->ref == 0) {
+                s32 cap = q->cap + 0x10;
+                func_00326798(q, cap, 4, func_005C11A8()->name);
+            }
         }
-        *arg0 = temp_s0;
+        func_002A0D20(tmp, 2);
     }
-    func_00312318(p1, 2);
-    func_002A0D20(sp, 2);
 }

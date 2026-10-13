@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,7 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F36E0(Obj *arg0, void *arg1, void (*arg2)(void));
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
@@ -69,14 +69,14 @@ extern char D_00692A48[];
 extern char D_00692A58[];
 extern char D_00825B00[];
 extern char D_00825AF8[];
-extern "C" void func_001A0DD8(void);
-extern "C" void func_001A0E48(void);
-extern "C" void func_001A0F80(void);
-extern "C" void func_001A10D0(void);
-extern "C" void func_001A1220(void);
-extern "C" void func_001A1370(void);
-extern "C" void func_001A1408(void);
-extern "C" void func_001A1548(void);
+extern "C" void MRaceData__global_00825B00(void);
+extern "C" void MRaceData__global_00825AF8(void);
+extern "C" void MRaceData__get_gold_time(void);
+extern "C" void MRaceData__get_silver_time(void);
+extern "C" void MRaceData__get_bronze_time(void);
+extern "C" void MRaceData__get_entry_num(void);
+extern "C" void MRaceData__get_course_code(void);
+extern "C" void MRaceData__get_car_code(void);
 extern "C" void MRaceData__getNeedLicense(void);
 extern "C" void MRaceData__getNeedDrivetrain(void);
 extern "C" void MRaceData__getNeedAspiration(void);
@@ -124,9 +124,9 @@ extern "C" void func_001A2EC8(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_00309CC0());
-    func_00306780(arg0, D_00825B00, func_001A0DD8);
-    func_002F36E0(arg0, D_00825AF8, func_001A0E48);
+    func_002F3A30(arg0, hObject__GetClassID());
+    func_00306780(arg0, D_00825B00, MRaceData__global_00825B00);
+    func_002F36E0(arg0, D_00825AF8, MRaceData__global_00825AF8);
     {
         Str *ps = &s;
         const char *src = D_00692890;
@@ -140,7 +140,7 @@ extern "C" void func_001A2EC8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_001A0F80, 0);
+        func_002F3860(arg0, &s, MRaceData__get_gold_time, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -162,7 +162,7 @@ extern "C" void func_001A2EC8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_001A10D0, 0);
+        func_002F3860(arg0, &s, MRaceData__get_silver_time, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -184,7 +184,7 @@ extern "C" void func_001A2EC8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_001A1220, 0);
+        func_002F3860(arg0, &s, MRaceData__get_bronze_time, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -206,7 +206,7 @@ extern "C" void func_001A2EC8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_001A1370, 0);
+        func_002F3860(arg0, &s, MRaceData__get_entry_num, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -228,7 +228,7 @@ extern "C" void func_001A2EC8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_001A1408, 0);
+        func_002F3860(arg0, &s, MRaceData__get_course_code, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -250,7 +250,7 @@ extern "C" void func_001A2EC8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_001A1548, 0);
+        func_002F3860(arg0, &s, MRaceData__get_car_code, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {

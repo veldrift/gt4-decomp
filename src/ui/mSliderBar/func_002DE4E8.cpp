@@ -1,3 +1,5 @@
+#define GT4_DECLS
+#include "gt4/hObject.h"
 typedef int s32;
 
 struct Rep {
@@ -33,9 +35,8 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" int func_00309CC0(void);
 extern "C" void func_002F3A30(Obj *arg0, s32 arg1);
-extern "C" int func_0028F690(void);
+extern "C" int mFBox__GetClassID(void);
 extern "C" void func_002F3818(Obj *arg0, Str *arg1, void (*arg2)(void));
 extern "C" void func_002F3860(Obj *arg0, Str *arg1, void (*arg2)(void), void (*arg3)(void));
 extern "C" void func_00306780(Obj *arg0, void *arg1, void (*arg2)(void));
@@ -51,21 +52,21 @@ extern char D_0069CF28[];
 extern char D_0069CF30[];
 extern char D_0069CF40[];
 extern char D_0083B070[];
-extern "C" void func_002DD9E0(void);
-extern "C" void func_002DE448(void);
-extern "C" void func_002DDA50(void);
-extern "C" void func_002DDAE8(void);
-extern "C" void func_002DDF38(void);
-extern "C" void func_002DDFD0(void);
-extern "C" void func_002DE040(void);
-extern "C" void func_002DE0D8(void);
-extern "C" void func_002DE148(void);
-extern "C" void func_002DE1E0(void);
-extern "C" void func_002DE248(void);
-extern "C" void func_002DE2E0(void);
-extern "C" void func_002DDB60(void);
-extern "C" void func_002DE348(void);
-extern "C" void func_002DE3E0(void);
+extern "C" void MSliderBar__global_0083B070(void);
+extern "C" void MSliderBar__get_is_popuped(void);
+extern "C" void MSliderBar__get_index(void);
+extern "C" void MSliderBar__set_index(void);
+extern "C" void MSliderBar__get_min(void);
+extern "C" void MSliderBar__set_min(void);
+extern "C" void MSliderBar__get_max(void);
+extern "C" void MSliderBar__set_max(void);
+extern "C" void MSliderBar__get_display_min(void);
+extern "C" void MSliderBar__set_display_min(void);
+extern "C" void MSliderBar__get_display_max(void);
+extern "C" void MSliderBar__set_display_max(void);
+extern "C" void MSliderBar__get_range(void);
+extern "C" void MSliderBar__get_step(void);
+extern "C" void MSliderBar__set_step(void);
 extern "C" void MSliderBar__incIndex(void);
 extern "C" void MSliderBar__decIndex(void);
 
@@ -96,8 +97,8 @@ extern "C" void func_002DE4E8(Obj *arg0) {
             }
         }
     }
-    func_002F3A30(arg0, func_0028F690());
-    func_00306780(arg0, D_0083B070, func_002DD9E0);
+    func_002F3A30(arg0, mFBox__GetClassID());
+    func_00306780(arg0, D_0083B070, MSliderBar__global_0083B070);
     {
         Str *ps = &s;
         const char *src = D_0069CED8;
@@ -111,7 +112,7 @@ extern "C" void func_002DE4E8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002DE448, 0);
+        func_002F3860(arg0, &s, MSliderBar__get_is_popuped, 0);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -133,7 +134,7 @@ extern "C" void func_002DE4E8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002DDA50, func_002DDAE8);
+        func_002F3860(arg0, &s, MSliderBar__get_index, MSliderBar__set_index);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -155,7 +156,7 @@ extern "C" void func_002DE4E8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002DDF38, func_002DDFD0);
+        func_002F3860(arg0, &s, MSliderBar__get_min, MSliderBar__set_min);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -177,7 +178,7 @@ extern "C" void func_002DE4E8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002DE040, func_002DE0D8);
+        func_002F3860(arg0, &s, MSliderBar__get_max, MSliderBar__set_max);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -199,7 +200,7 @@ extern "C" void func_002DE4E8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002DE148, func_002DE1E0);
+        func_002F3860(arg0, &s, MSliderBar__get_display_min, MSliderBar__set_display_min);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -221,7 +222,7 @@ extern "C" void func_002DE4E8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002DE248, func_002DE2E0);
+        func_002F3860(arg0, &s, MSliderBar__get_display_max, MSliderBar__set_display_max);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -243,7 +244,7 @@ extern "C" void func_002DE4E8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002DDB60, func_002DDB60);
+        func_002F3860(arg0, &s, MSliderBar__get_range, MSliderBar__get_range);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
@@ -265,7 +266,7 @@ extern "C" void func_002DE4E8(Obj *arg0) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        func_002F3860(arg0, &s, func_002DE348, func_002DE3E0);
+        func_002F3860(arg0, &s, MSliderBar__get_step, MSliderBar__set_step);
         {
             Rep *q = (Rep *)(s.p - 0x10);
             if (--q->ref == 0) {
