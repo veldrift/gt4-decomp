@@ -11,3 +11,6 @@ tools/compilers/
 tools/bin/
 tools/ext/
 progress/
+
+# Drafts the swarm kept (tools/attempt_store.py): text, not tracked.
+drafts/

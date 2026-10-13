@@ -117,3 +117,53 @@ archive = "https://github.com/decompme/compilers/releases/download/compilers/ee-
 dir = "~/.local/share/gt4/ee-gcc2.96"
 command = "{dir}/bin/ee-gcc -c -B {dir}/bin/ee- -O2 -G0 -fno-exceptions -fno-strict-aliasing -fno-schedule-insns -Iinclude"
 archive = "https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.96.tar.xz"
+
+[swarm]
+# Who takes which functions (tools/swarm.py assign --tier, plan). `fresh` is the size band (bytes)
+# of functions never tried; `retries` lists the tiers whose give-ups this tier picks up
+# (escalation, with the earlier notes in the prompt), up to `retry_max_bytes`. `count` is the batch
+# size, `tries` the budget per function. A tier with `model` is a Claude subagent slot (`slots`
+# caps its share in `swarm.py plan`); one without is run by tools/codex_worker.py. The bands and
+# models below are the ones measured on 2026-10-11/13; change them freely.
+
+[swarm.tiers.haiku]
+model = "haiku"
+fresh = [8, 256]
+retries = []
+count = 6
+tries = 5
+
+[swarm.tiers.sonnet]
+model = "sonnet"
+# About 45% on fresh functions of 257-512 B, 4 of 37 at 600-1000 B.
+fresh = [257, 512]
+retries = ["haiku"]
+retry_max_bytes = 1024
+count = 4
+tries = 8
+
+[swarm.tiers.sol]
+# gpt-6.1-sol through tools/codex_worker.py: about 70% up to 256 B, about 45% at 257-512 B.
+fresh = [8, 1024]
+retries = ["haiku"]
+retry_max_bytes = 1024
+count = 4
+tries = 8
+
+[swarm.tiers.astra]
+# gpt-6-astra through tools/codex_worker.py: 12 of 20 fresh functions of 513 B and more, about
+# 45% on certified drafts.
+fresh = [513, 8192]
+retries = ["sonnet", "sol"]
+retry_max_bytes = 8192
+count = 2
+tries = 10
+
+[swarm.tiers.opus]
+model = "opus"
+fresh = [513, 8192]
+retries = ["sonnet", "astra"]
+retry_max_bytes = 8192
+count = 2
+tries = 10
+slots = 1

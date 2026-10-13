@@ -56,10 +56,15 @@ mips-linux-gnu-as {as_flags} "$dir/target.s" -o "$dir/target.o"
 cpp -P "{src_dir}/source.c" > "$dir/base.c"
 "$dir/compile.sh" "$dir/base.c" -o "$dir/base.o"
 cd "$HOME/.local/share/gt4/decomp-permuter"
-timeout {seconds} python3 permuter.py "$dir" -j{jobs} --stop-on-zero >/dev/null 2>&1 || true
-best=$(ls -d "$dir"/output-0-* 2>/dev/null | head -1)
-if [ -n "$best" ]; then cp "$best/source.c" "{src_dir}/result.c"; echo "FOUND"; else
-  ls -d "$dir"/output-* 2>/dev/null | sed 's/.*output-//' | sort -n | head -1 | sed 's/^/best score: /'; fi
+timeout {seconds} python3 permuter.py "$dir" -j{jobs} --stop-on-zero > "$dir/permuter.log" 2>&1 || true
+# `|| true`: without a zero-score result ls fails, and set -e would end the script right here.
+best=$(ls -d "$dir"/output-0-* 2>/dev/null | head -1 || true)
+if [ -n "$best" ]; then cp "$best/source.c" "{src_dir}/result.c"; echo "FOUND";
+elif grep -qi "syntax error" "$dir/permuter.log"; then
+  # The permuter reads C: member functions, references and templates stop it before the first try.
+  echo "NOT C: $(grep -i -m1 -A1 'syntax error' "$dir/permuter.log" | tr '\n' ' ' | cut -c1-160)"; else
+  (ls -d "$dir"/output-* 2>/dev/null || true) | sed 's/.*output-//' | sort -n | head -1 | sed 's/^/best score: /'
+  echo "no better variant"; fi
 """
 
 
@@ -81,6 +86,9 @@ def main():
     name = f"func_{addr:08X}"
     # C sources (e.g. m2c drafts, tools/cpu_solve.py) are compiled as C, C++ ones as C++.
     lang = "c" if a.source.endswith(".c") else "cpp"
+    # The draft's compiler profile (first line `/* compiler: NAME */`) is the permuter's too, and
+    # goes back on the result: cpp -P drops the comment.
+    marker = project.source_compiler(a.source)
 
     # One directory per run (build/perm/ADDR/run_PID_xxxx and its Linux-side twin): several
     # permutations of one function may run at once without sharing a file.
@@ -95,7 +103,7 @@ def main():
     asm = match.gnu_asm(addr, count).replace(".set noreorder\n.set noat\n", "")
     open(os.path.join(work, "target.s"), "w", newline="\n").write(PRELUDE + asm)
     open(os.path.join(work, "compile.sh"), "w", newline="\n").write(
-        COMPILE_SH.replace("{command}", project.compiler_command()).replace("{lang}", lang))
+        COMPILE_SH.replace("{command}", project.compiler_command(marker)).replace("{lang}", lang))
     open(os.path.join(work, "settings.toml"), "w", newline="\n").write(
         f'func_name = "{name}"\ncompiler_type = "gcc"\n'
         f'objdump_command = "mips-linux-gnu-objdump -drz -m {project.CONFIG["cpu"]["objdump_arch"]}"\n')
@@ -104,6 +112,10 @@ def main():
     # The permuter parses C: drop C++ linkage markers (compile.sh wraps the file in extern "C").
     src = re.sub(r'extern\s+"C"\s*\{', "", src)
     src = re.sub(r'extern\s+"C"\s*', "extern ", src)
+    # C++ names a struct without the keyword; C needs a typedef for each (pycparser fails otherwise).
+    src = re.sub(r"\bclass\b", "struct", src)
+    tags = dict.fromkeys(re.findall(r"\b(struct|union)\s+([A-Za-z_]\w*)\s*[{;]", src))
+    src = "".join(f"typedef {kind} {tag} {tag};\n" for kind, tag in tags) + src
     if src.count("{") < src.count("}"):
         src = src[::-1].replace("}", "", src.count("}") - src.count("{"))[::-1]
     # The permuter looks the function up by name: drop C++ mangling hints if any.
@@ -125,7 +137,8 @@ def main():
     if not os.path.exists(result):
         sys.exit(1)
     final = os.path.join(work, f"result.{lang if lang == 'c' else 'cpp'}")
-    shutil.copy(result, final)
+    with open(final, "w", encoding="utf-8", newline="\n") as f:
+        f.write((f"/* compiler: {marker} */\n" if marker else "") + open(result, encoding="utf-8").read())
     ok = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "match.py"), "check", a.addr, final],
                         capture_output=True, text=True)
     print((ok.stdout or ok.stderr).splitlines()[0])
