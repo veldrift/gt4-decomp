@@ -236,3 +236,34 @@ with both original hashes. All three new sorters are `linked` from source.
 There are 28,335 unique source addresses and 27,634 linked functions, with
 no orphan or duplicate sources. Evidence is saved as
 `build/cardata-post-sync/full-report.json` and `full-build.log`.
+
+## Bounded remaining-helper pass
+
+The next pass tested forty source hypotheses across eight remaining helpers:
+`00449190`, `00449F80`, `004490F8`, `004478F8`, `00448C10`, `00448B48`,
+`0043BBC0`, and `00449AF8`. None passed the exact-match judge. Forty-six
+append-only diary records include those hypotheses and six deferrals. Drafts
+and full comparisons are retained under ignored `build/cardata-continue/`.
+No function source, shared header, compiler setting, or matching tool changed;
+the previously verified full build remains the latest source validation.
+
+For `0043BBC0`, direct inspection of the original nineteen-entry jump table at
+`006A64F0` confirms active selector cases 4, 5, 6, and 7. Their divisors are
+35, 65, 20, and 35, respectively; the remaining table entries take the default
+path. Explicit empty sentinel cases -1 and 17 reproduce the table extent.
+The record snapshot covers thirty bytes at input offset `0x10`, including
+twelve tuning bytes and a seventeen-byte selector area. The embedded control
+object starts at offset 4. Keeping its pointer alive and reading its count
+through that pointer avoids retaining an additional parent-object register.
+An inline signed-int flag getter over unsigned-short storage reproduces the
+original `lhu` followed by `sra`; direct field expressions emit `srl`.
+The percentage and clamp scheduling, selector-clear store order, and some
+result register allocations remain unresolved. These drafts do not improve
+on the old reported twenty-difference result, whose source was not found in
+the available current snapshots.
+
+Native row-view, TableData member, aggregate row, bool-fetch, scoped failure,
+and identifier-normalization hypotheses did not resolve the smaller helpers.
+Near matches remain outside `src/`. Own cumulative attempt limits were reached
+for the table initializer, tuner-code extractor, and specification-copy helper;
+the packed routine also reached ten hypotheses in this pass.
