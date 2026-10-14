@@ -1,0 +1,30 @@
+struct Entry { short delta, index; char *(*fn)(void *, int); };
+struct Entry4 { short delta, index; void (*fn)(void *, char *, int, int, float); };
+struct Obj { char *vtbl; char pad[0x9C0 - 4]; float f9C0; char pad2[0x9D4 - 0x9C4]; float f9D4; };
+struct Tg { char *vtbl; };
+struct Loc { float pad[8]; float a[3]; float b[3]; float c; };
+extern "C" void func_0036EF28(char *, float *) throw();
+extern "C" void func_005F5040(char *, float *);
+extern "C" void func_003FFD10(char *, char *, char *, char *, float *);
+extern "C" int func_003FFA20(char *);
+extern "C" void func_00375C08(Obj *self, char *arg1, int idx) {
+    Loc loc;
+    float *pa = loc.a;
+    float *pb = loc.b;
+    char *c04 = (char *)self + 0xC04;
+    char *s3 = (char *)self + idx * 0x19C + 0x10;
+    Entry *e0 = (Entry *)(self->vtbl + 0xD8);
+    char *v = e0->fn((char *)self + e0->delta, 0);
+    Tg *s0;
+    func_0036EF28(v + 0x100, pb);
+    func_005F5040(v + 0x10, pa);
+    loc.c = *(float *)(v + 0xC);
+    func_003FFD10(c04, arg1, s3, (char *)self + 4, pa);
+    s0 = *(Tg **)(s3 + 0x168);
+    int s2 = *(int *)(arg1 + 0x80);
+    int result = func_003FFA20(c04);
+    float ratio = self->f9D4 / self->f9C0;
+    Entry4 *e = (Entry4 *)(s0->vtbl + 0x138);
+    e->fn((char *)s0 + e->delta, s3, s2, result, ratio);
+    *(Tg **)(s3 + 0x12C) = s0;
+}

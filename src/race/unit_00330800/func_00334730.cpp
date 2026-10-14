@@ -1,0 +1,112 @@
+/* compiler: ee-gcc2.96-no-strict-aliasing */
+typedef int s32; typedef short s16; typedef float f32;
+#define M2C_FIELD(p,t,o) (*(t)((char *)(p)+(o)))
+struct VP { s16 delta,index; char *(*fn)(void *,int); };
+struct VF1 { s16 delta,index; f32 (*fn)(void *,f32); };
+struct VF0 { s16 delta,index; f32 (*fn)(void *); };
+extern "C" void func_00332550(f32,f32,f32,f32,f32,f32,f32,f32,f32) throw();
+extern "C" void func_00334C98(void *,s32);
+extern "C" void func_0033E368(void *,s32,s32,s32,f32);
+extern "C" void func_00343170(void *,s32);
+extern "C" void func_00489FD8(void *,void *);
+extern "C" void func_004A7454();
+extern "C" void func_004A7550(void *);
+extern "C" void func_004A7774(void *);
+static inline void copy(f32 *d,f32 *s) {
+    d[0]=s[0];
+    d[4]=s[4];
+    d[8]=s[8];
+    d[12]=s[12];
+    d[1]=s[1];
+    d[5]=s[5];
+    d[9]=s[9];
+    d[13]=s[13];
+    d[2]=s[2];
+    d[6]=s[6];
+    d[10]=s[10];
+    d[14]=s[14];
+    d[3]=s[3];
+    d[7]=s[7];
+    d[11]=s[11];
+    d[15]=s[15];
+}
+extern "C" void func_00334730(char *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5) {
+    struct { f32 sp10,sp14,sp18,sp1C,sp20,sp24,sp28,sp2C,sp30,sp34,sp38,sp3C,sp40,sp44,sp48,sp4C; char sp50[64]; } sp;
+    f32 temp_f16;
+    f32 temp_f1;
+    f32 temp_f20;
+    f32 temp_f21;
+    f32 temp_f22;
+    f32 temp_f23;
+    f32 var_f24;
+    char *temp_s0;
+    char *temp_a2;
+    char *temp_s1;
+    char *temp_v0;
+    char *temp_v0_2;
+    char *temp_v0_3;
+    char *temp_v0_4;
+    char *temp_v0_5;
+    char *temp_v0_6;
+    char *temp_v0_7;
+    char *temp_v0_8;
+    char *temp_v1;
+
+    var_f24 = 0x0.0p+0f;
+    if (M2C_FIELD(arg0, s32 *, 0x124) != 0) {
+        var_f24 = ((f32) arg5 / (f32) M2C_FIELD(arg0, s32 *, 0x118)) * M2C_FIELD(arg0, f32 *, 0x120);
+    }
+    temp_a2 = M2C_FIELD(arg0, char **, 0);
+    temp_s1 = M2C_FIELD(arg0, char **, 0x48) + (arg5 * 0x10);
+    temp_v1 = M2C_FIELD(temp_a2, char **, 0x64);
+    temp_f21=M2C_FIELD(temp_s1,f32 *,8);
+    temp_f21 += (f32)arg3;
+    f32 width=(f32)M2C_FIELD(arg0,s32 *,0xC);
+    temp_f20=M2C_FIELD(temp_s1,f32 *,0xC);
+    temp_f20 += (f32)arg4;
+    f32 height=(f32)M2C_FIELD(arg0,s32 *,0x10);
+    temp_f20 /= height;
+    temp_f20 -= 0.5f;
+    temp_f20 = -temp_f20;
+    temp_f21 /= width;
+    temp_f21 -= 0.5f;
+    VP *e = (VP *)(temp_v1 + 0xD0);
+    temp_s0 = e->fn(temp_a2 + e->delta, 0);
+    func_004A7454();
+    VF1 *e10=(VF1 *)(M2C_FIELD(temp_s0,char **,0)+0x10);
+    e10->fn(temp_s0+e10->delta,var_f24);
+    f32 *matrix=&sp.sp10;
+    func_004A7550(matrix);
+    VF1 *e50=(VF1 *)(M2C_FIELD(temp_s0,char **,0)+0x50);
+    temp_f23=e50->fn(temp_s0+e50->delta,var_f24);
+    VF0 *e58=(VF0 *)(M2C_FIELD(temp_s0,char **,0)+0x58);
+    temp_f22=e58->fn(temp_s0+e58->delta);
+    VF0 *e68=(VF0 *)(M2C_FIELD(temp_s0,char **,0)+0x68);
+    f32 far=e68->fn(temp_s0+e68->delta)*1000.0f;
+    temp_f16 = (f32) M2C_FIELD(arg0, s32 *, 4);
+    temp_f1 = (f32) M2C_FIELD(arg0, s32 *, 8);
+    temp_f20 /= temp_f1;
+    func_00332550(temp_f23, temp_f22, far, M2C_FIELD(arg0, f32 *, 0x14), temp_f16 / temp_f1, M2C_FIELD(temp_s1, f32 *, 0), M2C_FIELD(temp_s1, f32 *, 4), temp_f21 / temp_f16, temp_f20);
+    func_00489FD8(&sp.sp50, matrix);
+    func_004A7774(&sp.sp50);
+    func_004A7550(matrix);
+    temp_v0_5 = M2C_FIELD(arg0, char **, 0);
+    temp_v0_6 = temp_v0_5 + 0xE36C;
+    copy((f32 *)temp_v0_6, matrix);
+    func_00343170(M2C_FIELD(arg0, char **, 0), 0);
+    M2C_FIELD(M2C_FIELD(arg0, char **, 0), s32 *, 0xE334) = 0;
+    func_0033E368(M2C_FIELD(arg0, char **, 0), arg1, arg2, 0, var_f24);
+    M2C_FIELD(M2C_FIELD(arg0, char **, 0), s32 *, 0xE334) = 1;
+    func_00343170(M2C_FIELD(arg0, char **, 0), 1);
+    func_00334C98(arg0, arg1);
+    *matrix=1.0f;
+    sp.sp18=sp.sp44=sp.sp34=sp.sp14=sp.sp40=sp.sp30=sp.sp28=sp.sp20=0.0f;
+    sp.sp24=1.0f;
+    sp.sp3C=sp.sp2C=sp.sp1C=sp.sp48=0.0f;
+    sp.sp38=1.0f;
+    sp.sp4C=1.0f;
+    temp_v0_7 = M2C_FIELD(arg0, char **, 0);
+    temp_v0_8 = temp_v0_7 + 0xE36C;
+    copy((f32 *)temp_v0_8, matrix);
+
+}

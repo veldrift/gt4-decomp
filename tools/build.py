@@ -276,7 +276,7 @@ def main():
         loops.append(f"""
 while read -r f o stem h; do [ "$(cat "../obj/$o.src" 2>/dev/null)" = "$f {name or 'default'} $h" ] || echo "$f $o $stem $h"; done < {to_wsl(listing)} > ../todo_all.txt
 head -n {a.limit if a.limit else 1000000} ../todo_all.txt > ../todo.txt; echo "stale: $(wc -l < ../todo_all.txt), compiling: $(wc -l < ../todo.txt)"
-cat ../todo.txt | xargs -r -P{a.jobs} -L1 bash -c 'f="$0"; o="../obj/$1"; rm -f "$o.o" "$o.src"; cp -f "{to_wsl(project.SRC)}/$f" "$f" && {project.compiler_command(name)} "$f" -o "$o.raw" 2>"$o.err" && python3 "{to_wsl(os.path.join(ROOT, "tools", "compiler_alignment.py"))}" "$f" "$o.raw" && mips-linux-gnu-objcopy {STRIP} --wildcard -G "$2*" -G "$1*" "$o.raw" "$o.o" && echo "$f {name or 'default'} $3" > "$o.src" || rm -f "$o.o" "$o.src"; rm -f "$o.raw"; true'
+cat ../todo.txt | xargs -r -P{a.jobs} -L1 bash -c 'f="$0"; o="../obj/$1"; rm -f "$o.o" "$o.src"; cp -f "{to_wsl(project.SRC)}/$f" "$f" && {project.compiler_command(name)} "$f" -o "$o.raw" 2>"$o.err" && $(p=$HOME/.local/share/gt4/venv/bin/python; [ -x "$p" ] && echo "$p" || echo python3) "{to_wsl(os.path.join(ROOT, "tools", "compiler_alignment.py"))}" "$f" "$o.raw" && mips-linux-gnu-objcopy {STRIP} --wildcard -G "$2*" -G "$1*" "$o.raw" "$o.o" && echo "$f {name or 'default'} $3" > "$o.src" || rm -f "$o.o" "$o.src"; rm -f "$o.raw"; true'
 """)
     print(wsl(f"""
 d="{WSL_DIR}"; mkdir -p "$d/src" "$d/obj"

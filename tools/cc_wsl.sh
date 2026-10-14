@@ -8,6 +8,8 @@
 set -eo pipefail
 in="$1"; out="$2"; shift 2
 tools="$(cd "$(dirname "$0")" && pwd)"
+# The alignment retry imports the project tools (rabbitizer): use the project venv when there is one.
+py="$HOME/.local/share/gt4/venv/bin/python"; [ -x "$py" ] || py=python3
 rm -f "$out"
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
@@ -20,7 +22,7 @@ include_into "$work"
 src="$(basename "$in")"
 (cd "$work" && eval "$*" "\"$src\"" -o out.o)
 # ee-as 2.96 can leave a load opcode on a %hi of .rodata; a checked retry repairs exactly that.
-(cd "$work" && python3 "$tools/compiler_alignment.py" "$src" out.o --command "$*")
+(cd "$work" && "$py" "$tools/compiler_alignment.py" "$src" out.o --command "$*")
 # Copy under a temporary name and rename: a reader never sees a half-written object.
 cp "$work/out.o" "$out.part.$$"
 mv -f "$out.part.$$" "$out"
