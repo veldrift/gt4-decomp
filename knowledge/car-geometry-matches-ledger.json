@@ -1,0 +1,329 @@
+{
+  "upstream": "4797679311e1e02e4c446b38268373d2bcb0baa3",
+  "previous_revision": "211a1f5710e2e90ac20457a2ec6f8fff4f8af990",
+  "previous_count": 66,
+  "verified_count": 25,
+  "matched_instruction_bytes": 2252,
+  "upstream_retained": [
+    {
+      "address": "0038DB30",
+      "path": "src/func_0038DB30.cpp"
+    },
+    {
+      "address": "0038DCD8",
+      "path": "src/func_0038DCD8.cpp"
+    },
+    {
+      "address": "0038DD98",
+      "path": "src/func_0038DD98.cpp"
+    },
+    {
+      "address": "0038DDF8",
+      "path": "src/func_0038DDF8.cpp"
+    },
+    {
+      "address": "0038E098",
+      "path": "src/func_0038E098.cpp"
+    },
+    {
+      "address": "0038E0C8",
+      "path": "src/func_0038E0C8.cpp"
+    },
+    {
+      "address": "0038E0F8",
+      "path": "src/func_0038E0F8.cpp"
+    },
+    {
+      "address": "0038E128",
+      "path": "src/func_0038E128.cpp"
+    },
+    {
+      "address": "0038E3D8",
+      "path": "src/func_0038E3D8.cpp"
+    },
+    {
+      "address": "0038E408",
+      "path": "src/func_0038E408.cpp"
+    },
+    {
+      "address": "0038E498",
+      "path": "src/func_0038E498.cpp"
+    },
+    {
+      "address": "0038E4C8",
+      "path": "src/func_0038E4C8.cpp"
+    },
+    {
+      "address": "0038E4F8",
+      "path": "src/func_0038E4F8.cpp"
+    },
+    {
+      "address": "0038E528",
+      "path": "src/func_0038E528.cpp"
+    },
+    {
+      "address": "0038E558",
+      "path": "src/func_0038E558.cpp"
+    },
+    {
+      "address": "0038E588",
+      "path": "src/func_0038E588.cpp"
+    },
+    {
+      "address": "0038E5B8",
+      "path": "src/func_0038E5B8.cpp"
+    },
+    {
+      "address": "0038E5E8",
+      "path": "src/func_0038E5E8.cpp"
+    },
+    {
+      "address": "0038E618",
+      "path": "src/func_0038E618.cpp"
+    },
+    {
+      "address": "0038E648",
+      "path": "src/func_0038E648.cpp"
+    },
+    {
+      "address": "0038E678",
+      "path": "src/func_0038E678.cpp"
+    },
+    {
+      "address": "0038E6A8",
+      "path": "src/func_0038E6A8.cpp"
+    },
+    {
+      "address": "0038E6D8",
+      "path": "src/func_0038E6D8.cpp"
+    },
+    {
+      "address": "0038E708",
+      "path": "src/func_0038E708.cpp"
+    },
+    {
+      "address": "0038E798",
+      "path": "src/func_0038E798.cpp"
+    },
+    {
+      "address": "0033CE40",
+      "path": "src/func_0033CE40.cpp"
+    },
+    {
+      "address": "003A1F98",
+      "path": "src/func_003a1f98.c"
+    },
+    {
+      "address": "00338548",
+      "path": "src/func_00338548.cpp"
+    },
+    {
+      "address": "00339288",
+      "path": "src/func_00339288.cpp"
+    },
+    {
+      "address": "0038C8B0",
+      "path": "src/func_0038C8B0.cpp"
+    },
+    {
+      "address": "0038C8E0",
+      "path": "src/func_0038C8E0.cpp"
+    },
+    {
+      "address": "0038C910",
+      "path": "src/func_0038C910.cpp"
+    },
+    {
+      "address": "00346A28",
+      "path": "src/func_00346A28.cpp"
+    },
+    {
+      "address": "0035BFC0",
+      "path": "src/func_0035BFC0.c"
+    },
+    {
+      "address": "00375E48",
+      "path": "src/func_00375e48.c"
+    },
+    {
+      "address": "003847B0",
+      "path": "src/func_003847B0.cpp"
+    },
+    {
+      "address": "003A3900",
+      "path": "src/func_003A3900.c"
+    },
+    {
+      "address": "003AA378",
+      "path": "src/func_003aa378.c"
+    },
+    {
+      "address": "003EF330",
+      "path": "src/func_003ef330.c"
+    },
+    {
+      "address": "0042C818",
+      "path": "src/func_0042C818.c"
+    },
+    {
+      "address": "0044A1E0",
+      "path": "src/func_0044a1e0.c"
+    }
+  ],
+  "sources": [
+    {
+      "address": "0038DB98",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__structor_1.cpp",
+      "source_sha256": "654151454504702105766941e1b4ed707da425b708d968b841127769af0f6f1a",
+      "matched_instruction_bytes": 104
+    },
+    {
+      "address": "0038DE28",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetStepPosition_X.cpp",
+      "source_sha256": "a3057d82b33d4a2a5d1fb1ddeef4a6f2586c10b68d160289d3b3fca2027cdd84",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038DE58",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetStepPosition_Y.cpp",
+      "source_sha256": "bb427b485c2a04cb150fe2ba6a906d86b4bf00547cc15f722551b2ef6202f1b9",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038DE88",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetStepPosition_Z.cpp",
+      "source_sha256": "bd4c3869fd5d450d9d1d3bc82b2fe983855a3c7fde0fee04dcc3064b51e112fc",
+      "matched_instruction_bytes": 48
+    },
+    {
+      "address": "0038E158",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetBackmirrorPosition_X.cpp",
+      "source_sha256": "311ebfc0ff7bb4453fef04ddc113e97afbce478925b75ba4b6dcbe760fd0e677",
+      "matched_instruction_bytes": 208
+    },
+    {
+      "address": "0038E228",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetBackmirrorPosition_Y.cpp",
+      "source_sha256": "916d6ce79998bfac6cf4700d1accf63bbf66f044d961c1552f0d449914c28643",
+      "matched_instruction_bytes": 216
+    },
+    {
+      "address": "0038E300",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetBackmirrorPosition_Z.cpp",
+      "source_sha256": "f98081ee98d3e2b6452ad1abeba0aa8b15ecbc47e863e54295c1c6ea82036d9e",
+      "matched_instruction_bytes": 216
+    },
+    {
+      "address": "0038D0D8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/NormalCarGeometry__GetNumCrew.cpp",
+      "source_sha256": "090e6d3187a2084a05f21762e1cb3bf9654ab8a6d1b4b9b8bf97b637881123e6",
+      "matched_instruction_bytes": 88
+    },
+    {
+      "address": "00390ED8",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_04.cpp",
+      "source_sha256": "01de66ad3519b0d78afc88c44666d940f8d66dabc741dea206a5527266e43aa2",
+      "matched_instruction_bytes": 80
+    },
+    {
+      "address": "00390478",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_15.cpp",
+      "source_sha256": "e6583caab09850918969b1970bce2ee874799f0ed58467f845f20b15279515fc",
+      "matched_instruction_bytes": 112
+    },
+    {
+      "address": "00391128",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_31.cpp",
+      "source_sha256": "8bfc52b73ee2894a70047b9815dba52ede1058b493df3137e3d7cd76c389c9e5",
+      "matched_instruction_bytes": 72
+    },
+    {
+      "address": "00391170",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_39.cpp",
+      "source_sha256": "5558f3a89b71b6d8b945f9cb375458d72850a3caf275a5705f0ed9694ef816cd",
+      "matched_instruction_bytes": 96
+    },
+    {
+      "address": "0038FFC8",
+      "path": "src/race/RaceCarModel/func_0038FFC8.cpp",
+      "source_sha256": "ec9817b8e9295cb4ae06b39037b2a9508cf877565ea4ec91d3a35219c6d1b85e",
+      "matched_instruction_bytes": 108
+    },
+    {
+      "address": "003BC5A8",
+      "path": "src/race/RaceLicense/func_003BC5A8.cpp",
+      "source_sha256": "16a2ff72706715f6f3b697721128e3839a0a323a57f1afb5c58fa7d403e6a2c6",
+      "matched_instruction_bytes": 40
+    },
+    {
+      "address": "0038CB48",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__GetChairAngle.cpp",
+      "source_sha256": "2b7195cbe09a01cad49ee7f5502772a8509a8f1cddaaf60efb491cbc9ad6c533",
+      "matched_instruction_bytes": 72
+    },
+    {
+      "address": "0038CE98",
+      "path": "src/race/unit_0038CDE8/func_0038CE98.cpp",
+      "source_sha256": "537b59b68399cd80ff0681cd9249677d5ce12e53d6cf2c18ba2a4b16073d40c6",
+      "matched_instruction_bytes": 156
+    },
+    {
+      "address": "0038CF38",
+      "path": "src/race/unit_0038CDE8/func_0038CF38.cpp",
+      "source_sha256": "855acb2bcd14b93a00efb256067d84cb841a7452998fb5fcf143efb954a6249b",
+      "matched_instruction_bytes": 156
+    },
+    {
+      "address": "003DE5B8",
+      "path": "src/race/unit_003DDA58/func_003DE5B8.cpp",
+      "source_sha256": "f9dcd293132de0b54fe899da34f5541b741667170457d067994da13e2efcbeed",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "003DE708",
+      "path": "src/race/unit_003DDA58/func_003DE708.cpp",
+      "source_sha256": "fa4a13040bbb651485442cb85534dd2317a8126252e7f9b77c66603439b5abde",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "003DE800",
+      "path": "src/race/unit_003DDA58/func_003DE800.cpp",
+      "source_sha256": "3582492063c550ba1058899b6fd79ade5bba4a9a3ce6466f697219b5848a1df4",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "003DE9D0",
+      "path": "src/race/unit_003DDA58/func_003DE9D0.cpp",
+      "source_sha256": "28822048a9e5aa618357552e850174a65c12877ab3a295d5315236c765f9da2d",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "003F16D0",
+      "path": "src/race/unit_003F1660/func_003F16D0.cpp",
+      "source_sha256": "b4f3308627da06082da1cede7a62001b9828d5c45281980a11b1750c1ee0e549",
+      "matched_instruction_bytes": 44
+    },
+    {
+      "address": "00400EB0",
+      "path": "src/race/unit_003F7150/func_00400EB0.cpp",
+      "source_sha256": "f28e6b4f3e1e50c1fd7d374fbc6df09e6a127fae00d871b2b6ae5602a9b28ee2",
+      "matched_instruction_bytes": 56
+    },
+    {
+      "address": "004386C8",
+      "path": "src/race/unit_004271E8/func_004386C8.cpp",
+      "source_sha256": "caed1f0479e66ed2c29c76359af81e7087f7d27332a75c6e4fb089928176531d",
+      "matched_instruction_bytes": 36
+    },
+    {
+      "address": "004468E0",
+      "path": "src/race/unit_004271E8/func_004468E0.cpp",
+      "source_sha256": "23d31483c468984ad7b283d9f908af7d06237eb3a86f1b7a0bc21326b6a42884",
+      "matched_instruction_bytes": 24
+    }
+  ],
+  "hashes": {
+    ".text": "28422e7e20a6298224294255355487b9a22cef31",
+    ".data": "c28c833f9716467545bf362f321e9acc876c3603"
+  }
+}

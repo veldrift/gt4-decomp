@@ -1,0 +1,287 @@
+{
+  "upstream": "4797679311e1e02e4c446b38268373d2bcb0baa3",
+  "previous_revision": "f1ddcb48b243789f02c418ea4f8b55b26252b279",
+  "previous_count": 55,
+  "verified_count": 26,
+  "matched_instruction_bytes": 3288,
+  "upstream_retained": [
+    {
+      "address": "00101288",
+      "path": "src/func_00101288.cpp"
+    },
+    {
+      "address": "00138140",
+      "path": "src/func_00138140.cpp"
+    },
+    {
+      "address": "00138B38",
+      "path": "src/func_00138B38.cpp"
+    },
+    {
+      "address": "00139390",
+      "path": "src/func_00139390.cpp"
+    },
+    {
+      "address": "0013ABC0",
+      "path": "src/func_0013ABC0.cpp"
+    },
+    {
+      "address": "0013EDF8",
+      "path": "src/func_0013EDF8.cpp"
+    },
+    {
+      "address": "0013F528",
+      "path": "src/func_0013F528.cpp"
+    },
+    {
+      "address": "0013F7B0",
+      "path": "src/func_0013F7B0.cpp"
+    },
+    {
+      "address": "00145F70",
+      "path": "src/func_00145F70.cpp"
+    },
+    {
+      "address": "00146860",
+      "path": "src/func_00146860.cpp"
+    },
+    {
+      "address": "001468D8",
+      "path": "src/func_001468D8.cpp"
+    },
+    {
+      "address": "00146A20",
+      "path": "src/func_00146A20.cpp"
+    },
+    {
+      "address": "00146A98",
+      "path": "src/func_00146A98.cpp"
+    },
+    {
+      "address": "00151E28",
+      "path": "src/func_00151E28.cpp"
+    },
+    {
+      "address": "00151F30",
+      "path": "src/func_00151F30.cpp"
+    },
+    {
+      "address": "00152140",
+      "path": "src/func_00152140.cpp"
+    },
+    {
+      "address": "00152248",
+      "path": "src/func_00152248.cpp"
+    },
+    {
+      "address": "00152488",
+      "path": "src/func_00152488.cpp"
+    },
+    {
+      "address": "00152588",
+      "path": "src/func_00152588.cpp"
+    },
+    {
+      "address": "00152650",
+      "path": "src/func_00152650.cpp"
+    },
+    {
+      "address": "00152760",
+      "path": "src/func_00152760.cpp"
+    },
+    {
+      "address": "00152870",
+      "path": "src/func_00152870.cpp"
+    },
+    {
+      "address": "001528D8",
+      "path": "src/func_001528D8.cpp"
+    },
+    {
+      "address": "00152AD8",
+      "path": "src/func_00152AD8.cpp"
+    },
+    {
+      "address": "001575A8",
+      "path": "src/func_001575A8.cpp"
+    },
+    {
+      "address": "001580F8",
+      "path": "src/func_001580F8.cpp"
+    },
+    {
+      "address": "001582C0",
+      "path": "src/func_001582C0.cpp"
+    },
+    {
+      "address": "003A5F70",
+      "path": "src/func_003A5F70.cpp"
+    },
+    {
+      "address": "004568C0",
+      "path": "src/func_004568C0.c"
+    }
+  ],
+  "sources": [
+    {
+      "address": "00138890",
+      "path": "src/gamedata/unit_00132F48/MCarFace__set_quality_level.cpp",
+      "source_sha256": "bd60a76fba57adc69dd297826c69ee338e77b3844cb96f90a1784bf4c757b397",
+      "matched_instruction_bytes": 96
+    },
+    {
+      "address": "00138EE0",
+      "path": "src/gamedata/unit_00132F48/MCarFace__setColorIndex.cpp",
+      "source_sha256": "100a31509b29d28887a75adf70d530dcce56079d60a4e7762a57f905f0b749bb",
+      "matched_instruction_bytes": 108
+    },
+    {
+      "address": "0013A370",
+      "path": "src/gamedata/unit_00132F48/func_0013A370.cpp",
+      "source_sha256": "deb5d4db9acaca5e8483c2bf9dd4d02f4445cccbf784d809d590dc6faf0f4e3d",
+      "matched_instruction_bytes": 100
+    },
+    {
+      "address": "0013A3D8",
+      "path": "src/gamedata/unit_00132F48/func_0013A3D8.cpp",
+      "source_sha256": "c968d654f94d7edc0656ede10361c33c796d8edef966289897710b03818ca6d3",
+      "matched_instruction_bytes": 148
+    },
+    {
+      "address": "0013A960",
+      "path": "src/gamedata/unit_00132F48/func_0013A960.cpp",
+      "source_sha256": "a7b494eb01fb63b62e25132e86df6dda80d925ec8c414b4891ca913b80bb0840",
+      "matched_instruction_bytes": 68
+    },
+    {
+      "address": "0013AC48",
+      "path": "src/gamedata/unit_00132F48/func_0013AC48.cpp",
+      "source_sha256": "cc00fc1543bca8684b8b2fd1049a8f219792e34b712f8a9eea6cd6b2ee737bda",
+      "matched_instruction_bytes": 120
+    },
+    {
+      "address": "0013ACC8",
+      "path": "src/gamedata/unit_00132F48/func_0013ACC8.cpp",
+      "source_sha256": "6205d578c7b4fcec4a1c2d68af53782ea28e73b09b90c7ee46864d3724aead5e",
+      "matched_instruction_bytes": 60
+    },
+    {
+      "address": "0013F040",
+      "path": "src/gamedata/unit_0013B5F8/MCarGarage__isOpenCar.cpp",
+      "source_sha256": "cefa4d4e214bd9b45abd812b506ef8e3ec85b2aa42cbace9877f6f1446e80899",
+      "matched_instruction_bytes": 296
+    },
+    {
+      "address": "0013F598",
+      "path": "src/gamedata/unit_0013B5F8/MCarGarage__isNAtune.cpp",
+      "source_sha256": "1aa343ca8ab29fa162daa85ca19564e1ebac46557fb1c5874d633bb00136d7b5",
+      "matched_instruction_bytes": 204
+    },
+    {
+      "address": "001463E0",
+      "path": "src/gamedata/unit_0013B5F8/func_001463E0.cpp",
+      "source_sha256": "1e79815db6405f0c45a8bbdca67e9f6ecccdd6d6721a54f932e74c9e42a37853",
+      "matched_instruction_bytes": 104
+    },
+    {
+      "address": "00146B10",
+      "path": "src/gamedata/unit_0013B5F8/func_00146B10.cpp",
+      "source_sha256": "46d98b7736227c94d0dd84b7a931349a53464886f9ab68d7346e255c98789492",
+      "matched_instruction_bytes": 132
+    },
+    {
+      "address": "00147F10",
+      "path": "src/gamedata/mCarGarage/mCarGarage__structor_4.cpp",
+      "source_sha256": "04f6372d336187a85d16691ecf78fd145980a1bf30988b6e77a9eaa009547fd1",
+      "matched_instruction_bytes": 116
+    },
+    {
+      "address": "0014E9C0",
+      "path": "src/gamedata/unit_00148030/MCarGarage__getOilLifeRate.cpp",
+      "source_sha256": "2d6c59fcd7d5684046b88782e2e4f575941e28ff08956ff43e036633b0fe2edc",
+      "matched_instruction_bytes": 152
+    },
+    {
+      "address": "0014EC60",
+      "path": "src/gamedata/unit_00148030/MCarGarage__getBodyLifeRate.cpp",
+      "source_sha256": "28c4bdf293b7348938a00a20a770282569a14af575a5ccd26a49876f0670e9a9",
+      "matched_instruction_bytes": 152
+    },
+    {
+      "address": "00153B50",
+      "path": "src/gamedata/unit_00151BB0/func_00153B50.cpp",
+      "source_sha256": "77e4180c4cccbfd08bd00f20204f5dc885d877aabb9d41b16b9b8996395491be",
+      "matched_instruction_bytes": 104
+    },
+    {
+      "address": "00154330",
+      "path": "src/gamedata/unit_00151BB0/func_00154330.cpp",
+      "source_sha256": "186282ccd1410739b975dd35762aeee396c8cfb7f5b4e3cf6582472a32e596b6",
+      "matched_instruction_bytes": 64
+    },
+    {
+      "address": "001565F8",
+      "path": "src/gamedata/mCarModelPS2/mCarModelPS2__virtual_52.cpp",
+      "source_sha256": "e4a5b278fbaa2f75431bfe80eb375d492094e216e382e380de3c53cf73931534",
+      "matched_instruction_bytes": 100
+    },
+    {
+      "address": "0016ECC0",
+      "path": "src/gamedata/unit_0016D9D0/MGarage__hasRidingCar.cpp",
+      "source_sha256": "85193935fbd2c27600dca09c6b076b4920dbc3a065db3544c1328c635526deb6",
+      "matched_instruction_bytes": 156
+    },
+    {
+      "address": "0038DC30",
+      "path": "src/race/CarGeometry_NormalCarGeometry/func_0038DC30.cpp",
+      "source_sha256": "7a505b7470a43ad7b6d4babdd4a2868b79dc21bd0c2753aec70fd852fdcac64f",
+      "matched_instruction_bytes": 164
+    },
+    {
+      "address": "0038F240",
+      "path": "src/race/unit_0038E7C8/func_0038F240.cpp",
+      "source_sha256": "9dbf893e8d06ea11361f3dd3104053bc3fdeddf92d76446455c482945e83aaa3",
+      "matched_instruction_bytes": 128
+    },
+    {
+      "address": "0038FC60",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_12.c",
+      "source_sha256": "b9559bda5e0c3a8ea28de2c3da54d049034de6869312076a08a2f0794d73b982",
+      "matched_instruction_bytes": 228
+    },
+    {
+      "address": "0038FE30",
+      "path": "src/race/RaceCarModel/func_0038FE30.cpp",
+      "source_sha256": "3aee80d55bbc49fe6523821f8cb145fb742b8908feb0feb78a9bcb4659c57d83",
+      "matched_instruction_bytes": 128
+    },
+    {
+      "address": "0038FF38",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_13.cpp",
+      "source_sha256": "66f6af709768b245d60fcede4ab2ae14102ce7aa895c93a01aa5f5186a63f251",
+      "matched_instruction_bytes": 144
+    },
+    {
+      "address": "00390E78",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_03.c",
+      "source_sha256": "ee09841bff8b27c2d969df9b792a491b2985ab7473516d4cba99fe889b042d4e",
+      "matched_instruction_bytes": 96
+    },
+    {
+      "address": "003B5020",
+      "path": "src/race/unit_003B4D80/RaceEntryCar__copyVehicleModel.cpp",
+      "source_sha256": "be7d8c39057dcb775f36800bccaeadf012f60acbd9d9f59975c90b3c2c3314ae",
+      "matched_instruction_bytes": 76
+    },
+    {
+      "address": "0044CBE8",
+      "path": "src/race/unit_004271E8/func_0044CBE8.cpp",
+      "source_sha256": "17a0a07bc6d788b28b1e61d5de1e9d58a2f90808123ddc6dfee4f448d9eab3f0",
+      "matched_instruction_bytes": 44
+    }
+  ],
+  "hashes": {
+    ".text": "28422e7e20a6298224294255355487b9a22cef31",
+    ".data": "c28c833f9716467545bf362f321e9acc876c3603"
+  }
+}

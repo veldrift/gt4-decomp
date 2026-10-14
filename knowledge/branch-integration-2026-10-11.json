@@ -1,0 +1,596 @@
+{
+  "upstream_revision": "dde050c2ab398160aa537f69e0ecb78489a0398a",
+  "integration_branch": "pr/car-geometry-expansion",
+  "merged_branches": {
+    "master": "2afbee5f5d012a539535c4fb975161b8d0c962c4",
+    "dev": "1f6308536be790b76a71006fd47dba9b76c405f3",
+    "feat/first-matches": "f0b3e403deeb7b71be6b67832bd84a99de01ca34",
+    "pr/car-geometry-matches": "a5be8d6d98fcc8fe94695ec82c7c1f93964ba06a",
+    "pr/mcardata-matches": "d771b017ae9d1a80b35e0be555d700ce6cf815e7"
+  },
+  "upstream_source_count": 22410,
+  "retained_additional_function_count": 69,
+  "retained_additional_sources": [
+    {
+      "address": "0012D7A8",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetCarLabel.cpp"
+    },
+    {
+      "address": "0012D928",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetCarLogoName.cpp"
+    },
+    {
+      "address": "0012DCD8",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetCarLabelByIndex.cpp"
+    },
+    {
+      "address": "0012DE40",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetCarName.cpp"
+    },
+    {
+      "address": "0012DFC8",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetShortCarName.cpp"
+    },
+    {
+      "address": "0012E150",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetRaceCode.cpp"
+    },
+    {
+      "address": "0012E388",
+      "path": "src/gamedata/unit_0012D680/MCarData__IsTireNormal.cpp"
+    },
+    {
+      "address": "0012E498",
+      "path": "src/gamedata/unit_0012D680/MCarData__IsDirtRunnable.cpp"
+    },
+    {
+      "address": "0012E5A8",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetOpenModelType.cpp"
+    },
+    {
+      "address": "0012E880",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetCarNameByNumericCode.cpp"
+    },
+    {
+      "address": "0012E9E8",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetMaker.cpp"
+    },
+    {
+      "address": "0012EBA0",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetTuner.cpp"
+    },
+    {
+      "address": "0012ED60",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetCountry.cpp"
+    },
+    {
+      "address": "0012EF18",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetCategory.cpp"
+    },
+    {
+      "address": "0012F0D8",
+      "path": "src/gamedata/unit_0012D680/MCarData__IsStrange.cpp"
+    },
+    {
+      "address": "0012F258",
+      "path": "src/gamedata/unit_0012D680/MCarData__IsTestCar.cpp"
+    },
+    {
+      "address": "0012FEA8",
+      "path": "src/gamedata/unit_0012D680/MCarData__GetDescriptionID.cpp"
+    },
+    {
+      "address": "00130300",
+      "path": "src/gamedata/unit_0012D680/MCarData__NotForSell.cpp"
+    },
+    {
+      "address": "00130420",
+      "path": "src/gamedata/unit_0012D680/MCarData__RaceForbidden.cpp"
+    },
+    {
+      "address": "001305A0",
+      "path": "src/gamedata/unit_0012D680/func_001305A0.cpp"
+    },
+    {
+      "address": "00130618",
+      "path": "src/gamedata/unit_0012D680/func_00130618.cpp"
+    },
+    {
+      "address": "001307E8",
+      "path": "src/gamedata/unit_0012D680/func_001307E8.cpp"
+    },
+    {
+      "address": "00138890",
+      "path": "src/gamedata/unit_00132F48/MCarFace__set_quality_level.cpp"
+    },
+    {
+      "address": "00138EE0",
+      "path": "src/gamedata/unit_00132F48/MCarFace__setColorIndex.cpp"
+    },
+    {
+      "address": "0013A370",
+      "path": "src/gamedata/unit_00132F48/func_0013A370.cpp"
+    },
+    {
+      "address": "0013A3D8",
+      "path": "src/gamedata/unit_00132F48/func_0013A3D8.cpp"
+    },
+    {
+      "address": "0013A960",
+      "path": "src/gamedata/unit_00132F48/func_0013A960.cpp"
+    },
+    {
+      "address": "0013AC48",
+      "path": "src/gamedata/unit_00132F48/func_0013AC48.cpp"
+    },
+    {
+      "address": "0013ACC8",
+      "path": "src/gamedata/unit_00132F48/func_0013ACC8.cpp"
+    },
+    {
+      "address": "0013F040",
+      "path": "src/gamedata/unit_0013B5F8/MCarGarage__isOpenCar.cpp"
+    },
+    {
+      "address": "0013F598",
+      "path": "src/gamedata/unit_0013B5F8/MCarGarage__isNAtune.cpp"
+    },
+    {
+      "address": "001463E0",
+      "path": "src/gamedata/unit_0013B5F8/func_001463E0.cpp"
+    },
+    {
+      "address": "00146B10",
+      "path": "src/gamedata/unit_0013B5F8/func_00146B10.cpp"
+    },
+    {
+      "address": "00147F10",
+      "path": "src/gamedata/mCarGarage/mCarGarage__structor_4.cpp"
+    },
+    {
+      "address": "0014E9C0",
+      "path": "src/gamedata/unit_00148030/MCarGarage__getOilLifeRate.cpp"
+    },
+    {
+      "address": "0014EC60",
+      "path": "src/gamedata/unit_00148030/MCarGarage__getBodyLifeRate.cpp"
+    },
+    {
+      "address": "00153B50",
+      "path": "src/gamedata/unit_00151BB0/func_00153B50.cpp"
+    },
+    {
+      "address": "00154330",
+      "path": "src/gamedata/unit_00151BB0/func_00154330.cpp"
+    },
+    {
+      "address": "001565F8",
+      "path": "src/gamedata/mCarModelPS2/mCarModelPS2__virtual_52.cpp"
+    },
+    {
+      "address": "0016ECC0",
+      "path": "src/gamedata/unit_0016D9D0/MGarage__hasRidingCar.cpp"
+    },
+    {
+      "address": "0038CB48",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__GetChairAngle.cpp"
+    },
+    {
+      "address": "0038D0D8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/NormalCarGeometry__GetNumCrew.cpp"
+    },
+    {
+      "address": "0038DB98",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__structor_1.cpp"
+    },
+    {
+      "address": "0038DC30",
+      "path": "src/race/CarGeometry_NormalCarGeometry/func_0038DC30.cpp"
+    },
+    {
+      "address": "0038DE28",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetStepPosition_X.cpp"
+    },
+    {
+      "address": "0038DE58",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetStepPosition_Y.cpp"
+    },
+    {
+      "address": "0038DE88",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetStepPosition_Z.cpp"
+    },
+    {
+      "address": "0038E158",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetBackmirrorPosition_X.cpp"
+    },
+    {
+      "address": "0038E228",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetBackmirrorPosition_Y.cpp"
+    },
+    {
+      "address": "0038E300",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetBackmirrorPosition_Z.cpp"
+    },
+    {
+      "address": "0038F240",
+      "path": "src/race/unit_0038E7C8/func_0038F240.cpp"
+    },
+    {
+      "address": "0038FC60",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_12.c"
+    },
+    {
+      "address": "0038FE30",
+      "path": "src/race/RaceCarModel/func_0038FE30.cpp"
+    },
+    {
+      "address": "0038FF38",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_13.cpp"
+    },
+    {
+      "address": "0038FFC8",
+      "path": "src/race/RaceCarModel/func_0038FFC8.cpp"
+    },
+    {
+      "address": "00390478",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_15.cpp"
+    },
+    {
+      "address": "00390E78",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_03.c"
+    },
+    {
+      "address": "00390ED8",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_04.cpp"
+    },
+    {
+      "address": "00391128",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_31.cpp"
+    },
+    {
+      "address": "00391170",
+      "path": "src/race/RaceCarModel/RaceCarModel__virtual_39.cpp"
+    },
+    {
+      "address": "003B5020",
+      "path": "src/race/unit_003B4D80/RaceEntryCar__copyVehicleModel.cpp"
+    },
+    {
+      "address": "003DE5B8",
+      "path": "src/race/unit_003DDA58/func_003DE5B8.cpp"
+    },
+    {
+      "address": "003DE708",
+      "path": "src/race/unit_003DDA58/func_003DE708.cpp"
+    },
+    {
+      "address": "003DE800",
+      "path": "src/race/unit_003DDA58/func_003DE800.cpp"
+    },
+    {
+      "address": "003DE9D0",
+      "path": "src/race/unit_003DDA58/func_003DE9D0.cpp"
+    },
+    {
+      "address": "004386C8",
+      "path": "src/race/unit_004271E8/func_004386C8.cpp"
+    },
+    {
+      "address": "004443A8",
+      "path": "src/race/unit_004271E8/func_004443A8.cpp"
+    },
+    {
+      "address": "004468E0",
+      "path": "src/race/unit_004271E8/func_004468E0.cpp"
+    },
+    {
+      "address": "0044CBE8",
+      "path": "src/race/unit_004271E8/func_0044CBE8.cpp"
+    }
+  ],
+  "superseded_paths_removed": [
+    {
+      "address": "00105500",
+      "path": "src/startup/unit_00101400/func_00105500.cpp",
+      "upstream_path": "src/startup/unit_00101400/func_00105500.c"
+    },
+    {
+      "address": "005C34A0",
+      "path": "src/runtime/unit_005C1CE0/func_005C34A0.cpp",
+      "upstream_path": "src/runtime/unit_005C1CE0/func_005C34A0.c"
+    },
+    {
+      "address": "005F9A90",
+      "path": "src/runtime/unit_005F9858/func_005F9A90.cpp",
+      "upstream_path": "src/runtime/unit_005F9858/func_005F9A90.c"
+    },
+    {
+      "address": "005FA570",
+      "path": "src/runtime/unit_005FA430/func_005FA570.cpp",
+      "upstream_path": "src/runtime/unit_005FA430/func_005FA570.c"
+    },
+    {
+      "address": "005FBD40",
+      "path": "src/runtime/unit_005FA430/func_005FBD40.cpp",
+      "upstream_path": "src/runtime/unit_005FA430/func_005FBD40.c"
+    },
+    {
+      "address": "0038DCD8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_00.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetNumCrew.cpp"
+    },
+    {
+      "address": "0038DD98",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_04.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetOppositeSeatPosition_X.cpp"
+    },
+    {
+      "address": "0038DDC8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_05.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetOppositeSeatPosition_Y.cpp"
+    },
+    {
+      "address": "0038DDF8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_06.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetOppositeSeatPosition_Z.cpp"
+    },
+    {
+      "address": "0038E098",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_20.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetSideBrakePosition_X.cpp"
+    },
+    {
+      "address": "0038E0C8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_21.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetSideBrakePosition_Y.cpp"
+    },
+    {
+      "address": "0038E0F8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_22.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetSideBrakePosition_Z.cpp"
+    },
+    {
+      "address": "0038E128",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_23.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__HasBackmirror.cpp"
+    },
+    {
+      "address": "0038E3D8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_27.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetChairAngle.cpp"
+    },
+    {
+      "address": "0038E408",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_28.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetShiftBoundingBox_W.cpp"
+    },
+    {
+      "address": "0038E438",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_29.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetShiftBoundingBox_H.cpp"
+    },
+    {
+      "address": "0038E498",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_30.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetSideBrakeLength.cpp"
+    },
+    {
+      "address": "0038E4C8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_32.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__IsManualShift.cpp"
+    },
+    {
+      "address": "0038E4F8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_33.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedLeftHandlePosition_X.cpp"
+    },
+    {
+      "address": "0038E528",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_34.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedLeftHandlePosition_Y.cpp"
+    },
+    {
+      "address": "0038E558",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_35.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedLeftHandlePosition_Z.cpp"
+    },
+    {
+      "address": "0038E588",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_36.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedRightHandlePosition_X.cpp"
+    },
+    {
+      "address": "0038E5B8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_37.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedRightHandlePosition_Y.cpp"
+    },
+    {
+      "address": "0038E5E8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_38.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedRightHandlePosition_Z.cpp"
+    },
+    {
+      "address": "0038E618",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_39.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedLeftHandleVector_X.cpp"
+    },
+    {
+      "address": "0038E648",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_40.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedLeftHandleVector_Y.cpp"
+    },
+    {
+      "address": "0038E678",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_41.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedLeftHandleVector_Z.cpp"
+    },
+    {
+      "address": "0038E6A8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_42.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedRightHandleVector_X.cpp"
+    },
+    {
+      "address": "0038E6D8",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_43.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedRightHandleVector_Y.cpp"
+    },
+    {
+      "address": "0038E708",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_44.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__GetFixedRightHandleVector_Z.cpp"
+    },
+    {
+      "address": "0038E798",
+      "path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_47.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/CarGeometry__DoesLieOnBelly.cpp"
+    },
+    {
+      "address": "0038DA08",
+      "path": "src/race/CarGeometry_NormalCarGeometry/NormalCarGeometry__virtual_32.cpp",
+      "upstream_path": "src/race/CarGeometry_NormalCarGeometry/NormalCarGeometry__IsManualShift.c"
+    },
+    {
+      "address": "0038C238",
+      "path": "src/race/MTRGeometry/MTRGeometry__virtual_07.cpp",
+      "upstream_path": "src/race/MTRGeometry/MTRGeometry__virtual_07.c"
+    },
+    {
+      "address": "0033CE40",
+      "path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_16.cpp",
+      "upstream_path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__idle.cpp"
+    },
+    {
+      "address": "0033CCF0",
+      "path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_79.c",
+      "upstream_path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__raceEnd.c"
+    },
+    {
+      "address": "0033C3E8",
+      "path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__virtual_89.cpp",
+      "upstream_path": "src/race/RaceBGMPS2_RacePS2Base/RacePS2Base__soundStop.cpp"
+    },
+    {
+      "address": "003A6638",
+      "path": "src/race/RaceCarIconDisplay/RaceCarIconDisplay__virtual_09.cpp",
+      "upstream_path": "src/race/RaceCarIconDisplay/RaceCarIconDisplay__update.cpp"
+    },
+    {
+      "address": "003A1F98",
+      "path": "src/race/RaceDisplay/func_003A1F98.cpp",
+      "upstream_path": "src/race/RaceDisplay/func_003A1F98.c"
+    },
+    {
+      "address": "003BC5A8",
+      "path": "src/race/RaceLicense/func_003BC5A8.cpp",
+      "upstream_path": "src/race/RaceLicense/func_003BC5A8.c"
+    },
+    {
+      "address": "003BE0B0",
+      "path": "src/race/RaceMachineTest/RaceMachineTest__virtual_87.cpp",
+      "upstream_path": "src/race/RaceMachineTest/RaceMachineTest__cleanup.cpp"
+    },
+    {
+      "address": "003A4AA8",
+      "path": "src/race/RaceMessageDisplay/RaceReplayModeDisplay__virtual_09.cpp",
+      "upstream_path": "src/race/RaceMessageDisplay/RaceMessageDisplay__update.cpp"
+    },
+    {
+      "address": "003AD5E8",
+      "path": "src/race/RaceMTRMultiFunctionDisplay/RaceMTRMultiFunctionDisplay__virtual_09.cpp",
+      "upstream_path": "src/race/RaceMTRMultiFunctionDisplay/RaceMTRMultiFunctionDisplay__update.cpp"
+    },
+    {
+      "address": "0038C868",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_03.cpp",
+      "upstream_path": "src/race/SpecialCarGeometry/SpecialCarGeometry__GetSeatPosition_Z.cpp"
+    },
+    {
+      "address": "0038C8B0",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_04.cpp",
+      "upstream_path": "src/race/SpecialCarGeometry/SpecialCarGeometry__GetOppositeSeatPosition_X.cpp"
+    },
+    {
+      "address": "0038C8E0",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_05.cpp",
+      "upstream_path": "src/race/SpecialCarGeometry/SpecialCarGeometry__GetOppositeSeatPosition_Y.cpp"
+    },
+    {
+      "address": "0038C910",
+      "path": "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_06.cpp",
+      "upstream_path": "src/race/SpecialCarGeometry/SpecialCarGeometry__GetOppositeSeatPosition_Z.cpp"
+    },
+    {
+      "address": "00375E48",
+      "path": "src/race/unit_00374E90/func_00375E48.cpp",
+      "upstream_path": "src/race/unit_00374E90/func_00375E48.c"
+    },
+    {
+      "address": "00396288",
+      "path": "src/race/unit_00394D48/func_00396288.cpp",
+      "upstream_path": "src/race/unit_00394D48/func_00396288.c"
+    },
+    {
+      "address": "003A3900",
+      "path": "src/race/unit_003A3900/func_003A3900.cpp",
+      "upstream_path": "src/race/unit_003A3900/func_003A3900.c"
+    },
+    {
+      "address": "003AA378",
+      "path": "src/race/unit_003A9D80/func_003AA378.cpp",
+      "upstream_path": "src/race/unit_003A9D80/PaletteFlowAnimation__getColori.c"
+    },
+    {
+      "address": "003B70E0",
+      "path": "src/race/unit_003B70C8/func_003B70E0.cpp",
+      "upstream_path": "src/race/unit_003B70C8/func_003B70E0.c"
+    },
+    {
+      "address": "003EF330",
+      "path": "src/race/unit_003EF1E8/func_003EF330.cpp",
+      "upstream_path": "src/race/unit_003EF1E8/func_003EF330.c"
+    },
+    {
+      "address": "003F16D0",
+      "path": "src/race/unit_003F1660/func_003F16D0.cpp",
+      "upstream_path": "src/race/unit_003F1660/func_003F16D0.c"
+    },
+    {
+      "address": "0044A1E0",
+      "path": "src/race/unit_004271E8/func_0044A1E0.cpp",
+      "upstream_path": "src/race/unit_004271E8/func_0044A1E0.c"
+    },
+    {
+      "address": "00565B98",
+      "path": "src/libstream/unit_005547E8/func_00565B98.cpp",
+      "upstream_path": "src/libstream/unit_005547E8/func_00565B98.c"
+    },
+    {
+      "address": "003BC5A8",
+      "path": "src/race/RaceLicense/func_003BC5A8.cpp",
+      "upstream_path": "src/race/RaceLicense/func_003BC5A8.c"
+    },
+    {
+      "address": "003F16D0",
+      "path": "src/race/unit_003F1660/func_003F16D0.cpp",
+      "upstream_path": "src/race/unit_003F1660/func_003F16D0.c"
+    }
+  ],
+  "equivalent_local_aliases_removed": [
+    "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_24.cpp",
+    "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_25.cpp",
+    "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_26.cpp",
+    "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_07.cpp",
+    "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_08.cpp",
+    "src/race/CarGeometry_NormalCarGeometry/CarGeometry__virtual_09.cpp",
+    "src/race/CarGeometry_NormalCarGeometry/NormalCarGeometry__virtual_00.cpp",
+    "src/race/SpecialCarGeometry/SpecialCarGeometry__virtual_27.cpp"
+  ],
+  "validation": {
+    "all_upstream_sources_unchanged": true,
+    "duplicate_addresses": 0,
+    "orphan_sources": 0,
+    "python_syntax": "passed",
+    "synthetic_matching_tool_tests": "14 passed, using bundled include/m2c_macros.h for the missing external macro header",
+    "full_game_build": "not run: original game inputs absent in this checkout"
+  }
+}

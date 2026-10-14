@@ -2,11 +2,12 @@
 """Solve functions with the CPU only: m2c's draft, compiled as is, judged as is.
 
 For every function without a source (skipping hand-written assembly and code built by another
-compiler), m2c writes compilable C (`--valid-syntax`), which is compiled as C and judged. A match
-goes to src/func_ADDR.c; a near miss (few differing instructions) is kept for the permuter
+compiler), m2c writes compilable C (`--valid-syntax`), judged as C and C++ with bounded corrections.
+A match goes to its canonical source path with the winning extension; a near miss is kept for the permuter
 (tools/permute_cpu.py); the rest is listed for the language models. No model is called.
 
-    cpu_solve.py [--jobs 3] [--max-bytes 2048] [--limit N] [--context types] [--only FILE]
+    cpu_solve.py [--jobs 2] [--max-bytes 2048] [--limit N] [--context types] [--only FILE]
+                 [--draft-only] [--frontends c|cpp|both]
 
 --context adds drafts made with the type database (tools/types_db.py build first): m2c then
 calls known functions with their real prototypes and reads class fields with their real
@@ -30,6 +31,7 @@ import inventory
 import match
 import project
 import types_db
+import matching_candidates as candidates
 
 ROOT = match.ROOT
 OUT = os.path.join(ROOT, "build", "auto", "cpu")
@@ -87,11 +89,12 @@ def draft(addr, extra=(), ee=True, context=None, out=OUT):
 
 CONTEXT = None  # set by --context: the mode every attempt() of this run adds
 CONTEXT_ONLY = False  # set by --context-only: a function with a kept draft gets only context drafts
+FRONTENDS = 'both'
 
 
 def solve(addr):
     try:
-        return attempt(addr, CONTEXT, plain=not CONTEXT_ONLY)
+        return attempt(addr, CONTEXT, plain=not CONTEXT_ONLY, apply=False, frontends=FRONTENDS)
     except BaseException as e:  # one bad function must not stop the run
         return {"addr": f"{addr:08x}", "result": f"error: {str(e)[:80]}"}
 
@@ -342,7 +345,7 @@ def differs_by(res, addr=None):
     (a glued function may follow), so a draft that lost its tail (`--void`, a callee's result
     or argument dropped, dead stores) scored better than a complete one and was kept: that is
     what made 3.3 K of GT4's kept drafts shorter than their function."""
-    if res.returncode == 0 and "could not be checked" not in res.stdout:
+    if candidates.verdict(res.returncode, res.stdout + res.stderr)['state'] == 'match':
         return 0
     m = re.search(r"(\d+) of (\d+) instructions differ", res.stdout)
     if not m:
@@ -416,9 +419,12 @@ def stack_frame(addr, body):
 
 
 def prepared(addr, body, path):
-    """m2c's draft made compilable: the stack frame as one struct when its address is used,
-    exact floats, compiler errors fixed."""
-    body = stack_frame(addr, body)
+    """m2c's draft made compilable: local buffer for `sp`, exact floats, compiler errors fixed."""
+    # m2c names the address of a stack local `sp` when it cannot name the local itself: give it
+    # a local buffer so the draft compiles (the judge or the permuter takes it from there).
+    if re.search(r"\bsp\b", body.split("{", 1)[-1]):
+        body = re.sub(r"(^\w[^\n]*\bfunc_%08X\([^)]*\)\s*\{\n)" % addr,
+                      lambda m: m.group(1) + "    s8 sp[0x10];\n", body, count=1, flags=re.M)
     body = exact_floats(body)
     for _ in range(4):  # ee-gcc's error messages, fixed by rule until it compiles
         open(path, "w", newline="\n").write(PRELUDE + body)
@@ -428,10 +434,11 @@ def prepared(addr, body, path):
         if not fixed:
             break
         body = fixed
+    body = stack_frame(addr, body)
     return body
 
 
-def attempt(addr, context=None, out=OUT, plain=True):
+def attempt(addr, context=None, out=OUT, plain=True, apply=True, frontends='both', corrections_enabled=True):
     """The closest of m2c's drafts for one function, written to out/ADDR.c (src/ on a match).
     context: None, or 'protos'/'types' to add drafts made with the type database's context
     (tools/types_db.py: known prototypes, or prototypes plus globals and class layouts).
@@ -448,7 +455,8 @@ def attempt(addr, context=None, out=OUT, plain=True):
         old = strip_prelude(old)
         if old:
             res = judge(addr, path)
-            best = (differs_by(res, addr), old, res, "kept")
+            best = (differs_by(res, addr), old, res, "kept", '.c')
+    best_c = best
     gave_up = True
     for ee in namings:
         try:
@@ -470,11 +478,22 @@ def attempt(addr, context=None, out=OUT, plain=True):
                 rounds.append((prepared(addr, cbody, path), ctx))
         for text0, ctx in rounds:
             for how, text in variants(addr, text0, ee, ctx, context if ctx else None, out):
-                open(path, "w", newline="\n").write(PRELUDE + text)
-                res = judge(addr, path)
-                if best is None or differs_by(res, addr) < best[0]:
-                    best = (differs_by(res, addr), text, res, how)
-                if best[0] == 0:
+                for candidate in candidates.variants(addr, PRELUDE + text, frontends=frontends,
+                                                      corrections_enabled=corrections_enabled):
+                    trial = os.path.join(out, f'{addr:08x}' + candidate.extension)
+                    open(trial, 'w', newline='\n').write(candidate.source)
+                    if candidates.policy(candidate.source):
+                        continue
+                    res = judge(addr, trial)
+                    if candidate.extension == '.c' and (best_c is None or differs_by(res, addr) < best_c[0]):
+                        best_c = (differs_by(res, addr), candidate.source, res,
+                                  how + '+' + '+'.join(candidate.rules), '.c')
+                    if best is None or differs_by(res, addr) < best[0]:
+                        best = (differs_by(res, addr), candidate.source, res,
+                                how + '+' + '+'.join(candidate.rules), candidate.extension)
+                    if best[0] == 0:
+                        break
+                if best and best[0] == 0:
                     break
             if best and best[0] == 0:
                 break
@@ -482,27 +501,40 @@ def attempt(addr, context=None, out=OUT, plain=True):
             break
     if gave_up and best is None:
         return dict({"addr": f"{addr:08x}", "result": "m2c could not decompile it"}, **({"ctx": context} if context else {}))
-    score, text, res, how = best
+    if best is None:
+        return {'addr': f'{addr:08x}', 'result': 'does not compile'}
+    # Existing near-fix/permuter consumers read the nearest C draft. Preserve that
+    # contract for failures, while retaining a closer C++ draft separately.
+    if best[0] != 0 and best_c is not None:
+        if best[4] == '.cpp':
+            open(os.path.join(out, f'{addr:08x}.cpp'), 'w', newline='\n').write(best[1])
+        best = best_c
+    score, text, res, how, extension = best
     # keep the closest draft and its verdict for near_fix, the permuter and the report
-    open(path, "w", newline="\n").write(PRELUDE + text)
+    path = os.path.join(out, f'{addr:08x}' + extension)
+    source = text if text.startswith(PRELUDE) or 'extern "C" {' in text else PRELUDE + text
+    open(path, "w", newline="\n").write(source)
     row = {"addr": f"{addr:08x}", "how": how}
     if context:
         row["ctx"] = context  # so a chunked --retry --context-only run skips what it already tried
     if score == 0:
-        dest = os.path.join(ROOT, "src", f"func_{addr:08X}.c")
-        if not project.source_for(addr):
-            open(dest, "w", newline="\n").write(open(path).read())
-        return dict(row, result="match")
+        if apply:
+            accepted = candidates.promote(candidates.Candidate(addr, source, extension, (how,)), out)
+            if accepted['state'] not in ('match', 'existing'):
+                return dict(row, result='does not compile')
+        return dict(row, result="match", extension=extension, draft_path=path)
     m = re.search(r"(\d+) of (\d+) instructions differ \(original (\d+), mine (\d+)\)", res.stdout)
     if m:
         return dict(row, result="differs", differ=int(m.group(1)), of=int(m.group(2)),
-                    same_length=m.group(3) == m.group(4), full=full_length(addr))
+                    same_length=m.group(3) == m.group(4))
     return dict(row, result="does not compile")
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--jobs", type=int, default=3)
+    ap.add_argument("--jobs", type=int, choices=[1, 2], default=2)
+    ap.add_argument('--draft-only', action='store_true', help='judge candidates without writing src/')
+    ap.add_argument('--frontends', choices=['c', 'cpp', 'both'], default='both')
     ap.add_argument("--max-bytes", type=int, default=2048)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--retry", action="store_true", help="try earlier failures again")
@@ -519,7 +551,8 @@ def main():
                          "(half the work); functions whose last result already used this context are skipped")
     a = ap.parse_args()
     a_retry = a.retry
-    global CONTEXT, CONTEXT_ONLY
+    global CONTEXT, CONTEXT_ONLY, FRONTENDS
+    FRONTENDS = a.frontends
     CONTEXT, CONTEXT_ONLY = a.context, a.context_only
     os.makedirs(OUT, exist_ok=True)
     tried = set()
@@ -533,8 +566,9 @@ def main():
         # --retry: try the failures again (after the variants got better); with --context-only a
         # failure already retried with this context counts as tried (chunked runs resume)
         tried = {k for k, r in latest.items()
-                 if not (a_retry and r["result"] in ("differs", "does not compile", "m2c could not decompile it"))
-                 or (a.context_only and r.get("ctx") == a.context)} | recent
+                 if (a.draft_only or not r.get('draft_only')) and
+                 (not (a_retry and r["result"] in ("differs", "does not compile", "m2c could not decompile it"))
+                  or (a.context_only and r.get("ctx") == a.context))} | recent
     only = None
     if a.only:
         only = {int(x, 16) for x in open(a.only).read().split() if x.strip()}
@@ -563,9 +597,17 @@ def main():
     log = os.open(RESULTS, os.O_WRONLY | os.O_APPEND | os.O_CREAT)
     with ThreadPoolExecutor(a.jobs) as pool:
         for i, r in enumerate(pool.map(solve, todo), 1):
+            if a.draft_only:
+                r['draft_only'] = True
+            if r['result'] == 'match' and not a.draft_only:
+                addr = int(r['addr'], 16)
+                candidate = candidates.Candidate(addr, open(r['draft_path']).read(), r['extension'], (r['how'],))
+                promoted = candidates.promote(candidate, OUT)
+                if promoted['state'] not in ('match', 'existing'):
+                    r['result'] = 'does not compile'
             os.write(log, (json.dumps(r) + "\n").encode())
             counts[r["result"]] = counts.get(r["result"], 0) + 1
-            if r["result"] == "match":
+            if r["result"] == "match" and not a.draft_only:
                 with open(autoloop.LOG, "a") as f:
                     f.write(json.dumps({"addr": r["addr"], "matched": True, "effort": "m2c",
                                         "time": time.strftime("%Y-%m-%d %H:%M:%S")}) + "\n")
