@@ -420,11 +420,7 @@ def stack_frame(addr, body):
 
 def prepared(addr, body, path):
     """m2c's draft made compilable: local buffer for `sp`, exact floats, compiler errors fixed."""
-    # m2c names the address of a stack local `sp` when it cannot name the local itself: give it
-    # a local buffer so the draft compiles (the judge or the permuter takes it from there).
-    if re.search(r"\bsp\b", body.split("{", 1)[-1]):
-        body = re.sub(r"(^\w[^\n]*\bfunc_%08X\([^)]*\)\s*\{\n)" % addr,
-                      lambda m: m.group(1) + "    s8 sp[0x10];\n", body, count=1, flags=re.M)
+    body = stack_frame(addr, body)
     body = exact_floats(body)
     for _ in range(4):  # ee-gcc's error messages, fixed by rule until it compiles
         open(path, "w", newline="\n").write(PRELUDE + body)
@@ -434,7 +430,6 @@ def prepared(addr, body, path):
         if not fixed:
             break
         body = fixed
-    body = stack_frame(addr, body)
     return body
 
 
