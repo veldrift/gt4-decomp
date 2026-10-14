@@ -96,3 +96,57 @@ there are 27,701 unique source addresses, 27,007 linked functions, and no orphan
 or duplicate sources. Evidence is saved as `build/cardata-more/full-report.json`
 and `full-build-both.log`. No compiler tooling or shared header changes were
 needed for this continuation.
+
+## Garage range continuation
+
+Three additional garage methods now pass both matching interfaces and direct
+resolved-object comparison. Each object has exactly one function and no
+unresolved relocations.
+
+| Address | Method | Instructions | Body / span bytes |
+| --- | --- | --- | --- |
+| `0014AAD8` | `MCarGarage__getLSDRange` | 456 | 1,824 / 1,824 |
+| `0014B478` | `MCarGarage__getSuspensionRange` | 1,008 | 4,032 / 4,032 |
+| `00149538` | `MCarGarage__getGearRange` | 643 | 2,572 / 2,576 |
+
+These recover 8,428 body bytes. All use the established
+`ee-gcc2.96-no-strict-aliasing` profile, native handle constructors and
+destructors, and the existing reference-counted assignment behavior.
+
+The important source distinction is temporary lifetime. An inline context
+lookup owns and releases its garage handle before the result array is created.
+Inline field exporters own one named integer handle each, allowing the compiler
+to reuse its sixteen-byte return area. LSD exports eighteen byte values from
+six four-byte records. Suspension exports four unsigned halfwords and thirty-eight
+bytes into a forty-two-element array.
+
+Gear range exports twenty-three integers. It retains the native specification
+copy, optional virtual integer argument, signed-short conversion, range
+calculation, and zero-fill path. Its computed short-array values are read after
+the element lookup, in separate blocks owning named integer handles. Passing
+the arrays through exporter pointer arguments keeps an extra address register
+alive; direct local reads recover the original scheduling and stack reuse.
+The last four span bytes are alignment padding, verified by the full build.
+
+The tuner list remains two instructions away. Ten fresh hypotheses did not
+close the independent preheader scheduling difference, and the pass was stopped
+at the project skill's per-function limit. The native 64-bit identifier ABI is
+preserved. The canonical draft is `build/cardata-finish/tuner-seed.cpp`; its
+compiler dumps are under `build/cardata-finish/rtl/`. The second scheduling pass
+places loop-counter initialization ahead of the empty-string-rep low-address
+instruction; the original places that address instruction first. No tuner
+near-match has been added to `src/`.
+
+Engine-curve drafts are also retained without promotion. A future attempt can
+apply the now-proven scoped native-handle approach to the curve computation and
+graph export lifetimes instead of explicit overlaid scratch slots.
+
+All twenty-two new diary records and the accepted source files are preserved.
+Proofs, drafts, compiler dumps, and full-build evidence are under ignored
+`build/cardata-finish/`.
+
+The full build at `2026-10-14T14:25:25Z` passes `.text OK` and `.data OK`,
+with both original SHA-1 hashes listed above. All three new methods are
+`linked` from source. The audit counts 27,704 unique source addresses and
+27,010 linked functions, with no orphan or duplicate sources. Evidence is
+saved as `build/cardata-finish/full-report.json` and `full-build.log`.
