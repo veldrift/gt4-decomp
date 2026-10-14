@@ -43,3 +43,19 @@ cache so previous workspaces and their caches are preserved.
 
 The existing matching-tool regression suite passes all 14 tests. Source audit
 finds 27,699 unique source addresses with no orphan or duplicate files.
+
+## Full-build verification
+
+The complete validation snapshot passes `.text OK` and `.data OK`:
+
+- Text SHA-1: `28422e7e20a6298224294255355487b9a22cef31`.
+- Data SHA-1: `c28c833f9716467545bf362f321e9acc876c3603`.
+- Both new functions have `linked` status in `build/full/report.json`, as do
+  all 12 other sources added relative to the wheel-helper branch.
+- 27,005 functions are linked from source. Existing sources excluded by the
+  full-link checker retain the project's original-assembly fallback.
+
+The local evidence files are `build/cardata-next-ten/full-report.json` and
+`full-build.log`. The validation snapshot has no Git metadata, so the report's
+commit field is null; it validates the source state committed locally in
+`c2588777c`, following merge cleanup `f13286ea0`.
