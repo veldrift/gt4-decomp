@@ -189,3 +189,50 @@ with both original hashes. Both new functions are `linked` from source.
 There are 27,706 unique source addresses and 27,012 linked functions, with
 no orphan or duplicate sources. Evidence is saved as
 `build/cardata-finish/full-report-more.json` and `full-build-more.log`.
+
+## Scored garage-array sorters after upstream synchronization
+
+The three remaining scored-array sort helpers now pass the judge, worker
+interface, and direct resolved-object comparison. Each object contains exactly
+one function and no unresolved relocations.
+
+| Address | Score key | Instructions | Body / span bytes |
+| --- | --- | --- | --- |
+| `001479B8` | Integer garage property from `00145EF0` | 212 | 848 / 848 |
+| `001475A8` | Float car-data property from `0043DDB0` | 215 | 860 / 864 |
+| `00146F38` | Normalized car name, represented by a vector of signed shorts | 367 | 1,468 / 1,472 |
+
+Together these recover 3,176 body bytes. Their native method names remain
+unknown, so the address names are retained. All use the existing SGI STL
+profile and headers, with the game's allocator and native fill, copy, sort,
+and array copy-back helpers declared at their original addresses.
+
+The allocator is stateless. Its empty class still places the vector's three
+pointers at offsets 4, 8, and 12. Giving it an invented four-byte state let
+the compiler reuse its temporary for later GarageRef and ArrayRef objects;
+removing that state recovered the original stack layout and reduced the
+integer sorter's residual to six instructions. A native inline score factory
+returning the intermediate object then recovered the order of the two
+temporary addresses. Using the actual SGI `less<T>` predicate and the
+const-input uninitialized-copy specialization preserves the native sort
+and copy scheduling.
+
+The scored element owns its GarageRef as a member, preserving the native
+complete-object destructor flag. The integer and float forms have scalar
+scores. The name form owns a short vector, with its separate native heap,
+name decoding and normalization routines, guarded self-assignment, and all
+three temporary-vector copy/deallocation sequences intact.
+
+The fresh upstream gear-ratio source supplied allocator and output-layout
+clues for the engine-curve method, but those attempts remain unmatched.
+Database lookup and initialization drafts are also retained without
+promotion. All twenty-three new attempt records are appended to the diary.
+Drafts and direct proof are saved under ignored `build/cardata-post-sync/`.
+The validation snapshot is `/home/dev/gt4-next-ten-upstream-sync`, with text
+line endings normalized to LF before compilation.
+
+The full build at `2026-10-14T18:44:56Z` passes `.text OK` and `.data OK`
+with both original hashes. All three new sorters are `linked` from source.
+There are 28,335 unique source addresses and 27,634 linked functions, with
+no orphan or duplicate sources. Evidence is saved as
+`build/cardata-post-sync/full-report.json` and `full-build.log`.
