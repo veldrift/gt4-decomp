@@ -267,3 +267,41 @@ and identifier-normalization hypotheses did not resolve the smaller helpers.
 Near matches remain outside `src/`. Own cumulative attempt limits were reached
 for the table initializer, tuner-code extractor, and specification-copy helper;
 the packed routine also reached ten hypotheses in this pass.
+
+## Other remaining functions
+
+The following pass investigated three functions untouched in the preceding
+eight-helper pass: `001308C8` (PickUpEnemyCars), `00443518` (language-table
+loading), and `00445B88` (specification comparison). Thirty hypotheses and
+three deferrals were appended to the diary. None reached MATCH; no function
+source changed. Drafts, original disassembly, and complete judge comparisons
+are retained under ignored `build/cardata-untouched/`.
+
+The older PickUpEnemyCars drafts were located under
+`/home/dev/gt4-decomp/build/auto/mcardata/manual/`. The best baseline differs
+in ten of 487 instructions. Giving the candidate output cursor a lifetime
+inside a guarded nonempty-list phase, with a do-loop, recovers the original
+initial branch and reduces this to eight. Declaring the library qsort call
+nonthrowing then recovers the original non-likely backedge, leaving seven.
+The entire candidate loop now matches. The remaining differences are a
+three-instruction qsort argument rotation, a two-instruction subtraction/base
+copy swap before the lower score search, and a two-instruction label/length
+argument copy swap before string replacement. Native string size types, pure
+strlen, standard qsort source naming, and explicit lower-score update do not
+resolve these. The saved best draft is `pickup-qsort-nothrow.cpp`; future work
+should inspect scheduling RTL rather than repeat those source forms.
+
+The loader's primary directory pointer remains live across all three phases,
+with a separate copied directory pointer in the secondary phase. Its final
+table pointer is at object offset `0x1E4`, after an unknown word at `0x1E0`.
+Its secondary signed-byte category must be snapshotted before the predicate
+call and retained for table addressing. Fresh drafts still differ in register
+allocation and preheader/address scheduling, and do not improve on the old
+reported twelve-aligned-difference result, whose draft was not found.
+
+The comparison routine's twenty-four input/row field pairs were extracted
+directly from consecutive native input and stack loads. Its final sentinel
+path has no separate return-value assignment. Callers use the returned value,
+so a void signature would be incorrect. Missing-return hypotheses were kept
+as diagnostic drafts only; neither those nor fully defined false-return forms
+match. No source with an ambiguous fallthrough return was promoted.
