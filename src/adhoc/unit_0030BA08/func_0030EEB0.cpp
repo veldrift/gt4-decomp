@@ -25,7 +25,7 @@ struct Vec {
 extern Rep D_00659FA8;
 
 extern "C" void func_002FFC58(s32, s32);
-extern "C" const char *func_003166D8(s32);
+extern "C" const char *HSymID__GetName(s32);
 extern "C" s32 func_0057F260(const char *);
 extern "C" char *func_005C2560(Rep *);
 extern "C" void *func_005C2630(Str *, s32, s32, const char *, s32);
@@ -51,7 +51,7 @@ extern "C" void func_0030EEB0(Vec *arg0, s32 arg1) {
         ps = &s;
         for (i = 0; i < n; i++) {
             s32 *e = arg0->begin + i;
-            const char *s0 = func_003166D8(*e);
+            const char *s0 = HSymID__GetName(*e);
             {
                 Rep *r = &D_00659FA8;
                 char *d;

@@ -11,7 +11,7 @@ extern "C" void func_00204558(void *arg0, s32 arg1);
 extern "C" void func_003285A8(s32 p);
 extern "C" void func_003285F8(s32 p);
 
-extern "C" void func_0012A268(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MRaceCourseMapFace__get_course_color(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
     s32 buf0[4];
     s32 buf2[4];
     s32 *p_s2;

@@ -19,7 +19,7 @@ extern "C" void func_002FC870(void *arg0, s32 arg1);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_00133288(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MCalendar__getElapsedDate(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 v_s1;
     s32 newVal;

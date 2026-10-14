@@ -19,7 +19,7 @@ static inline void vcall20(VObj *o, s32 *ret, s32 n, s32 *args) {
 /* mScriptWatcher__virtual_49: if the handler at +0x20 is set, builds a 1-element
    argument list from +0x1C, invokes the handler (vtable slot 0xA8) into a result,
    destroys the result and the argument list, and bumps the counter at +0x24. */
-extern "C" void func_002CEB78(Obj *self) {
+extern "C" void mScriptWatcher__virtual_49(Obj *self) {
     s32 args[4];
     s32 tmp[4];
     s32 v1;

@@ -29,7 +29,7 @@ static inline f32 vcall_60(Obj *o) {
     return e->fn((char *)o + e->delta);
 }
 
-extern "C" void func_0014EB80(s32 *arg0, void *arg1, s32 arg2, Obj **arg3) {
+extern "C" void MCarGarage__get_dirtiness(s32 *arg0, void *arg1, s32 arg2, Obj **arg3) {
     s32 buf[4];
     s32 newVal;
     s32 oldVal;

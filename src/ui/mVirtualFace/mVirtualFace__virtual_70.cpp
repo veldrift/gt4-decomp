@@ -6,7 +6,7 @@ struct Obj { char pad0[0xA0]; VObj *handler; };
 struct VEntryA8 { s16 delta; s16 index; void (*fn)(void *, s32 *, s32, void *); };
 struct VEntry2E8 { s16 delta; s16 index; void (*fn)(void *, s32); };
 
-extern "C" void func_002638E0(void *a0, s32 a1, s32 a2);
+extern "C" void mWidget__virtual_70(void *a0, s32 a1, s32 a2);
 extern "C" void func_0030BB18(void *h);
 extern "C" void func_0022AC98(void *h, s32 *val);
 extern "C" void func_0022ACC8(void *h, s32 flags);
@@ -27,16 +27,16 @@ static inline void vcall_A8(VObj *o, s32 *ret, s32 n, void *args) {
     e->fn((char *)o + e->delta, ret, n, args);
 }
 
-/* mVirtualFace__virtual_70: calls func_002638E0, then if the handler at self+0xA0 and arg2
+/* mVirtualFace__virtual_70: calls mWidget__virtual_70, then if the handler at self+0xA0 and arg2
    are set, builds two Values (arg1 and self), invokes the handler (vtable slot 0xA8), calls
    slot 0x2E8 on the returned object with arg1, and releases the temporaries. */
-extern "C" void func_002E7F60(void *arg0, s32 arg1, s32 arg2) {
+extern "C" void mVirtualFace__virtual_70(void *arg0, s32 arg1, s32 arg2) {
     s32 newVal;
     s32 oldVal;
     Obj *self = (Obj *)arg0;
     VObj **ph = &self->handler;
 
-    func_002638E0(arg0, arg1, 0);
+    mWidget__virtual_70(arg0, arg1, 0);
     if (*ph != 0 && arg2 != 0) {
         Value args[2];
         s32 tmp[4];

@@ -14,7 +14,7 @@ extern "C" void func_003285F8(RefCounter *p);
 extern "C" void func_002FC870(void *arg0, int arg1);
 extern "C" void func_001DC5F8(void *arg0, int arg1);
 
-extern "C" void func_001E2E70(s32 *arg0, void *arg1, s32 arg2) {
+extern "C" void MNetwork__leaveGame(s32 *arg0, void *arg1, s32 arg2) {
     void *h[4];
     s32 buf0[4];
     s32 *p_s2;

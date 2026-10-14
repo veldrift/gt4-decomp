@@ -45,17 +45,17 @@ extern "C" void func_0032B5C0(SS *arg0);
 extern "C" SS *func_0032B808(SS *arg0, const char *arg1);
 extern "C" SS *func_0032B658(SS *self, SS *str);
 extern "C" Str *func_0032B8C0(SS *arg0);
-extern "C" const char *func_00323CD8(SV *arg0);
+extern "C" const char *hValue__getName(SV *arg0);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" char *func_005C2560(Rep *r);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 
-extern "C" Str *func_003118B8(Str *arg0, SV *arg1) {
+extern "C" Str *hStaticValue__toString(Str *arg0, SV *arg1) {
     SS ss;
     SS tmp;
     func_0032B5C0(&ss);
     SS *t = func_0032B808(&ss, D_0069E100);
-    const char *nm = func_00323CD8(arg1);
+    const char *nm = hValue__getName(arg1);
     func_0032B808(func_0032B808(t, nm), D_0069E110);
     {
         Val *v = arg1->val;

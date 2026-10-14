@@ -48,7 +48,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_002119B0(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MManager__getPrototype(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     Str s2;

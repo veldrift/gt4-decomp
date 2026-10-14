@@ -32,7 +32,7 @@ struct func_002F8530_arg0 {
     f32 unk10;
 };
 
-extern "C" void func_002F8530(s32 *arg0, void *arg1) {
+extern "C" void hFloat__virtual_33(s32 *arg0, void *arg1) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

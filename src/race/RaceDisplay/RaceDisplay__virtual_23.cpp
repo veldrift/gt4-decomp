@@ -20,17 +20,17 @@ struct Sub {
     s32 unk1C;
 };
 
-extern "C" s32 func_003A1628(Obj *arg0);
+extern "C" s32 RaceDisplay__is_play_mode(Obj *arg0);
 extern "C" void func_003A3AA8(s32 arg0, f32 fparg0);
 extern "C" s32 func_003A4A78(void *arg0);
 extern "C" void func_003AE538(char *arg0, f32 fparg0, f32 fparg1);
 
-extern "C" void func_003A22A0(Obj *arg0, Src *arg1) {
+extern "C" void RaceDisplay__virtual_23(Obj *arg0, Src *arg1) {
     s32 temp_s1;
     Sub *temp_v1;
     s32 r2;
 
-    if (func_003A1628(arg0) == 0) {
+    if (RaceDisplay__is_play_mode(arg0) == 0) {
         temp_s1 = arg1->unk8;
         if (temp_s1 != arg0->unk50) {
             func_003A3AA8((s32)((char *)arg0 + 0x1170), 0x1.6p3f);

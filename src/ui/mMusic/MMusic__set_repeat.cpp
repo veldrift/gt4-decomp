@@ -11,7 +11,7 @@ static inline s32 vcall_58(char *o) {
 extern "C" void func_002C28D0(void *arg0, void *arg1);
 extern "C" void func_002C2878(void *arg0, s32 arg1);
 
-extern "C" void func_002C3928(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MMusic__set_repeat(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 v_s0;
     char *w;

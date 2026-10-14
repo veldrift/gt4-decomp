@@ -13,7 +13,7 @@ struct A {
     s32 pad[3];
 };
 
-extern "C" void func_00195A38(void *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MPhotoMapWindow__set_view_angle(void *arg0, void *arg1, s32 arg2, char **arg3) {
     A a;
     float v = vcall_60(*arg3);
     func_00192A58(&a, arg1);

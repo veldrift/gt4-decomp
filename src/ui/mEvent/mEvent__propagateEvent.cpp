@@ -16,7 +16,7 @@ struct Obj {
 
 extern "C" s32 func_0025C2A0(S *arg0);
 
-extern "C" s32 func_0028E858(s32 arg0, void *arg1, void *arg2) {
+extern "C" s32 mEvent__propagateEvent(s32 arg0, void *arg1, void *arg2) {
     char *o = (char *)arg2;
     s32 r = 1;
     while (o != 0) {

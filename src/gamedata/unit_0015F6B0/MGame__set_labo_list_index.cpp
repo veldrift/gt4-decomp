@@ -11,7 +11,7 @@ static inline s32 vcall_166CC8(char *o) {
 extern "C" void func_0015F3E0(void *arg0, void *arg1);
 extern "C" void func_0015F388(void *arg0, s32 arg1);
 
-extern "C" void func_00166CC8(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MGame__set_labo_list_index(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     char *o;
     char *w;

@@ -17,7 +17,7 @@ extern "C" void func_00576788(s32 a0);
 extern "C" void func_005767C0(s32 a0);
 extern "C" void func_00109948(struct Obj *self);
 
-extern "C" void func_00101308(struct Obj *self)
+extern "C" void GranTurismo4__GameObjectPS2__internal_update(struct Obj *self)
 {
     s32 zero;
     s32 flag = 0;

@@ -30,15 +30,15 @@ struct MButtonPressEvent {
 };
 
 extern char D_0069A9F0[];
-extern char D_006695C0[];
+extern char mButtonPressEvent__vtable[];
 extern "C" void *func_00326750(s32, s32, void *);
-extern "C" void *func_0026BB40(void *, s32, s32);
+extern "C" void *mWindowEvent__structor_0(void *, s32, s32);
 extern "C" int func_0027F2F0(void *, void *);
 extern "C" void func_00280630(void *, s32);
 extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
 
-extern "C" void func_00280760(s32 *arg0) {
+extern "C" void MButtonPressEvent__global_00833620(s32 *arg0) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s1;
@@ -50,10 +50,10 @@ extern "C" void func_00280760(s32 *arg0) {
     p_s1 = buf1;
     ev = (struct MButtonPressEvent *)func_00326750(0x30, 0x4, D_0069A9F0);
     v_s0 = (s32)ev;
-    func_0026BB40(ev, 0, 0);
+    mWindowEvent__structor_0(ev, 0, 0);
     ev->flag20 = 0;
     ev->f24 = 0;
-    ev->vtbl = D_006695C0;
+    ev->vtbl = mButtonPressEvent__vtable;
     ev->f28 = zero;
     ev->f2C = zero;
     buf1[0] = v_s0;

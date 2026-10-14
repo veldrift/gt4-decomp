@@ -9,7 +9,7 @@ extern "C" void func_003285A8(s32 p);
 extern "C" void func_003285F8(s32 p);
 extern "C" f32 func_00579398(f32 fparg0);
 
-extern "C" void func_002CBA28(s32 *arg0, s32 unused1, s32 arg2, s32 arg3) {
+extern "C" void MRandom__getValue(s32 *arg0, s32 unused1, s32 arg2, s32 arg3) {
     s32 buf0[4];
     s32 s0;
     s32 s1;

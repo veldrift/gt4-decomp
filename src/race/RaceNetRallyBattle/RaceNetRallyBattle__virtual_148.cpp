@@ -14,17 +14,17 @@ struct VEntry2 {
 };
 
 struct func_00426A08_arg0;
-extern "C" s32 func_00426A08(struct func_00426A08_arg0 *arg0);
+extern "C" s32 RaceInput__getButtonDown(struct func_00426A08_arg0 *arg0);
 
 struct Obj {
     char pad0[0x64];
     char *vtbl;
 };
 
-extern "C" void func_00339828(Obj *self) {
+extern "C" void RaceNetRallyBattle__virtual_148(Obj *self) {
     VEntry1 *e1 = (VEntry1 *)(self->vtbl + 0x230);
     void *o = e1->fn((char *)self + e1->delta);
-    s32 r = func_00426A08((struct func_00426A08_arg0 *)o);
+    s32 r = RaceInput__getButtonDown((struct func_00426A08_arg0 *)o);
     if (r & 0x40) {
         VEntry2 *e2 = (VEntry2 *)(self->vtbl + 0x2B8);
         e2->fn((char *)self + e2->delta, 2, 0.0f, 0.0f);

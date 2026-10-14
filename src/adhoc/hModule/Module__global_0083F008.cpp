@@ -20,7 +20,7 @@ struct B {
 };
 static inline int get(B *b) { return b->v[0]; }
 
-extern "C" void func_00304A80(void *arg0, void *arg1, int count, void *name)
+extern "C" void Module__global_0083F008(void *arg0, void *arg1, int count, void *name)
 {
     if (count == 1) {
         A a;

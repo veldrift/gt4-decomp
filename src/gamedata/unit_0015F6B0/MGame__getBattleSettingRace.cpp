@@ -3,7 +3,7 @@ typedef int s32;
 struct RefCounter;
 
 extern "C" void func_0015F3E0(void *arg0, void *arg1);
-extern "C" s32 func_00575DC8(s32 arg0);
+extern "C" s32 malloc(s32 arg0);
 extern "C" void func_00200140(void *arg0, void *arg1, void *arg2);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
@@ -29,7 +29,7 @@ struct BS_src {
     s32 u1108;
 };
 
-extern "C" void func_00161F28(s32 *arg0, void *arg1) {
+extern "C" void MGame__getBattleSettingRace(s32 *arg0, void *arg1) {
     s32 buf0[4];
     s32 buf1[4];
     s32 v_s0;
@@ -39,7 +39,7 @@ extern "C" void func_00161F28(s32 *arg0, void *arg1) {
     s32 oldVal;
     func_0015F3E0(buf0, arg1);
     v_s0 = *(s32 *)((char *)buf0[0] + 0x10);
-    v_s1 = func_00575DC8(0x18);
+    v_s1 = malloc(0x18);
     p_s2 = buf1;
     BS_src *src = (BS_src *)(0x38cb0 + v_s0);
     BS_dst *d = (BS_dst *)v_s1;

@@ -5,13 +5,13 @@ struct Obj {
     int unk14;
 };
 
-extern "C" void func_003B4F18(Obj *arg0, struct func_003B4F18_arg1 *arg1);
+extern "C" void RaceEntryCar__setPlayerSpec(Obj *arg0, struct func_003B4F18_arg1 *arg1);
 extern "C" void func_005F31C0(Obj *arg0, int arg1);
 
-extern "C" void func_00335AD8(char *arg0, Obj *arg1) {
+extern "C" void RaceLanBattleInformation__virtual_12(char *arg0, Obj *arg1) {
     int n = arg1->unk14;
     if (n >= 0 && n < *(int *)(arg0 + 0x118)) {
-        return func_003B4F18(arg1, (struct func_003B4F18_arg1 *)(arg0 + n * 0x190 + 0x130));
+        return RaceEntryCar__setPlayerSpec(arg1, (struct func_003B4F18_arg1 *)(arg0 + n * 0x190 + 0x130));
     }
     func_005F31C0((Obj *)arg0, n);
 }

@@ -1,0 +1,2 @@
+struct S{int pad,capacity,position,mode;char*cursor;int remain,pad2,err,failed;};extern "C" void func_0046E8E0(S*);extern "C" void*func_005A4724(void*,const void*,int);
+extern "C" void func_0046EB40(S*self,void*out,int n){if(!self->failed){if(self->mode!=7){func_0046E8E0(self);self->mode=7;}if(self->capacity<self->position+n){self->err=1;self->failed=1;return;}func_005A4724(out,self->cursor,n);self->cursor+=n;int pos=self->position+n;self->position=pos;if(pos>=self->capacity)self->remain=0;}}

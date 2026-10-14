@@ -28,7 +28,7 @@ extern s32 D_00620178[];
 extern s32 D_0083C5D0;
 
 extern "C" s32 func_00324FF0(void *arg0);
-extern "C" s32 *func_002F1CB0(s32 *arg0);
+extern "C" s32 *HBuiltinModule__Get(s32 *arg0);
 extern "C" void func_003041B8(void *arg0, int arg1);
 extern "C" void func_003069F8(void *arg0, void *arg1, s32 arg2);
 extern "C" void *func_0030D928(void *ret);
@@ -61,7 +61,7 @@ extern "C" void func_002EC530(void *arg0) {
         for (; p != 0; p = p->next) {
             p->f1();
         }
-        func_002F1CB0(buf0);
+        HBuiltinModule__Get(buf0);
 
         s32 *pslot = (s32 *)((char *)arg0 + 0x38);
         if ((void *)pslot != (void *)buf0) {

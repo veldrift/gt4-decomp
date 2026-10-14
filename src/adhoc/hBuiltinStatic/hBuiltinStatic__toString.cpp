@@ -36,7 +36,7 @@ extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 extern "C" void func_0057DA20(int arg0, int arg1, ...);
 
-extern "C" Str *func_0032E548(Str *arg0, Obj *arg1) {
+extern "C" Str *hBuiltinStatic__toString(Str *arg0, Obj *arg1) {
     SS ss;
     char buf[0x80];
     func_0032B5C0(&ss);

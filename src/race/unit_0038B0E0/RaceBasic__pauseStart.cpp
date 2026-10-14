@@ -29,21 +29,21 @@ struct Obj_428 {
     s32 fE418;
 };
 
-extern "C" void func_0038B798(Obj_428 *arg0, s32 arg1);
-extern "C" void func_00396A90(void *self, s32 on);
-extern "C" void func_003C6570(void *arg0, s32 arg1);
+extern "C" void RaceBasic__setPause(Obj_428 *arg0, s32 arg1);
+extern "C" void CourseData__setPause(void *self, s32 on);
+extern "C" void PauseBase__setTimeLimit(void *arg0, s32 arg1);
 
-extern "C" void func_0038B428(Obj_428 *self, s32 arg1) {
+extern "C" void RaceBasic__pauseStart(Obj_428 *self, s32 arg1) {
     s32 v = arg1;
     if (v == 0) {
         v = *(s32 *)((char *)self + 0xE400);
     }
     *(s32 *)((char *)self + 0xE418) = v;
     if (v != 0) {
-        func_003C6570((void *)v, self->f6C->fD0);
-        func_0038B798(self, 1);
+        PauseBase__setTimeLimit((void *)v, self->f6C->fD0);
+        RaceBasic__setPause(self, 1);
         VEntry_428 *e = (VEntry_428 *)(self->vt + 0x2D0);
         e->fn((char *)self + e->delta);
-        func_00396A90(self->f6C->p80->p4, 1);
+        CourseData__setPause(self->f6C->p80->p4, 1);
     }
 }

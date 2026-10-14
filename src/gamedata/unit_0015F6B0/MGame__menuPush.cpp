@@ -47,7 +47,7 @@ static inline const char *c_str(Str *s) {
     return s->p;
 }
 
-extern "C" void func_00165EE0(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
+extern "C" void MGame__menuPush(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
     if (arg2 > 0) {
         s32 buf[8];
         Str s;

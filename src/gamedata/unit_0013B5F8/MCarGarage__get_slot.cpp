@@ -43,7 +43,7 @@ extern "C" void func_002FE278(void *, s32);
 extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
 
-extern "C" void func_00140C70(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MCarGarage__get_slot(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s2;

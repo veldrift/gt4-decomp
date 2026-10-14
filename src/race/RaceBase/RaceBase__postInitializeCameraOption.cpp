@@ -19,13 +19,13 @@ struct Obj_C00 {
 
 extern char *D_00622F4C;
 
-extern "C" void func_003743B8(char *arg0, s32 arg1, s32 arg2);
-extern "C" int func_00388D40(int a);
+extern "C" void CameraSys__CameraManager__initOptionInfo_mount(char *arg0, s32 arg1, s32 arg2);
+extern "C" int RaceBase__getCameraMountModeFromOption(int a);
 
-extern "C" void func_00388C00(Obj_C00 *self) {
+extern "C" void RaceBase__postInitializeCameraOption(Obj_C00 *self) {
     if (self->fCD0 == 0 && self->fCC8 < 2) {
         VEntry_C00 *e = (VEntry_C00 *)(self->vt + 0xD0);
         char *r = e->fn((char *)self + e->delta, 0);
-        func_003743B8(r, 0, func_00388D40(*(s32 *)(D_00622F4C + 0x39DA4)));
+        CameraSys__CameraManager__initOptionInfo_mount(r, 0, RaceBase__getCameraMountModeFromOption(*(s32 *)(D_00622F4C + 0x39DA4)));
     }
 }

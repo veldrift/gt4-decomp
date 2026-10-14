@@ -1,4 +1,4 @@
-/* mTextBoxFace__structor_0: constructor body. Base constructor func_002D4830 (returns
+/* mTextBoxFace__structor_0: constructor body. Base constructor mScrollable__structor_0 (returns
  * this), vtable store at +4, a 16-byte local array passed to func_002270F8, func_00246F58
  * on the member at +0xC0, a 0x80-iteration loop filling the pointer table at +0x12C from the
  * nil string rep D_00659FA8 (grab: clone when selfish, else ref++ and data pointer), then
@@ -6,15 +6,15 @@
 typedef int s32;
 
 struct StringRep;
-extern "C" void *func_002D4830(void *self);
+extern "C" void *mScrollable__structor_0(void *self);
 extern "C" void func_002270F8(void *a, s32 *buf);
 extern "C" void func_00246F58(void *self);
 extern "C" void func_00265FB8(void *self, s32 arg1);
 extern "C" char *func_005C2560(StringRep *src);
 extern char D_00659FA8[];
-extern char D_006725E8[];
+extern char mTextBoxFace__vtable[];
 
-extern "C" void func_002E4D60(void *arg0) {
+extern "C" void mTextBoxFace__structor_0(void *arg0) {
     char *self = (char *)arg0;
     char **w = (char **)(self + 0x12C);
     s32 n = 0x7F;
@@ -24,8 +24,8 @@ extern "C" void func_002E4D60(void *arg0) {
     char *s1;
     char *v;
 
-    func_002D4830(arg0);
-    *(s32 *)(self + 4) = (s32)D_006725E8;
+    mScrollable__structor_0(arg0);
+    *(s32 *)(self + 4) = (s32)mTextBoxFace__vtable;
     buf[0] = 0;
     func_002270F8(self + 0xBC, buf);
     func_00246F58(s4);

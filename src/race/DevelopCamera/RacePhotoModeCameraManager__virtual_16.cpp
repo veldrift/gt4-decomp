@@ -19,10 +19,10 @@ struct Obj {
     s32 f9bc;
 };
 
-extern "C" float func_0044F460(void);
+extern "C" float SceneCameraBase__virtual_16(void);
 
-extern "C" float func_00371E30(Obj *arg0) {
-    float r = func_0044F460();
+extern "C" float RacePhotoModeCameraManager__virtual_16(Obj *arg0) {
+    float r = SceneCameraBase__virtual_16();
     Obj *self = arg0;
     s32 a = self->f9bc;
     VEntryA *e = (VEntryA *)(self->vtbl + 0xD8);

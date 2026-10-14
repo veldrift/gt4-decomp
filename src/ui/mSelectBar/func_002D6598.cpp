@@ -22,8 +22,8 @@ struct mSelectBox {
     f32 unkEC;      /* 0xEC */
 };
 
-extern "C" f32 func_0025B370(struct C *arg0);
-extern "C" f32 func_0025B3D0(struct C *arg0);
+extern "C" f32 mWidget__getWindowW(struct C *arg0);
+extern "C" f32 mWidget__getWindowH(struct C *arg0);
 extern "C" f32 func_002D4980(Obj *arg0);
 extern "C" s32 func_0057CE60(Obj *arg0);
 
@@ -48,9 +48,9 @@ extern "C" f32 func_002D6598(struct mSelectBox *arg0) {
         f21 = arg0->unkE8;
     }
     if (t == 0) {
-        f20 = func_0025B370((struct C *)arg0);
+        f20 = mWidget__getWindowW((struct C *)arg0);
     } else {
-        f20 = func_0025B3D0((struct C *)arg0);
+        f20 = mWidget__getWindowH((struct C *)arg0);
     }
     f22 = f21 + func_002D4980((Obj *)arg0);
     sub = (Obj *)((char *)arg0 + 0xBC);

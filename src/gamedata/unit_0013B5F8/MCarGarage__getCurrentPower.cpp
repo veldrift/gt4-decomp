@@ -33,7 +33,7 @@ extern "C" void func_003285F8(RefCounter *);
 extern "C" void func_002FC870(void *, s32);
 extern "C" void func_0013BD68(void *, s32);
 
-extern "C" void func_001412A8(s32 *arg0) {
+extern "C" void MCarGarage__getCurrentPower(s32 *arg0) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s2;

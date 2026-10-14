@@ -23,7 +23,7 @@ struct Func002E4390Obj
   s32 m1C;
   s32 m20;
 };
-extern void func_002E4390(struct Func002E4390Obj *arg0)
+extern void mTextActor__update(struct Func002E4390Obj *arg0)
 {
   struct Func002E4390Obj *self = arg0;
   s32 a3 = self->m20;

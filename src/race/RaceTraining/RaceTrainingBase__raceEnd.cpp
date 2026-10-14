@@ -2,7 +2,7 @@ typedef short s16;
 typedef int s32;
 typedef float f32;
 
-extern "C" void func_0033CCF0(struct RaceTrainingBase *arg0);
+extern "C" void RacePS2Base__raceEnd(struct RaceTrainingBase *arg0);
 
 struct VEntry {
     s16 delta;
@@ -24,11 +24,11 @@ struct RaceTrainingBase__raceEnd_arg0 {
     s32 unk125F8;
 };
 
-extern "C" void func_003ED188(struct RaceTrainingBase *arg0) {
+extern "C" void RaceTrainingBase__raceEnd(struct RaceTrainingBase *arg0) {
     if ((((struct RaceTrainingBase__raceEnd_arg0 *)arg0)->unk125F8 != 0 || arg0->unkCD0 != 0) && arg0->unkCE0 == 0) {
         VEntry *e = (VEntry *)((char *)arg0->unk64 + 0x2B8);
         e->fn((char *)arg0 + e->delta, 1, 0.0f, 0.0f);
         return;
     }
-    func_0033CCF0(arg0);
+    RacePS2Base__raceEnd(arg0);
 }

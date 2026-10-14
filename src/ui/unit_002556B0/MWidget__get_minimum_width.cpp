@@ -23,7 +23,7 @@ extern "C" void func_002F9360(void *arg0, float fparg0);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_002584A0(s32 *arg0, void *arg1, s32 arg2, void **arg3) {
+extern "C" void MWidget__get_minimum_width(s32 *arg0, void *arg1, s32 arg2, void **arg3) {
     s32 buf[4];
     f32 *s2;
     s32 newVal;

@@ -8,7 +8,7 @@ struct func_004727B8_p;
 extern char *D_006187A8;
 extern void *D_00624984;
 extern "C" const Text5 D_0068E438;
-extern char D_006244D8[];
+extern char PDISTD__UNIT_MANAGER[];
 extern "C" const char *func_004726B8(struct func_004726B8_Obj *p);
 extern "C" char *func_004727B8(struct func_004727B8_p *p);
 extern "C" void func_00490A40(void *a, void *b, s32 c, s32 d, const char *e, char *f, char *g);
@@ -21,7 +21,7 @@ extern "C" void func_00127C48(s32 dummy, s32 size, char *buf) {
         *(Text5 *)buf = D_0068E438;
         return;
     }
-    const char *s1 = func_004726B8((struct func_004726B8_Obj *)D_006244D8);
-    char *b = func_004727B8((struct func_004727B8_p *)D_006244D8);
+    const char *s1 = func_004726B8((struct func_004726B8_Obj *)PDISTD__UNIT_MANAGER);
+    char *b = func_004727B8((struct func_004727B8_p *)PDISTD__UNIT_MANAGER);
     func_00490A40(D_00624984, buf, size, s4, s1, s3, b);
 }

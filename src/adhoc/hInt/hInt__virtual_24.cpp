@@ -38,7 +38,7 @@ struct func_002FCC18_arg0 {
     s32 unk10;
 };
 
-extern "C" void func_002FCC18(s32 *arg0, void *arg1, s32 arg2, char **arg3, s32 *arg4) {
+extern "C" void hInt__virtual_24(s32 *arg0, void *arg1, s32 arg2, char **arg3, s32 *arg4) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

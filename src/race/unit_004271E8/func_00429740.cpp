@@ -1,0 +1,3 @@
+struct E{int a;short table,first,second;char pad[6];};struct T{char pad[16];char*groups;char pad2[8];E*entries;};struct S{int a;T*t;};extern "C" int func_0042A220(S*,int);extern "C" float func_0042C490(void*,int,int,float,float),func_0042C4B8(void*,int,int,float,float,float);
+inline E*entry(T*t,int i){return (E*)(i*16+(int)t->entries);}
+extern "C" float func_00429740(S*s,int index,int key,float x,float y,float z){if(s->t==0)return 0.0f;if(func_0042A220(s,index)!=1)return 0.0f;{E*e=entry(s->t,index);void*p=s->t->groups+e->table*16;int first=e->first;int second=e->second;if(first>=0)return func_0042C490(p,first,key,x,y);if(second>=0)return func_0042C4B8(p,second,key,x,y,z);return 0.0f;}}

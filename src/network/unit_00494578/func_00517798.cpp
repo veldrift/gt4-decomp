@@ -1,0 +1,34 @@
+struct Obj { unsigned char type, active; char pad2[0x22]; int x24,x28; };
+struct Packet { unsigned char type,status; unsigned short id; char pad[12]; };
+struct Buf { unsigned int word; char data[4092]; };
+extern Buf D_00853A38;
+extern int D_00854150;
+extern "C" Obj *func_00515DD8(unsigned int) throw();
+extern "C" void func_005173E8(void *, unsigned int) throw();
+extern "C" int func_005174F0(Obj *,unsigned int,unsigned char,unsigned char *,void *,int *) throw();
+extern "C" void func_00519A20(signed char,int,int,int,int,void *,void *);
+extern "C" void func_00532310(signed char,int,int,int,int,int,void *);
+extern "C" int func_00517798(unsigned int id,unsigned char a,unsigned char b) {
+ Packet p;
+ char extra[16];
+ unsigned char flags;
+ int size=0;
+ flags=0;
+ Obj *o=func_00515DD8(id);
+ if(!o) return 23;
+ if(o->active) func_005173E8(extra,id);
+ *(unsigned int *)&p=0;
+ p.id=id;
+ p.type=o->type;
+ size=4;
+ Buf *out=&D_00853A38;
+ p.status=func_005174F0(o,id,b,&flags,out->data,&size);
+ D_00853A38.word=*(unsigned int *)&p;
+ o->x28=0;
+ o->x24=0;
+ flags|=a;
+ if (!p.status) return 0;
+ if(o->active) func_00519A20((signed char)flags,D_00854150,0,3,size,out,extra);
+ else func_00532310((signed char)flags,D_00854150,-1,0,3,size,out);
+ return 0;
+}

@@ -15,7 +15,7 @@ struct Obj {
     s32 f10C;
 };
 
-extern "C" int func_005AE268(int mode, int a, int b);
+extern "C" int write(int mode, int a, int b);
 
 extern "C" void func_00576280(Obj *self) {
     if (self->f108 != 10 && self->f104 != 0) {
@@ -23,7 +23,7 @@ extern "C" void func_00576280(Obj *self) {
         e->fn((char *)self + e->delta, 10);
     }
     if (self->f10C != 0) {
-        func_005AE268(1, (int)((char *)self + 4), self->f10C);
+        write(1, (int)((char *)self + 4), self->f10C);
         self->f10C = 0;
     }
 }

@@ -8,9 +8,9 @@ struct RPHD_arg0 {
     s8 *unk1C;
 };
 
-extern "C" s32 func_003AA378(s32, s32, f32);
+extern "C" s32 PaletteFlowAnimation__getColori(s32, s32, f32);
 
-extern "C" void func_003AA5D8(RPHD_arg0 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+extern "C" void RacePriusHybridDisplay__apply_patch(RPHD_arg0 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     s32 var_s1;
     s32 base;
 
@@ -27,9 +27,9 @@ extern "C" void func_003AA5D8(RPHD_arg0 *arg0, s32 arg1, s32 arg2, s32 arg3, s32
                 s8 *dst;
                 var_s1 += 1;
                 dst = b + k;
-                dst[0] = (s8)func_003AA378(arg1, 0, fr);
-                dst[1] = (s8)func_003AA378(arg1, 1, fr);
-                dst[2] = (s8)func_003AA378(arg1, 2, fr);
+                dst[0] = (s8)PaletteFlowAnimation__getColori(arg1, 0, fr);
+                dst[1] = (s8)PaletteFlowAnimation__getColori(arg1, 1, fr);
+                dst[2] = (s8)PaletteFlowAnimation__getColori(arg1, 2, fr);
             } while (var_s1 < arg4);
         }
     }

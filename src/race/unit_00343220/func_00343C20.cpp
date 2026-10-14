@@ -11,8 +11,8 @@ struct VE343C20 {
 };
 
 extern "C" s32 func_0034C158(s32 x, u32 i);
-extern "C" f32 func_0034C230(void *arg0);
-extern "C" u32 func_00358440(void *arg0);
+extern "C" f32 DynamicsConductor__GetCourseLength(void *arg0);
+extern "C" u32 DynamicsConductor__CurrentTotalTime(void *arg0);
 
 extern "C" s32 func_00343C20(void *arg0) {
     char *self = (char *)arg0;
@@ -25,7 +25,7 @@ extern "C" s32 func_00343C20(void *arg0) {
     if (*(u8 *)(d + 0x4B0) != 0) {
         return v0;
     }
-    s32 t = func_0034C158((s32)o, func_00358440(o));
+    s32 t = func_0034C158((s32)o, DynamicsConductor__CurrentTotalTime(o));
     v0 = 1;
     if (t != 0) {
         return v0;
@@ -38,7 +38,7 @@ extern "C" s32 func_00343C20(void *arg0) {
     if (*(s16 *)(d + 0x4AC) < s0) {
         return 0;
     }
-    f32 h = func_0034C230(o) * 0.5f;
+    f32 h = DynamicsConductor__GetCourseLength(o) * 0.5f;
     if (*(f32 *)(d + 0x4A4) < h) {
         s0 += 1;
     }

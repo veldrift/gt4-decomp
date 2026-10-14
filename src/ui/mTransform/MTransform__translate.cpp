@@ -21,7 +21,7 @@ extern "C" void func_0024B248(void *arg0, int arg1);
 extern "C" void func_0024B2A0(void *arg0, void *arg1);
 extern "C" void func_0024BEB0(void *arg0, f32 fparg0, f32 fparg1);
 
-extern "C" void func_0024B538(s32 *arg0, void *arg1, s32 arg2, VObj **arg3) {
+extern "C" void MTransform__translate(s32 *arg0, void *arg1, s32 arg2, VObj **arg3) {
     char *h[4];
     if (arg2 == 2) {
         func_0024B2A0(h, arg1);

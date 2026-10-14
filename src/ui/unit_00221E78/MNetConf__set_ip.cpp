@@ -41,7 +41,7 @@ extern "C" void func_00312318(void *arg0, int arg1);
 extern "C" void func_00312370(void *arg0, void *arg1);
 extern "C" Str *func_00314920(s32 arg0);
 
-extern "C" void func_00222940(void *arg0, void *arg1, s32 count, void *name) {
+extern "C" void MNetConf__set_ip(void *arg0, void *arg1, s32 count, void *name) {
     if (count > 0) {
         A a;
         B b;

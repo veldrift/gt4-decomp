@@ -13,7 +13,7 @@ struct Obj {
     VEntry *vtbl;
 };
 
-extern "C" void func_002FF580(struct Obj *arg0, s8 arg1) {
+extern "C" void hIO__cput(struct Obj *arg0, s8 arg1) {
     s8 tmp = arg1;
     VEntry *e = (VEntry *)((char *)arg0->vtbl + 0x198);
 

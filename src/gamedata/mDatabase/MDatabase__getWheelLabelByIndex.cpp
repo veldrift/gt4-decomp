@@ -46,7 +46,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_001B52D0(s32 *arg0, s32 arg1, s32 arg2) {
+extern "C" void MDatabase__getWheelLabelByIndex(s32 *arg0, s32 arg1, s32 arg2) {
     s32 buf0[64];
     s32 buf1[8];
     Str s2;

@@ -20,16 +20,16 @@ struct func_002C1790_arg0 {
     f32 unk4C;
 };
 
-extern "C" void func_001FF6F8(void);
+extern "C" void mActor__initialize(void);
 extern "C" void func_0025B538(s32 c, f32 fparg0, f32 fparg1, f32 fparg2, f32 fparg3);
 
-extern "C" void func_002C1790(struct func_002C1790_arg0 *arg0) {
+extern "C" void mMoveActor__initialize(struct func_002C1790_arg0 *arg0) {
     f32 *temp_v0;
     f32 *temp_a1;
     f32 *temp_v1;
 
     if (arg0->unk14 != 0) {
-        func_001FF6F8();
+        mActor__initialize();
         temp_v0 = &arg0->unk18;
         temp_a1 = &arg0->unk3C;
         if (temp_a1 != temp_v0) {

@@ -18,17 +18,17 @@ struct Stk {
     s32 wC;
 };
 
-extern char D_0067E708[];
+extern char RaceDisplayGeneralTimeEvent__vtable[];
 
 extern "C" s32 func_0034C190(s32 arg0, s32 arg1);
 extern "C" s32 func_0035E3F8(void *a0, void *a1, s32 a2);
-extern "C" void func_003A33C8(void *p);
-extern "C" void func_003A3148(void *o, void *t);
-extern "C" void *func_003A34E8(void *p);
+extern "C" void RaceDisplayCheckPointEvent__structor_0(void *p);
+extern "C" void RaceDisplayEventBase__put(void *o, void *t);
+extern "C" void *RaceDisplayDiffEvent__structor_0(void *p);
 extern "C" void func_003A3660(void *p, u32 v);
 extern "C" void func_003C0C60(void *a0, s32 a1, s32 a2, s32 a3);
 
-extern "C" void func_0035E428(Obj0 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
+extern "C" void RaceDisplayGeneralTimeEvent__structor_0(Obj0 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
     Stk st;
     Stk st2;
     Stk *p2;
@@ -43,17 +43,17 @@ extern "C" void func_0035E428(Obj0 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4
         s1 = arg0->first;
         s4 = func_0035E3F8(s1, arg0, v) == 0;
         if (s1->unkDC == 0) {
-            func_003A33C8(&st);
+            RaceDisplayCheckPointEvent__structor_0(&st);
             st.w0 = arg1;
             st.w8 = arg2;
             st.wC = arg3;
-            func_003A3148(&st, s1);
+            RaceDisplayEventBase__put(&st, s1);
             p2 = &st2;
-            func_003A34E8(p2);
-            p2->w4 = (s32)D_0067E708;
+            RaceDisplayDiffEvent__structor_0(p2);
+            p2->w4 = (s32)RaceDisplayGeneralTimeEvent__vtable;
             p2->w0 = arg1;
             func_003A3660(p2, arg5);
-            func_003A3148(p2, s1);
+            RaceDisplayEventBase__put(p2, s1);
         }
         if (arg6 == 0 && s4 != 0) {
             func_003C0C60(s1, arg1, arg3, arg5);

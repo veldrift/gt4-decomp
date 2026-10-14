@@ -32,7 +32,7 @@ extern "C" char *func_005C2560(Rep *src);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 
-extern "C" Str *func_002FDFB0(Str *arg0, Obj *arg1) {
+extern "C" Str *hInt__toString(Str *arg0, Obj *arg1) {
     SS ss;
     func_0032B5C0(&ss);
     func_0032B738(&ss, arg1->val);

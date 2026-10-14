@@ -30,7 +30,7 @@ extern "C" void func_002FE278(void *arg0, void *arg1);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_0031C018(void *arg0, void *arg1) {
+extern "C" void mIntConst__execute(void *arg0, void *arg1) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

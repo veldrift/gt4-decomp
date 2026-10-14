@@ -10,7 +10,7 @@ struct Obj {
     Obj ***tbl;             /* 0x44 */
 };
 
-extern "C" void func_00454D30(Obj *arg0)
+extern "C" void ModelSet2__DMAsafe(Obj *arg0)
 {
     int i;
     int j;

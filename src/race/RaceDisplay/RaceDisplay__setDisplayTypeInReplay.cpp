@@ -21,7 +21,7 @@ struct RD {
 
 extern char *D_00622F4C;
 
-extern "C" void func_003A2040(RD *self, s32 a1) {
+extern "C" void RaceDisplay__setDisplayTypeInReplay(RD *self, s32 a1) {
     if (self->f64 == a1)
         return;
     self->f64 = a1;

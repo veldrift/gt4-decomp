@@ -56,7 +56,7 @@ extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 extern "C" void func_003285A8(s32 arg0);
 extern "C" void func_003285F8(s32 arg0);
 extern "C" s32 func_0057F260(const char *s);
-extern "C" Inner *func_005C0FC8(void *arg0, const char *arg1, int arg2, void *arg3, const char *arg4, Inner *arg5);
+extern "C" Inner *GT4MC__FileGT4GameData__loadInstance(void *arg0, const char *arg1, int arg2, void *arg3, const char *arg4, Inner *arg5);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" char *func_005C2560(Rep *r);
 extern "C" void *func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
@@ -84,7 +84,7 @@ static inline void assign(s32 *dst, Handle *h)
     }
 }
 
-extern "C" void func_00174768(s32 *arg0, void *arg1) {
+extern "C" void MMemoryCardFile__get_carName(s32 *arg0, void *arg1) {
     Obj h0;
     Handle tmp;
     Str s1;
@@ -96,7 +96,7 @@ extern "C" void func_00174768(s32 *arg0, void *arg1) {
     in = ((Outer *)h0.p)->in;
     a1 = 0;
     if (in != 0) {
-        a1 = func_005C0FC8(in->tab->fn, D_005D15A8, 0, (char *)in + in->tab->delta, D_005D1260, in);
+        a1 = GT4MC__FileGT4GameData__loadInstance(in->tab->fn, D_005D15A8, 0, (char *)in + in->tab->delta, D_005D1260, in);
     }
     if (a1 != 0) {
         Str *ps = &s1;

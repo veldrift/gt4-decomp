@@ -32,7 +32,7 @@ extern "C" void func_002FE278(void *, s32);
 extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
 
-extern "C" void func_002DDD68(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MSliderBar__incIndex(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s3;

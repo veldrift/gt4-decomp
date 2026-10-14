@@ -21,7 +21,7 @@ extern "C" Vec4 *func_002030E8(Vec4 *arg0, Vec4 *arg1);
 extern "C" void func_00203118(void *arg0, int arg1);
 extern "C" void func_00203620(void *arg0, int arg1);
 
-extern "C" void func_00203870(void *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MColorObject__global_0082A690(void *arg0, void *arg1, s32 arg2, void *arg3) {
     s32 buf[4];
     Vec4 vec;
     f32 f20;

@@ -39,7 +39,7 @@ struct VEntry3 {
 
 extern "C" void func_00342400(void *arg);
 
-extern "C" void func_0033D970(void *arg0, void *arg1) {
+extern "C" void RacePS2Base__render(void *arg0, void *arg1) {
     RacePS2Base *self = (RacePS2Base *)arg0;
     void *a1 = arg1;
     RacePS2Sub *sub = self->sub;

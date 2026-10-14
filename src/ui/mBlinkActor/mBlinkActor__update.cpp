@@ -32,7 +32,7 @@ static inline void vcall(char *o, s32 off, f32 f) {
     e->fn(o + e->delta, f);
 }
 
-extern "C" void func_00279908(void *arg0) {
+extern "C" void mBlinkActor__update(void *arg0) {
     mBlinkActor *self = (mBlinkActor *)arg0;
     f32 zero = 0.0f;
     f32 f2 = self->unk18.f;

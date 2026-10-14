@@ -3,7 +3,7 @@ typedef unsigned int u32;
 typedef unsigned char u8;
 typedef float f32;
 
-extern "C" f32 func_0034C230(char *arg0);
+extern "C" f32 DynamicsConductor__GetCourseLength(char *arg0);
 extern "C" f32 func_0034C780(char *arg0, s32 arg1);
 
 extern "C" s32 func_0035AE58(char *arg0) {
@@ -14,7 +14,7 @@ extern "C" s32 func_0035AE58(char *arg0) {
     if (!(k < 3)) {
         return r;
     }
-    f32 t = func_0034C230(s0);
+    f32 t = DynamicsConductor__GetCourseLength(s0);
     f32 f20 = *(f32 *)(s1 + 0x4A4);
     if (f20 < t * 0.5f) {
         f20 += t;

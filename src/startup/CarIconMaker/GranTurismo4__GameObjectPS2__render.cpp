@@ -21,7 +21,7 @@ extern "C" void func_00105250(char *arg0);
 extern "C" void func_00105280(char *arg0, int arg1);
 extern "C" char *func_00105378(char *d, const char *s);
 
-extern "C" void func_00101148(char *arg0) {
+extern "C" void GranTurismo4__GameObjectPS2__render(char *arg0) {
     struct Frame78 f;
     char *g = D_0061850C;
     char *s3;

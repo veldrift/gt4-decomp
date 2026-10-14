@@ -44,7 +44,7 @@ extern "C" void func_00312318(void *arg0, int arg1);
 extern "C" void func_00312370(void *arg0, void *arg1);
 extern "C" u8 *func_00314920(u8 *arg0);
 
-extern "C" void func_00223368(void *arg0, void *arg1, s32 count, void *name) {
+extern "C" void MNetConf__set_proxy(void *arg0, void *arg1, s32 count, void *name) {
     if (count > 0) {
         A a;
         B b;

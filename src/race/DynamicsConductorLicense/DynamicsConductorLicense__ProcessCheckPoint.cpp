@@ -11,9 +11,9 @@ struct VEntry {
 extern "C" s32 func_0034C190(s32 arg0, s32 arg1);
 extern "C" int func_003F6320(void *o);
 extern "C" void func_0035E6B0(s32 *arg0, void *arg1, s32 arg2, char **arg3);
-extern "C" void func_0035E428(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
+extern "C" void RaceDisplayGeneralTimeEvent__structor_0(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6);
 
-extern "C" void func_003F63A0(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
+extern "C" void DynamicsConductorLicense__ProcessCheckPoint(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
     char *s5 = (char *)func_0034C190((s32)arg0, arg1);
     u8 *a;
     char *q;
@@ -36,5 +36,5 @@ extern "C" void func_003F63A0(void *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4
         }
     }
     func_0035E6B0((s32 *)arg0, (void *)arg1, k, (char **)arg6);
-    return func_0035E428(arg0, arg1, 1, k, arg5, arg6, (u8)s5[0x5B7]);
+    return RaceDisplayGeneralTimeEvent__structor_0(arg0, arg1, 1, k, arg5, arg6, (u8)s5[0x5B7]);
 }

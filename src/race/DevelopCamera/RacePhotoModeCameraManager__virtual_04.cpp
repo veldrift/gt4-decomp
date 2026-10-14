@@ -21,7 +21,7 @@ struct Owner {
 typedef Obj *(*ObjFn)(void *self, s32 arg);
 typedef f32 (*FFn)(void *self, f32 arg);
 
-f32 func_00373780(Owner *arg0, f32 fparg0) {
+f32 RacePhotoModeCameraManager__virtual_04(Owner *arg0, f32 fparg0) {
     f32 var_f0;
     VEntry *e = (VEntry *)((char *)arg0->vtbl + 0xD8);
     Obj *obj = ((ObjFn)e->fn)((char *)arg0 + e->delta, arg0->unk9BC);

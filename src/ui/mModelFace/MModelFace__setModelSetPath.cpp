@@ -42,7 +42,7 @@ extern "C" void func_002BE968(Obj *arg0, s32 arg1);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 
-extern "C" void func_002BB220(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
+extern "C" void MModelFace__setModelSetPath(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
     s32 buf[4];
     Str s;
     Str *ps;

@@ -32,8 +32,8 @@ extern "C" void func_00326798(void *, s32, s32, const char *);
 extern "C" void func_003068A8(s32, void *, void *);
 extern "C" void func_003041A0(void *, void *);
 extern "C" void func_003041B8(void *, s32);
-extern "C" void func_00301FE0(void);
-extern "C" void func_00302078(void);
+extern "C" void adhoc__sin(void);
+extern "C" void adhoc__cos(void);
 
 extern char D_0069DB40[];
 extern char D_0069DB48[];
@@ -85,7 +85,7 @@ extern "C" void * func_00302110(s32 *arg0) {
         p->p = d;
     }
     func_005C2630(p, 0, -0x1, v, func_0057F260(v));
-    func_003068A8(h, p, (void *)func_00301FE0);
+    func_003068A8(h, p, (void *)adhoc__sin);
     str_release(p);
     }
     {
@@ -104,7 +104,7 @@ extern "C" void * func_00302110(s32 *arg0) {
         p->p = d;
     }
     func_005C2630(p, 0, -0x1, v, func_0057F260(v));
-    func_003068A8(h, p, (void *)func_00302078);
+    func_003068A8(h, p, (void *)adhoc__cos);
     str_release(p);
     }
     func_003041A0(arg0, buf0);

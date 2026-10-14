@@ -14,7 +14,7 @@ extern "C" void func_0016D7F0(void *, s32);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_0016D9D0(s32 *arg0) {
+extern "C" void MGarage__global_00823B80(s32 *arg0) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

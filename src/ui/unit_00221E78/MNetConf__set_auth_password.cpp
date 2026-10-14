@@ -31,7 +31,7 @@ extern "C" void func_00312318(void *arg0, int arg1);
 extern "C" void func_00312370(void *arg0, void *arg1);
 extern "C" u8 *func_00314920(u8 *arg0);
 
-extern "C" void func_002238A8(void *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MNetConf__set_auth_password(void *arg0, void *arg1, s32 arg2, void *arg3) {
     if (arg2 > 0) {
         s32 buf0[4];
         s32 buf1[4];

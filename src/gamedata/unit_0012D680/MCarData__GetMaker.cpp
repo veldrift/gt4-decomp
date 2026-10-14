@@ -75,7 +75,7 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void func_0012E9E8(void **arg0, s32 arg1, VObj **arg2) {
+extern "C" void MCarData__GetMaker(void **arg0, s32 arg1, VObj **arg2) {
     if (arg1 > 0) {
         s32 dest[4];
         U u;

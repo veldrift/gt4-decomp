@@ -71,7 +71,7 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void func_001E95E8(s32 *arg0, void *arg1, s32 arg2, VObj **arg3) {
+extern "C" void MNetwork__billingPurchaseProduct(s32 *arg0, void *arg1, s32 arg2, VObj **arg3) {
     if (arg2 > 0) {
         U u;
         Handle h;

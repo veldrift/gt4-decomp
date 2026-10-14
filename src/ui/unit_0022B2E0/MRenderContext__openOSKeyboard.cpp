@@ -32,7 +32,7 @@ extern "C" void func_002FE278(void *arg0, void *arg1);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_0022B5E0(s32 *arg0, void *arg1, s32 arg2, VObjF **arg3) {
+extern "C" void MRenderContext__openOSKeyboard(s32 *arg0, void *arg1, s32 arg2, VObjF **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 v_s0;

@@ -10,7 +10,7 @@ struct Struct_0013A548 {
     s32 unk2A8;
 };
 
-extern "C" void func_002638D0(Struct_0013A548 *self);
+extern "C" void mTextFace__virtual_68(Struct_0013A548 *self);
 extern "C" void func_0013BD38(void *arg0, s32 *arg1);
 extern "C" void func_0013BD68(void *arg0, int arg1);
 extern "C" void func_00151800(void *arg0, s32 *arg1);
@@ -22,7 +22,7 @@ extern "C" void func_0013A650(Struct_0013A548 *arg0);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_0013AEE0(Struct_0013A548 *self) {
+extern "C" void mCarFace__virtual_68(Struct_0013A548 *self) {
     s32 buf[4];
     s32 zero;
     s32 zero2;
@@ -30,7 +30,7 @@ extern "C" void func_0013AEE0(Struct_0013A548 *self) {
     s32 *dst;
     s32 newVal;
     s32 oldVal;
-    func_002638D0(self);
+    mTextFace__virtual_68(self);
     zero = 0;
     func_0013BD38(buf, &zero);
     dst = &self->unk2A8;

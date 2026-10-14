@@ -33,7 +33,7 @@ struct Dev {
     void *f9BC;
 };
 
-extern "C" void func_00373420(Dev *arg0, Dev *arg1) {
+extern "C" void DevelopCamera__virtual_22(Dev *arg0, Dev *arg1) {
     VEntry1 *e1 = (VEntry1 *)(arg0->vtbl + 0xD8);
     void *o = e1->fn((char *)arg0 + e1->delta, arg0->f9BC);
     VEntry2 *e2 = (VEntry2 *)(*(char **)o + 0xF8);

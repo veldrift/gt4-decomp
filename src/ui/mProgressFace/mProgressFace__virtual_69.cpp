@@ -12,11 +12,11 @@ struct MProgressFace {
 
 extern "C" f32 func_00228A38(s32 arg0);
 extern "C" f32 func_00228A78(s32 arg0);
-extern "C" void func_0025B3A0(char *arg0, f32 fparg0);
-extern "C" void func_002638D8(char *arg0, s32 arg1, s32 arg2);
+extern "C" void mWidget__setWindowW(char *arg0, f32 fparg0);
+extern "C" void mColorChipFace__virtual_69(char *arg0, s32 arg1, s32 arg2);
 extern "C" void func_002A3800(char *arg0, s32 arg1, f32 *arg2);
 
-extern "C" void func_002CAE28(char *arg0, s32 arg1, s32 arg2) {
+extern "C" void mProgressFace__virtual_69(char *arg0, s32 arg1, s32 arg2) {
     struct MProgressFace *self = (struct MProgressFace *)arg0;
     f32 buf[8];
     f32 *s0;
@@ -37,7 +37,7 @@ extern "C" void func_002CAE28(char *arg0, s32 arg1, s32 arg2) {
         self->unkF8 = f;
     }
 
-    func_0025B3A0(arg0, self->unkFC * self->unkF8);
+    mWidget__setWindowW(arg0, self->unkFC * self->unkF8);
 
     sp10 = self->unkF8;
     sp14 = 1.0f;
@@ -49,5 +49,5 @@ extern "C" void func_002CAE28(char *arg0, s32 arg1, s32 arg2) {
 
     func_002A3800(arg0, 1, buf);
     func_002A3800(arg0, 2, s0);
-    func_002638D8(arg0, arg1, arg2);
+    mColorChipFace__virtual_69(arg0, arg1, arg2);
 }

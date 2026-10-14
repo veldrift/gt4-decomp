@@ -1,0 +1,47 @@
+struct Big { int w[8]; };
+struct Jam { int f0, f4, f8, fC, f10, f14, f18; const void *vt; int f20; };
+struct G { int f0, f4, f8, fC, f10; };
+struct Tab { char *name; int b, c; };
+extern G D_008468D0;
+extern Tab D_006239A8[];
+extern char GTSOUNDINSTRUMENTJAM__vtable[];
+extern "C" void func_00461068(int);
+extern "C" void func_004611B0(void);
+extern "C" char *func_004624F0(void);
+extern "C" void GTSOUNDINSTRUMENT__structor_1(Jam *, int);
+extern "C" void func_00462738(Jam *, char *, int);
+extern "C" int func_00462798(int);
+extern "C" void func_004627B0(int, int);
+extern "C" void GTSOUNDINSTRUMENTJAM__structor_1(Jam *);
+extern "C" int func_00462900(Jam *);
+extern "C" int GTSOUNDINSTRUMENTJAM__getJam(Jam *);
+extern "C" void func_00460ED8(void);
+extern "C" void func_004AE268(Big *, char *, int, int, int);
+extern "C" void func_004AE6B0(Big *, char *);
+extern "C" int func_005A5A30(char *, unsigned, const char *, ...);
+extern "C" void GTSOUNDINSTRUMENTJAM__structor_0(int idx)
+{
+    char buf[0x70];
+    char buf2[0x70];
+    Big r;
+    Big r2;
+    Jam jam;
+    Tab *t = &D_006239A8[idx];
+    func_00461068(1);
+    func_004611B0();
+    func_005A5A30(buf, 0x70, "%s/%s/%s", "/music", func_004624F0(), t->name);
+    func_005A5A30(buf2, 0x70, "%s%s", buf, ".sqt");
+    func_004AE6B0(&r, buf2);
+    func_004AE268(&r2, buf2, D_008468D0.f10, r.w[2], 1);
+    func_004627B0(D_008468D0.fC, 0x2800);
+    func_00462798(0xAC000);
+    GTSOUNDINSTRUMENTJAM__structor_1(&jam);
+    func_005A5A30(buf2, 0x70, "%s%s", buf, ".ins");
+    func_00462738(&jam, buf2, 0);
+    func_00462900(&jam);
+    D_008468D0.f8 = GTSOUNDINSTRUMENTJAM__getJam(&jam);
+    func_00460ED8();
+    D_008468D0.f0 = idx;
+    jam.vt = GTSOUNDINSTRUMENTJAM__vtable;
+    GTSOUNDINSTRUMENT__structor_1(&jam, 0);
+}

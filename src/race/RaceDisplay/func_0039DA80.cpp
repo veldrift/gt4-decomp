@@ -1,0 +1,3 @@
+extern "C" void RaceEventQueue__clear(void*,int),func_00393428(void*,int,float,float);
+extern signed char D_00621514,D_00621515,D_00621516;
+extern "C" void func_0039DA80(void*self){void*p=(char*)self+0xf4;RaceEventQueue__clear(p,10);RaceEventQueue__clear(p,13);RaceEventQueue__clear(p,14);RaceEventQueue__clear(p,15);RaceEventQueue__clear(p,16);RaceEventQueue__clear(p,17);RaceEventQueue__clear(p,18);RaceEventQueue__clear(p,19);RaceEventQueue__clear(p,20);RaceEventQueue__clear(p,21);RaceEventQueue__clear(p,25);RaceEventQueue__clear(p,26);if(D_00621514){D_00621514=0;func_00393428((void*)39,64,1.f,1.f);}if(D_00621515){D_00621515=0;func_00393428((void*)40,64,1.f,1.f);}if(D_00621516){D_00621516=0;func_00393428((void*)48,64,1.f,1.f);}}

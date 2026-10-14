@@ -7,7 +7,7 @@ typedef long s64;
 typedef float f32;
 
 struct Units;
-extern char D_006244D8[];
+extern char PDISTD__UNIT_MANAGER[];
 
 struct VEntry_60 { s16 delta; s16 index; f32 (*fn)(void *); };
 struct VObj_60 { char pad0[4]; VEntry_60 *vtbl; };
@@ -22,12 +22,12 @@ extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
 extern "C" void func_002FC870(void *, s32);
 
-extern "C" void func_001AF598(s32 *arg0, s32 arg1, void **arg2) {
+extern "C" void MUnit__GetPowerForDisplay(s32 *arg0, s32 arg1, void **arg2) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;
     if (arg1 > 0) {
-        f32 r = func_004729A0((Units *)D_006244D8, vcall_60((char *)(*(s32 *)arg2)));
+        f32 r = func_004729A0((Units *)PDISTD__UNIT_MANAGER, vcall_60((char *)(*(s32 *)arg2)));
         s32 t = (s32)(r + 0x1.0p-1f);
         func_002FE278(buf0, (void *)t);
         if (arg0 != buf0) {

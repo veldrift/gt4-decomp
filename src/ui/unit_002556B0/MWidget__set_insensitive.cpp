@@ -16,7 +16,7 @@ extern "C" void func_00255110(void *arg0, void *arg1);
 extern "C" void func_00266200(s32 arg0, s32 arg1);
 extern "C" void func_002550B8(void *arg0, s32 arg1);
 
-extern "C" void func_00256F30(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MWidget__set_insensitive(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 v_s1;
     func_00255110(buf0, arg1);

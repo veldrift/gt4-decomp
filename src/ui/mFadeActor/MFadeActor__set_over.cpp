@@ -21,7 +21,7 @@ struct B {
 
 static inline int get(B *b) { return b->v[0]; }
 
-extern "C" void func_0020B910(void *arg0, void *arg1, int count, void *name)
+extern "C" void MFadeActor__set_over(void *arg0, void *arg1, int count, void *name)
 {
     if (count > 0) {
         A a;

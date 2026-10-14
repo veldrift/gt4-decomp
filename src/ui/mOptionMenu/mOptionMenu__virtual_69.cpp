@@ -14,18 +14,18 @@ struct Opt {
     f32 f11C;
 };
 
-extern "C" void func_002638D8(void *, s32, s32);
+extern "C" void mColorChipFace__virtual_69(void *, s32, s32);
 extern "C" f32 func_00267DB0(void *);
-extern "C" void func_00267DB8(void *, f32);
+extern "C" void mWidget__setOpacity(void *, f32);
 extern "C" void *func_0057B0F8(void *, f32, f32);
 extern "C" void func_0025BA08(void *, f32);
 extern "C" void func_0025B500(void *, f32 *, f32 *, f32 *, f32 *);
 extern "C" void func_0025B538(void *, f32, f32, f32, f32);
 
-extern "C" void func_002C9C90(Opt *arg0, s32 arg1) {
+extern "C" void mOptionMenu__virtual_69(Opt *arg0, s32 arg1) {
     f32 sv[4];
 
-    func_002638D8(arg0, arg1, 0);
+    mColorChipFace__virtual_69(arg0, arg1, 0);
     if (arg0->fc != 0) {
         if (arg0->c0 != 0) {
             f32 t = func_00267DB0(arg0->c0);
@@ -34,7 +34,7 @@ extern "C" void func_002C9C90(Opt *arg0, s32 arg1) {
                 if (x >= 1.0f) {
                     x = 1.0f;
                 }
-                func_00267DB8(arg0->c0, x);
+                mWidget__setOpacity(arg0->c0, x);
             }
         }
     }

@@ -8,7 +8,7 @@ extern "C" void func_002550B8(void *, s32);
 extern "C" void func_0022ACC8(void *, s32);
 extern "C" void func_002AE968(void *, s32);
 
-extern "C" void func_002AF9C8(void *arg0, void *arg1, s32 arg2, s32 *arg3) {
+extern "C" void MListBox__enterDragMode(void *arg0, void *arg1, s32 arg2, s32 *arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];

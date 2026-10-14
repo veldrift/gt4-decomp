@@ -12,8 +12,8 @@ typedef double f64;
 typedef int s128;
 typedef unsigned int u128;
 s32 func_0034C190(s32, s32);
-s32 func_0035E078(s32, s32, s32);
-s32 func_0035E428(s32 *, s32, s32, s32, s32, s32, u8);
+s32 RaceDisplayTimeDiffEvent__structor_0(s32, s32, s32);
+s32 RaceDisplayGeneralTimeEvent__structor_0(s32 *, s32, s32, s32, s32, s32, u8);
 struct func_003F5028_temp_v0
 {
   char pad0[0x5B7];
@@ -24,7 +24,7 @@ struct func_003F5028_obj
   char pad0[0x928];
   s32 unk928[1];
 };
-s32 func_003F5028(s32 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6)
+s32 DynamicsConductorFreePractice__ProcessCheckPoint(s32 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6)
 {
   s32 *new_var2;
   s32 temp_s0;
@@ -41,9 +41,9 @@ s32 func_003F5028(s32 *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
     temp_v0_2 = new_var2[arg3];
     if (temp_v0_2 != 0x157529FF)
     {
-      func_0035E078(temp_s0, arg1, arg6 - temp_v0_2);
+      RaceDisplayTimeDiffEvent__structor_0(temp_s0, arg1, arg6 - temp_v0_2);
     }
   }
   temp_v0_2 = arg5;
-  return func_0035E428(new_var, arg1, arg2, arg3, temp_v0_2, arg6, temp_v0->unk5B7);
+  return RaceDisplayGeneralTimeEvent__structor_0(new_var, arg1, arg2, arg3, temp_v0_2, arg6, temp_v0->unk5B7);
 }

@@ -18,7 +18,7 @@ static inline void call_00215D30(char *self, f32 a, f32 b, f32 c, f32 d) {
     e->fn(self + e->delta, a, b, c, d);
 }
 
-extern "C" void func_00215D30(char *arg0, f32 fparg0, f32 fparg1, f32 fparg2, f32 fparg3) {
+extern "C" void mRenderContextPS2__virtual_52(char *arg0, f32 fparg0, f32 fparg1, f32 fparg2, f32 fparg3) {
     f32 k2 = 2.0f;
     f32 k4 = 4.0f;
     f32 x0 = fparg0 - k2;

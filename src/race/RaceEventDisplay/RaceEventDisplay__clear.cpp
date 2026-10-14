@@ -10,10 +10,10 @@ struct Item {
     f32 unk28;
 };
 
-extern "C" void func_003A4DA0(struct Item *self);
-extern "C" void func_003A4E48(void *p, f32 f);
+extern "C" void RaceMessageDisplay__clear(struct Item *self);
+extern "C" void RaceMessageDisplay__fadeout(void *p, f32 f);
 
-extern "C" void func_003A4F00(struct Item *arg0, f32 fparg0) {
+extern "C" void RaceEventDisplay__clear(struct Item *arg0, f32 fparg0) {
     s32 s0 = 0;
     s32 s2;
     char *ptr;
@@ -27,12 +27,12 @@ extern "C" void func_003A4F00(struct Item *arg0, f32 fparg0) {
         for (; s2 < 8; s2++) {
             char *q = ptr;
             ptr += 0x150;
-            func_003A4DA0((struct Item *)q);
+            RaceMessageDisplay__clear((struct Item *)q);
         }
     } else {
         while (s0 < 8) {
             s32 t = s0 * 0x15;
-            func_003A4E48((char *)arg0 + t * 0x10 + 0x50, fparg0);
+            RaceMessageDisplay__fadeout((char *)arg0 + t * 0x10 + 0x50, fparg0);
             s0++;
         }
     }

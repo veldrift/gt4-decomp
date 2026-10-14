@@ -1,6 +1,6 @@
 typedef int s32;
 
-extern "C" s32 func_00575DC8(s32 arg0);
+extern "C" s32 malloc(s32 arg0);
 
 struct Node {
     Node *next;
@@ -14,7 +14,7 @@ struct Obj {
     Node node;
 };
 
-extern Obj *D_00658288;
+extern Obj *_impure_ptr;
 
 extern "C" s32 func_005A2ED0(s32 arg0) {
     Obj **g;
@@ -22,14 +22,14 @@ extern "C" s32 func_005A2ED0(s32 arg0) {
     s32 *pc;
     s32 c;
 
-    g = &D_00658288;
+    g = &_impure_ptr;
     n = (*g)->head;
     if (n == 0) {
         n = &(*g)->node;
         (*g)->head = n;
     }
     if (n->count >= 0x20) {
-        n = (Node *)func_00575DC8(0x88);
+        n = (Node *)malloc(0x88);
         if (n == 0) {
             return -1;
         }

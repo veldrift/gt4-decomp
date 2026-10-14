@@ -1,0 +1,2 @@
+struct Command{unsigned char type,x,y,z;int mode;long handle;};extern "C" long func_00447C78(void*);extern "C" void func_0042F0E0(void*,Command*);
+extern "C" void func_0042F448(void* self,void* value,int z,unsigned char x,unsigned char y,int mode){Command command;command.type=8;long handle=func_00447C78(value);command.x=x;command.y=y;command.z=z;command.mode=mode;command.handle=handle;func_0042F0E0(self,&command);}

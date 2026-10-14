@@ -2,7 +2,7 @@ typedef int s32;
 
 extern "C" s32 func_003A1E10(const char *name);
 
-extern "C" char D_006244D8[];
+extern "C" char PDISTD__UNIT_MANAGER[];
 extern "C" char D_006A1650[];
 extern "C" char D_006A1668[];
 extern "C" char D_006A1680[];
@@ -16,11 +16,11 @@ struct RacePriusPanel_arg0 {
     s32 m250;
 };
 
-extern "C" void func_003A9E80(struct RacePriusPanel_arg0 *o) {
+extern "C" void RacePriusPanel__init_texset(struct RacePriusPanel_arg0 *o) {
     char *name;
 
     if (o->m10 == 0) {
-        if (*(s32 *)D_006244D8 == 1) {
+        if (*(s32 *)PDISTD__UNIT_MANAGER == 1) {
             name = D_006A1650;
         } else {
             name = D_006A1668;

@@ -1,0 +1,1 @@
+struct A{char p[4];float a;char q[8];float b;};struct N{char p[0x3c];float v;};struct S{char p[16];N*n;char q[0x557];unsigned char mode;char r[0x31c];A a;};float func_0035C788(S*s){A*a=&s->a;N*n=s->n;if(s->mode!=3)return 0;float v=a->a;float b=a->b;float c=n->v;v-=b;return v-c;}

@@ -24,9 +24,9 @@ struct VB { s16 delta; s16 index; s32 (*fn)(void *); };
 struct VC { s16 delta; s16 index; void (*fn)(void *); };
 struct VD { s16 delta; s16 index; f32 (*fn)(void *); };
 
-extern "C" void func_003C04E8(char *arg0, f32 fparg0);
+extern "C" void RaceOrganization__raceRealTimeUpdate(char *arg0, f32 fparg0);
 
-extern "C" void func_00389990(char *arg0, f32 fparg0) {
+extern "C" void RaceBase__updatePlay(char *arg0, f32 fparg0) {
     Obj *self = (Obj *)arg0;
     Sub *s = self->sub;
     s32 i;
@@ -44,7 +44,7 @@ extern "C" void func_00389990(char *arg0, f32 fparg0) {
 
     VB *e8 = (VB *)(self->vtbl + 0x108);
     s32 v = e8->fn((char *)self + e8->delta);
-    func_003C04E8((char *)s, fparg0 * (f32)v);
+    RaceOrganization__raceRealTimeUpdate((char *)s, fparg0 * (f32)v);
 
     self->n44 = 0;
 

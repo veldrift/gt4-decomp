@@ -14,14 +14,14 @@ struct VEntry108 {
     s32 (*fn)(void *);
 };
 
-extern "C" f32 func_0044F3E0(char *self);
+extern "C" f32 SceneCameraBase__virtual_14(char *self);
 
-extern "C" f32 func_00371D18(char *arg0) {
+extern "C" f32 DevelopCamera__virtual_14(char *arg0) {
     f32 temp_f20;
     VEntryD8 *e;
     char *r;
 
-    temp_f20 = func_0044F3E0(arg0);
+    temp_f20 = SceneCameraBase__virtual_14(arg0);
     e = (VEntryD8 *)(*(char **)arg0 + 0xD8);
     r = (char *)e->fn(arg0 + e->delta, *(s32 *)(arg0 + 0x9BC));
     if (r != 0) {

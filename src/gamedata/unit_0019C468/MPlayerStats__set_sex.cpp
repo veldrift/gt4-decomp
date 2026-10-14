@@ -8,7 +8,7 @@ struct Obj { char pad0[4]; VEntry *vtbl; };
 extern "C" void func_0019C1D8(void *arg0, void *arg1);
 extern "C" void func_0019C180(void *arg0, int arg1);
 
-extern "C" void func_0019C990(void *a0, void *a1, void *a2, Obj **a3) {
+extern "C" void MPlayerStats__set_sex(void *a0, void *a1, void *a2, Obj **a3) {
     s32 buf[4];
     s32 s1;
     Obj *obj;

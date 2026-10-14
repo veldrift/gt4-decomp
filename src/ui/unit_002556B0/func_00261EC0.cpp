@@ -17,7 +17,7 @@ struct Str {
 
 extern Rep D_00659FA8;
 
-extern "C" void func_00261E70(void *arg0, Str *arg1);
+extern "C" void MstringReader__structor_6(void *arg0, Str *arg1);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" char *func_005C2560(Rep *src);
@@ -32,7 +32,7 @@ extern "C" void **func_00261EC0(void **arg0, void *arg1) {
         r->ref++;
     }
     s.p = d;
-    func_00261E70(arg1, &s);
+    MstringReader__structor_6(arg1, &s);
     {
         s32 p = *(s32 *)&s.p;
         Rep *q = (Rep *)(p - 0x10);

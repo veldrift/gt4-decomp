@@ -23,7 +23,7 @@ static inline f32 vcall_1c8(char *o, s32 a) {
     return e->fn(o + e->delta, a);
 }
 
-extern "C" void func_00284CF8(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MColorFace__get_alpha(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s3;

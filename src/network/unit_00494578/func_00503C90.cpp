@@ -1,0 +1,1 @@
+extern void func_00576788(void*);extern void func_0052A588(void*);extern void func_005767C0(void*);static inline void lock(char*const&p){func_00576788(p);}static inline void unlock(char*const&p){func_005767C0(p);}void func_00503C90(char*s){char*p=s;lock(p);func_0052A588(*(void**)(s+0x958));unlock(p);}

@@ -9,9 +9,9 @@ struct Obj
   s32 unk124;
 };
 extern f32 func_002B1FE0(struct Obj *arg0);
-extern f32 func_002B1F90(struct Obj *arg0);
+extern f32 mListBox__get_width(struct Obj *arg0);
 extern f32 func_002B2340(struct Obj *arg0);
-extern f32 func_002B2390(struct Obj *arg0);
+extern f32 mListBox__getTotal(struct Obj *arg0);
 extern f32 func_002D4980(struct Obj *arg0);
 extern f32 func_002B2400(struct Obj *arg0)
 {
@@ -27,10 +27,10 @@ extern f32 func_002B2400(struct Obj *arg0)
   if (arg0->unk124 >= 0)
   {
     temp_f20 = func_002B1FE0(arg0);
-    temp_f21 = func_002B1F90(arg0);
+    temp_f21 = mListBox__get_width(arg0);
     var_f0 = func_002D4980(arg0);
     temp_f22 = temp_f20 + var_f0;
-    temp_f0 = func_002B2390(arg0);
+    temp_f0 = mListBox__getTotal(arg0);
     var_f1 = 0.0f;
     if (temp_f21 <= temp_f0)
     {

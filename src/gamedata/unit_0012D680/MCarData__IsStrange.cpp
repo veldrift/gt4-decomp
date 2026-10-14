@@ -65,7 +65,7 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void func_0012F0D8(s32 *arg0, s32 arg1, VObj **arg2) {
+extern "C" void MCarData__IsStrange(s32 *arg0, s32 arg1, VObj **arg2) {
     if (arg1 > 0) {
         s32 dest[8];
         U u;

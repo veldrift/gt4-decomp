@@ -23,7 +23,7 @@ extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
 extern "C" void func_002FC870(void *, s32);
 
-extern "C" void func_0012E498(s32 *arg0, s32 arg1, void *arg2) {
+extern "C" void MCarData__IsDirtRunnable(s32 *arg0, s32 arg1, void *arg2) {
     s32 buf0[16];
     s32 buf3[4];
     s32 buf4[4];

@@ -13,19 +13,19 @@ struct Obj {
     s32 h;
 };
 
-extern "C" void func_002638D0(Obj *self);
+extern "C" void mTextFace__virtual_68(Obj *self);
 extern "C" void func_002F9B08(void *arg0, s32 *arg1);
 extern "C" void func_002F9B38(void *arg0, int arg1);
 extern "C" void func_003285A8(s32 arg0);
 extern "C" void func_003285F8(s32 arg0);
 
-extern "C" void func_00193948(Obj *self) {
+extern "C" void mPhotoMapWindow__virtual_68(Obj *self) {
     s32 buf[4];
     s32 zero;
     s32 *dst;
     s32 newVal;
     s32 oldVal;
-    func_002638D0(self);
+    mTextFace__virtual_68(self);
     self->f00 = 0;
     self->f04 = 0;
     self->f08 = 0;

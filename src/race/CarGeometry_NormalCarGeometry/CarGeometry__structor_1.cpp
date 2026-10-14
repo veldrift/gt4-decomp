@@ -1,8 +1,8 @@
 extern "C" {
-    extern char D_0067D7C0[];
-    extern char D_0067DC70[];
-    extern char D_0067DAE0[];
-    extern char D_0067D950[];
+    extern char CarGeometry__vtable[];
+    extern char MTRGeometry__vtable[];
+    extern char SpecialCarGeometry__vtable[];
+    extern char NormalCarGeometry__vtable[];
 }
 
 struct SpecialGeometry {
@@ -25,13 +25,13 @@ struct CarGeometry {
 extern "C" int func_0038DC30(CarGeometry *, void *, void *, void *);
 
 extern "C" int CarGeometry__structor_1(CarGeometry *arg0, void *arg1, void *arg2) {
-    arg0->vtbl = D_0067D7C0;
+    arg0->vtbl = CarGeometry__vtable;
     SpecialGeometry *special = &arg0->special;
-    special->vtbl = D_0067DC70;
+    special->vtbl = MTRGeometry__vtable;
     special->state = 0;
-    arg0->baseVtbl = D_0067DAE0;
+    arg0->baseVtbl = SpecialCarGeometry__vtable;
     NormalGeometry *normal = &arg0->normal;
-    normal->vtbl = D_0067D950;
+    normal->vtbl = NormalCarGeometry__vtable;
     normal->geometry = 0;
     arg0->implementation = 0;
     return func_0038DC30(arg0, 0, arg1, arg2);

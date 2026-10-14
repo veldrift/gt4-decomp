@@ -20,14 +20,14 @@ struct CTVEntry {
     void (*fn)(void *);
 };
 
-extern "C" void func_0024D1E8(void *arg0);
-extern "C" void func_00215298(int arg0);
+extern "C" void mTransition__panOutIn(void *arg0);
+extern "C" void mUpdateContext__Sync(int arg0);
 
-extern "C" void func_0028A528(void *arg0, void *arg1) {
+extern "C" void mCrossTransition__panOutIn(void *arg0, void *arg1) {
     struct CTA *a = (struct CTA *)arg0;
     struct CTB *b = (struct CTB *)arg1;
 
-    func_0024D1E8(arg0);
+    mTransition__panOutIn(arg0);
 
     int flag = a->unk20;
     a->unk24.f = 1.0f;
@@ -37,10 +37,10 @@ extern "C" void func_0028A528(void *arg0, void *arg1) {
     if (flag == 0) {
         int old = b->unk6E0;
         b->unk6E0 = 1;
-        func_00215298(2);
+        mUpdateContext__Sync(2);
         CTVEntry *e = (CTVEntry *)(b->vtbl + 0x228);
         e->fn((char *)b + e->delta);
-        func_00215298(1);
+        mUpdateContext__Sync(1);
         b->unk6E0 = old;
     }
 }

@@ -19,7 +19,7 @@ extern "C" void func_0022AD20(void *arg0, void *arg1);
 extern "C" void func_002550B8(void *arg0, int arg1);
 extern "C" void func_00255110(void *arg0, void *arg1);
 
-extern "C" void func_00205530(void *arg0, void *arg1, s32 n, Obj **args) {
+extern "C" void MComposite__insertChild(void *arg0, void *arg1, s32 n, Obj **args) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];

@@ -14,7 +14,7 @@ struct A {
     s32 pad[3];
 };
 
-extern "C" void func_001E8B90(void *arg0, void *arg1)
+extern "C" void MNetwork__imClose(void *arg0, void *arg1)
 {
     A a;
     func_001DC650(&a, arg1);

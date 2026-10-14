@@ -12,13 +12,13 @@ static inline f32 vcall_60(char *o) {
 extern "C" void func_00255110(void *arg0, void *arg1);
 extern "C" void func_002550B8(void *arg0, int arg1);
 extern "C" f32 func_00267D10(s32 arg0);
-extern "C" void func_00267D18(s32 arg0, f32 fparg0);
+extern "C" void mWidget__setRotate(s32 arg0, f32 fparg0);
 extern "C" void func_002F7B68(void *arg0, s32 arg1);
 extern "C" void func_002F9360(void *arg0, f32 fparg0);
 extern "C" void func_003285A8(s32 p);
 extern "C" void func_003285F8(s32 p);
 
-extern "C" void func_00255B20(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MWidget__get_rotate(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 v_s0;
@@ -46,7 +46,7 @@ extern "C" void func_00255B20(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     } else if (arg2 == 1) {
         v_s0 = buf0[0];
         t1 = vcall_60(*arg3);
-        func_00267D18(v_s0, t1);
+        mWidget__setRotate(v_s0, t1);
     }
     func_002550B8(buf0, 0x2);
 }

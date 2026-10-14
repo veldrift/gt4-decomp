@@ -1,7 +1,7 @@
 typedef int s32;
 
 extern "C" void func_003D62A8(void *, s32);
-extern "C" void func_003BB3D8(void *, s32);
+extern "C" void RaceInformation__structor_1(void *, s32);
 extern "C" void func_005C1628(void *);
 
 extern "C" void func_005F3118(void *arg0, s32 arg1) {
@@ -12,7 +12,7 @@ extern "C" void func_005F3118(void *arg0, s32 arg1) {
             func_003D62A8(p0, 0x2);
         }
     }
-    func_003BB3D8(arg0, 0x0);
+    RaceInformation__structor_1(arg0, 0x0);
     if ((arg1 & 0x1) != 0) {
         return func_005C1628(arg0);
     }

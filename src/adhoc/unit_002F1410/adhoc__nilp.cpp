@@ -13,7 +13,7 @@ extern "C" void func_002FE278(void *arg0, void *arg1);
 extern "C" void func_003285A8(struct RefCounter *p);
 extern "C" void func_003285F8(struct RefCounter *p);
 
-extern "C" void func_002F1BC8(s32 *arg0, void *arg1, s32 *arg2) {
+extern "C" void adhoc__nilp(s32 *arg0, void *arg1, s32 *arg2) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

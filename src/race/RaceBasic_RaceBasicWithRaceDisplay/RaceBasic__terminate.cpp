@@ -16,14 +16,14 @@ struct VEntry_0038AAB0 {
 };
 
 extern "C" void func_003D8A60(void *p);
-extern "C" void func_00389ED8(Obj_0038AAB0 *self, s32 arg1, f32 fparg0, f32 fparg1);
+extern "C" void RaceBase__terminate(Obj_0038AAB0 *self, s32 arg1, f32 fparg0, f32 fparg1);
 
-extern "C" void func_0038AAB0(Obj_0038AAB0 *o, s32 arg1, f32 fparg0, f32 fparg1) {
+extern "C" void RaceBasic__terminate(Obj_0038AAB0 *o, s32 arg1, f32 fparg0, f32 fparg1) {
     void *p = o->lock;
     if (p != 0) {
         func_003D8A60(p);
     }
     VEntry_0038AAB0 *e = (VEntry_0038AAB0 *)(o->inner + 0x470);
     e->fn((char *)o + e->delta, 1);
-    func_00389ED8(o, arg1, fparg0, fparg1);
+    RaceBase__terminate(o, arg1, fparg0, fparg1);
 }

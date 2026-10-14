@@ -1,0 +1,3 @@
+struct S{char pad[0x20];int mode;char data[0x168c];int state;};struct G{char pad[0x20];int val;};extern "C" G D_006184D0;
+extern "C" void func_001074D0(G*,int,int,int,int),func_004AB040(int),func_004A1638(int);extern "C" int func_004390D0(void*);
+extern "C" int func_00436640(S*self){switch(self->state){case 1:func_001074D0(&D_006184D0,2,6,640,448);func_004AB040(23);break;case 2:func_001074D0(&D_006184D0,2,7,576,960);D_006184D0.val=func_004390D0((char*)self+0x24);if(self->mode==1)func_004A1638(23);else func_004AB040(23);break;case 0:default:func_001074D0(&D_006184D0,1,0,640,448);func_004AB040(23);break;}return self->state!=0;}

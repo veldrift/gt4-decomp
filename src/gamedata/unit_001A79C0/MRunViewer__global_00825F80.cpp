@@ -9,7 +9,7 @@ extern "C" void func_001A79C0(void *arg0, void *arg1);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_001A7A28(s32 *arg0) {
+extern "C" void MRunViewer__global_00825F80(s32 *arg0) {
     s32 buf[4];
 
     s32 v = D_00622D50;

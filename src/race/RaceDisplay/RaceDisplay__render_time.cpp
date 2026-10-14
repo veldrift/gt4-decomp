@@ -19,7 +19,7 @@ static inline void sub_test(char *s) {
     }
 }
 
-extern "C" void func_0039FDA8(void *arg0) {
+extern "C" void RaceDisplay__render_time(void *arg0) {
     char *self = (char *)arg0;
 
     sub_test(self + 0x15F8);

@@ -1,0 +1,40 @@
+/* compiler: ee-gcc2.96-no-strict-aliasing */
+struct Copy { int x[0x17f4/4]; };
+struct P80 { char pad[0x80]; Copy *p; };
+struct Link { int a; P80 *p; };
+struct Inner { char pad[0x80]; Link *p; };
+struct Root { char pad[0x6c]; Inner *p; };
+struct Obj { char pad[0x20]; char sub[0x16c]; };
+struct Menu { char bytes[0xb0]; };
+struct GlobalObj { char pad[0x1c]; void *p; };
+extern char *D_00622F4C;
+extern char D_006A2CA8[], D_006A2CB8[];
+extern "C" Root *func_003C3F98(Obj *) throw();
+extern "C" void func_003C46C8(Obj *) throw();
+extern "C" void func_00335558(void *);
+extern "C" void func_00334158(void *);
+extern "C" void func_00109A78(Menu *);
+extern "C" void func_00109AB8(Menu *,int);
+extern "C" GlobalObj *func_001D3A60();
+extern "C" void func_001D3AD0(GlobalObj *);
+extern "C" void func_0042FC98(void *,const char *);
+extern "C" int GranTurismo4__MenuGameObject__startProject(Menu *,const char *,void *);
+extern "C" void func_003337D8(void *);
+extern "C" void func_00335580(void *);
+extern "C" void func_003C51A0(Obj *self) {
+ Copy old = *func_003C3F98(self)->p->p->p->p;
+ void *sub = self->sub;
+ func_00335558(sub);
+ func_00334158(sub);
+ Menu menu;
+ func_00109A78(&menu);
+ func_001D3AD0(func_001D3A60());
+ func_001D3A60()->p = sub;
+ func_0042FC98(D_00622F4C+0x3a368,D_006A2CA8);
+ GranTurismo4__MenuGameObject__startProject(&menu,D_006A2CB8,sub);
+ func_003337D8(sub);
+ func_00335580(sub);
+ *func_003C3F98(self)->p->p->p->p = old;
+ func_003C46C8(self);
+ func_00109AB8(&menu,2);
+}

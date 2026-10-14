@@ -17,7 +17,7 @@ extern "C" void func_0024B248(void *arg0, int arg1);
 extern "C" void func_0024B2A0(void *arg0, void *arg1);
 extern "C" void func_0024BE78(void *arg0, f32 fparg0, f32 fparg1);
 
-extern "C" void func_0024B498(s32 *arg0, void *arg1, s32 arg2, VObj_0024B498 **arg3) {
+extern "C" void MTransform__scale(s32 *arg0, void *arg1, s32 arg2, VObj_0024B498 **arg3) {
     void *buf0[4];
     if (arg2 == 2) {
         func_0024B2A0(buf0, arg1);

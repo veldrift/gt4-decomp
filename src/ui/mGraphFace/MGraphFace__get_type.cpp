@@ -77,7 +77,7 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void func_0029EB58(void **arg0, void *arg1, s32 arg2, VObj **arg3) {
+extern "C" void MGraphFace__get_type(void **arg0, void *arg1, s32 arg2, VObj **arg3) {
     Handle h;
     Str t;
     s32 spare[4];

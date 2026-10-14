@@ -12,10 +12,10 @@ struct Obj {
     char *f64;
 };
 
-extern "C" void func_0039EFE0(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
-extern "C" s32 *D_00621870;
+extern "C" void RaceDisplay__printReplayMode(s32 arg0, s32 arg1, s32 arg2, s32 arg3);
+extern "C" s32 *DisplayRText__rtext_ptrs_;
 
-extern "C" void func_003BAA58(char *arg0) {
+extern "C" void RaceFreeRun__printSoundMode(char *arg0) {
     char *s0 = arg0;
     Obj *o = (Obj *)arg0;
     s32 s1 = 0x1A;
@@ -26,5 +26,5 @@ extern "C" void func_003BAA58(char *arg0) {
         s32 v = *(s32 *)(s0 + 0x24698);
         s1 = (v != 0) ? 0x1C : 0x1A;
     }
-    func_0039EFE0((s32)(s0 + 0x1F308), D_00621870[s1], 0, 0);
+    RaceDisplay__printReplayMode((s32)(s0 + 0x1F308), DisplayRText__rtext_ptrs_[s1], 0, 0);
 }

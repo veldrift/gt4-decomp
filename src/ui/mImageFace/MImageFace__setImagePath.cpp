@@ -33,7 +33,7 @@ extern "C" void func_002A0D20(void *arg0, int arg1);
 extern "C" void func_002A0D78(void *arg0, void *arg1);
 extern "C" void func_002A35F8(Obj *self, Str *src);
 
-extern "C" void func_002A1288(void *arg0, void *arg1, s32 n, Obj **args) {
+extern "C" void MImageFace__setImagePath(void *arg0, void *arg1, s32 n, Obj **args) {
     s32 tmp[4];
     Str s;
     Str *ps;

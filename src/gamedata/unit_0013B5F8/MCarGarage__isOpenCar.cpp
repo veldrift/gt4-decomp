@@ -34,7 +34,7 @@ static inline void assign(void **dst, Handle *ph) {
     }
 }
 
-extern "C" void func_0013F040(void **arg0, void *arg1) {
+extern "C" void MCarGarage__isOpenCar(void **arg0, void *arg1) {
     Handle h0;
     Dest d;
     Handle h;

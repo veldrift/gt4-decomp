@@ -37,7 +37,7 @@ extern "C" void func_00309378(void *, s32);
 extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
 
-extern "C" void func_00136370(s32 *arg0, s32 arg1, char **arg2) {
+extern "C" void MCalendar__dayToGameDay(s32 *arg0, s32 arg1, char **arg2) {
     s32 buf0[4];
     s32 sp10;
     s32 newVal;

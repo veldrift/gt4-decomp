@@ -65,7 +65,7 @@ static inline const char *c_str(Str *t) {
     return t->p;
 }
 
-extern "C" void func_00166670(void **arg0, void *arg1, s32 arg2, void **arg3) {
+extern "C" void MGame__isCourseAvailable(void **arg0, void *arg1, s32 arg2, void **arg3) {
     if (arg2 > 0) {
         union StrOrHandle u;
         Handle h;

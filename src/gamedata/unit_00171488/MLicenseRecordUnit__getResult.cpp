@@ -44,7 +44,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_00171898(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MLicenseRecordUnit__getResult(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
     s32 buf0[4];
     s32 buf2[4];
     Str s3;

@@ -1,0 +1,1 @@
+struct S{float a;int b;float c;};extern S D_0088F2D0;extern int RaceCarSound__dive_,RaceCarSound__narration_;void func_00391D28(){D_0088F2D0.a=1;D_0088F2D0.c=1;D_0088F2D0.b=0;RaceCarSound__dive_=0;RaceCarSound__narration_=0;}

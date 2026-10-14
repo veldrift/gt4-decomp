@@ -28,7 +28,7 @@ extern "C" void func_002F9360(void *arg0, f32 fparg0);
 extern "C" void func_003285A8(s32 arg0);
 extern "C" void func_003285F8(s32 arg0);
 
-extern "C" void func_0031B688(void *arg0, void *arg1) {
+extern "C" void mFloatConst__execute(void *arg0, void *arg1) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

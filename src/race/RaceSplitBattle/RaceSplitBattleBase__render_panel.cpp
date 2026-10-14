@@ -24,7 +24,7 @@ struct Owner {
 typedef Obj *(*GetFn)(void *self, s32 arg);
 typedef void (*SetFn)(void *self, s32 arg);
 
-extern "C" void func_003302F0(Owner *arg0, s32 arg1) {
+extern "C" void RaceSplitBattleBase__render_panel(Owner *arg0, s32 arg1) {
     VEntry *e = &arg0->p->e;
     Obj *r = ((GetFn)e->fn)((char *)arg0 + e->delta, arg1);
     VEntry *f = &r->vtbl[28];

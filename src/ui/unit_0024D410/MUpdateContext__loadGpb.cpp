@@ -23,7 +23,7 @@ extern "C" void func_00312318(void *arg0, s32 arg1);
 extern "C" void func_0024E378(void *arg0, s32 arg1);
 extern "C" u8 *func_00314920(u8 *arg0);
 
-extern "C" void func_0024EBA0(void *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MUpdateContext__loadGpb(void *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];

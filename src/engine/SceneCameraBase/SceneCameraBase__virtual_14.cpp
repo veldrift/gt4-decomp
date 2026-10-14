@@ -17,7 +17,7 @@ struct Obj {
     char *vtbl;
 };
 
-extern "C" f32 func_0044F3E0(Obj *self) {
+extern "C" f32 SceneCameraBase__virtual_14(Obj *self) {
     f32 v[16];
     VEntryV *e1 = (VEntryV *)(self->vtbl + 0x38);
     e1->fn((char *)self + e1->delta, v, 0.0f);

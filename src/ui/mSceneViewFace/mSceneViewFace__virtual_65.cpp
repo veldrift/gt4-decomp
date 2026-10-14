@@ -38,7 +38,7 @@ extern "C" s32 func_0057F260(const char *s);
 extern "C" void func_005C2630(Str *s, s32 pos, s32 n, const char *src, s32 len);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
-extern "C" s32 func_003166B8(Str *s);
+extern "C" s32 HSymID__GetID(Str *s);
 extern "C" void func_003069F8(Obj *obj, void *h, s32 *val);
 extern "C" void func_0030BB18(void *h);
 extern "C" void func_0024E348(void *h, s32 *val);
@@ -73,7 +73,7 @@ static inline void vcall20(VObj *o, s32 *ret, s32 n, void *args) {
         }                                       \
     }
 
-extern "C" void func_002634E0(Obj *self, s32 arg1) {
+extern "C" void mSceneViewFace__virtual_65(Obj *self, s32 arg1) {
     s32 newVal;
     s32 oldVal;
     MethodHandle h;
@@ -94,7 +94,7 @@ extern "C" void func_002634E0(Obj *self, s32 arg1) {
         }
         ps->p = d;
         func_005C2630(ps, 0, -1, src, func_0057F260(src));
-        *pv = func_003166B8(ps);
+        *pv = HSymID__GetID(ps);
         func_003069F8(self, &h, pv);
         {
             Rep *q = (Rep *)(ps->p - 0x10);

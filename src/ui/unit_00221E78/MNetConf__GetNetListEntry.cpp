@@ -67,7 +67,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_00223C28(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MNetConf__GetNetListEntry(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];

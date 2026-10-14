@@ -25,7 +25,7 @@ struct func_001655A8_s {
     u8 unk29;
 };
 
-extern "C" void func_001655A8(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MGame__get_suspended_session(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 v_s0;
     s32 t1;

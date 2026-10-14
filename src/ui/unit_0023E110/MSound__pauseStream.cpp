@@ -25,7 +25,7 @@ struct A {
     s32 pad[3];
 };
 
-extern "C" void func_0023E978(void *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MSound__pauseStream(void *arg0, void *arg1, s32 arg2, char **arg3) {
     if (arg2 == 1) {
         A a;
         s32 v = vcall_58(*arg3) != 0;

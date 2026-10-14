@@ -67,7 +67,7 @@ static inline s32 vcall58(void *obj) {
     return e->fn((char *)o + e->delta);
 }
 
-extern "C" void func_0016DBB0(void **arg0, void *arg1, s32 arg2, void **arg3) {
+extern "C" void MGarage__addNewCar(void **arg0, void *arg1, s32 arg2, void **arg3) {
     if (arg2 >= 2) {
         Str s;
         s32 s5 = 0;

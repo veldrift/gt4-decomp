@@ -11,7 +11,7 @@ static inline s32 vcall_58(char *o) {
 extern "C" void func_001DC650(void *arg0, void *arg1);
 extern "C" void func_001DC5F8(void *arg0, s32 arg1);
 
-extern "C" void func_001DCBC0(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MNetwork__setLobbyMessageEnable(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 v_s1;
     func_001DC650(buf0, arg1);

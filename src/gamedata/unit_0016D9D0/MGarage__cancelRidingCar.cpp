@@ -20,7 +20,7 @@ extern "C" s32 func_00147D80(s32 arg0);
 extern "C" void func_00435418(void *o, s32 a, s32 b);
 extern "C" void func_0013BD68(void *arg0, s32 arg1);
 
-extern "C" void func_0016E2A0(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MGarage__cancelRidingCar(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     char *s2;
     s32 v_s0;

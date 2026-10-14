@@ -12,7 +12,7 @@ extern "C" s32 func_00314920(s32 arg0);
 extern "C" void func_003285A8(s32 p);
 extern "C" void func_003285F8(s32 p);
 
-extern "C" void func_00304398(s32 *arg0, void *arg1, s32 arg2, s32 arg3) {
+extern "C" void Module__load(s32 *arg0, void *arg1, s32 arg2, s32 arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p0;

@@ -1,9 +1,9 @@
 typedef int s32;
 
-extern "C" void func_003A4DA0(void *self);
+extern "C" void RaceMessageDisplay__clear(void *self);
 extern "C" void func_003A5D10(void *arg0);
 
-extern "C" void func_003A16A8(char *arg0) {
+extern "C" void RaceDisplay__virtual_34(char *arg0) {
     s32 *p1108 = (s32 *)(arg0 + 0x1108);
     s32 *p1300 = (s32 *)(arg0 + 0x1300);
     s32 *p1398 = (s32 *)(arg0 + 0x1398);
@@ -31,7 +31,7 @@ extern "C" void func_003A16A8(char *arg0) {
     *p1748 = *p1748 & -0x100;
     *p17BC = *p17BC & -0x100;
     *p228C = *p228C & -0x100;
-    func_003A4DA0(p228C);
+    RaceMessageDisplay__clear(p228C);
 
     s32 *p10E4 = (s32 *)(arg0 + 0x10E4);
     *p10E4 = *p10E4 & -0x100;

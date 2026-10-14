@@ -7,11 +7,11 @@ struct Item_002B5500 {
     unsigned int hi : 14;
 };
 
-extern "C" s32 func_002B49D8(void *list);
+extern "C" s32 mListBox__get_total_item_count(void *list);
 extern "C" Item_002B5500 *func_002B49B8(void *list, s32 i);
 
-extern "C" void func_002B5500(void *list, s32 i, s32 on) {
-    if (i >= 0 && i < func_002B49D8(list)) {
+extern "C" void mListBox__setItemActive(void *list, s32 i, s32 on) {
+    if (i >= 0 && i < mListBox__get_total_item_count(list)) {
         Item_002B5500 *it = func_002B49B8(list, i);
         it->on = on != 0;
     }

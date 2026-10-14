@@ -12,9 +12,9 @@ struct VE88B50 {
     void *fn;
 };
 
-extern "C" void func_00372050(s32 arg0, s32 arg1, s32 arg2);
+extern "C" void CameraSys__CameraManager__initWindowInput(s32 arg0, s32 arg1, s32 arg2);
 
-extern "C" void func_00388B50(void *arg0) {
+extern "C" void RaceBase__postInitializeCamera(void *arg0) {
     char *self = (char *)arg0;
     VE88B50 *e1 = (VE88B50 *)(*(char **)(self + 0x64) + 0xD0);
     char *s1 = (char *)((void *(*)(void *, s32))e1->fn)(self + e1->delta, 0);
@@ -27,7 +27,7 @@ extern "C" void func_00388B50(void *arg0) {
 
     VE88B50 *e3 = (VE88B50 *)(*(char **)(self + 0x64) + 0x228);
     s32 r = ((s32 (*)(void *, s32))e3->fn)(self + e3->delta, 0);
-    func_00372050((s32)s1, 0, r);
+    CameraSys__CameraManager__initWindowInput((s32)s1, 0, r);
 
     VE88B50 *e4 = (VE88B50 *)(*(char **)(self + 0x64) + 0x188);
     ((void (*)(void *))e4->fn)(self + e4->delta);

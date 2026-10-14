@@ -11,7 +11,7 @@ extern "C" void func_002F4848(s8 *arg0, s32 arg1);         /* extern */
 extern "C" void func_003067C0(s32 arg0, void *arg1, void *arg2); /* extern */
 extern "C" s32 func_00322060(void *arg0);                  /* extern */
 
-extern "C" void func_0031B908(void *arg0, void *arg1) {
+extern "C" void mFunctionDefine__execute(void *arg0, void *arg1) {
     struct mFunctionDefine *self = (struct mFunctionDefine *)arg0;
     s8 **pp = &self->unkC;
 

@@ -21,7 +21,7 @@ extern "C" void func_00232C20(void *arg0, int arg1);
 extern "C" void func_00232C78(void *arg0, void *arg1);
 extern "C" void func_0025B538(void *c, f32 fparg0, f32 fparg1, f32 fparg2, f32 fparg3);
 
-extern "C" void func_002331C0(s32 *arg0, void *arg1, s32 arg2, VObj_002331C0 **arg3) {
+extern "C" void MRootWindow__global_0082E690(s32 *arg0, void *arg1, s32 arg2, VObj_002331C0 **arg3) {
     void *buf0[4];
     if (arg2 >= 2) {
         func_00232C78(buf0, arg1);

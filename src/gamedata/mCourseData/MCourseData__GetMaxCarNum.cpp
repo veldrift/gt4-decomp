@@ -71,7 +71,7 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void func_001B2F10(s32 *arg0, s32 arg1, VObj **arg2) {
+extern "C" void MCourseData__GetMaxCarNum(s32 *arg0, s32 arg1, VObj **arg2) {
     if (arg1 > 0) {
         U u;
         Rec rec;

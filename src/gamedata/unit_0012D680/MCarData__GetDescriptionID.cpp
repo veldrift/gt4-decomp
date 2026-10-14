@@ -64,7 +64,7 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void func_0012FEA8(s32 *arg0, s32 arg1, VObj **arg2) {
+extern "C" void MCarData__GetDescriptionID(s32 *arg0, s32 arg1, VObj **arg2) {
     if (arg1 > 0) {
         s32 dest[4];
         U u;

@@ -44,7 +44,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_00312CE8(s32 *arg0, void *arg1, s32 arg2, char **arg3, s32 *arg4) {
+extern "C" void hString__virtual_30(s32 *arg0, void *arg1, s32 arg2, char **arg3, s32 *arg4) {
     s32 buf0[4];
     Str s1;
     s32 buf2[4];

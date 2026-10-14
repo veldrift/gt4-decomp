@@ -14,7 +14,7 @@ extern "C" void func_00132D60(void *, s32);
 extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
 
-extern "C" void func_00132FB0(s32 *arg0) {
+extern "C" void MCalendar__global_008222B8(s32 *arg0) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

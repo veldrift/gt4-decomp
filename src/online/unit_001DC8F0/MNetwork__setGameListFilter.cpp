@@ -77,7 +77,7 @@ static inline void vcall18(Str *ret, void *obj) {
     e->fn(ret, (char *)o + e->delta);
 }
 
-extern "C" void func_001E1F40(void **arg0, void *arg1, s32 arg2, void **arg3) {
+extern "C" void MNetwork__setGameListFilter(void **arg0, void *arg1, s32 arg2, void **arg3) {
     if (arg2 >= 3) {
         Handle h;
         s32 spare[4];

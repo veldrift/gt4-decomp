@@ -29,7 +29,7 @@ typedef Obj *(*GetFn)(void *self, s32 arg);
 typedef float (*FloatFn)(void *self);
 typedef s32 (*IntFn)(void *self);
 
-extern "C" s32 func_00341CC8(void *arg0)
+extern "C" s32 RacePS2Base__render_use_back_mirror(void *arg0)
 {
     Owner *self = (Owner *)arg0;
     s32 res = 0;

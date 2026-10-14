@@ -15,7 +15,7 @@ extern "C" void func_002F1410(void *arg0, void *arg1, void *arg2);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_002EE9F0(void *a0, s32 *result, s32 a2, s32 a3, char **other) {
+extern "C" void hArray__virtual_48(void *a0, s32 *result, s32 a2, s32 a3, char **other) {
     s32 buf[4];
     s32 v = vcall(*other);
     func_002F1410(buf, (void *)a2, (void *)v);

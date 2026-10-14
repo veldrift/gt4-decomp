@@ -53,7 +53,7 @@ static inline const char *c_str(Str *t) {
     return t->p;
 }
 
-extern "C" void func_0012D7A8(void **arg0, s32 arg1, void *arg2) {
+extern "C" void MCarData__GetCarLabel(void **arg0, s32 arg1, void *arg2) {
     if (arg1 > 0) {
         Handle h0;
         Handle h;

@@ -23,8 +23,8 @@ struct func_003E56E8_arg0 {
     s32 unk54;
 };
 
-extern "C" u8 func_0045B0F8(s32);
-extern "C" f32 func_0045B200(s32);
+extern "C" u8 GT4Model__BinStreamReader__read8u(s32);
+extern "C" f32 GT4Model__BinStreamReader__readFloat(s32);
 extern "C" void func_003E29C8(char *);
 
 extern "C" void func_003E56E8(struct func_003E56E8_arg0 *arg0, s32 arg1) {
@@ -32,13 +32,13 @@ extern "C" void func_003E56E8(struct func_003E56E8_arg0 *arg0, s32 arg1) {
     char *p1;
     s32 n;
 
-    arg0->unk44 = func_0045B0F8(arg1);
-    arg0->unk4 = (f32)(s32)func_0045B0F8(arg1) * 0x1.921FB4p1f * 0x1.0p-7f;
-    arg0->unk8 = (f32)(s32)func_0045B0F8(arg1) * 0x1.921FB4p1f * 0x1.0p-7f;
-    arg0->unkC = (f32)(s32)func_0045B0F8(arg1) * 0x1.921FB4p1f * 0x1.0p-7f;
-    arg0->unk10 = func_0045B200(arg1);
-    arg0->unk14 = func_0045B200(arg1);
-    arg0->unk18 = func_0045B200(arg1);
+    arg0->unk44 = GT4Model__BinStreamReader__read8u(arg1);
+    arg0->unk4 = (f32)(s32)GT4Model__BinStreamReader__read8u(arg1) * 0x1.921FB4p1f * 0x1.0p-7f;
+    arg0->unk8 = (f32)(s32)GT4Model__BinStreamReader__read8u(arg1) * 0x1.921FB4p1f * 0x1.0p-7f;
+    arg0->unkC = (f32)(s32)GT4Model__BinStreamReader__read8u(arg1) * 0x1.921FB4p1f * 0x1.0p-7f;
+    arg0->unk10 = GT4Model__BinStreamReader__readFloat(arg1);
+    arg0->unk14 = GT4Model__BinStreamReader__readFloat(arg1);
+    arg0->unk18 = GT4Model__BinStreamReader__readFloat(arg1);
     p1 = (char *)arg0 + 0x28;
     p0 = (char *)arg0 + 0x1C;
     n = 2;

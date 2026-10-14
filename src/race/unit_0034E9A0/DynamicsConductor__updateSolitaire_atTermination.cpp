@@ -10,11 +10,11 @@ struct VEntry_240 {
     char *(*fn)(char *, s32);
 };
 
-extern "C" s32 func_0035DF00(char *arg0);
+extern "C" s32 DynamicsConductor__GetNumberOfPylonsToBeTouched(char *arg0);
 extern "C" char *func_0034C190(char *arg0, s32 arg1);
 extern "C" u32 func_0035E3F0(char *arg0);
 
-extern "C" s32 func_003580F8(char *arg0) {
+extern "C" s32 DynamicsConductor__updateSolitaire_atTermination(char *arg0) {
     char *s0 = *(char **)arg0;
     char *s2;
     s32 one;
@@ -24,7 +24,7 @@ extern "C" s32 func_003580F8(char *arg0) {
     if (*(s32 *)(s0 + 0xE0) != 0) return 0;
 
     s2 = s0 + 0x88;
-    if (func_0035DF00(arg0) > 0) return 0;
+    if (DynamicsConductor__GetNumberOfPylonsToBeTouched(arg0) > 0) return 0;
 
     {
         char *a2 = *(char **)(s0 + 0x84);

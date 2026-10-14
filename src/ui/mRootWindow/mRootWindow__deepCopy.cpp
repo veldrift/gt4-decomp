@@ -38,21 +38,21 @@ struct Obj {
     unsigned b5 : 1;
 };
 
-extern char D_005DB9E0[];
-extern char D_005EFF90[];
+extern char mRootWindow__tf[];
+extern char hObject__tf[];
 
-extern "C" void func_00201700(void *a, void *b);
-extern "C" Obj *func_005C0FC8(s32 a0, void *a1, s32 a2, void *a3, void *a4, void *a5);
+extern "C" void mBox__deepCopy(void *a, void *b);
+extern "C" Obj *GT4MC__FileGT4GameData__loadInstance(s32 a0, void *a1, s32 a2, void *a3, void *a4, void *a5);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" char *func_005C2560(Rep *r);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 
-extern "C" void func_00234590(Obj *arg0, hObject *arg1) {
+extern "C" void mRootWindow__deepCopy(Obj *arg0, hObject *arg1) {
     Obj *o = 0;
-    func_00201700(arg0, arg1);
+    mBox__deepCopy(arg0, arg1);
     if (arg1 != 0) {
         TypeEntry *t = arg1->vtbl;
-        o = func_005C0FC8(t->type, D_005DB9E0, 0, (char *)arg1 + t->offset, D_005EFF90, arg1);
+        o = GT4MC__FileGT4GameData__loadInstance(t->type, mRootWindow__tf, 0, (char *)arg1 + t->offset, hObject__tf, arg1);
     }
     if (o != 0) {
         arg0->b4 = o->b4;

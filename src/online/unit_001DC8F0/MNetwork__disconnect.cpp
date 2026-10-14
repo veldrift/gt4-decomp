@@ -28,7 +28,7 @@ static inline void assign(void **dst, Handle *ph) {
     }
 }
 
-extern "C" void func_001DE098(s32 *arg0, void *arg1) {
+extern "C" void MNetwork__disconnect(s32 *arg0, void *arg1) {
     Handle h0;
     Handle h1;
     s32 flag;

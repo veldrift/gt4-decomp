@@ -88,7 +88,7 @@ s32 func_003EDA38();                          /* extern */
 s32 func_003EDAD8();                                /* extern */
 M2C_UNK func_0044F4A8();                            /* extern */
 
-void func_0038FC60(void *arg0, s32 arg1, s32 arg2) {
+void RaceCarModel__virtual_12(void *arg0, s32 arg1, s32 arg2) {
     s32 temp_v0;
     void *temp_s0;
 

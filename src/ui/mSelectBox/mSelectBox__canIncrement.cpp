@@ -21,13 +21,13 @@ struct mSelectBox {
     f32 unkEC;      /* 0xEC */
 };
 
-extern "C" f32 func_0025B370(struct C *arg0);
-extern "C" f32 func_0025B3D0(struct C *arg0);
+extern "C" f32 mWidget__getWindowW(struct C *arg0);
+extern "C" f32 mWidget__getWindowH(struct C *arg0);
 extern "C" f32 func_002D4980(Obj *arg0);
 extern "C" s32 func_0057CE60(Obj *arg0);
 extern "C" bool func_0057CEC8(Obj *o);
 
-extern "C" s32 func_002DBB80(struct mSelectBox *arg0) {
+extern "C" s32 mSelectBox__canIncrement(struct mSelectBox *arg0) {
     Obj *sub = (Obj *)((char *)arg0 + 0xBC);
     f32 f21;
     f32 f22;
@@ -45,9 +45,9 @@ extern "C" s32 func_002DBB80(struct mSelectBox *arg0) {
         f21 = arg0->unkE8;
     }
     if (t == 0) {
-        f22 = func_0025B370((struct C *)arg0);
+        f22 = mWidget__getWindowW((struct C *)arg0);
     } else {
-        f22 = func_0025B3D0((struct C *)arg0);
+        f22 = mWidget__getWindowH((struct C *)arg0);
     }
     f20 = f21 + func_002D4980((Obj *)arg0);
     n = func_0057CE60(sub) - 1;

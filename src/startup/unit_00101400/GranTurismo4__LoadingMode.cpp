@@ -1,0 +1,35 @@
+extern "C" int func_0057F238(const char*,const char*);
+extern "C" void func_0010AEE0(const void*);
+extern char D_0068BEB8[];
+extern char D_0068BEC0[];
+extern char D_0068BEC8[];
+extern char D_0068BED8[];
+extern char D_0068BEE0[];
+extern char D_0068BEE8[];
+extern char D_0068BEF0[];
+extern char D_0068BEF8[];
+extern char D_0068BF08[];
+extern void* D_00618498;
+extern char D_00618430[];
+extern char D_006DE998[];
+extern char D_006DE948[];
+extern char D_006DE9E0[];
+extern char D_006DEA18[];
+extern char D_006DEA50[];
+extern char D_006DEAB8[];
+extern void* D_0061849C;
+extern "C" void GranTurismo4__LoadingMode(const char* name) {
+ if(!name)return;
+ const void* command;
+ if(func_0057F238(name,D_0068BEB8)==0)command=D_00618498;
+ else if(func_0057F238(name,D_0068BEC0)==0)command=D_00618430;
+ else if(func_0057F238(name,D_0068BEC8)==0)command=D_006DE998;
+ else if(func_0057F238(name,D_0068BED8)==0)command=D_006DE948;
+ else if(func_0057F238(name,D_0068BEE0)==0)command=D_006DE9E0;
+ else if(func_0057F238(name,D_0068BEE8)==0)command=D_006DEA18;
+ else if(func_0057F238(name,D_0068BEF0)==0)command=D_006DEA50;
+ else if(func_0057F238(name,D_0068BEF8)==0)command=D_006DEAB8;
+ else if(func_0057F238(name,D_0068BF08)==0)command=D_0061849C;
+ else return;
+ func_0010AEE0(command);
+}

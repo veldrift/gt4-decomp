@@ -17,7 +17,7 @@ extern "C" void func_00309378(void *arg0, s32 arg1);
 extern "C" void func_003285A8(s32 arg0);
 extern "C" void func_003285F8(s32 arg0);
 
-extern "C" void func_0031E188(void *arg0, Owner *arg1) {
+extern "C" void mNilConst__execute(void *arg0, Owner *arg1) {
     s32 buf[4];
     Lst *s2;
     s32 *s1;

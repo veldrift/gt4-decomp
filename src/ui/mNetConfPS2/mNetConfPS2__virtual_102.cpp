@@ -4,7 +4,7 @@ struct func_004ED4D8_arg0;
 extern char D_0069A578[];
 extern "C" s32 func_004ED4D8(struct func_004ED4D8_arg0 *arg0, s32 arg1, s32 arg2);
 
-extern "C" void func_00275D40(void *arg0, void **arg1, void **arg2) {
+extern "C" void mNetConfPS2__virtual_102(void *arg0, void **arg1, void **arg2) {
     char *d1 = (char *)*arg1;
     s32 n1 = ((s32 *)d1)[-4];
     const char *c1;

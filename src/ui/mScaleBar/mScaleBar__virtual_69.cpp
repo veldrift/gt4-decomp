@@ -16,15 +16,15 @@ struct Obj {
 
 extern "C" {
 s32 func_00238F58(Obj *);                           /* extern */
-f32 func_0025B370(void *);                          /* extern */
-f32 func_0025B3D0(void *);                          /* extern */
-void func_0025B2E0(void *, f32);                    /* extern */
-void func_0025B340(void *, f32);                    /* extern */
-void func_002638D8(void *, s32, s32);               /* extern */
+f32 mWidget__getWindowW(void *);                          /* extern */
+f32 mWidget__getWindowH(void *);                          /* extern */
+void mWidget__setWindowX(void *, f32);                    /* extern */
+void mWidget__setWindowY(void *, f32);                    /* extern */
+void mColorChipFace__virtual_69(void *, s32, s32);               /* extern */
 void *func_0057B0F8(void *, f32, f32);              /* extern */
 }
 
-extern "C" void func_00238828(Obj *arg0, s32 arg1) {
+extern "C" void mScaleBar__virtual_69(Obj *arg0, s32 arg1) {
     f32 f20;
     f32 f21;
     f32 f1;
@@ -34,7 +34,7 @@ extern "C" void func_00238828(Obj *arg0, s32 arg1) {
     void *tgt;
     char *sub;
 
-    func_002638D8(arg0, arg1, 0);
+    mColorChipFace__virtual_69(arg0, arg1, 0);
     if (arg0->fF4 != 0) {
         tgt = arg0;
         if (arg0->f100 != 0) {
@@ -42,14 +42,14 @@ extern "C" void func_00238828(Obj *arg0, s32 arg1) {
             tgt = (c != 0) ? c : (void *)arg0;
         }
         if (func_00238F58(arg0) != 0) {
-            f21 = func_0025B370(tgt);
+            f21 = mWidget__getWindowW(tgt);
         } else {
-            f21 = func_0025B3D0(tgt);
+            f21 = mWidget__getWindowH(tgt);
         }
         if (func_00238F58(arg0) != 0) {
-            f20 = func_0025B370(arg0->fF4);
+            f20 = mWidget__getWindowW(arg0->fF4);
         } else {
-            f20 = func_0025B3D0(arg0->fF4);
+            f20 = mWidget__getWindowH(arg0->fF4);
         }
         sub = (char *)arg0 + 0xDC;
         func_0057B0F8(sub, arg0->fC4, 0x1.999998p-3f);
@@ -59,9 +59,9 @@ extern "C" void func_00238828(Obj *arg0, s32 arg1) {
         if (0.0f < f2) {
             t = ((*(f32 *)(sub + 8) - f3) / f2) * (f21 - f20);
             if (func_00238F58(arg0) != 0) {
-                return func_0025B2E0(arg0->fF4, t);
+                return mWidget__setWindowX(arg0->fF4, t);
             }
-            func_0025B340(arg0->fF4, t);
+            mWidget__setWindowY(arg0->fF4, t);
         }
     }
 }

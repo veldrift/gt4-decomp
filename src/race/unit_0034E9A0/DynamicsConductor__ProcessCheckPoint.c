@@ -1,0 +1,13 @@
+#include "types.h"
+#define NULL 0
+void *memcpy(void *, const void *, unsigned int);
+#include "m2c_macros.h"
+
+void *func_0034C190();                              /* extern */
+M2C_UNK RaceDisplayGeneralTimeEvent__structor_0(s32, s32, s32, s32, s32, s32, u8); /* extern */
+
+void DynamicsConductor__ProcessCheckPoint(s32 arg0, s32 arg1, s32 arg2, s32 arg3, M2C_UNK arg4, s32 arg5, s32 arg6) {
+    u8 frag0;
+    frag0 = M2C_FIELD(func_0034C190(), u8 *, 0x5B7);
+    RaceDisplayGeneralTimeEvent__structor_0(arg0, arg1, arg2 - 1, arg3, arg5, arg6, frag0);
+}

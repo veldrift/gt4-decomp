@@ -6,7 +6,7 @@ extern "C" s32 func_001062B8(void *arg0);
 
 extern char D_006184D0[];
 
-extern "C" void func_00215FE0(void *arg0, f32 *arg1, f32 *arg2) {
+extern "C" void mRenderContextPS2__virtual_62(void *arg0, f32 *arg1, f32 *arg2) {
     char *g = D_006184D0;
     f32 sx = (f32)func_00106298(g) / 640.0f;
     f32 sy = (f32)func_001062B8(g) / 480.0f;

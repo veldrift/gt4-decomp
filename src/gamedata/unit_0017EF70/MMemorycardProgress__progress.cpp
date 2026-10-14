@@ -16,7 +16,7 @@ extern "C" void func_002F9360(void *arg0, f32 fparg0);
 extern "C" void func_003285A8(s32 p);
 extern "C" void func_003285F8(s32 p);
 
-extern "C" void func_0017EF70(s32 *arg0, s32 arg1, s32 arg2) {
+extern "C" void MMemorycardProgress__progress(s32 *arg0, s32 arg1, s32 arg2) {
     s32 buf0[4];
     s32 buf1[4];
     f32 *pg;

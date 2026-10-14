@@ -28,15 +28,15 @@ struct Obj {
 extern "C" void func_0032B5C0(SS *arg0);
 extern "C" void **func_0032B808(SS *arg0, s32 arg1);
 extern "C" Str *func_0032B8C0(SS *arg0);
-extern "C" s32 func_003166D8(s32 arg0);
+extern "C" s32 HSymID__GetName(s32 arg0);
 extern "C" char *func_005C2560(Rep *src);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 
-extern "C" Str *func_00319420(Str *arg0, Obj *arg1) {
+extern "C" Str *mDefine__toString(Str *arg0, Obj *arg1) {
     SS ss;
     func_0032B5C0(&ss);
-    func_0032B808(&ss, func_003166D8(arg1->id));
+    func_0032B808(&ss, HSymID__GetName(arg1->id));
     {
         s32 p = *(s32 *)&func_0032B8C0(&ss)->p;
         Rep *r = (Rep *)(p - 0x10);

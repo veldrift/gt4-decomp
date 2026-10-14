@@ -1,0 +1,47 @@
+typedef unsigned char u8;
+typedef unsigned short u16;
+struct Owner;
+struct Obj {
+    int unused, kind;
+    unsigned state;
+    char pad[0x58-12];
+    unsigned expected, count;
+    char pad60[4];
+    char data[8];
+    unsigned value;
+    char pad70[0x80-0x70];
+    Owner *owner;
+};
+struct API { char pad[0x80]; int (*copy)(void *, const void *); };
+extern API *D_0064B4B0;
+extern "C" int func_0051E158(Owner *, unsigned, int, const void *, unsigned, int) throw();
+extern "C" int func_00520250(int, int, int, int);
+extern "C" int func_00538F98(u8 *, u16 *);
+extern "C" int func_0051EA08(Obj *self, int unused, u8 *p, unsigned length) {
+    u16 val;
+    unsigned state = self->state;
+    if (state != 6) return 0xCB20;
+    if (self->kind != 1) return 0xCB20;
+    unsigned consumed = 0;
+    if (consumed >= length) return 0xCB20;
+    int a = p[0], b = p[1], c = p[2];
+    p += 3;
+    if (length < 3) return 0xCB20;
+    if (!func_00520250(1, a, b, c)) return 0xCB28;
+    consumed = 4;
+    if (consumed >= length) return 0xCB20;
+    func_00538F98(p, &val); p += 2;
+    if (val != self->expected) return 0xCB20;
+    if (length <= state) return 0xCB20;
+    func_00538F98(p, &val); p += 2;
+    self->count = val;
+    if (length < 23) return 0xCB20;
+    D_0064B4B0->copy(self->data, p); p += 16;
+    consumed = 24;
+    if (consumed >= length) return 0xCB20;
+    func_00538F98(p, &val);
+    self->value = val;
+    int result = func_0051E158(self->owner, 23, 65535, 0, 0, 1);
+    if (!result) self->state = 7;
+    return result;
+}

@@ -1,0 +1,4 @@
+struct Mode{int v;Mode(int x):v(x){}operator int()const{return v;}bool operator<(int n)const{return v<n;}bool operator>=(int n)const{return !(*this<n);}};
+struct Vp{short delta,index;void*(*fn)(void*);};struct V{short delta,index;int(*fn)(void*);};struct Data{char p[8];void**list;};struct M{char p[0x60];Data*data;};struct S{char p[0x64];char*vt;int gap;M*m;char q[0xc60];int gate;char r[0xd738];void*object;};
+extern "C" void func_003DCD88(void*);extern "C" void*func_003DCC50(void*,void*,bool);
+extern "C" void func_0038B990(S*self,void*object){if(self->gate)return;if(self->object)func_003DCD88(self->object);self->object=object;if(object){M*m=self->m;Vp*f=(Vp*)(self->vt+0x310);int index=(int)f->fn((char*)self+f->delta);void*selected=m->data->list[index];V*e=(V*)(self->vt+0x2f8);Mode mode(e->fn((char*)self+e->delta));bool b=mode>=3&&mode<19;func_003DCC50(self->object,selected,b);}}

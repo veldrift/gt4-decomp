@@ -8,7 +8,7 @@ typedef long s64;
 typedef float f32;
 
 extern char D_0069C0A8[];
-extern u32 D_00624978[];
+extern u32 PDISTD__LOCALE[];
 
 extern "C" void func_00312370(void *, void *);
 extern "C" u8 *func_00314920(u8 *);
@@ -19,7 +19,7 @@ extern "C" void func_003285F8(s32);
 extern "C" void func_002FC870(void *, s32);
 extern "C" void func_00312318(void *, s32);
 
-extern "C" void func_002B61F8(s32 *arg0, s32 arg1, void *arg2) {
+extern "C" void MLocale__set(s32 *arg0, s32 arg1, void *arg2) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s1;
@@ -38,7 +38,7 @@ extern "C" void func_002B61F8(s32 *arg0, s32 arg1, void *arg2) {
             v1[len] = 0;
             s = (char *)*pp;
         }
-        t1 = func_0048EEB8(D_00624978, (s32)s);
+        t1 = func_0048EEB8(PDISTD__LOCALE, (s32)s);
         p_s1 = buf1;
         func_002FE278(p_s1, t1);
         if (arg0 != p_s1) {

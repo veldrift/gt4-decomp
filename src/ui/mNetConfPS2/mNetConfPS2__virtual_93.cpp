@@ -3,7 +3,7 @@ typedef int s32;
 extern char D_0069A578[];
 extern "C" void func_004ED980(void *conn, void *value, const char *name, const char *text);
 
-extern "C" void func_002755B0(void *arg0, void *arg1, void **arg2, void **arg3) {
+extern "C" void mNetConfPS2__virtual_93(void *arg0, void *arg1, void **arg2, void **arg3) {
     void *obj2 = *arg2;
     s32 off2 = *(s32 *)((char *)obj2 - 0x10);
     void *a2v;

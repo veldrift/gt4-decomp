@@ -6,7 +6,7 @@ typedef unsigned int u32;
 extern char D_006A37F0[];
 
 struct G { char pad[0x194]; const char *fmt; };
-extern G *D_00621870;
+extern G *DisplayRText__rtext_ptrs_;
 
 extern "C" u32 func_0057F260(const char *s);
 extern "C" void func_0057DA20(char *buf, const char *fmt, ...);
@@ -26,7 +26,7 @@ extern "C" void func_003E03E0(char *arg0, int arg1, int arg2, int arg3, int arg4
     int width = 0x2B;
     if (flag == 0)
         width = big;
-    func_0057DA20(s0, D_00621870->fmt, width, arg1);
+    func_0057DA20(s0, DisplayRText__rtext_ptrs_->fmt, width, arg1);
     if (arg3 != 0) {
         *(int *)(arg0 + 0xB4) = 1;
     }

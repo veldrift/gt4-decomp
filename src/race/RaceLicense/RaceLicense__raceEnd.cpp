@@ -2,7 +2,7 @@ typedef short s16;
 typedef int s32;
 typedef float f32;
 
-extern "C" void func_0033CCF0(void *self, s32 a);
+extern "C" void RacePS2Base__raceEnd(void *self, s32 a);
 
 struct VEntry {
     s16 delta;
@@ -26,7 +26,7 @@ struct RaceLicense_24EE0 {
     s32 unk24EE0;
 };
 
-extern "C" void func_003BC530(void *arg0, s32 arg1) {
+extern "C" void RaceLicense__raceEnd(void *arg0, s32 arg1) {
     struct RaceLicense *self = (struct RaceLicense *)arg0;
     s32 var_a1 = arg1;
     if ((((struct RaceLicense_24EE0 *)arg0)->unk24EE0 != 0) || (self->unkCD0 != 0)) {
@@ -38,5 +38,5 @@ extern "C" void func_003BC530(void *arg0, s32 arg1) {
             return;
         }
     }
-    func_0033CCF0(arg0, var_a1);
+    RacePS2Base__raceEnd(arg0, var_a1);
 }

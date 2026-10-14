@@ -20,7 +20,7 @@ extern "C" void func_00137D60(void *arg0, int arg1);
 extern "C" void func_00137DB8(void *arg0, void *arg1);
 extern "C" void func_0013A9A8(void *arg0, int arg1);
 
-extern "C" void MCarFace__set_car_color(s32 arg0, void *arg1, s32 arg2, Arg3 *arg3) {
+extern "C" void MCarFace__setColorIndex(s32 arg0, void *arg1, s32 arg2, Arg3 *arg3) {
     s32 buf[4];
     ObjA *obj;
     VEntry *entry;

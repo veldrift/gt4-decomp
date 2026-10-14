@@ -14,7 +14,7 @@ struct DynamicsConductorMission {
 extern "C" s32 func_0034C190(s32 arg0, s32 arg1);
 extern "C" void func_0035DF80(char *arg0, s32 arg1, s32 arg2, s32 arg3);
 
-extern "C" void func_003F6EE8(DynamicsConductorMission *arg0) {
+extern "C" void DynamicsConductorMission__RunTimeJudgement(DynamicsConductorMission *arg0) {
     s32 var_s2 = 0;
     s32 base = arg0->unk0;
     if (arg0->unkF8A0 > 0) {

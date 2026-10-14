@@ -1,0 +1,1 @@
+struct O{char pad[224];int flag;};struct S{char pad[108];O*o;char pad2[0xf054-112];int state;};extern "C" void* RaceSolitaire__getInputGhost(S*s){if(s->state||s->o->flag)return (void*)(0xea2c+(unsigned)s);return (void*)(0xe66c+(unsigned)s);}

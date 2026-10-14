@@ -23,13 +23,13 @@ static inline f32 vcall_60(Obj *o) {
 extern "C" void func_00255110(void *arg0, void *arg1);
 extern "C" void func_002550B8(void *arg0, int arg1);
 extern "C" f32 func_00267DB0(Obj *arg0);
-extern "C" void func_00267DB8(Obj *arg0, f32 fparg0);
+extern "C" void mWidget__setOpacity(Obj *arg0, f32 fparg0);
 extern "C" void func_002F7B68(void *arg0, int arg1);
 extern "C" void func_002F9360(void *arg0, float fparg0);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_00255E30(s32 *arg0, void *arg1, s32 arg2, Obj **arg3) {
+extern "C" void MWidget__get_opacity(s32 *arg0, void *arg1, s32 arg2, Obj **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s2;
@@ -56,7 +56,7 @@ extern "C" void func_00255E30(s32 *arg0, void *arg1, s32 arg2, Obj **arg3) {
     } else if (arg2 == 1) {
         Obj *o = *arg3;
         Obj *s0 = (Obj *)buf0[0];
-        func_00267DB8(s0, vcall_60(o));
+        mWidget__setOpacity(s0, vcall_60(o));
     }
     func_002550B8(buf0, 0x2);
 }

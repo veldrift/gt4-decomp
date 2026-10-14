@@ -1,0 +1,64 @@
+/* compiler: ee-gcc2.96-no-strict-aliasing */
+extern int D_00634F48,D_00634F4C,D_00634F50,D_00634F54,D_00634F58,D_00634F5C,D_00634F60,D_00634F64,D_00634F68,D_00634F6C,D_00634F70;
+extern char D_006B9790[],D_006B9798[],D_006B97A0[];
+extern "C" {
+int func_004BBE90(unsigned);
+int func_004B9BD8(int *,void *) throw();
+void free(int) throw();
+int malloc(long) throw();
+int func_0057DA20(void *,const char *,...);
+void *func_005A48D8(void *,int,unsigned);
+long func_004C4B90();
+int func_004C4B88();
+int func_004C4218(int,int,int,int);
+int func_004C4650(int,int);
+int func_004C48C8(int,int);
+int func_004C4A90(int,int);
+}
+extern "C" int InitWnn(int path) {
+ char buf[256];
+ D_00634F48=1;
+ int result=func_004BBE90(1);
+ if(result<0) return result;
+ int *a=&D_00634F4C;
+ if(*a) free(*a);
+ const char *fmt=D_006B9790;
+ func_0057DA20(buf,fmt,path,D_006B9798);
+ *a=func_004B9BD8((int *)buf,&D_00634F50);
+ int *b=&D_00634F54;
+ if(*b) free(*b);
+ int *blen=&D_00634F58;
+ *blen=512;
+ int mem=malloc(512);
+ *b=mem;
+ func_005A48D8((void *)mem,0,*blen);
+ int *c=&D_00634F5C;
+ if(*c) free(*c);
+ func_0057DA20(buf,fmt,path,D_006B97A0);
+ int *clen=&D_00634F60;
+ *c=func_004B9BD8((int *)buf,clen);
+ int *d=&D_00634F64;
+ if(*d) free(*d);
+ int *dlen=&D_00634F68;
+ int count=(int)func_004C4B90();
+ *dlen=count;
+ int mem_2 = malloc(count);
+ *d=mem_2;
+ func_005A48D8((void *)mem_2,0,*dlen);
+ int *e=&D_00634F6C;
+ if(*e) free(*e);
+ int n=func_004C4B88();
+ int *elen=&D_00634F70;
+ *elen=n;
+ mem_2=malloc(n);
+ *e=mem_2;
+ func_005A48D8((void *)mem_2,0,*elen);
+ result=func_004C4218(*a,D_00634F50,*b,*blen);
+ if(result<0) return result;
+ result=func_004C4650(*c,*clen);
+ if(result<0) return result;
+ result=func_004C48C8(*d,*dlen);
+ if(result<0) return result;
+ result=func_004C4A90(*e,*elen);
+ return result>=0?1:result;
+}

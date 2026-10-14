@@ -12,9 +12,9 @@ struct VE32F6 {
     void *fn;
 };
 
-extern "C" void func_00372050(s32 arg0, s32 arg1, s32 arg2);
+extern "C" void CameraSys__CameraManager__initWindowInput(s32 arg0, s32 arg1, s32 arg2);
 
-extern "C" void func_0032F6A8(void *arg0) {
+extern "C" void RaceSplitBattleBase__postInitializeCamera(void *arg0) {
     char *self = (char *)arg0;
 
     VE32F6 *e1 = (VE32F6 *)(*(char **)(self + 0x64) + 0xD0);
@@ -29,7 +29,7 @@ extern "C" void func_0032F6A8(void *arg0) {
     for (s32 i = 0; i < 2; i++) {
         VE32F6 *e3 = (VE32F6 *)(*(char **)(self + 0x64) + 0x228);
         s32 r = ((s32 (*)(void *, s32))e3->fn)(self + e3->delta, i);
-        func_00372050((s32)s2, i, r);
+        CameraSys__CameraManager__initWindowInput((s32)s2, i, r);
     }
 
     VE32F6 *e4 = (VE32F6 *)(*(char **)(self + 0x64) + 0x188);

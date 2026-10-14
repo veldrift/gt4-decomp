@@ -32,7 +32,7 @@ struct MPhotoRenderFace__get_imageHeight_v_s0 {
     s32 unk1C;
 };
 
-extern "C" void func_00198DE0(s32 *arg0) {
+extern "C" void MPhotoRenderFace__get_imageHeight(s32 *arg0) {
     s32 buf0[4];
     s32 v_s0;
     s32 newVal;

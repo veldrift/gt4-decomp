@@ -15,7 +15,7 @@ struct Obj89 {
 extern "C" s32 func_00265F38(Obj89 *arg0);
 extern "C" void func_00265F48(Obj89 *arg0, s32 arg1);
 
-extern "C" void func_002639A8(Obj89 *arg0, s32 arg1) {
+extern "C" void mSceneViewFace__virtual_89(Obj89 *arg0, s32 arg1) {
     if (func_00265F38(arg0) == 0) {
         VEntry89 *e = (VEntry89 *)(arg0->vtbl + 0x220);
         e->fn((char *)arg0 + e->delta, arg1);

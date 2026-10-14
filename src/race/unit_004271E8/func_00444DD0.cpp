@@ -1,0 +1,28 @@
+extern char D_006235A8[];
+extern "C" int SPEC_DATABASE__DatabaseStorage__IsExistID(void*,long);
+extern "C" int SPEC_DATABASE__DatabaseStorage__getRow(void*,long,void*);
+extern "C" int func_004452A8(void*,int,int,int);
+extern "C" int func_00444DD0(unsigned char*self){long key=*(long*)(self+0x50);if(!SPEC_DATABASE__DatabaseStorage__IsExistID(D_006235A8,key))return 0;unsigned char record[0x70];SPEC_DATABASE__DatabaseStorage__getRow(D_006235A8,key,record);
+self[0x140]=record[0x29];self[0x141]=record[0x2C];
+self[0x139]=func_004452A8(self,record[0xF],record[0x11],record[0x10]);
+self[0x13A]=func_004452A8(self,record[0x12],record[0x14],record[0x13]);
+*(unsigned short*)(self+0x13C)=func_004452A8(self,*(unsigned short*)(record+0x0),*(unsigned short*)(record+0x4),*(unsigned short*)(record+0x2));
+*(unsigned short*)(self+0x13E)=func_004452A8(self,*(unsigned short*)(record+0x6),*(unsigned short*)(record+0xA),*(unsigned short*)(record+0x8));
+self[0x142]=func_004452A8(self,record[0x34],record[0x36],record[0x35]);
+self[0x143]=func_004452A8(self,record[0x37],record[0x39],record[0x38]);
+self[0x144]=record[0x3A];self[0x145]=record[0x3B];
+int limit=record[0x48];
+self[0x146]=func_004452A8(self,1,record[0x4B],limit);
+self[0x147]=func_004452A8(self,1,record[0x4E],limit);
+limit=record[0x4F];
+self[0x148]=func_004452A8(self,1,record[0x52],limit);
+self[0x149]=func_004452A8(self,1,record[0x55],limit);
+limit=record[0x56];
+self[0x14A]=func_004452A8(self,1,record[0x59],limit);
+self[0x14B]=func_004452A8(self,1,record[0x5C],limit);
+limit=record[0x5D];
+self[0x14C]=func_004452A8(self,1,record[0x60],limit);
+self[0x14D]=func_004452A8(self,1,record[0x63],limit);
+self[0x14E]=func_004452A8(self,1,record[0x69],record[0x66]);
+self[0x14F]=func_004452A8(self,1,record[0x6D],record[0x6A]);
+return 1;}

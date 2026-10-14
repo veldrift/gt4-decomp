@@ -1,0 +1,1 @@
+extern int func_001C4A90(void*,int,int);struct E{int a,b,c,n;};struct S{char p[316];E e[1];};void f(S**s,int n,int a){S*p=s[5];if(p)func_001C4A90(&p->e[n],a,p->e[n].n);}

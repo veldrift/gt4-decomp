@@ -17,7 +17,7 @@ extern "C" void func_004ED660(s32 conn, s32 a1, s32 a2, s32 a3, s32 a4);
 extern "C" void func_004ED790(s32 conn, s32 a1, s32 a2, s32 a3, s32 a4);
 extern "C" void func_004ED850(s32 conn, s32 a1);
 
-extern "C" void func_00275B08(void *arg0) {
+extern "C" void mNetConfPS2__virtual_99(void *arg0) {
     char *self = (char *)arg0;
     s32 s4 = vc275(self, 0x1D0);
     s32 s3 = vc275(self, 0x190);

@@ -1,0 +1,2 @@
+struct Big{char pad[0xcbe1];unsigned char gate;};struct E{char pad[0x466];signed char flag;unsigned char state;};struct S{int x;Big*b;char pad[12];char item[240];E e;};extern "C" void func_00463E90(void*);extern "C" int func_00463C28(void*,int,int);extern "C" void func_00353ED8(E*);
+extern "C" int func_00345228(S*s){void*p=s->item;func_00463E90(p);E*e=&s->e;if(!s->b->gate){if(!e->flag){int r=func_00463C28(p,7,0);if(!r)return r;}else{int n=e->state;if(n==2||n==4||n==3){int r=func_00463C28(p,6,0);if(!r)return r;}}}e->state=0;func_00353ED8(e);return 1;}

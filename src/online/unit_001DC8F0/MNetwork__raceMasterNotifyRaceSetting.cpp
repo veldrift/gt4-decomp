@@ -7,7 +7,7 @@ extern "C" void func_001F7330(void *ctx, Blob32 *blob);
 extern "C" void func_001FFF30(void *arg0, s32 arg1);
 extern "C" void func_001FFF88(void *arg0, s32 arg1);
 
-extern "C" void func_001E6CF0(void *arg0, void *arg1, s32 arg2, s32 arg3) {
+extern "C" void MNetwork__raceMasterNotifyRaceSetting(void *arg0, void *arg1, s32 arg2, s32 arg3) {
     if (arg2 > 0) {
         s32 buf[4];
         func_001FFF88(buf, arg3);

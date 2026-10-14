@@ -2,7 +2,7 @@ typedef int s32;
 
 extern "C" s32 func_0034C190(s32 arg0, s32 arg1);
 
-extern "C" void func_00365D80(void *arg0) {
+extern "C" void DynamicsConductor__InitializeStandings(void *arg0) {
     char *base = (char *)arg0;
     char *a4 = base + 4;
     s32 m = -1;

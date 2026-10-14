@@ -4,7 +4,7 @@ struct Table;
 extern char D_0069A578[];
 extern "C" int func_004EE4E8(Table *table, const char *id);
 
-extern "C" void func_00275568(void *arg0, void **arg1) {
+extern "C" void mNetConfPS2__virtual_92(void *arg0, void **arg1) {
     void *obj = *arg1;
     s32 off = *(s32 *)((char *)obj - 0x10);
     void *a1v;

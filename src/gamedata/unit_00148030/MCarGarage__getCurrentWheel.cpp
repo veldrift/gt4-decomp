@@ -91,7 +91,7 @@ static inline void release(Str *s) {
     }
 }
 
-extern "C" void func_0014DD38(void **arg0, s32 arg1, s32 arg2, VObj **arg3) {
+extern "C" void MCarGarage__getCurrentWheel(void **arg0, s32 arg1, s32 arg2, VObj **arg3) {
     if (arg2 > 0) {
         U u;
         Pack pk;

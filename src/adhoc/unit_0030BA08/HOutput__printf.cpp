@@ -5,11 +5,11 @@ struct HOutput {
     s32 enabled;
 };
 
-extern void (*D_00619DF8)(void *);
+extern void (*HOutput__Handler_)(void *);
 
 extern "C" s32 func_0057DD28(s32 arg0, s32 arg1, s32 arg2);
 
-extern "C" void func_0030C378(void *arg0, const char *fmt, ...) {
+extern "C" void HOutput__printf(void *arg0, const char *fmt, ...) {
     __builtin_va_list ap;
     char buf[0x400];
     HOutput *self = (HOutput *)arg0;
@@ -27,5 +27,5 @@ extern "C" void func_0030C378(void *arg0, const char *fmt, ...) {
         }
     }
     func_0057DD28((s32)p, (s32)fmt, (s32)ap);
-    D_00619DF8(b);
+    HOutput__Handler_(b);
 }

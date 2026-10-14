@@ -25,7 +25,7 @@ extern "C" void func_0015F388(void *arg0, int arg1);
 extern "C" void func_0015F3E0(void *arg0, void *arg1);
 extern "C" void func_0043AF88(int a, int b);
 
-extern "C" void func_00163860(s32 arg0, void *arg1, s32 arg2, Arg3 *arg3) {
+extern "C" void MGame__set_money(s32 arg0, void *arg1, s32 arg2, Arg3 *arg3) {
     s32 buf[4];
     ObjA *obj;
     VEntry *entry;

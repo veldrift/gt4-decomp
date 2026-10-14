@@ -20,7 +20,7 @@ struct Obj {
 
 extern "C" void func_00578B10(int);
 
-extern "C" void func_001565F8(Obj *self) {
+extern "C" void mCarModelPS2__virtual_52(Obj *self) {
     Sub *s = self->sub;
     if (s) {
         VEntry *e = &s->vtbl[4];

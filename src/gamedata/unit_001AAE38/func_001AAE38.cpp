@@ -1,4 +1,4 @@
-extern "C" void func_00215298(int);
+extern "C" void mUpdateContext__Sync(int);
 
 extern "C" int func_001AAE38(char *arg0, int arg1) {
     int i = 0;
@@ -9,7 +9,7 @@ extern "C" int func_001AAE38(char *arg0, int arg1) {
             if ((*p ^ 2) != 0) {
                 return 0;
             }
-            func_00215298(1);
+            mUpdateContext__Sync(1);
             i++;
         } while (i < arg1);
     }

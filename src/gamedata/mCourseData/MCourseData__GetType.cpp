@@ -57,7 +57,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_001B3030(void **arg0, s32 arg1, void *arg2) {
+extern "C" void MCourseData__GetType(void **arg0, s32 arg1, void *arg2) {
     if (arg1 > 0) {
         Handle h0;
         Rec rec;

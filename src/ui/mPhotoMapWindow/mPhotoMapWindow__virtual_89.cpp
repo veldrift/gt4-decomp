@@ -9,14 +9,14 @@ struct Obj89 {
     char *vtbl;
 };
 
-extern "C" void func_002639A8(Obj89 *arg0, int arg1);
+extern "C" void mSceneViewFace__virtual_89(Obj89 *arg0, int arg1);
 extern "C" Obj89 *func_00206868(Obj89 *arg0);
 extern "C" Obj89 *func_0025C300(Obj89 *arg0);
 
-extern "C" void func_00207110(Obj89 *arg0, int arg1) {
+extern "C" void mPhotoMapWindow__virtual_89(Obj89 *arg0, int arg1) {
     Obj89 *s0;
 
-    func_002639A8(arg0, arg1);
+    mSceneViewFace__virtual_89(arg0, arg1);
     s0 = func_00206868(arg0);
     if (s0 != 0) {
         do {

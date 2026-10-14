@@ -16,7 +16,7 @@ struct Obj_16C {
 extern "C" void func_0016BF40(void *arg0, s32 arg1);
 extern "C" void func_0016BF98(void *arg0);
 
-extern "C" void func_0016C820(void *, void *, s32, void **arg3) {
+extern "C" void MGameStats__set_laps(void *, void *, s32, void **arg3) {
     s32 buf[4];
     s32 s1;
     Obj_16C *obj;

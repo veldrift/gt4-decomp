@@ -10,7 +10,7 @@ struct Guard { Holder *p; s32 pad[3]; };
 extern "C" void func_00174148(void *arg0, void *arg1);
 extern "C" void func_001740F0(void *arg0, int arg1);
 
-extern "C" void func_001769F0(void *a0, void *a1, void *a2, Obj **a3) {
+extern "C" void MMemoryCardFile__set_dispstep(void *a0, void *a1, void *a2, Obj **a3) {
     Guard g;
     func_00174148(&g, a1);
     Obj *o = *a3;

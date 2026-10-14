@@ -28,7 +28,7 @@ extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 extern "C" void func_00343698(Obj *o, f32 v);
 
-extern "C" void func_0014EA58(s32 *arg0, void *arg1, s32 n, Obj **args) {
+extern "C" void MCarGarage__get_oil(s32 *arg0, void *arg1, s32 n, Obj **args) {
     s32 buf[4];
     s32 newVal;
     s32 oldVal;

@@ -12,7 +12,7 @@ extern "C" void *func_002030E8(void *arg0, void *arg1);
 extern "C" void func_00203620(void *arg0, int arg1);
 extern "C" void func_00243470(void *arg0, int arg1);
 
-extern "C" void func_00244080(void *arg0, void *arg1, int argc, void *name)
+extern "C" void MTextFace__set_shadow_color(void *arg0, void *arg1, int argc, void *name)
 {
     if (argc > 0) {
         Str s;

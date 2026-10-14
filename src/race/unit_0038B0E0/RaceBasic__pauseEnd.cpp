@@ -25,14 +25,14 @@ struct Obj_B4B8 {
     s32 fD30;
 };
 
-extern "C" void func_0038B798(Obj_B4B8 *arg0, s32 arg1);
-extern "C" void func_00396A90(void *self, s32 on);
+extern "C" void RaceBasic__setPause(Obj_B4B8 *arg0, s32 arg1);
+extern "C" void CourseData__setPause(void *self, s32 on);
 
-extern "C" void func_0038B4B8(Obj_B4B8 *self) {
+extern "C" void RaceBasic__pauseEnd(Obj_B4B8 *self) {
     self->fD30 = 0;
-    func_0038B798(self, 0);
+    RaceBasic__setPause(self, 0);
     VEntry_B4B8 *e = (VEntry_B4B8 *)(self->vt + 0x2C8);
     e->fn((char *)self + e->delta);
-    func_00396A90(self->f6C->p80->p4, 0);
+    CourseData__setPause(self->f6C->p80->p4, 0);
     *(s32 *)((char *)self + 0xE418) = 0;
 }

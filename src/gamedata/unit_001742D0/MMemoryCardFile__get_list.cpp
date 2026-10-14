@@ -7,11 +7,11 @@ extern "C" void func_0017E588(void *arg0, void *arg1);
 extern "C" void func_0017D268(void *arg0, int arg1);
 extern "C" void func_003285A8(void *p);
 extern "C" void func_003285F8(void *p);
-extern "C" int func_005C0FC8(void *arg0, void *arg1, int arg2, void *arg3, void *arg4, void *arg5);
+extern "C" int GT4MC__FileGT4GameData__loadInstance(void *arg0, void *arg1, int arg2, void *arg3, void *arg4, void *arg5);
 extern char D_005D1E70[];
 extern char D_005D1260[];
 
-extern "C" void func_001773E8(void **arg0, void *arg1) {
+extern "C" void MMemoryCardFile__get_list(void **arg0, void *arg1) {
     s32 buf0[4];
     s32 var;
     void *obj;
@@ -21,7 +21,7 @@ extern "C" void func_001773E8(void **arg0, void *arg1) {
     var = 0;
     if (obj != 0) {
         char *desc = *(char **)((char *)obj + 0x4C);
-        var = func_005C0FC8(*(void **)(desc + 4), D_005D1E70, 0,
+        var = GT4MC__FileGT4GameData__loadInstance(*(void **)(desc + 4), D_005D1E70, 0,
                             (char *)obj + *(s16 *)desc, D_005D1260, obj);
     }
     func_001740F0(buf0, 2);

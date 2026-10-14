@@ -19,12 +19,12 @@ static inline s32 vcall_0038A1E8(Self_0038A1E8 *self) {
     return e->fn((char *)self + e->delta);
 }
 
-extern "C" s32 func_003C0FF0(void *arg0, s32 arg1);
-extern "C" void func_003C1220(void *self, s32 i);
+extern "C" s32 RaceOrganization__getScore(void *arg0, s32 arg1);
+extern "C" void RaceOrganization__computeScore(void *self, s32 i);
 
-extern "C" void func_0038A1E8(Self_0038A1E8 *arg0) {
+extern "C" void RaceBase__handleGoalEvent(Self_0038A1E8 *arg0) {
     void *s1 = arg0->p6c;
-    if (func_003C0FF0(s1, vcall_0038A1E8(arg0)) == 0) {
-        func_003C1220(s1, vcall_0038A1E8(arg0));
+    if (RaceOrganization__getScore(s1, vcall_0038A1E8(arg0)) == 0) {
+        RaceOrganization__computeScore(s1, vcall_0038A1E8(arg0));
     }
 }

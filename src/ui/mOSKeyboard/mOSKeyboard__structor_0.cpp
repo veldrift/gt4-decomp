@@ -36,15 +36,15 @@ struct mOSKeyboard {
     s32 m64;
 };
 
-extern char D_0066F598[];
-extern "C" s32 func_00328420(struct mOSKeyboard *);
+extern char mOSKeyboard__vtable[];
+extern "C" s32 RefCounter__structor_0(struct mOSKeyboard *);
 
-extern "C" void func_002C4660(struct mOSKeyboard *arg0) {
+extern "C" void mOSKeyboard__structor_0(struct mOSKeyboard *arg0) {
     s32 spare[4];
-    func_00328420(arg0);
+    RefCounter__structor_0(arg0);
     struct Sub *p = &arg0->sub;
     arg0->m8 = 0;
-    arg0->u.vtbl = D_0066F598;
+    arg0->u.vtbl = mOSKeyboard__vtable;
     arg0->mC = 0;
     arg0->m10 = 0;
     arg0->m14 = 0;

@@ -6,7 +6,7 @@ struct func_0035A540_Obj;
 
 extern "C" f32 func_0035A540(func_0035A540_Obj *self, int k);
 extern "C" f32 func_00385478(Obj *arg0, s32 arg1);
-extern "C" void *func_0044F4C0(void);
+extern "C" void *DRIVERSUPPORT_NAME__GetMotoristDynamicParameter(void);
 extern "C" f32 func_0044FAB0(Obj *arg0);
 
 extern "C" f32 func_00385548(Obj *arg0, s32 arg1)
@@ -35,9 +35,9 @@ extern "C" f32 func_00385548(Obj *arg0, s32 arg1)
   }
 
   var_f20 = 0x1.999998p-2f;
-  if (func_0044F4C0() != 0)
+  if (DRIVERSUPPORT_NAME__GetMotoristDynamicParameter() != 0)
   {
-    var_f20 = func_0044FAB0((Obj *) func_0044F4C0());
+    var_f20 = func_0044FAB0((Obj *) DRIVERSUPPORT_NAME__GetMotoristDynamicParameter());
   }
   temp = -func_0035A540((func_0035A540_Obj *) arg0, 9);
   return temp * var_f20;

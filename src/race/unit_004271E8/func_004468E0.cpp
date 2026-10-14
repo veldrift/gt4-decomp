@@ -1,2 +1,1 @@
-struct Obj { char pad[0x168]; unsigned char value; };
-extern "C" int func_004468E0(Obj *obj) { if (obj->value != 0) return obj->value; return -1; }
+struct S { char p[0x168]; unsigned char v; }; int func_004468E0(S *s) { if(s->v) return s->v; return -1; }

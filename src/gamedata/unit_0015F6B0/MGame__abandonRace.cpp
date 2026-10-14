@@ -8,7 +8,7 @@ struct Obj {
 extern "C" void func_0015F3E0(void *arg0, void *arg1);
 extern "C" void func_0015F388(void *arg0, int arg1);
 
-extern "C" void func_001656A8(void *arg0, void *arg1) {
+extern "C" void MGame__abandonRace(void *arg0, void *arg1) {
     s32 sp0[4];
     Obj *o;
     char *s;

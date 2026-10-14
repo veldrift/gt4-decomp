@@ -15,19 +15,19 @@ static inline f32 vcallf_60(char *o) {
     return e->fn(o + e->delta);
 }
 
-extern "C" char D_006244D8[];
+extern "C" char PDISTD__UNIT_MANAGER[];
 extern "C" f32 func_00472A08(struct func_00472A08_p *p, f32 x);
 extern "C" void func_002FE278(void *arg0, void *arg1);
 extern "C" void func_003285A8(s32 p);
 extern "C" void func_003285F8(s32 p);
 extern "C" void func_002FC870(void *arg0, s32 arg1);
 
-extern "C" void func_001AF760(s32 *arg0, s32 arg1, void **arg2) {
+extern "C" void MUnit__GetTorqueForDisplay(s32 *arg0, s32 arg1, void **arg2) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;
     if (arg1 > 0) {
-        func_002FE278(buf0, (void *)(s32)(func_00472A08((struct func_00472A08_p *)D_006244D8, vcallf_60((char *)*arg2)) + 0.5f));
+        func_002FE278(buf0, (void *)(s32)(func_00472A08((struct func_00472A08_p *)PDISTD__UNIT_MANAGER, vcallf_60((char *)*arg2)) + 0.5f));
         if (arg0 != buf0) {
             newVal = buf0[0];
             if (newVal != 0) {

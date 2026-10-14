@@ -18,7 +18,7 @@ extern "C" void func_002FC870(void *arg0, s32 arg1);
 extern "C" void func_003285A8(s32 p);
 extern "C" void func_003285F8(s32 p);
 
-extern "C" void func_0031D278(s32 *arg0, void *arg1) {
+extern "C" void mLogicalAnd__execute(s32 *arg0, void *arg1) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

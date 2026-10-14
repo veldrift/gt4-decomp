@@ -21,8 +21,8 @@ static inline const char *c_str(const String &s) {
 
 struct Obj { char pad[0x10]; String name; };
 extern "C" s32 func_005A2F70(const char *);
-extern "C" void func_0057FA48(s32);
+extern "C" void dptofp(s32);
 
 extern "C" void hString__toFloat(Obj *o) {
-    func_0057FA48(func_005A2F70(c_str(o->name)));
+    dptofp(func_005A2F70(c_str(o->name)));
 }

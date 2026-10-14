@@ -27,7 +27,7 @@ struct A {
     s32 pad[3];
 };
 
-extern "C" void func_00291F08(void *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MFlashFace__set_cache(void *arg0, void *arg1, s32 arg2, char **arg3) {
     if (arg2 > 0) {
         A a;
         s32 v = vcall_58(*arg3) != 0;

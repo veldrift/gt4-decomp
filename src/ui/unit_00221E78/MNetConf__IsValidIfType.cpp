@@ -31,7 +31,7 @@ extern "C" void func_002FC870(void *arg0, s32 arg1);
 extern "C" void func_00221AD0(void *arg0, s32 arg1);
 extern "C" void func_00312318(void *arg0, s32 arg1);
 
-extern "C" void func_002244C0(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MNetConf__IsValidIfType(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];

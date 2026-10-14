@@ -21,7 +21,7 @@ extern "C" void func_002FC870(void *arg0, int arg1);
 extern "C" void func_002FC8C8(void *arg0, void *arg1);
 extern "C" s32 func_002FE250(s32 arg0);
 
-extern "C" void func_00284DF8(void *arg0, void *arg1, s32 arg2, void *arg3)
+extern "C" void MColorFace__set_alpha(void *arg0, void *arg1, s32 arg2, void *arg3)
 {
     s32 buf0[4];
     s32 buf1[4];

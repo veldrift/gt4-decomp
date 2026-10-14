@@ -1,0 +1,1 @@
+struct A{char pad[80];int(*fn)(int);};struct B{char pad[72];int(*fn)(int);};extern A*D_0064B4A8;extern B*D_0064B4B8;struct S{char pad[344];int kind,pad2,a,b;};extern "C" int func_00535780(int);extern "C" int func_00534990(S*s){if(!s)return 23;if(s->kind!=2){int t=func_00535780(D_0064B4A8->fn(s->a));if(t)return t;goto zero;}if(D_0064B4B8->fn(s->b))return 37;zero:return 0;}

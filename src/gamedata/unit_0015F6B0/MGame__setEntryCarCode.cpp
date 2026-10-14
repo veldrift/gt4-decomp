@@ -53,7 +53,7 @@ static inline const char *c_str(Str *s) {
     return s->p;
 }
 
-extern "C" void func_00161A50(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
+extern "C" void MGame__setEntryCarCode(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
     if (arg2 >= 3) {
         union {
             s32 buf[4];

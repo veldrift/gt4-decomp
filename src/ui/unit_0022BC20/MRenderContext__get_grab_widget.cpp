@@ -12,7 +12,7 @@ extern "C" void func_00309378(void *arg0, s32 arg1);
 extern "C" void func_003285A8(s32 arg0);
 extern "C" void func_003285F8(s32 arg0);
 
-extern "C" void func_0022C350(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MRenderContext__get_grab_widget(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
     char *h[4];
     s32 sp10[4];
     s32 sp20[4];

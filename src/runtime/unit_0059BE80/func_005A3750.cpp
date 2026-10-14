@@ -23,7 +23,7 @@ extern "C" void func_005A5B80(void);
 extern "C" void func_005A5BE8(void);
 extern "C" void func_005A5C68(void);
 extern "C" void func_005A5CD0(void);
-extern "C" void func_005A3AB8(struct File *fp, s32 buf, s32 mode);
+extern "C" void fseek(struct File *fp, s32 buf, s32 mode);
 
 extern "C" struct File *func_005A3750(void *ptr, const char *file, const char *mode) {
     s32 buf[4];
@@ -54,7 +54,7 @@ extern "C" struct File *func_005A3750(void *ptr, const char *file, const char *m
     fp->flags = flags;
     fp->cookie = fp;
     if (a4 != 0) {
-        func_005A3AB8(fp, 0, 2);
+        fseek(fp, 0, 2);
     }
     return fp;
 }

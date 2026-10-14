@@ -13,7 +13,7 @@ struct Buf {
 extern "C" void func_0015F388(void *arg0, s32 arg1);
 extern "C" void func_0015F3E0(void *arg0, void *arg1);
 
-extern "C" void func_001668D0(void *arg0, void *arg1) {
+extern "C" void MGame__setAllAvailable(void *arg0, void *arg1) {
     struct Buf buf;
     struct Obj *p;
 

@@ -1,6 +1,6 @@
 typedef int s32;
 
-extern "C" void func_003A4E00(char *arg0, float fparg0);
+extern "C" void RaceMessageDisplay__show(char *arg0, float fparg0);
 extern "C" s32 func_003A1E10(char *p, char *q);
 extern "C" void func_003B0428(char *dst, const char *src, s32 size);
 
@@ -13,11 +13,11 @@ struct RaceMessageDisplayLayout {
     char u90;
 };
 
-extern "C" void func_003A4CF0(char *self, char *s, float f) {
+extern "C" void RaceMessageDisplay__setMessage(char *self, char *s, float f) {
     struct RaceMessageDisplayLayout *r = (struct RaceMessageDisplayLayout *)self;
 
     if (f > 0.0f) {
-        func_003A4E00(self, f);
+        RaceMessageDisplay__show(self, f);
     }
     if (s != 0) {
         if (*s == 0x40) {

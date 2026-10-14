@@ -24,7 +24,7 @@ struct func_0022C918_v_s0 {
     s32 unk6E0;
 };
 
-extern "C" void func_0022C918(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MRenderContext__get_pause(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s2;

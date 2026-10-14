@@ -26,7 +26,7 @@ static inline f32 fmax_s_003A4FC8(f32 a, f32 b) {
     return r;
 }
 
-extern "C" void func_003A4FC8(RaceEventDisplay_003A4FC8 *self, f32 t) {
+extern "C" void RaceEventDisplay__update(RaceEventDisplay_003A4FC8 *self, f32 t) {
     Item_003A4FC8 *it = self->items;
     int n = 7;
     do {

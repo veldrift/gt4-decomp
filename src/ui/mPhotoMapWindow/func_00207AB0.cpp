@@ -2,7 +2,7 @@ typedef int s32;
 typedef float f32;
 
 extern "C" s32 func_00206868(s32);
-extern "C" void func_0025B498(s32, s32, s32);
+extern "C" void mWidget__getWindowSize(s32, s32, s32);
 extern "C" s32 func_0025C300(s32);
 extern "C" s32 func_00265D98(s32);
 
@@ -14,7 +14,7 @@ extern "C" s32 func_00207AB0(s32 arg0, f32 *arg1, f32 *arg2) {
     if (obj != 0) {
         do {
             if (func_00265D98(obj) == 0) {
-                func_0025B498(obj, (s32)&buf[0], (s32)&buf[1]);
+                mWidget__getWindowSize(obj, (s32)&buf[0], (s32)&buf[1]);
 
                 f32 t = *arg1;
                 if (!(buf[0] < t)) {

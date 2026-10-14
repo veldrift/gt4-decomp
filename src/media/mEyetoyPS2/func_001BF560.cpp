@@ -1,0 +1,1 @@
+struct N{int a,b,c,d;};struct B{char p[0x13c];N nodes[1];};struct S{char p[20];B*b;};extern void func_001C4A90(N*,int);void func_001BF560(S*s,int n){B*b=s->b;if(b)func_001C4A90(&b->nodes[n],b->nodes[n].c);}

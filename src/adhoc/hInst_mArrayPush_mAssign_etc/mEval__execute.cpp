@@ -24,7 +24,7 @@ struct Outer {
     Owner *owner;
 };
 
-extern "C" void func_0031B418(void *unused, Outer *a1) {
+extern "C" void mEval__execute(void *unused, Outer *a1) {
     Owner *o = a1->owner;
     s32 idx = o->count - 1;
     Elem **slot = o->arr + idx;

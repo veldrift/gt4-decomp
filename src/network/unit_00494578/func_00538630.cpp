@@ -1,0 +1,17 @@
+struct O { int a,b,c,d,e; };
+extern "C" int func_00538530(O *, int *) throw();
+extern "C" int func_00538630(O *o, int *out) {
+    int r = 2;
+    int v = 0;
+    if (o == 0) return r;
+    if (out == 0) return r;
+    r = func_00538530(o, &v);
+    if (r != 0) return r;
+    if (v != 0) {
+        int v_b = o->a;
+        *out = o->e + v_b;
+    } else {
+        return 200;
+    }
+    return 0;
+}

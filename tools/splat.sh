@@ -9,4 +9,6 @@ read -r elf config basename < <(python3 -c 'import tomllib; g = tomllib.load(ope
 mkdir -p build/splat
 mips-linux-gnu-objcopy -O binary --gap-fill=0x00 "$elf" "build/splat/$basename.rom"
 touch config/symbol_addrs.txt
-"$HOME/.local/share/gt4/venv/bin/python" -m splat split "$config" "$@"
+# splat cannot read config/symbol_addrs.txt itself (aliases, type:data): give it generic names.
+python3 tools/splat_symbols.py "$config" build/splat_config
+"$HOME/.local/share/gt4/venv/bin/python" -m splat split "build/splat_config/$(basename "$config")" "$@"

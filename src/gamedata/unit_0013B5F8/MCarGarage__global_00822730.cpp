@@ -78,7 +78,7 @@ static inline const char *c_str(Str *t) {
     return t->p;
 }
 
-extern "C" void func_0013BFB8(void **arg0, void *arg1, s32 arg2, ObjPair *arg3) {
+extern "C" void MCarGarage__global_00822730(void **arg0, void *arg1, s32 arg2, ObjPair *arg3) {
     if (arg2 > 0) {
         Handle h;
         U u;

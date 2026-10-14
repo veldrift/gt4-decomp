@@ -14,15 +14,15 @@ struct VEntry_120 {
     f32 (*fn)(void *);
 };
 
-extern "C" f32 func_0044F450(void);
+extern "C" f32 SceneCameraBase__getExposureCorrect(void);
 
-extern "C" f32 func_00371DB8(char *arg0) {
+extern "C" f32 RacePhotoModeCameraManager__virtual_15(char *arg0) {
     f32 temp_f20;
     void *obj;
     VEntry_D8 *e;
     void *r;
 
-    temp_f20 = func_0044F450();
+    temp_f20 = SceneCameraBase__getExposureCorrect();
     obj = *(void **)(arg0 + 0x9BC);
     e = (VEntry_D8 *)(*(char **)arg0 + 0xD8);
     r = e->fn(arg0 + e->delta, obj);

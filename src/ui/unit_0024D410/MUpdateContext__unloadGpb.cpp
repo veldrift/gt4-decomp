@@ -19,7 +19,7 @@ struct B {
 };
 static inline u8 *get(B *b) { return (u8 *)b->v[0]; }
 
-extern "C" void func_0024EE38(void *arg0, void *arg1, int arg2, void *arg3)
+extern "C" void MUpdateContext__unloadGpb(void *arg0, void *arg1, int arg2, void *arg3)
 {
     A a;
     B b;

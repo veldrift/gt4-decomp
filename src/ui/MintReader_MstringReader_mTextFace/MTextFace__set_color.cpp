@@ -27,7 +27,7 @@ extern "C" void func_00243470(void *arg0, int arg1);
 extern "C" void func_00203678(void *arg0, void *arg1);
 extern "C" void func_00203620(void *arg0, int arg1);
 
-extern "C" void func_00243F70(void *self, void *a1, int count, void *arg) {
+extern "C" void MTextFace__set_color(void *self, void *a1, int count, void *arg) {
     if (count > 0) {
         H h;
         func_002434C8(&h, a1);

@@ -9,7 +9,7 @@ extern "C" void func_00227128(void *arg0, s32 arg1);
 extern "C" void func_003285A8(struct RefCounter *p);
 extern "C" void func_003285F8(struct RefCounter *p);
 
-extern "C" void func_001E87E8(s32 *arg0, s32 arg1) {
+extern "C" void MNetwork__imOpen(s32 *arg0, s32 arg1) {
     s32 buf[4];
     s32 sp10;
     s32 *p10;

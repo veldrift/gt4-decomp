@@ -20,14 +20,14 @@ static inline void vcall(char *o, s32 off, s32 a1, f32 f) {
     e->fn(o + e->delta, a1, f);
 }
 
-extern "C" void func_002638E0(void *, void *, s32);
+extern "C" void mWidget__virtual_70(void *, void *, s32);
 extern "C" void func_0025BAA0(C *arg0, s32 a1, s32 a2, s32 a3, s32 a4);
 
-extern "C" void func_0027C2D8(void *arg0, void *arg1, s32 arg2) {
+extern "C" void mBlurFace__virtual_70(void *arg0, void *arg1, s32 arg2) {
     C *self = (C *)arg0;
     f32 v[4];
 
-    func_002638E0(arg0, arg1, 0);
+    mWidget__virtual_70(arg0, arg1, 0);
     if (arg2 != 0) {
         if (self->unkA0 != 0) {
             if (self->unkA4 > 0.0f) {

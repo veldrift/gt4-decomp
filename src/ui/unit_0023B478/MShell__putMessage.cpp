@@ -42,7 +42,7 @@ static inline const char *c_str(Str *s) {
     return s->p;
 }
 
-extern "C" void func_0023B638(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
+extern "C" void MShell__putMessage(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
     if (arg2 > 0) {
         s32 buf[8];
         Str s;

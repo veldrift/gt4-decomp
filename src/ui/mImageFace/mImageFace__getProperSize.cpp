@@ -18,9 +18,9 @@ struct Self_BC {
     VObj *bc;
 };
 
-extern "C" void func_0025B498(void *arg0, s32 arg1, s32 arg2);
+extern "C" void mWidget__getWindowSize(void *arg0, s32 arg1, s32 arg2);
 
-extern "C" void func_002A2360(void *arg0, f32 *arg1, f32 *arg2) {
+extern "C" void mImageFace__getProperSize(void *arg0, f32 *arg1, f32 *arg2) {
     Self_BC *self = (Self_BC *)arg0;
     VObj *o = self->bc;
 
@@ -35,6 +35,6 @@ extern "C" void func_002A2360(void *arg0, f32 *arg1, f32 *arg2) {
             *arg2 = (f32)e2->fn((char *)o2 + e2->delta);
         }
     } else {
-        func_0025B498(arg0, (s32)arg1, (s32)arg2);
+        mWidget__getWindowSize(arg0, (s32)arg1, (s32)arg2);
     }
 }

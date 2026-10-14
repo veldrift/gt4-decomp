@@ -59,7 +59,7 @@ static inline const char *c_str(Str *t) {
     return t->p;
 }
 
-extern "C" void func_001E3C18(void **arg0, void *arg1, s32 arg2, void **arg3) {
+extern "C" void MNetwork__accountName2AccountID(void **arg0, void *arg1, s32 arg2, void **arg3) {
     if (arg2 > 0) {
         Handle res;
         Handle ctx;

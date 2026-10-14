@@ -1,0 +1,33 @@
+struct Key { unsigned char *a; unsigned char *b; };
+extern "C" void *func_005A4724(void *, const void *, unsigned);
+extern "C" void *func_005A48D8(void *, int, unsigned);
+extern "C" void func_0044B3A8(unsigned char *);
+extern "C" unsigned func_0044AF40(unsigned char *, int);
+extern "C" void func_0044C6C8(unsigned char *, int, unsigned, int);
+extern "C" unsigned func_00572C90(const unsigned char *, unsigned);
+extern "C" void func_0044B4A0(unsigned char *, unsigned char *, char *, char *, int);
+extern "C" void func_0044BED8(Key *, unsigned char *, int);
+extern char D_006A7C88[];
+extern "C" void func_0044B060(unsigned char *p, unsigned char *q, int arg2) {
+    Key key;
+    unsigned char buf[0x1C0];
+    unsigned char *s1 = p + 1;
+    unsigned char *s3 = q + 1;
+    func_005A4724(s1, s3, 0xB);
+    unsigned char *s2 = p + 0xE;
+    func_005A48D8(p + 0xC, 0, 2);
+    func_0044B3A8(s2);
+    func_005A48D8(s1, 0, 0xD);
+    func_005A4724(p + 3, s3, 0xB);
+    unsigned v = func_0044AF40(s2, arg2);
+    unsigned a = (v >> 16) ^ v;
+    a ^= a >> 8;
+    a ^= a >> 4;
+    func_0044C6C8(s1, 0, a & 0xF, 4);
+    unsigned c = func_00572C90(s1, 0xD);
+    func_0044C6C8(s1, 4, (c ^ (c >> 12) ^ (c >> 24)) & 0xFFF, 0xC);
+    func_0044B4A0(buf + 0xE0, s2, D_006A7C88, D_006A7C88 + 8, 0xD);
+    key.a = s2;
+    key.b = buf + 0xE0;
+    func_0044BED8(&key, s1, 0xD);
+}

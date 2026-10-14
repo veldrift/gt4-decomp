@@ -13,7 +13,7 @@ struct AutomaticFader__oneshot {
 
 extern f32 D_006A1630;
 
-extern "C" void func_003A98E8(struct AutomaticFader__oneshot *self, f32 a0, f32 a1, f32 a2, f32 a3) {
+extern "C" void AutomaticFader__oneshot(struct AutomaticFader__oneshot *self, f32 a0, f32 a1, f32 a2, f32 a3) {
     self->unk4 = a0;
     self->unk8 = a1;
     self->unk18 = 0;

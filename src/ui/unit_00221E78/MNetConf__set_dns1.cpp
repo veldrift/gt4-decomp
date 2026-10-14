@@ -44,7 +44,7 @@ static inline int get(B *b) {
     return b->v[0];
 }
 
-extern "C" void func_00223160(void *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MNetConf__set_dns1(void *arg0, void *arg1, s32 arg2, void *arg3) {
     if (arg2 > 0) {
         A a;
         B b;

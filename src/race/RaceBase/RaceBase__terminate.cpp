@@ -21,7 +21,7 @@ struct Obj_00389ED8 {
 
 extern "C" void func_003C0F40(struct func_003C0F40_arg0 *arg0, f32 fparg0, f32 fparg1);
 
-extern "C" void func_00389ED8(Obj_00389ED8 *self, s32 arg1, f32 fparg0, f32 fparg1) {
+extern "C" void RaceBase__terminate(Obj_00389ED8 *self, s32 arg1, f32 fparg0, f32 fparg1) {
     self->ce0 = arg1;
     if (fparg0 == 0.0f && fparg1 == 0.0f) {
         VEntry *e = (VEntry *)((char *)self->vt64 + 0x280);

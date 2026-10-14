@@ -28,7 +28,7 @@ extern s32 D_00659FB4;
 extern "C" s32 func_00472898(void *);
 extern "C" void * func_0015F3E0(void *, void *);
 extern "C" void func_0015F388(void *, s32);
-extern "C" f32 func_0057F480(s64);
+extern "C" f32 __floatdisf(s64);
 extern "C" f32 func_00472C28(void *, f32);
 extern "C" s32 func_0057F360(f32);
 extern "C" void func_0042E7E8(s32, void *, s32);
@@ -79,7 +79,7 @@ extern "C" void MGame__getAspecDistance(s32 *arg0, void *arg1) {
     func_0015F3E0(p_s3, arg1);
     v_s0 = *(s64 *)((char *)(*(s32 *)((char *)(*p_s3) + 0x10)) + 0x3b8);
     func_0015F388(p_s3, 0x2);
-    func_0042E7E8(func_0057F360(func_00472C28(v_s1, func_0057F480(v_s0))), buf0, 0x80);
+    func_0042E7E8(func_0057F360(func_00472C28(v_s1, __floatdisf(v_s0))), buf0, 0x80);
     func_005A5DC8(buf0, v_s2);
     p_s1 = &s10;
     p_s0 = buf0;

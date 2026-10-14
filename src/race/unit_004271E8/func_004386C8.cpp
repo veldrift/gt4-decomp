@@ -1,1 +1,1 @@
-extern "C" int func_004386C8(int value) { if (value < 0) return 0; value = (value + 4) >> 3; int result = 4096; if (value < 4096) result = value; return result; }
+int func_004386C8(int n) { if(n<0) return 0; n=(n+4)>>3; int r=4096; if(n<4096) r=n; return r; }

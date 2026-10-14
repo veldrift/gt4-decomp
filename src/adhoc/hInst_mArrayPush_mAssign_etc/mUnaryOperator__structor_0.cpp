@@ -1,4 +1,4 @@
-extern int func_00328420(struct RefCounter *arg0);
+extern int RefCounter__structor_0(struct RefCounter *arg0);
 extern "C" void *memcpy(void *dst, const void *src, unsigned int n);
 extern char mUnaryOperator__vtable[];
 
@@ -9,9 +9,9 @@ struct mUnaryOperator {
     unsigned char unk0C[8];        /* 0x0C - 8 bytes copied from arg2 */
 };
 
-void func_003209E8(struct mUnaryOperator *arg0, int *arg1, void *arg2)
+void mUnaryOperator__structor_0(struct mUnaryOperator *arg0, int *arg1, void *arg2)
 {
-    func_00328420((struct RefCounter *)arg0);
+    RefCounter__structor_0((struct RefCounter *)arg0);
     arg0->unk4 = (int)mUnaryOperator__vtable;
     arg0->unk8 = *arg1;
     memcpy(arg0->unk0C, arg2, 8);

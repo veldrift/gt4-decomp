@@ -1,5 +1,5 @@
 
-void func_00575DA0(int arg0);
+void free(int arg0);
 char *func_005BC6C0(void);
 void func_005BCB68(int arg0)
 {
@@ -29,5 +29,5 @@ void func_005BCB68(int arg0)
     *((int *) (base + 0xD0)) = v;
     return;
   }
-  return func_00575DA0(arg0);
+  return free(arg0);
 }

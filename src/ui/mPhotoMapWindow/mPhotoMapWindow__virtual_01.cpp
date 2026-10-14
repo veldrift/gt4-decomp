@@ -12,13 +12,13 @@ struct S {
     VEntry *vt;
 };
 
-extern "C" void func_00306F88(void *arg0);
+extern "C" void hModule__cleanup(void *arg0);
 extern "C" int func_00206868(S *arg0);
 extern "C" void func_00206D18(s32 arg0);
 extern "C" s32 func_0025C300(S *arg0);
 
-extern "C" void func_00207A38(S *self) {
-    func_00306F88(self);
+extern "C" void mPhotoMapWindow__virtual_01(S *self) {
+    hModule__cleanup(self);
     S *p = (S *)func_00206868(self);
     if (p != 0) {
         do {

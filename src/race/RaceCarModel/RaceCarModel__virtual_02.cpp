@@ -31,7 +31,7 @@ extern "C" void func_004513C0(void *arg0, s32 arg1, f32 fparg0);
 extern "C" void func_00451408(void *arg0, s32 arg1, f32 fparg0);
 extern "C" void func_00451550(void *arg0, s32 arg1, f32 fparg0);
 
-extern "C" void func_00390C90(void *arg0) {
+extern "C" void RaceCarModel__virtual_02(void *arg0) {
     char *s3 = (char *)arg0;
     char *s1 = s3 + 0x18;
     Obj2 *s2 = *(Obj2 **)s3;

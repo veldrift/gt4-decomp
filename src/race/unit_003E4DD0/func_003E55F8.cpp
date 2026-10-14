@@ -14,15 +14,15 @@ struct func_003E55F8_arg0 {
     u8 unk44;
 };
 
-extern "C" void func_0045AF18(void *, s32);
-extern "C" void func_0045B018(void *, f32);
+extern "C" void GT4Model__BinStreamWriter__write8u(void *, s32);
+extern "C" void GT4Model__BinStreamWriter__writeFloat(void *, f32);
 
 extern "C" void func_003E55F8(struct func_003E55F8_arg0 *arg0, void *arg1) {
-    func_0045AF18(arg1, arg0->unk44);
-    func_0045AF18(arg1, (s32)((arg0->unk4 * 0x1.0p7f) / 0x1.921FB4p1f));
-    func_0045AF18(arg1, (s32)((arg0->unk8 * 0x1.0p7f) / 0x1.921FB4p1f));
-    func_0045AF18(arg1, (s32)((arg0->unkC * 0x1.0p7f) / 0x1.921FB4p1f));
-    func_0045B018(arg1, arg0->unk10);
-    func_0045B018(arg1, arg0->unk14);
-    func_0045B018(arg1, arg0->unk18);
+    GT4Model__BinStreamWriter__write8u(arg1, arg0->unk44);
+    GT4Model__BinStreamWriter__write8u(arg1, (s32)((arg0->unk4 * 0x1.0p7f) / 0x1.921FB4p1f));
+    GT4Model__BinStreamWriter__write8u(arg1, (s32)((arg0->unk8 * 0x1.0p7f) / 0x1.921FB4p1f));
+    GT4Model__BinStreamWriter__write8u(arg1, (s32)((arg0->unkC * 0x1.0p7f) / 0x1.921FB4p1f));
+    GT4Model__BinStreamWriter__writeFloat(arg1, arg0->unk10);
+    GT4Model__BinStreamWriter__writeFloat(arg1, arg0->unk14);
+    GT4Model__BinStreamWriter__writeFloat(arg1, arg0->unk18);
 }

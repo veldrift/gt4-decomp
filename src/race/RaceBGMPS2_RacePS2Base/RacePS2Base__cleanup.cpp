@@ -7,21 +7,21 @@ struct VEntry_340 {
     void (*fn)(void *);
 };
 
-extern "C" void func_0044E520(void);
-extern "C" void func_003CF550(void *);
-extern "C" void func_00389F40(void *);
-extern "C" void func_00397CD0(void *);
+extern "C" void UnloadSphereMapperModel(void);
+extern "C" void Pitmen__clear_2(void *);
+extern "C" void RaceBase__cleanup(void *);
+extern "C" void CourseEnvPtr__cleanup(void *);
 
-extern "C" void func_0033C210(char *arg0) {
+extern "C" void RacePS2Base__cleanup(char *arg0) {
     char *tmp;
     VEntry_340 *e;
 
-    func_0044E520();
-    func_003CF550(arg0 + 0x3628);
-    func_00389F40(arg0);
+    UnloadSphereMapperModel();
+    Pitmen__clear_2(arg0 + 0x3628);
+    RaceBase__cleanup(arg0);
     tmp = *(char **)(*(char **)(*(char **)(arg0 + 0x6C) + 0x80) + 4);
     if (tmp != 0) {
-        func_00397CD0(*(char **)(tmp + 0x80));
+        CourseEnvPtr__cleanup(*(char **)(tmp + 0x80));
     }
     e = (VEntry_340 *)(*(char **)(arg0 + 0x64) + 0x340);
     e->fn(arg0 + e->delta);

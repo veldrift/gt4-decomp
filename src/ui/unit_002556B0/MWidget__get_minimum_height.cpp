@@ -30,7 +30,7 @@ extern "C" void func_002F7B68(void *arg0, int arg1);
 extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
 
-extern "C" void func_00258588(s32 *arg0, void *arg1, s32 arg2, void **arg3) {
+extern "C" void MWidget__get_minimum_height(s32 *arg0, void *arg1, s32 arg2, void **arg3) {
     s32 buf[4];
     W *w;
     s32 newVal;

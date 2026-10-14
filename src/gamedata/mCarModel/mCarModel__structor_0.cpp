@@ -1,0 +1,67 @@
+/* compiler: ee-gcc2.96-no-strict-aliasing */
+typedef int s32;
+typedef float f32;
+struct V4 { f32 x; f32 y; f32 z; s32 w; };
+struct Self {
+    char pad0[4];
+    char *vt;
+    char pad8[8];
+    s32 unk10;
+    s32 unk14; f32 unk18, unk1C, unk20, unk24, unk28, unk2C, unk30, unk34, unk38;
+    struct Vec { f32 x,y,z; } vec;
+    f32 unk48, unk4C, unk50;
+    s32 unk54;
+    f32 unk58, unk5C, unk60, unk64;
+    V4 v68;
+    V4 v78;
+    char sub88[4];
+    f32 unk8C;
+    s32 unk90;
+    s32 unk94;
+};
+extern char mCarModel__vtable[];
+extern "C" void hObject__structor_0(void *);
+extern "C" int func_0021B310(void *, s32 *);
+
+extern "C" int mCarModel__structor_0(Self *arg0) {
+    struct { char allocator[16]; s32 value[4]; } scratch;
+    hObject__structor_0(arg0);
+    arg0->unk14 = 0;
+    Self::Vec *v = &arg0->vec;
+    V4 *a = &arg0->v68;
+    V4 *b = &arg0->v78;
+    f32 z = *(f32 *)&arg0->unk14;
+    ((f32 *)((char *)arg0+0x18))[0] = z;
+    ((f32 *)((char *)arg0+0x18))[1] = z;
+    ((f32 *)((char *)arg0+0x18))[2] = z;
+    ((f32 *)((char *)arg0+0x18))[3] = z;
+    ((f32 *)((char *)arg0+0x18))[4] = z;
+    ((f32 *)((char *)arg0+0x18))[5] = z;
+    ((f32 *)((char *)arg0+0x18))[6] = z;
+    ((f32 *)((char *)arg0+0x18))[7] = z;
+    ((f32 *)((char *)arg0+0x18))[8] = z;
+    arg0->vt = mCarModel__vtable;
+    arg0->unk10 = 0;
+    v->x = z;
+    v->y = z;
+    v->z = z;
+    arg0->unk48 = z;
+    arg0->unk4C = z;
+    arg0->unk50 = 1.0f;
+    arg0->unk54 = -1;
+    arg0->unk58 = 0.1f;
+    arg0->unk5C = 0.1f;
+    arg0->unk60 = z;
+    arg0->unk64 = (1.0f/120.0f);
+    a->y = 0;
+    a->z = 0;
+    a->w = 0;
+    b->y = 0;
+    b->z = 0;
+    b->w = 0;
+    scratch.value[0] = 0;
+    func_0021B310(arg0->sub88, scratch.value);
+    arg0->unk8C = 1.0f;
+    arg0->unk90 = 0;
+    arg0->unk94 = 0;
+}

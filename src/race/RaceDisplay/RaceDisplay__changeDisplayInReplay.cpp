@@ -15,7 +15,7 @@ struct Self {
     s32 unk64;
 };
 
-extern "C" void func_003A1FA8(Self *self) {
+extern "C" void RaceDisplay__changeDisplayInReplay(Self *self) {
     Self *p = self;
     if ((unsigned int)(p->unk20 - 2) < 2u) {
         s32 v = p->unk64 + 1;

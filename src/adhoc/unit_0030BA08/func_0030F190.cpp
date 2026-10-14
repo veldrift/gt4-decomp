@@ -25,8 +25,8 @@ struct Vec {
 extern Rep D_00659FA8;
 extern char D_0069E018[];
 
-extern "C" s32 func_003166B8(s32 arg0);
-extern "C" s32 func_003166D8(s32 arg0);
+extern "C" s32 HSymID__GetID(s32 arg0);
+extern "C" s32 HSymID__GetName(s32 arg0);
 extern "C" s32 func_0057F260(const char *s);
 extern "C" char *func_005C2560(Rep *r);
 extern "C" void *func_005C2630(void *s, s32 pos, s32 n1, const char *src, s32 n2);
@@ -60,7 +60,7 @@ extern "C" void func_0030F190(Vec *self) {
                     func_005C2630(&s, ((Rep *)(s.p - 0x10))->len, 0, sep, func_0057F260(sep));
                 }
                 s32 off = i * 4;
-                const char *elem = (const char *)func_003166D8(*(s32 *)((char *)self->begin + off));
+                const char *elem = (const char *)HSymID__GetName(*(s32 *)((char *)self->begin + off));
                 i = i + 1;
                 func_005C2630(&s, ((Rep *)(s.p - 0x10))->len, 0, elem, func_0057F260(elem));
             } while (i < s2);
@@ -68,7 +68,7 @@ extern "C" void func_0030F190(Vec *self) {
         s32 *p10 = buf1;
         s32 *last = self->end - 1;
         {
-            s32 r3 = func_003166B8((s32)&s);
+            s32 r3 = HSymID__GetID((s32)&s);
             *p10 = r3;
             if (last != p10) {
                 *last = r3;

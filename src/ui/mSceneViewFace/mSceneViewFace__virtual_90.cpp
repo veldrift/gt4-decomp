@@ -15,7 +15,7 @@ struct Obj {
 extern "C" s32 func_00265F38(Obj *arg0);
 extern "C" void func_00265F48(Obj *arg0, s32 arg1);
 
-extern "C" void func_00263A08(Obj *arg0, s32 arg1) {
+extern "C" void mSceneViewFace__virtual_90(Obj *arg0, s32 arg1) {
     if (func_00265F38(arg0) != 0) {
         VEntry *e = (VEntry *)((char *)arg0->vtbl + 0x228);
         e->fn((char *)arg0 + e->delta, arg1);

@@ -1,7 +1,7 @@
 typedef int s32;
 typedef signed char s8;
 
-extern "C" void func_003677F8(s32 arg0, s8 *arg1, s8 *arg2, s8 *arg3) {
+extern "C" void ComputeTireWearGaugeColor(s32 arg0, s8 *arg1, s8 *arg2, s8 *arg3) {
     s32 t;
 
     if (arg0 >= 0x40) {

@@ -20,9 +20,9 @@ static inline s32 vcall_0034D168(Obj *o, s32 off, s32 a) {
     return e->fn((char *)o + e->delta, a);
 }
 
-extern "C" s32 func_0034C3E0(Obj *o);
+extern "C" s32 DynamicsConductor__GetStartVOffsetBySectionSet(Obj *o);
 
-extern "C" s32 func_0034D168(Obj *arg0, s32 arg1, s32 *arg2, s32 *arg3, s32 *arg4) {
+extern "C" s32 DynamicsConductor__getSpecialStart_Rolling_ByBalance(Obj *arg0, s32 arg1, s32 *arg2, s32 *arg3, s32 *arg4) {
     s32 n;
 
     n = vcall_0034D168(arg0, 0x118, arg1);
@@ -33,7 +33,7 @@ extern "C" s32 func_0034D168(Obj *arg0, s32 arg1, s32 *arg2, s32 *arg3, s32 *arg
             n = vcall_0034D168(arg0, 0x118, arg1);
             *arg3 = n;
             if (n != 0) {
-                *arg3 += func_0034C3E0(arg0);
+                *arg3 += DynamicsConductor__GetStartVOffsetBySectionSet(arg0);
             }
             *arg4 = vcall_0034D168(arg0, 0x120, arg1);
             return 1;

@@ -40,7 +40,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_00198690(s32 *arg0, void *arg1) {
+extern "C" void MPhotoRenderFace__getPrinterName(s32 *arg0, void *arg1) {
     s32 buf[4];
     s32 spare[4];
     Str s;

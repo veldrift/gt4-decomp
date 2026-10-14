@@ -25,23 +25,23 @@ extern char D_0069AB30[];
 extern char D_0069AB48[];
 
 extern "C" void func_005D4AD8(const char *fmt, ...);
-extern "C" s32 func_00305570(s32 arg0);
+extern "C" s32 hModule__getName(s32 arg0);
 extern "C" s32 func_0028EA08(void *arg0);
 extern "C" s32 func_0028EA18(void *arg0);
-extern "C" s32 func_0028E858(void *arg0, s32 arg1, s32 arg2);
+extern "C" s32 mEvent__propagateEvent(void *arg0, s32 arg1, s32 arg2);
 
-extern "C" s32 func_00282DF8(void *arg0) {
+extern "C" s32 mCancelEvent__dispatchEvent(void *arg0) {
     mCancelEvent *self = (mCancelEvent *)arg0;
     s32 s1;
     s32 r;
 
     func_005D4AD8(D_0069AB28);
     func_005D4AD8(D_0069AB30,
-                  func_00305570(vcall_50((char *)self)),
+                  hModule__getName(vcall_50((char *)self)),
                   self->unk14,
                   self->unk10);
     s1 = func_0028EA08(self);
-    r = func_0028E858(self, s1, func_0028EA18(self));
+    r = mEvent__propagateEvent(self, s1, func_0028EA18(self));
     func_005D4AD8(D_0069AB48);
     return r;
 }

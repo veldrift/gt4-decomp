@@ -26,7 +26,7 @@ extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" char *func_005C2560(Rep *src);
 
-extern "C" void func_0021E1C0(void *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MMovieFace__reserveName(void *arg0, void *arg1, s32 arg2, void *arg3) {
     SS ss;
     SS tmp;
     func_0021D9D0(&ss, arg1);

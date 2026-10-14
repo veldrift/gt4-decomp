@@ -3,7 +3,7 @@
 void *memcpy(void *, const void *, unsigned int);
 #include "m2c_macros.h"
 
-char * func_005D2B58(void *);
+char * strobe__toUpper(void *);
 s8 **func_004EA450(s8 **arg0, void *arg1) {
     s8 *temp_v0;
     s8 *var_a2;
@@ -13,7 +13,7 @@ s8 **func_004EA450(s8 **arg0, void *arg1) {
     temp_a1 = temp_v0 - 0x10;
     var_a2 = temp_v0;
     if (M2C_FIELD(temp_a1, s32 *, 0xC) != 0) {
-        var_a2 = func_005D2B58(temp_a1);
+        var_a2 = strobe__toUpper(temp_a1);
     } else {
         M2C_FIELD(temp_a1, s32 *, 8) = (s32) (M2C_FIELD(temp_a1, s32 *, 8) + 1);
     }

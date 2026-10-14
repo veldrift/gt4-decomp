@@ -43,7 +43,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_0024DD40(Holder *arg0, void *arg1, void *arg2) {
+extern "C" void MintReader__virtual_03(Holder *arg0, void *arg1, void *arg2) {
     Str s;
     char *c;
     if (func_005CD320(arg2, D_006995C0, 0, func_0057F260(D_006995C0)) == 0) {

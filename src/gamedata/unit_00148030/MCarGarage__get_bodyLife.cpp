@@ -33,7 +33,7 @@ static inline f32 vcall_60(Obj *o) {
     return e->fn((char *)o + e->delta);
 }
 
-extern "C" void func_0014ECF8(s32 *arg0, void *arg1, s32 n, Obj **args) {
+extern "C" void MCarGarage__get_bodyLife(s32 *arg0, void *arg1, s32 n, Obj **args) {
     s32 buf[4];
     s32 newVal;
     s32 oldVal;

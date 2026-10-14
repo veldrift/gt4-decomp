@@ -48,7 +48,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_00209418(s32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
+extern "C" void MDomNode__getAttribute(s32 *arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];

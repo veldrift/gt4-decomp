@@ -7,6 +7,7 @@
 # call is removed first, so a failure never leaves an object a later step could take for valid.
 set -eo pipefail
 in="$1"; out="$2"; shift 2
+tools="$(cd "$(dirname "$0")" && pwd)"
 rm -f "$out"
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
@@ -18,6 +19,8 @@ cp "$in" "$work/"
 include_into "$work"
 src="$(basename "$in")"
 (cd "$work" && eval "$*" "\"$src\"" -o out.o)
+# ee-as 2.96 can leave a load opcode on a %hi of .rodata; a checked retry repairs exactly that.
+(cd "$work" && python3 "$tools/compiler_alignment.py" "$src" out.o --command "$*")
 # Copy under a temporary name and rename: a reader never sees a half-written object.
 cp "$work/out.o" "$out.part.$$"
 mv -f "$out.part.$$" "$out"

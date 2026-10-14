@@ -51,7 +51,7 @@ static inline const char *c_str(Str *s) {
     return s->p;
 }
 
-extern "C" void func_00174650(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MMemoryCardFile__set_title(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];

@@ -6,7 +6,7 @@ extern "C" void func_00255110(void *arg0, s32 *arg1);
 extern "C" void func_003285A8(s32 obj);
 extern "C" void func_003285F8(s32 obj);
 
-extern "C" void func_001C3058(void *arg0, s32 *arg1)
+extern "C" void mGTShirtPS2__virtual_71(void *arg0, s32 *arg1)
 {
     s32 buf[4];
     s32 tmp;

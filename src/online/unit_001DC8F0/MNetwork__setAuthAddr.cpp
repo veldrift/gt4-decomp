@@ -48,7 +48,7 @@ static inline const char *c_str(Str *s) {
     return s->p;
 }
 
-extern "C" void func_001DEA60(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
+extern "C" void MNetwork__setAuthAddr(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
     if (arg2 >= 2) {
         s32 buf[8];
         Str s;

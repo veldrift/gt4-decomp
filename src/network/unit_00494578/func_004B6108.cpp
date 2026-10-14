@@ -1,0 +1,2 @@
+struct S{char pad[12];int capacity;};extern "C" int func_004B4B40(S*,int),func_004B5CC0(S*),func_004B94A8(void*,int);extern "C" void func_004B5E00(S*,int,unsigned short*,int);extern char D_006B0D80[];
+extern "C" void func_004B6108(S* self,int code){if(func_004B4B40(self,6)<self->capacity){int index=func_004B5CC0(self);int mapped=0;if((unsigned int)(code-33)>=94)mapped=func_004B94A8(D_006B0D80,code);if(!mapped)mapped=code;unsigned short text[2];text[0]=mapped;text[1]=0;func_004B5E00(self,index,text,0);}}

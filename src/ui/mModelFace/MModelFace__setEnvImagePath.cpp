@@ -45,7 +45,7 @@ extern "C" void func_002BEB40(struct S002BEB40 *arg0, s32 arg1);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 
-extern "C" void func_002BB5A0(void *arg0, void *arg1, s32 n, Obj **args) {
+extern "C" void MModelFace__setEnvImagePath(void *arg0, void *arg1, s32 n, Obj **args) {
     s32 tmp[4];
     Str s;
     Str *ps;

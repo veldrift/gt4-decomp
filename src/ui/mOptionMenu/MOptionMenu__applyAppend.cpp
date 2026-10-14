@@ -27,7 +27,7 @@ extern "C" void func_002C72B8(H *h, int in_chrg);
 extern "C" void func_0022AD20(T *t, void *a);
 extern "C" void func_0022ACC8(T *t, int in_chrg);
 
-extern "C" void func_002C7A08(void *self, void *a1, int count, void *arg) {
+extern "C" void MOptionMenu__applyAppend(void *self, void *a1, int count, void *arg) {
     if (count > 0) {
         T t;
         func_0022AD20(&t, arg);

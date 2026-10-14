@@ -47,7 +47,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_00313B30(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void string__global_00840458(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     Str s;
     Str *p_s;

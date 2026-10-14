@@ -14,7 +14,7 @@ extern "C" f32 func_00238FA8(s32 arg0);
 extern "C" s32 func_00239048(s32 arg0, f32 fparg0);
 extern "C" void func_00236680(void *arg0, int arg1);
 
-extern "C" void func_002376C8(s32 arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MScaleBar__incValue(s32 arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     f32 f;
     func_002366D8(buf0, arg1);

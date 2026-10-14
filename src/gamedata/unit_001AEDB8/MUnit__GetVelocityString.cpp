@@ -35,7 +35,7 @@ struct VObjF {
 };
 
 extern Rep D_00659FA8;
-extern s32 D_006244D8;
+extern s32 PDISTD__UNIT_MANAGER;
 extern void *D_00624984;
 extern char D_00693040[];
 
@@ -65,7 +65,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_001AF168(void **arg0, s32 arg1, void **arg2) {
+extern "C" void MUnit__GetVelocityString(void **arg0, s32 arg1, void **arg2) {
     if (arg1 > 0) {
         char buf[0x80];
         Handle h;
@@ -75,7 +75,7 @@ extern "C" void func_001AF168(void **arg0, s32 arg1, void **arg2) {
         s32 *g;
 
         vel = vcallf((VObjF *)*arg2);
-        g = &D_006244D8;
+        g = &PDISTD__UNIT_MANAGER;
         if (*g != 0) {
             vel = func_00472940(g, vel * 0x1.1C71C6p-2f);
         }

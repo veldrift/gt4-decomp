@@ -53,7 +53,7 @@ union Slot {
     s32 buf[4];
 };
 
-extern "C" void func_001667D0(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
+extern "C" void MGame__setCourseAvailable(void *arg0, void *arg1, s32 arg2, Obj **arg3) {
     if (arg2 > 0) {
         Slot u;
         Obj *o = *arg3;

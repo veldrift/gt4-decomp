@@ -1,13 +1,13 @@
-extern "C" void func_003A16A8(char *arg0);
+extern "C" void RaceDisplay__virtual_34(char *arg0);
 
-extern "C" void func_003BD3B0(char *arg0)
+extern "C" void RaceLicenseDisplay__virtual_34(char *arg0)
 {
     int *var_a0;
     int *var_v1;
     int var_a1;
     int mask;
 
-    func_003A16A8(arg0);
+    RaceDisplay__virtual_34(arg0);
     mask = -0x100;
     var_a0 = (int *)(arg0 + 0x4080);
     var_v1 = (int *)(arg0 + 0x3F30);

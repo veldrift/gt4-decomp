@@ -1,0 +1,1 @@
+extern void func_004AD048();extern void func_004AD110();struct S{char p[0x4c];void*data;char q[20];void(*a)();int b;void(*c)();int d;};void func_004AF688(S*s){s->data=(char*)s+0xb0;s->a=func_004AD048;s->b=0;s->c=func_004AD110;s->d=0;}

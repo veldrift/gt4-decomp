@@ -11,9 +11,9 @@ struct VEntry {
 
 extern "C" S *func_00206868(void *arg0);
 extern "C" S *func_0025C300(S *arg0);
-extern "C" void func_00263948(void *arg0, int arg1);
+extern "C" void mSceneViewFace__virtual_87(void *arg0, int arg1);
 
-extern "C" void func_00207010(void *arg0, int arg1) {
+extern "C" void mPhotoMapWindow__virtual_87(void *arg0, int arg1) {
     S *s;
 
     s = func_00206868(arg0);
@@ -24,5 +24,5 @@ extern "C" void func_00207010(void *arg0, int arg1) {
             s = func_0025C300(s);
         } while (s != 0);
     }
-    func_00263948(arg0, arg1);
+    mSceneViewFace__virtual_87(arg0, arg1);
 }

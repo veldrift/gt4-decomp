@@ -1,11 +1,11 @@
 typedef int s32;
 
 extern "C" void func_001C95B0(void *arg0, s32 arg1);
-extern "C" void func_00255548(void *arg0, s32 arg1);
+extern "C" void mWidget__structor_1(void *arg0, s32 arg1);
 extern "C" void func_00326798(void *arg0, s32 arg1, s32 arg2, const char *arg3);
-extern "C" void func_00575DA0(s32 arg0);
+extern "C" void free(s32 arg0);
 
-extern char D_0065D7C8[];
+extern char mPhotoRenderFace__vtable[];
 extern char D_006923C8[];
 
 struct mPhotoRenderFace_layout {
@@ -19,26 +19,26 @@ struct mPhotoRenderFace_layout {
     s32 unkC8;
 };
 
-extern "C" void func_00197AD8(void *arg0, s32 arg1) {
+extern "C" void mPhotoRenderFace__structor_1(void *arg0, s32 arg1) {
     struct mPhotoRenderFace_layout *self = (struct mPhotoRenderFace_layout *)arg0;
     s32 slot[4];
     s32 temp_a0;
     s32 temp_a0_2;
 
-    self->unk4 = (void *)D_0065D7C8;
+    self->unk4 = (void *)mPhotoRenderFace__vtable;
     slot[0] = self->unkC8;
     if (slot[0] != 0) {
-        func_00575DA0(slot[0]);
+        free(slot[0]);
     }
     temp_a0 = self->unkA8;
     if (temp_a0 != 0) {
-        func_00575DA0(temp_a0);
+        free(temp_a0);
     }
     temp_a0_2 = self->unkA0;
     if (temp_a0_2 != 0) {
         func_001C95B0((void *)temp_a0_2, 3);
     }
-    func_00255548(arg0, 0);
+    mWidget__structor_1(arg0, 0);
     if (arg1 & 1) {
         func_00326798(arg0, 0x100, 4, (const char *)D_006923C8);
     }

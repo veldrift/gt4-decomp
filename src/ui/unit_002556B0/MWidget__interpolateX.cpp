@@ -30,7 +30,7 @@ extern "C" void func_002FE278(void *arg0, void *arg1);
 extern "C" void func_003285A8(s32 arg0);
 extern "C" void func_003285F8(s32 arg0);
 
-extern "C" void func_002578A0(s32 *arg0, void *arg1, s32 arg2, VObjF **arg3) {
+extern "C" void MWidget__interpolateX(s32 *arg0, void *arg1, s32 arg2, VObjF **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 v_s0;

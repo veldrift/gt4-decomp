@@ -14,11 +14,11 @@ struct VEntry118 {
     s32 (*fn)(void *);
 };
 
-extern "C" f32 func_0044F398(void);
+extern "C" f32 SceneCameraBase__virtual_11(void);
 extern "C" f32 func_0036FA20(s32 x);
 
-extern "C" f32 func_00371C28(char *arg0) {
-    f32 r = func_0044F398();
+extern "C" f32 RacePhotoModeCameraManager__virtual_11(char *arg0) {
+    f32 r = SceneCameraBase__virtual_11();
     s32 a = *(s32 *)(arg0 + 0x9BC);
     VEntryD8 *e = (VEntryD8 *)(*(char **)arg0 + 0xD8);
     char *r2 = (char *)e->fn(arg0 + e->delta, a);

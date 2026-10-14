@@ -26,10 +26,10 @@ static inline s32 vcall58(char *o) {
     return e->fn(o + e->delta);
 }
 
-/* func_005EDB08: FunctionCompare__less. Builds two Values (from arg1 and arg2), a result
+/* FunctionCompare__less: FunctionCompare__less. Builds two Values (from arg1 and arg2), a result
    slot, calls the handler (vtable slot 0xA8), tests the returned object's slot 0x58, releases
    the result and the argument list, and returns whether that test was nonzero. */
-extern "C" s32 func_005EDB08(ObjH *self, Value *arg1, Value *arg2) {
+extern "C" s32 FunctionCompare__less(ObjH *self, Value *arg1, Value *arg2) {
     s32 newVal;
     s32 oldVal;
     s32 r;

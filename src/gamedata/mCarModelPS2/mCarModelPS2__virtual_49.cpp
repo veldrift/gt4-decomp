@@ -1,0 +1,76 @@
+/* compiler: ee-gcc2.96-no-strict-aliasing */
+typedef int s32; typedef unsigned int u32;
+struct Rep { s32 len,cap,ref,sel; };
+extern char D_0068FD90[],D_0068FD98[],D_0068FDA8[],D_0068FDB0[];
+struct String { char *p; Rep *rep() const { return (Rep *)p-1; } s32 length() const { return rep()->len; } const char *c_str() const { if(length()==0) return D_0068FD90; p[length()]=0; return p; } };
+struct Str { char *p; char pad[12]; };
+struct P8 { s32 a,b; };
+struct Q { s32 type; char path[0x80]; char name[0x40]; s32 mode; };
+struct Obj { char pad0[0x11c]; char f11c[0x15c-0x11c]; s32 f15c; char p160[0x1c8-0x160]; s32 f1c8,f1cc,f1d0,f1d4,f1d8; Q f1dc; char p2a4[0x874-0x2a4]; P8 f874; char p87c[8]; P8 f884; char p88c[8]; s32 f894,f898; };
+struct Heap { const char *name; };
+extern Rep D_00659FA8;
+extern P8 D_0068FD88;
+extern "C" char *func_00145AB8(void *);
+extern "C" void *func_00147D78(void *);
+extern "C" void func_001553C0(void *,void *,s32) throw();
+extern "C" void func_00326798(void *,s32,s32,const char *);
+extern "C" void *func_00441280(void *);
+extern "C" s32 func_004462E0(void *);
+extern "C" s32 func_00446320(void *);
+extern "C" s32 func_00446E40(void *);
+extern "C" s32 func_00446E50(void *);
+extern "C" void func_00446ED8(void *,void *);
+extern "C" void func_00446F70(void *,void *);
+extern "C" void func_00576788(void *);
+extern "C" void func_005767C0(void *);
+extern "C" void func_005768D8(void *);
+extern "C" void func_0057DA20(void *,const char *,...);
+extern "C" u32 func_0057F260(const char *) throw();
+extern "C" char *func_005A609C(char *,const char *);
+extern "C" Heap *func_005C11A8();
+extern "C" char *func_005C2560(Rep *);
+extern "C" void *func_005C2630(Str *,u32,u32,const char *,u32);
+extern "C" s32 mCarModelPS2__virtual_49(Obj *self,String *input,void **owner,s32 mode) {
+    Str s;
+    Q q;
+    if(input->length()==0) return 0;
+    Str *ps=&s;
+    char *src=func_00145AB8(*owner);
+    Rep *r=&D_00659FA8;
+    char *d;
+    if(r->sel!=0) d=func_005C2560(r);
+    else { d=(char *)(r+1); r->ref++; }
+    ps->p=d;
+    func_005C2630(ps,0,-1,src,func_0057F260(src));
+    q.type=2;
+    func_005A609C(q.name,((String *)&s)->c_str());
+    q.mode=mode;
+    const char *in=input->c_str();
+    char *path=q.path;
+    func_0057DA20(path,D_0068FD98,mode?D_0068FDA8:D_0068FDB0,in);
+    func_001553C0(self,path,mode);
+    void *model=func_00441280(func_00147D78(*owner));
+    if(func_00446E40(model)) self->f874=D_0068FD88;
+    else func_00446ED8(model,&self->f874);
+    if(func_00446E50(model)) self->f884=D_0068FD88;
+    else func_00446F70(model,&self->f884);
+    self->f894=func_004462E0(model);
+    self->f898=func_00446320(model);
+    self->f1c8=0;
+    self->f1cc=0;
+    self->f1d0=0;
+    self->f1d4=0;
+    self->f1d8=0;
+    char *lock=self->f11c;
+    func_00576788(lock);
+    self->f1dc=q;
+    self->f15c=1;
+    func_005768D8(lock);
+    func_005767C0(lock);
+    Rep *old=(Rep *)(s.p-0x10);
+    if(--old->ref==0) {
+        s32 cap=old->cap+0x10;
+        func_00326798(old,cap,4,func_005C11A8()->name);
+    }
+    return 1;
+}

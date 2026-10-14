@@ -1,7 +1,7 @@
 typedef int s32;
 typedef float f32;
 
-extern "C" s32 func_00397638(void *arg0);
+extern "C" s32 CourseData__evalVMMethods(void *arg0);
 extern "C" void func_004573B8(s32 arg0, s32 *arg1, s32 arg2);
 
 extern s32 D_006214D8;
@@ -27,7 +27,7 @@ struct func_00397568_arg0 {
 extern "C" void func_00397568(struct func_00397568_arg0 *arg0, f32 fparg0) {
     D_006214DC = fparg0;
     D_006214D8 += (s32)(fparg0 * 0x1.F4p+9f);
-    func_00397638(arg0);
+    CourseData__evalVMMethods(arg0);
     {
         Obj7C *v = arg0->unk4;
         if (v != 0) {

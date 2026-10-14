@@ -47,7 +47,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_001B54B0(s32 *arg0, s32 arg1, void *arg2) {
+extern "C" void MDatabase__getWingLabelByIndex(s32 *arg0, s32 arg1, void *arg2) {
     s32 buf0[64];
     s32 h[4];
     s32 spare[4];

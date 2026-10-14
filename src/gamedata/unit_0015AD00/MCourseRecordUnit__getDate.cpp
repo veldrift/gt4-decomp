@@ -43,7 +43,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_0015B1B0(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MCourseRecordUnit__getDate(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
     s32 buf0[4];
     char buf1[0x80];
     s32 buf2[4];

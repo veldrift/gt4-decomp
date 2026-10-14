@@ -89,7 +89,7 @@ static inline void empty(Str *s) {
 extern "C" s32 func_00448AD0(const char *, void *);
 extern "C" void func_00446F90(void *);
 extern "C" s32 func_004470E8(void *, long long);
-extern "C" const char *func_00447280(void *);
+extern "C" const char *SPEC_DATABASE__RaceSpec__getRaceLabel(void *);
 extern "C" void func_00446FC8(void *, s32);
 static inline s32 v_int(VObj *o) {
     VEntry *e = (VEntry *)((char *)o->vtbl + 0x58);
@@ -122,7 +122,7 @@ extern "C" void MCarData__GetRaceCode(s32 *arg0, s32 arg1, VObj **arg2) {
 
                 void *p = work.record;
                 func_00446F90(p);
-                if (func_004470E8(p, code)) label = func_00447280(p);
+                if (func_004470E8(p, code)) label = SPEC_DATABASE__RaceSpec__getRaceLabel(p);
                 func_00446FC8(p, 2);
             }
         }

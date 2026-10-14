@@ -32,7 +32,7 @@ extern "C" void func_00387EF0(Obj *self, int arg1, int arg2);
 extern "C" void func_0010AF10(s32 arg0);
 extern "C" s32 func_0054C6E8(s32 v);
 
-extern "C" void func_0033BBF8(void *arg0, s32 arg1) {
+extern "C" void RacePS2Base__play(void *arg0, s32 arg1) {
     Obj *self = (Obj *)arg0;
     s32 s0;
     s32 r;

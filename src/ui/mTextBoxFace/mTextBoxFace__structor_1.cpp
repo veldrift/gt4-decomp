@@ -11,13 +11,13 @@ struct S00659988 {
     const char *name;
 };
 
-extern char D_006725E8[];
+extern char mTextBoxFace__vtable[];
 extern char D_0069D188[];
 
 extern "C" void func_002270F8(void *, s32 *);
 extern "C" void func_00227128(void *, s32);
 extern "C" void func_00203118(void *, s32);
-extern "C" void func_002D4870(void *, s32);
+extern "C" void mScrollable__structor_1(void *, s32);
 extern "C" void func_00326798(void *, s32, s32, const char *);
 extern "C" void func_003285A8(s32);
 extern "C" void func_003285F8(s32);
@@ -31,7 +31,7 @@ static inline void str_rel(char *p) {
     }
 }
 
-extern "C" void func_002E4E70(char *arg0, s32 arg1) {
+extern "C" void mTextBoxFace__structor_1(char *arg0, s32 arg1) {
     s32 buf0[4];
     s32 v;
     s32 newVal;
@@ -41,7 +41,7 @@ extern "C" void func_002E4E70(char *arg0, s32 arg1) {
     s32 *s4;
 
     dst = (s32 *)(arg0 + 0xBC);
-    *(char **)(arg0 + 4) = D_006725E8;
+    *(char **)(arg0 + 4) = mTextBoxFace__vtable;
     v = 0;
     func_002270F8(buf0, &v);
     if (dst != buf0) {
@@ -71,7 +71,7 @@ extern "C" void func_002E4E70(char *arg0, s32 arg1) {
     str_rel(*(char **)(arg0 + 0xD0));
     func_00203118(s2, 2);
     func_00227128(dst, 2);
-    func_002D4870(arg0, 0);
+    mScrollable__structor_1(arg0, 0);
     if (arg1 & 1) {
         func_00326798(arg0, 0x3C8, 4, D_0069D188);
     }

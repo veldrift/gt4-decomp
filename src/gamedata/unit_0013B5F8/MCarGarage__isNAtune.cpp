@@ -10,7 +10,7 @@ extern "C" void func_002FE278(s32 *arg0, s32 arg1);
 extern "C" void func_003285A8(s32 arg0);
 extern "C" void func_003285F8(s32 arg0);
 
-extern "C" void func_0013F598(s32 *arg0,void *arg1) {
+extern "C" void MCarGarage__isNAtune(s32 *arg0,void *arg1) {
     s32 sp[4];
     s32 sp10[4];
     s32 *p1;
@@ -37,4 +37,3 @@ extern "C" void func_0013F598(s32 *arg0,void *arg1) {
     func_002FC870(p1, 2);
     func_0013BD68(sp, 2);
 }
-

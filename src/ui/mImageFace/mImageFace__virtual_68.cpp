@@ -9,20 +9,20 @@ struct Obj {
     s32 h2;
 };
 
-extern "C" void func_002638D0(Obj *self);
+extern "C" void mTextFace__virtual_68(Obj *self);
 extern "C" void func_002106E0(void *arg0, s32 *arg1);
 extern "C" void func_00210710(void *arg0, int arg1);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_002A2530(Obj *self) {
+extern "C" void mImageFace__virtual_68(Obj *self) {
     s32 buf[4];
     s32 zero;
     s32 zero2;
     s32 *dst;
     s32 newVal;
     s32 oldVal;
-    func_002638D0(self);
+    mTextFace__virtual_68(self);
     self->unkBC = 0;
     zero = 0;
     func_002106E0(buf, &zero);

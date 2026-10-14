@@ -1,0 +1,37 @@
+struct Texture { int resource,flags,width,height,a10,a14,a18,a1c; float u,v; int a28,a2c,a30,owned,a38; Texture(int,int,int) asm("func_001052E0"); ~Texture() asm("func_00105280"); };
+struct Self { Texture* texture; };
+struct Entry { short adjustment; char opaque2[2]; void (*call)(void*,float); };
+struct Object { char prefix[8]; Entry* table; };
+extern "C" void RaceEntryCar__update(int);
+extern "C" void func_004A53F8();
+extern "C" void func_004A74B4(const float*);
+extern "C" void pglPushAttrib(int);
+extern "C" void func_001056A0(Texture*);
+extern "C" void func_004A3040(float,float,float,float);
+extern "C" int func_00105818(Texture*);
+extern "C" void func_00105708(Texture*);
+extern "C" void func_004A3230(int);
+extern "C" void func_004AB040(int);
+extern "C" void func_004A29A8(unsigned char);
+extern "C" void func_004A1638(int);
+extern "C" void func_004A2808(unsigned char,float);
+extern "C" void func_004A2980(unsigned);
+extern "C" void func_004AA1D8(float,float,float,float);
+extern "C" void func_004A6140(int,int,int,int);
+extern "C" void func_004A5688();
+extern "C" void func_004A5400();
+extern "C" void func_003D6700(Self* self,Object* object,float value) {
+ float matrix[16];
+ RaceEntryCar__update(1); func_004A53F8();
+ matrix[0]=2; matrix[5]=-2; matrix[12]=-1; matrix[13]=1; matrix[15]=1;
+ matrix[1]=0;matrix[2]=0;matrix[3]=0;matrix[4]=0;matrix[6]=0;matrix[7]=0;matrix[8]=0;matrix[9]=0;matrix[10]=0;matrix[11]=0;matrix[14]=0;
+ func_004A74B4(matrix);RaceEntryCar__update(0);pglPushAttrib(0x8c7);
+ func_001056A0(self->texture);func_004A3040(0,0,0,0);
+ int width=self->texture->width; int height=func_00105818(self->texture);
+ Texture temporary(0x31,width,height);func_00105708(&temporary);
+ func_004A3230(3);func_004AB040(5);func_004A29A8(0);
+ Entry* entry=object->table+24;entry->call((char*)object+entry->adjustment,value);
+ func_004AB040(5);func_004AB040(4);func_004A1638(6);func_004A2808(0x98,1);func_004A2980(0xffffff);func_004AA1D8(1,1,1,1);
+ int width2=self->texture->width;int height2=func_00105818(self->texture);
+ func_004A6140(0,0,width2,height2);func_004AB040(3);func_004A2980(~0U);func_004AB040(6);func_004A5688();RaceEntryCar__update(1);func_004A5400();RaceEntryCar__update(0);
+}

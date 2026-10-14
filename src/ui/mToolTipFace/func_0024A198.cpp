@@ -12,11 +12,11 @@ struct S0024A198 {
 
 struct S00490640;
 extern "C" f32 func_00490640(struct S00490640 *arg0);
-extern s32 D_00624978;
-extern s32 D_00624980;
+extern s32 PDISTD__LOCALE;
+extern s32 PDISTD__global_font_manager;
 
 extern "C" void func_0024A198(struct S0024A198 *self) {
-    switch (D_00624978) {
+    switch (PDISTD__LOCALE) {
     case 0:
         self->f14C = 10.0f;
         break;
@@ -30,7 +30,7 @@ extern "C" void func_0024A198(struct S0024A198 *self) {
         self->f14C = 12.5f;
         break;
     }
-    f32 r = func_00490640((struct S00490640 *)D_00624980);
+    f32 r = func_00490640((struct S00490640 *)PDISTD__global_font_manager);
     self->f148 = r;
     if (r <= 0.0f)
         self->f148 = 8.0f;

@@ -24,7 +24,7 @@ extern "C" void func_00309378(void *arg0, s32 arg1);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_0032DA40(void *arg0, void **arg1, s32 arg2, s32 arg3, s32 arg4) {
+extern "C" void hBuiltinMethod__call_const_2(void *arg0, void **arg1, s32 arg2, s32 arg3, s32 arg4) {
     s32 buf0[4];
     s32 newVal;
     s32 oldVal;

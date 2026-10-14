@@ -30,7 +30,7 @@ static inline f32 call1_0038E228(Obj_0038E228 *self, int off, f32 f) {
     return e->fn(o + e->delta, f);
 }
 
-extern "C" f32 func_0038E228(Obj_0038E228 *self, f32 fparg) {
+extern "C" f32 CarGeometry__GetBackmirrorPosition_Y(Obj_0038E228 *self, f32 fparg) {
     if (call0_0038E228(self, 0xC8) == 0.0f) {
         if (call1_0038E228(self, 0xD0, fparg) == 0.0f) {
             if (call1_0038E228(self, 0xD8, fparg) == 0.0f)

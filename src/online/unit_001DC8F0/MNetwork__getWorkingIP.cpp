@@ -53,7 +53,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_001DD3B0(void **arg0, void *arg1) {
+extern "C" void MNetwork__getWorkingIP(void **arg0, void *arg1) {
     Handle h0;
     Str s4;
     Str s;

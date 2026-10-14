@@ -21,7 +21,7 @@ extern "C" void func_00314B20(void *arg0, void *arg1);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_0031F708(void *arg0, Owner *arg1) {
+extern "C" void mStringConst__execute(void *arg0, Owner *arg1) {
     s32 buf0[4];
     Lst *s2;
     s32 *s1;

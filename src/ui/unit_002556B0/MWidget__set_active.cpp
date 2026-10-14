@@ -14,9 +14,9 @@ struct VObj_58 {
 
 extern "C" void func_00255110(void *arg0, void *arg1);
 extern "C" void func_002550B8(void *arg0, s32 arg1);
-extern "C" void func_00265FF0(void *node, void *arg);
+extern "C" void mWidget__setActive(void *node, void *arg);
 
-extern "C" void func_00256E28(s32 arg0, void *arg1, s32 arg2, void **arg3) {
+extern "C" void MWidget__set_active(s32 arg0, void *arg1, s32 arg2, void **arg3) {
     s32 buf[4];
     s32 s1;
     VObj_58 *obj;
@@ -28,6 +28,6 @@ extern "C" void func_00256E28(s32 arg0, void *arg1, s32 arg2, void **arg3) {
     s1 = buf[0];
     entry = (VEntry_58 *)((char *)obj->vtbl + 0x58);
     r = entry->fn((char *)obj + entry->delta);
-    func_00265FF0((void *)s1, (void *)(s32)(r != 0));
+    mWidget__setActive((void *)s1, (void *)(s32)(r != 0));
     func_002550B8(buf, 2);
 }

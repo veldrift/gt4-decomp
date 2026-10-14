@@ -66,7 +66,7 @@ static inline void str_release(Str *s) {
     }
 }
 
-extern "C" void func_00187D28(s32 *arg0, void *arg1, s32 arg2, VObj **arg3) {
+extern "C" void MOption__get_event_name(s32 *arg0, void *arg1, s32 arg2, VObj **arg3) {
     Handle buf;
     if (arg2 > 0) {
         func_0017FB28(&buf, arg1);

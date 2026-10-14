@@ -23,8 +23,8 @@ extern char D_006AE558[];
 
 extern "C" void func_0057DA20(int arg0, int arg1, ...);
 extern "C" s32 func_005A3830(int arg0, int arg1);
-extern "C" void func_005A4440(void *arg0, s32 arg1, s32 arg2, s32 arg3);
-extern "C" s32 func_005A31F0(void *arg0);
+extern "C" void fwrite(void *arg0, s32 arg1, s32 arg2, s32 arg3);
+extern "C" s32 fclose(void *arg0);
 
 extern "C" void func_004918B0(Obj *arg0) {
     char buf[0x80];
@@ -40,8 +40,8 @@ extern "C" void func_004918B0(Obj *arg0) {
                 func_0057DA20((int)buf, (int)D_006AE550, a->v);
                 s32 n = (*(E2 **)(off + (s32)arg0->t18))->c;
                 s32 r = func_005A3830((int)buf, (int)D_006AE558);
-                func_005A4440(*(E2 **)(off + (s32)arg0->t18), 1, n, r);
-                func_005A31F0((void *)r);
+                fwrite(*(E2 **)(off + (s32)arg0->t18), 1, n, r);
+                fclose((void *)r);
                 cnt = arg0->count;
             }
         } while (i < (s32)cnt);

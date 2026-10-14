@@ -1,0 +1,1 @@
+extern "C" int RaceBase__getLicenseSubMode(const signed char* text){int result=0;if(text[2]!='l')return 0;switch(text[4]){case 'b':result=text[3]=='i'?6:4;break;case 'a':result=text[3]=='i'?7:5;break;case 'c':result=9;break;case 's':result=8;break;}return result;}

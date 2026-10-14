@@ -1,0 +1,2 @@
+struct Timer{unsigned first,second;};struct ClockState{Timer now;unsigned long long accumulated,lastTick;};extern "C" ClockState D_0086B400;extern "C" unsigned char D_0064C10D;extern "C" unsigned long long func_0053B340();
+extern "C" int func_0053B360(){if(!D_0064C10D){D_0086B400.now.first=0;D_0086B400.accumulated=0;D_0086B400.now.second=0;D_0086B400.lastTick=func_0053B340();D_0064C10D=1;}return 0;}

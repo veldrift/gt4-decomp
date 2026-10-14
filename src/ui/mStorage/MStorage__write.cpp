@@ -48,7 +48,7 @@ static inline const char *c_str(Str *s) {
     return s->p;
 }
 
-extern "C" void func_00240E38(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
+extern "C" void MStorage__write(s32 *arg0, void *arg1, s32 arg2, void *arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];

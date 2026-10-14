@@ -27,7 +27,7 @@ struct func_00244258_v_s0 {
     f32 unk34;
 };
 
-extern "C" void func_00244258(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
+extern "C" void MTextFace__get_scale_x(s32 *arg0, void *arg1, s32 arg2, char **arg3) {
     s32 buf0[4];
     s32 buf1[4];
     s32 *p_s1;

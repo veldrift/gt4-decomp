@@ -1,0 +1,1 @@
+struct V { union {float a; int bitsA;}; union {float b; int bitsB;}; V &operator=(const V &s) { a=s.a;b=s.b;return *this; } }; struct S { char p[108]; V v; char q[36]; unsigned int flags; }; void mWidget__setScale(S *s,const V *v) { s->v=*v; s->flags|=0x200000; }

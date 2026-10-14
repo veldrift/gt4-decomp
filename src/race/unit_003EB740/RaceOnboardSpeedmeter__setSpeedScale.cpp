@@ -9,10 +9,10 @@ struct Obj {
 extern char D_006A3C50[];
 extern char D_006A3C88[];
 
-extern "C" void func_003AECB0(Obj *arg0, s32 arg1);
-extern "C" void func_003BE228(Obj *arg0, f32 fparg0, f32 fparg1);
+extern "C" void RaceDisplayObjectBase__selectTexture(Obj *arg0, s32 arg1);
+extern "C" void RaceMeterBase__setScale(Obj *arg0, f32 fparg0, f32 fparg1);
 
-extern "C" void func_003EB860(Obj *arg0, s32 arg1, f32 fparg0) {
+extern "C" void RaceOnboardSpeedmeter__setSpeedScale(Obj *arg0, s32 arg1, f32 fparg0) {
     f32 f20 = 0.0f;
 
     if (arg1 != 0) {
@@ -27,7 +27,7 @@ extern "C" void func_003EB860(Obj *arg0, s32 arg1, f32 fparg0) {
                 {
                     s32 a = *(s32 *)(off + b8);
                     f20 = *(f32 *)(off + b4);
-                    func_003AECB0(arg0, a);
+                    RaceDisplayObjectBase__selectTexture(arg0, a);
                 }
                 break;
             }
@@ -45,7 +45,7 @@ extern "C" void func_003EB860(Obj *arg0, s32 arg1, f32 fparg0) {
                 {
                     s32 a = *(s32 *)(p + 8);
                     f20 = *(f32 *)(p + 4);
-                    func_003AECB0(arg0, a);
+                    RaceDisplayObjectBase__selectTexture(arg0, a);
                 }
                 break;
             }
@@ -56,6 +56,6 @@ extern "C" void func_003EB860(Obj *arg0, s32 arg1, f32 fparg0) {
         }
     }
 
-    func_003BE228(arg0, 0.0f, f20);
+    RaceMeterBase__setScale(arg0, 0.0f, f20);
     arg0->f24 = 0;
 }

@@ -33,16 +33,16 @@ extern "C" void func_0032B5C0(SS *arg0);
 extern "C" void *func_0032B738(void *arg0, s32 arg1);
 extern "C" void *func_0032B808(void *arg0, const char *arg1);
 extern "C" Str *func_0032B8C0(SS *arg0);
-extern "C" const char *func_00323CD8(void *arg0);
+extern "C" const char *hValue__getName(void *arg0);
 extern "C" char *func_005C2560(Rep *src);
 extern "C" struct S00659988 *func_005C11A8(void);
 extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 
-extern "C" Str *func_0032BB58(Str *arg0, Obj *arg1) {
+extern "C" Str *hAttribute__toString(Str *arg0, Obj *arg1) {
     SS ss;
     func_0032B5C0(&ss);
     void *s0 = func_0032B808(&ss, D_0069EEC0);
-    func_0032B808(s0, func_00323CD8(arg1));
+    func_0032B808(s0, hValue__getName(arg1));
     func_0032B808(func_0032B738(func_0032B808(&ss, D_0069EED0), arg1->a), D_0069EED8);
     {
         s32 p = *(s32 *)&func_0032B8C0(&ss)->p;

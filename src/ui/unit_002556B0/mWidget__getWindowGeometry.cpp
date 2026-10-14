@@ -13,17 +13,17 @@ struct Obj {
     void *parent;
 };
 
-extern "C" void func_0025B498(void *arg0, f32 *arg1, f32 *arg2);
+extern "C" void mWidget__getWindowSize(void *arg0, f32 *arg1, f32 *arg2);
 extern "C" void func_0025BA38(void *arg0, f32 *arg1, f32 *arg2);
 extern "C" s32 func_00267698(struct Obj *arg0);
 
-extern "C" void func_0025B578(struct Obj *self, struct Rect *r, f32 *px, f32 *py, f32 *pw, f32 *ph) {
+extern "C" void mWidget__getWindowGeometry(struct Obj *self, struct Rect *r, f32 *px, f32 *py, f32 *pw, f32 *ph) {
     f32 sx;
     f32 sy;
 
     switch (func_00267698(self)) {
     case 1:
-        func_0025B498(self->parent, &sx, &sy);
+        mWidget__getWindowSize(self->parent, &sx, &sy);
         if (px != 0) *px = r->x * sx;
         if (py != 0) *py = r->y * sy;
         if (pw != 0) *pw = r->w * sx;

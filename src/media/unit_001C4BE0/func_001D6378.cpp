@@ -1,0 +1,90 @@
+/* compiler: ee-gcc2.96-no-strict-aliasing */
+struct Rect { char p[0x10]; int x; int y; int w; int h; };
+struct Obj { char p[8]; int f8; char q[0x34]; };
+struct Self { char p[0x58]; float f58; char q[0x18C - 0x5C]; float f18c; float f190; };
+extern "C" void func_00105280(Obj *, int);
+extern "C" Obj *func_00105378(Obj *, void *);
+extern "C" void func_001054A0(Obj *, int);
+extern "C" void func_00105670(void *);
+extern "C" void func_001056A0(void *);
+extern "C" void func_00105728(void *);
+extern "C" int func_00105818(Obj *);
+extern "C" void *func_00105AD8(void *, void *, int, int);
+extern "C" void func_001D6968(Self *, void *, void *, int, float, float);
+extern "C" void func_001D6DC8(Self *);
+extern "C" void func_004A1638(int);
+extern "C" void func_004A2808(int, float);
+extern "C" void func_004A2980(int);
+extern "C" void func_004A29A8(int);
+extern "C" void func_004A2C58(int, int, float);
+extern "C" void func_004A3078(int);
+extern "C" void func_004A3088(float);
+extern "C" void func_004A3230(int);
+extern "C" void func_004A3998(int, float);
+extern "C" void func_004A4550(int, int);
+extern "C" void func_004A6788(float, float, float, float, float, float, float, float);
+extern "C" void func_004AA1D8(float, float, float, float);
+extern "C" void func_004AB040(int);
+extern "C" void func_001D6378(Self *self, void *a1, void *a2, Rect *r, int n) {
+    Obj o;
+    func_00105670(r);
+    float a = self->f58;
+    float threshold = 0.5f;
+    if (a < threshold) n = n / 2;
+    threshold = 0.25f;
+    if (a < threshold) n = n / 2;
+    a = self->f18c;
+    float sum = a + self->f190;
+    if (n <= 0) n = 1;
+    int flag = 1;
+    if (sum != 0.0f) flag = 0;
+    float ratio = 0.0f;
+    if (flag == 0) ratio = a / sum;
+    float fn = (float)n;
+    int s4 = (int)(fn * ratio + 0.5f);
+    int i = 0;
+    while (i < n) {
+        func_001056A0(a2);
+        func_00105AD8(a2, a1, 0, 0);
+        func_004A3078(0x80000000);
+        func_004A29A8(1);
+        func_004A2980(0xFF000000);
+        func_004A3088(1.0f);
+        func_004A3230(3);
+        func_004A2980(-1);
+        if (flag == 0) {
+            int s0 = i >= s4;
+            func_004A2C58(n, i, 0x1.333332p-1f);
+            float d = (float)i + 0.125f;
+            float pos = d / fn;
+            if (s0 == 0) d = (float)s4; else d = (float)(n - s4);
+            func_001D6968(self, a1, a2, s0, pos, fn / d);
+        }
+        int next = i + 1;
+        for (int k = 0; k < next; k++)
+            func_004A2C58(n, i, 0x1.999998p-2f);
+        func_001D6DC8(self);
+        func_004A3998(6, 1.0f / ((float)i + 1.0f));
+        i = next;
+    }
+    func_00105378(&o, a1);
+    func_001054A0(&o, 0);
+    func_001056A0(&o);
+    func_00105728(r);
+    func_004A4550(3, 0);
+    func_004A4550(2, 0);
+    func_004A29A8(0);
+    func_004AB040(5);
+    func_004AB040(4);
+    func_004A1638(6);
+    func_004AA1D8(1.0f, 1.0f, 1.0f, 1.0f);
+    func_004A2808(0x64, self->f58);
+    float w = (float)o.f8;
+    int v = func_00105818(&o);
+    float x = r->x;
+    float y = r->y;
+    float right = r->x + r->w;
+    float bottom = r->y + r->h;
+    func_004A6788(0.0f, 0.0f, w, (float)v, x, y, right, bottom);
+    func_00105280(&o, 2);
+}

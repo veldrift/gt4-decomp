@@ -16,11 +16,11 @@ struct Ser_0044D140 {
     virtual s32 v4();
 };
 
-extern "C" void *func_0044D110(void *arg0, void *arg1);
+extern "C" void *Serialize__Base__getHeader(void *arg0, void *arg1);
 
-extern "C" s32 func_0044D140(Ser_0044D140 *self, void *arg1) {
+extern "C" s32 Serialize__Base__probe(Ser_0044D140 *self, void *arg1) {
     Buf buf;
-    func_0044D110(&buf, arg1);
+    Serialize__Base__getHeader(&buf, arg1);
     u16 x = buf.b;
     if (x != self->v3()) {
         return 2;

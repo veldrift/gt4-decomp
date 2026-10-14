@@ -27,7 +27,7 @@ struct A {
     s32 pad[3];
 };
 
-extern "C" void func_00256B58(void *arg0, void *arg1, s32 arg2, void **arg3) {
+extern "C" void MWidget__set_can_focus(void *arg0, void *arg1, s32 arg2, void **arg3) {
     A a;
     s32 v = 1;
     if (arg2 != 0) {

@@ -23,7 +23,7 @@ extern "C" void func_00204558(void *arg0, void *arg1);
 extern "C" void func_003285A8(RefCounter *p);
 extern "C" void func_003285F8(RefCounter *p);
 
-extern "C" void func_002039E0(s32 *arg0, s32 arg1, char *arg2) {
+extern "C" void MColorObject__interpolate(s32 *arg0, s32 arg1, char *arg2) {
     s32 buf0[4];
     s32 buf1[4];
     s32 buf2[4];
