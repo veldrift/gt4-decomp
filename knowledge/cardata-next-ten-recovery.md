@@ -59,3 +59,40 @@ The local evidence files are `build/cardata-next-ten/full-report.json` and
 `full-build.log`. The validation snapshot has no Git metadata, so the report's
 commit field is null; it validates the source state committed locally in
 `c2588777c`, following merge cleanup `f13286ea0`.
+
+## Further continuation: packed data helpers
+
+Two more support functions now pass the original compiler's judge and direct
+resolved-object comparison, with exactly one function in each object:
+
+| Address | Recovered operation | Body / span |
+| --- | --- | --- |
+| `00430C28` | Compare a byte limit with the packed upper-nibble threshold; nibble `0xF` always yields zero | 40 bytes / 10 instructions |
+| `0043C608` | Clear twelve destination bytes, copy an eleven-byte packed record from source offset `0x10`, return destination plus twelve | 104 bytes / 26 instructions |
+
+Both use the default game compiler. The threshold operation keeps its inverted
+comparison in the native unsigned 64-bit domain, eliminating the redundant
+integer-result extensions seen in earlier drafts. The record copy uses direct
+assignment of one packed aggregate, so all source fields are read before any
+destination field is written. Both retain address names because their native
+method names are unknown.
+
+The direct CarData/garage methods attempted in this continuation remain
+unaccepted. `MCarGarage__getTunerList` at `00140FA8` is now two instructions away
+from matching: the only difference is the order of independent empty-string-rep
+address and loop-counter initialization. Its corrected draft preserves native
+64-bit car identifiers returned by `004454C0` and consumed by `00448788` and
+`004478F8`. It is saved in ignored `build/cardata-more/00140fa8.cpp` on both
+hosts. Gear-ratio output at `00148940` still needs register-allocation and
+point-loop scheduling recovery; no near-match source has been promoted.
+
+All 27 judged hypotheses and deferrals from this continuation are appended to
+the attempts diary. New proofs and build evidence are under ignored
+`build/cardata-more/`.
+
+The final full build, generated at `2026-10-14T13:28:39Z`, passes both original
+hashes listed above. Both newly accepted helpers are `linked` from source;
+there are 27,701 unique source addresses, 27,007 linked functions, and no orphan
+or duplicate sources. Evidence is saved as `build/cardata-more/full-report.json`
+and `full-build-both.log`. No compiler tooling or shared header changes were
+needed for this continuation.
