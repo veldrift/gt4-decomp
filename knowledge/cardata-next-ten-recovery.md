@@ -150,3 +150,42 @@ with both original SHA-1 hashes listed above. All three new methods are
 `linked` from source. The audit counts 27,704 unique source addresses and
 27,010 linked functions, with no orphan or duplicate sources. Evidence is
 saved as `build/cardata-finish/full-report.json` and `full-build.log`.
+
+## Further native value recovery
+
+Two more functions pass the matching interfaces and direct resolved-object
+comparison, with one function per object and no unresolved relocations:
+
+| Address | Recovered operation | Instructions | Body / span bytes |
+| --- | --- | --- | --- |
+| `004430F0` | Convert four floating-point fields to unsigned shorts and a fifth field, scaled by 10,000, to a signed short | 65 | 260 / 264 |
+| `001360A0` | `MCalendar__dayToDate`: return year, month, day in an array, or a null reference when no argument is supplied | 115 | 460 / 464 |
+
+Both use the established no-strict-aliasing profile. The field writer keeps
+each unsigned conversion's correction path and destination store ahead of the
+next source read. A typed layout and sequential assignments recover the native
+branch-likely delay slots without special instruction helpers.
+
+The calendar method calls `00579898` with its native four-byte Date aggregate
+return: signed-short year followed by unsigned-byte month and day. The aggregate
+ABI produces the two short stores directly. Declaring an unsigned 64-bit scalar
+and narrowing its halves had introduced redundant masks in previous drafts.
+Native array-object append returns a temporary Ref, while each IntegerRef
+argument has its own full-expression lifetime; these recover the original
+return slots, reference-counted assignment, and destructor order.
+
+The engine-curve setup now matches, but its graph-loop headers and scheduling
+remain unresolved. It reached ten failed hypotheses across these passes and
+was deferred with the direct `00148b60-order.cpp` draft. Gear-ratio native
+lookup and output-handle lifetimes now match; its closest current draft,
+`00148940-scopes.cpp`, differs in 36 rows concentrated in the two point loops.
+The other investigated table and randomization drafts remain unaccepted.
+The attempts diary contains thirty-eight additional records, including the
+judged hypotheses and engine deferral. Drafts and new direct proof are under
+`build/cardata-finish/`; the latter is `proof-more.json`.
+
+The full build at `2026-10-14T16:05:37Z` passes `.text OK` and `.data OK`
+with both original hashes. Both new functions are `linked` from source.
+There are 27,706 unique source addresses and 27,012 linked functions, with
+no orphan or duplicate sources. Evidence is saved as
+`build/cardata-finish/full-report-more.json` and `full-build-more.log`.
