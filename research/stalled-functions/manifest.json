@@ -1635,7 +1635,12 @@
         "build/localized-text-pass2-evidence/",
         "build/swarm/localized-text-pass3/",
         "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-pass3/",
-        "build/localized-text-pass3-evidence/"
+        "build/localized-text-pass3-evidence/",
+        "build/localized-text-sibling-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-sibling/"
+      ],
+      "research_notes": [
+        "docs/research/localized-text-constructor-siblings.md"
       ]
     }
   ],

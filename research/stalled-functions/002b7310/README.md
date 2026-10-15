@@ -38,3 +38,8 @@ Second-pass validation: strict viewer build passed again with `MENU_VM_PROOF_OK`
 ## Third bounded pass - 2026-10-15
 
 Ten further novel hypotheses failed; best remains 2/104. See [third-pass evidence](PASS3.md) for all hypotheses, scheduler versus delay-slot findings, retained source hashes and the remaining missing evidence. Eleven judge events include one corrected source-preparation compile failure. No MATCH, source promotion, viewer integration or new full-image validation occurred. Unchanged viewer suites were not rerun.
+
+
+## Matched sibling and header investigation - 2026-10-15
+
+Verified partial siblings 0021FC78, 00212DD0 and 002DA400 and compared their compiler dumps. The closest copy-assignment sibling takes runtime text; the literal siblings have different pre-branch pointer preparation. Inspected upstream basic_string headers at the documented 2000-10-03 date. See [research findings](../../../docs/research/localized-text-constructor-siblings.md). No new target hypothesis was judged; best remains 2/104 and the exact Sony/game header context remains unverified.
