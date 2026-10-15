@@ -143,7 +143,7 @@ count = 4
 tries = 8
 
 [swarm.tiers.sol]
-# gpt-6.1-sol through tools/codex_worker.py: about 70% up to 256 B, about 45% at 257-512 B.
+# Codex worker tier. Defaults in tools/codex_worker.py use the model and effort available to this account.
 fresh = [8, 1024]
 retries = ["haiku"]
 retry_max_bytes = 1024

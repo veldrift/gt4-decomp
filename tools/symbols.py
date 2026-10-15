@@ -11,6 +11,9 @@ Names come from:
   config/libs/*_symbols.txt tools/libmatch.py's libraries: real (C and mangled C++) names of library
                             functions and data, e.g. libio's `tellg__7istream`; like stl_symbols.txt
                             they resolve but never name an address
+  config/resolved_symbols.txt tools/resolve_symbols.py: names matched sources use (soft-float helpers,
+                            vtables, mangled members), addresses read back from the original; they
+                            resolve but never name an address
   config/adhoc_methods.txt  tools/registration.py: `Class method 0xADDR`, the native methods the
                             script engine registers, used as Class__method
 
@@ -36,6 +39,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SYMBOL_ADDRS = os.path.join(ROOT, "config", "symbol_addrs.txt")
 ADHOC = os.path.join(ROOT, "config", "adhoc_methods.txt")
 STL = os.path.join(ROOT, "config", "stl_symbols.txt")  # tools/stl.py: mangled names of STL instantiations
+# tools/resolve_symbols.py: names matched sources use, with addresses read back from the original
+RESOLVED = os.path.join(ROOT, "config", "resolved_symbols.txt")
 # tools/libmatch.py: names of third-party library functions and data (libio's mangled C++ names)
 LIB_SYMBOLS = os.path.join(ROOT, "config", "libs")
 CLASSES = os.path.join(ROOT, "config", "classes.json")
@@ -58,6 +63,7 @@ class Table:
         self.by_addr = {}     # address -> [names]
         self.canonical = {}   # address -> name
         self.kinds = {}       # address -> "func" | "data"
+        self.keep = set()     # names organize must leave as written (config/resolved_symbols.txt)
 
 
 def _load():
@@ -73,7 +79,7 @@ def _load():
     gthd = set()  # names from Gran Turismo HD (tools/gthd_names.py): above Class__virtual_NN
     libs = sorted(os.path.join(LIB_SYMBOLS, f) for f in os.listdir(LIB_SYMBOLS)
                   if f.endswith("_symbols.txt")) if os.path.isdir(LIB_SYMBOLS) else []
-    for path in [SYMBOL_ADDRS, STL] + libs:
+    for path in [SYMBOL_ADDRS, STL] + libs + [RESOLVED]:
         if not os.path.exists(path):
             continue
         for line in open(path):
@@ -81,10 +87,12 @@ def _load():
             if m:
                 addr, kind = int(m.group(2), 16), m.group(3)
                 t.names[m.group(1)] = (addr, kind)
+                if path == RESOLVED:
+                    t.keep.add(m.group(1))
                 t.kinds[addr] = kind
                 # mangled template/library names resolve but never name an address (or a file); plain C
                 # library names (memcpy, strlen...) do, so sources keep calling them by name
-                if path != SYMBOL_ADDRS and ("__" in m.group(1) or "$" in m.group(1) or path == STL):
+                if path != SYMBOL_ADDRS and ("__" in m.group(1) or "$" in m.group(1) or path in (STL, RESOLVED)):
                     continue
                 t.by_addr.setdefault(addr, []).append(m.group(1))
                 rtti.setdefault(addr, []).append(m.group(1))
@@ -263,7 +271,7 @@ def generic(sym):
 # code, so renaming tools never rewrite these names or the addresses they stand for.
 BUILTINS = {"memcpy", "memset", "memcmp", "memmove", "strcpy", "strncpy", "strcmp", "strncmp",
             "strlen", "strcat", "strchr", "strrchr", "abs", "fabs", "fabsf", "sqrt", "sqrtf",
-            "bzero", "bcopy", "bcmp", "alloca", "abort", "exit", "malloc"}
+            "bzero", "bcopy", "bcmp", "alloca", "abort", "exit", "malloc", "free"}
 
 
 def rename_text(text, lookup=None):
@@ -291,7 +299,7 @@ def generic_text(text):
 
     def sub(m):
         name = m.group(0)
-        if name in t.names and name not in BUILTINS:
+        if name in t.names and name not in BUILTINS and name not in t.keep:
             addr, kind = t.names[name]
             return f"func_{addr:08X}" if kind == "func" else f"D_{addr:08X}"
         return name

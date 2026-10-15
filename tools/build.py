@@ -98,14 +98,43 @@ def place_rodata(addrs, data_addr, orig_data, orig_text, text_addr):
     wsl(f'cd "{WSL_DIR}/obj" && cp {names} {to_wsl(local)}/\n')
     sext = lambda v: (v & 0xFFFF) - 0x10000 if v & 0x8000 else v & 0xFFFF
     word = lambda a: struct.unpack_from("<I", orig_text, a - text_addr)[0]
+    # Relocations of each object's .rodata: only R_MIPS_32 against its own .text (a switch's jump
+    # table) can be resolved here; any other kind leaves the object out.
+    rodata_relocs = {}
+    dump = wsl(f'cd "{to_wsl(local)}" && for f in {names}; do echo "@ $f"; '
+               f'mips-linux-gnu-objdump -r -j .rodata "$f" 2>/dev/null | grep -E "^[0-9a-f]{{8}} " || true; done\n')
+    cur = None
+    for line in dump.splitlines():
+        if line.startswith("@ "):
+            cur = int(line[2:].split("_")[1][:8], 16)
+            rodata_relocs[cur] = []
+        elif cur is not None and rodata_relocs[cur] is not None:
+            off, rtype, sym = line.split()[:3]
+            if rtype == "R_MIPS_32" and sym == ".text":
+                rodata_relocs[cur].append(int(off, 16))
+            else:
+                rodata_relocs[cur] = None
+    addrs = [a for a in addrs if rodata_relocs.get(a) is not None]
     out = {}
     for addr in addrs:
         path = os.path.join(local, f"func_{addr:08X}.o")
         blob, srelocs, _ = match.read_object(path, want_symbols=True)
         rodata = elf_section(path, ".rodata")
+        if rodata_relocs.get(addr):
+            # A jump table: each word is the function's own address plus the addend stored in place.
+            words = bytearray(rodata)
+            for roff in rodata_relocs[addr]:
+                struct.pack_into("<I", words, roff, (addr + struct.unpack_from("<I", words, roff)[0]) & 0xFFFFFFFF)
+            rodata = bytes(words)
         mine = lambda off: struct.unpack_from("<I", blob, off)[0]
         bases = set()
         offs = sorted(srelocs)
+        if any(str(srelocs[o][1]).endswith("tab") for o in offs):
+            continue  # code reaching into a section the link discards (libmatch's stub table)
+        if any(srelocs[o][0] == match.R_MIPS_HI16 and mine(o) >> 26 != 0x0F for o in offs):
+            # ee-as 2.96 can leave a load opcode on the %hi of an indexed-load macro
+            # (knowledge/ee-gcc-2.96.md): the judge ignores relocated words, the image does not.
+            continue
         for n, off in enumerate(offs):
             rtype, sym = srelocs[off][0], srelocs[off][1]
             if sym != ".rodata" or rtype != match.R_MIPS_HI16:
@@ -254,10 +283,21 @@ def main():
         print(f"  duplicate sources for {key}: {', '.join(ps)}")
     print(f"compiling {len(sources)} functions...", flush=True)
     by_compiler = {}
+    # The headers are part of every object: an object is reused only while include/ holds the same
+    # bytes, or a header change (the stdlib shim on 2026-10-14) leaves objects that a fresh checkout,
+    # and the CI, can no longer compile.
+    headers = hashlib.sha1()
+    inc = os.path.join(ROOT, "include")
+    for dirpath, dirs, files in os.walk(inc):
+        dirs.sort()
+        for f in sorted(files):
+            fp = os.path.join(dirpath, f)
+            headers.update(os.path.relpath(fp, inc).replace(os.sep, "/").encode() + b"\0" + open(fp, "rb").read())
+    headers = headers.digest()
     for addr, path in sources.items():
         rel = os.path.relpath(path, project.SRC).replace(os.sep, "/")
         stem = os.path.splitext(os.path.basename(path))[0]
-        digest = hashlib.sha1(open(path, "rb").read()).hexdigest()
+        digest = hashlib.sha1(open(path, "rb").read() + headers).hexdigest()
         by_compiler.setdefault(project.source_compiler(path), []).append(f"{rel} func_{addr:08X} {stem} {digest}")
     # Only objects of sources that exist now take part: an object left by a source since deleted,
     # renamed or re-addressed would otherwise be linked as if it were still proven.
@@ -337,7 +377,7 @@ done
         extra = {k: v for k, v in p["sections"].items()
                  if v and k not in HARMLESS and not k.startswith(".rel") and not k.endswith("tab")}
         bad_syms = [s for s in p["undefined"] if symbols.address_of(s) is None]
-        if set(extra) == {".rodata"} and not p["sections"].get(".rel.rodata"):
+        if set(extra) == {".rodata"}:  # constants or a jump table (.rel.rodata): place_rodata checks both
             rodata_candidates.append(addr)
         if extra and addr not in rodata_candidates:
             status[addr] = "brings its own data: " + ", ".join(sorted(extra))
@@ -359,11 +399,13 @@ done
         if addr in objects and addr not in rodata_at:
             del objects[addr]
             status[addr] = "brings its own data: .rodata (its place in the original could not be confirmed)"
-    data_plan, end = [], data_addr
+    data_plan, shared, end = [], [], data_addr
     for addr, base in sorted(rodata_at.items(), key=lambda kv: kv[1]):
-        if base < end:  # overlaps one already placed
-            del objects[addr]
-            status[addr] = "brings its own data: .rodata (overlaps another function's)"
+        if base < end:
+            # Overlaps one already placed: functions of one unit share a constant pool in the
+            # original. place_rodata checked these bytes are the original's at that address, so the
+            # section is only located there (NOLOAD) for its references; the image keeps the bytes.
+            shared.append((addr, base))
             continue
         data_plan.append((addr, base))
         end = base + parsed[addr]["sections"][".rodata"]
@@ -440,6 +482,8 @@ done
     ld = ("\n".join(syms) + "\nSECTIONS\n{\n"
           f"  .text 0x{text_addr:x} : SUBALIGN(4)\n  {{\n" + "\n".join(body) + "\n  }\n"
           f"  .data 0x{data_addr:x} : SUBALIGN(1)\n  {{\n" + "\n".join(data_body) + "\n  }\n"
+          + "".join(f"  .shared_rodata_{a_:08x} 0x{b_:x} (NOLOAD) : {{ obj/func_{a_:08X}.o(.rodata) }}\n"
+                    for a_, b_ in shared) +
           "  /DISCARD/ : { *(.reginfo) *(.mdebug*) *(.comment) *(.pdr) *(.eh_frame) *(.gcc_except_table) *(*) }\n}\n")
     open(os.path.join(OUT, "link.ld"), "w", newline="\n").write(ld)
 

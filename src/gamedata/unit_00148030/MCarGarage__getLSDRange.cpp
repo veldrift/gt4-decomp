@@ -1,67 +1,348 @@
 /* compiler: ee-gcc2.96-no-strict-aliasing */
 typedef int s32;
-extern "C" void func_003285A8(void *);
-extern "C" void func_003285F8(void *);
-struct Ref_00309348 {
-    void *field_0;
-    Ref_00309348(const Ref_00309348 &) __asm__("func_00309360");
-    ~Ref_00309348() __asm__("func_00309378");
-    Ref_00309348 &operator=(const Ref_00309348 &other) {
-        if (this != &other) {
-            void *value = other.field_0;
-            if (value) func_003285A8(value);
-            if (field_0) func_003285F8(field_0);
-            field_0 = value;
-        }
-        return *this;
-    }
-};
+typedef unsigned char u8;
 
-struct GarageRef : Ref_00309348 {
-    GarageRef(void *) __asm__("func_0013BDC0");
-    ~GarageRef() __asm__("func_0013BD68");
-};
-struct ArrayRef : Ref_00309348 {
-    ArrayRef(int) __asm__("func_002EFC48");
-    ~ArrayRef() __asm__("func_002ED5C0");
-    Ref_00309348 &operator[](int) __asm__("func_002EFCE0");
-};
-struct IntegerRef : Ref_00309348 {
-    IntegerRef(int) __asm__("func_002FE278");
-    ~IntegerRef() __asm__("func_002FC870");
-};
-struct RangeField { unsigned char byte0, byte1, byte2, byte3; };
-struct RangeData { char unknown[0xF8]; RangeField fields[6]; };
-static inline RangeData *range_for(void *context) {
-    GarageRef garage(context);
-    return (RangeData *)((char *)garage.field_0 + 0x30);
-}
-template<int index, int offset>
-static inline void store(ArrayRef &array, RangeData *range) {
-    Ref_00309348 &element = array[index];
-    IntegerRef value(((unsigned char *)range)[offset]);
-    element = value;
-}
-extern "C" void MCarGarage__getLSDRange(Ref_00309348 *destination, void *context) {
-    RangeData *range = range_for(context);
-    ArrayRef array(18);
-    store<0, 0xF8>(array, range);
-    store<1, 0xF9>(array, range);
-    store<2, 0xFC>(array, range);
-    store<3, 0xFD>(array, range);
-    store<4, 0x100>(array, range);
-    store<5, 0x101>(array, range);
-    store<6, 0x104>(array, range);
-    store<7, 0x105>(array, range);
-    store<8, 0x108>(array, range);
-    store<9, 0x109>(array, range);
-    store<10, 0x10C>(array, range);
-    store<11, 0x10D>(array, range);
-    store<12, 0xFA>(array, range);
-    store<13, 0xFE>(array, range);
-    store<14, 0x102>(array, range);
-    store<15, 0x106>(array, range);
-    store<16, 0x10A>(array, range);
-    store<17, 0x10E>(array, range);
-    *destination = array;
+struct RefCounter;
+
+extern "C" void func_0013BDC0(void *arg0, void *arg1);
+extern "C" void func_0013BD68(void *arg0, s32 arg1);
+extern "C" void func_002EFC48(void *arg0, s32 arg1);
+extern "C" s32 *HArray__operator_index(void *h, s32 arg);
+extern "C" void func_002FE278(void *arg0, void *arg1);
+extern "C" void func_002FC870(void *arg0, s32 arg1);
+extern "C" void func_002ED5C0(void *arg0, s32 arg1);
+extern "C" void func_003285A8(RefCounter *p);
+extern "C" void func_003285F8(RefCounter *p);
+
+extern "C" void MCarGarage__getLSDRange(s32 *arg0, void *arg1) {
+    s32 buf0[4];
+    s32 buf1[4];
+    s32 *p_s2;
+    u8 *s3;
+    s32 newVal;
+    s32 oldVal;
+
+    func_0013BDC0(buf0, arg1);
+    s3 = (u8 *)buf0[0] + 0x30;
+    func_0013BD68(buf0, 2);
+    func_002EFC48(buf0, 0x12);
+    {
+    s32 *s1 = HArray__operator_index(buf0, 0);
+    p_s2 = buf1;
+    func_002FE278(p_s2, (void *)(s32)s3[0xf8]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 1);
+    func_002FE278(p_s2, (void *)(s32)s3[0xf9]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 2);
+    func_002FE278(p_s2, (void *)(s32)s3[0xfc]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 3);
+    func_002FE278(p_s2, (void *)(s32)s3[0xfd]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 4);
+    func_002FE278(p_s2, (void *)(s32)s3[0x100]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 5);
+    func_002FE278(p_s2, (void *)(s32)s3[0x101]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 6);
+    func_002FE278(p_s2, (void *)(s32)s3[0x104]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 7);
+    func_002FE278(p_s2, (void *)(s32)s3[0x105]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 8);
+    func_002FE278(p_s2, (void *)(s32)s3[0x108]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 9);
+    func_002FE278(p_s2, (void *)(s32)s3[0x109]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 10);
+    func_002FE278(p_s2, (void *)(s32)s3[0x10c]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 11);
+    func_002FE278(p_s2, (void *)(s32)s3[0x10d]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 12);
+    func_002FE278(p_s2, (void *)(s32)s3[0xfa]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 13);
+    func_002FE278(p_s2, (void *)(s32)s3[0xfe]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 14);
+    func_002FE278(p_s2, (void *)(s32)s3[0x102]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 15);
+    func_002FE278(p_s2, (void *)(s32)s3[0x106]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 16);
+    func_002FE278(p_s2, (void *)(s32)s3[0x10a]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    {
+    s32 *s1 = HArray__operator_index(buf0, 17);
+    func_002FE278(p_s2, (void *)(s32)s3[0x10e]);
+    if (s1 != p_s2) {
+        newVal = *p_s2;
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *s1;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *s1 = newVal;
+    }
+    func_002FC870(p_s2, 2);
+    }
+
+    if (arg0 != buf0) {
+        newVal = buf0[0];
+        if (newVal != 0) {
+            func_003285A8((RefCounter *)newVal);
+        }
+        oldVal = *arg0;
+        if (oldVal != 0) {
+            func_003285F8((RefCounter *)oldVal);
+        }
+        *arg0 = newVal;
+    }
+    func_002ED5C0(buf0, 2);
 }

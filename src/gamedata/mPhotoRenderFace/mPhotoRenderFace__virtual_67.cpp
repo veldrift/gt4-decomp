@@ -17,13 +17,13 @@ struct RacePhotoMode_00197798 { char unknown_00[0x1E634]; volatile int field_1e6
 };
 struct PhotoData_00197788 { char unknown_00[0x11C]; int field_11c; };
 struct Config_00622F4C { char unknown_00[0x39DBC]; int field_39dbc; };
-extern "C" void func_002638B0(void *, void *);
+extern "C" void mTextFace__virtual_67(void *, void *);
 extern "C" RacePhotoMode_00197798 *func_00197798(void *);
 extern "C" PhotoData_00197788 *func_00197788(void *);
 extern "C" int func_00197808(int);
 extern "C" Config_00622F4C *D_00622F4C;
 extern "C" void mPhotoRenderFace__virtual_67(mPhotoRenderFace *self, void *photo) {
-    func_002638B0(self, photo);
+    mTextFace__virtual_67(self, photo);
     self->field_b8 = 0;
     RacePhotoMode_00197798 *stream = func_00197798(photo);
     if (stream != 0) { stream->field_1e634 = 1; (void)stream->field_1e634; }

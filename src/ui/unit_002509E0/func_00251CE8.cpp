@@ -8,7 +8,7 @@
 typedef int s32;
 extern "C" void *func_00326750(unsigned int size, int align, const char *name);
 extern "C" void func_00326798(void *p, int size, int align, const char *name);
-extern "C" void free(void *p, int size);
+extern "C" void func_00575DA0(void *p, int size);
 
 struct TypeInfo {
     const char *name;

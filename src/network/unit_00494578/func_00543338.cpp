@@ -1,31 +1,30 @@
 extern "C" {
 #include "types.h"
-#define NULL 0
-void *memcpy(void *, const void *, unsigned int);
 
-char *func_00538988(...) throw();
-s32 func_005428E8(...) throw();
-s32 memcpy(...) throw();
-s32 func_005A48D8(...) throw();
+/* memcpy and memset (Sony SDK): called by address so that gcc does not
+   expand the fixed-size copy inline as a builtin. */
+void *func_005A4724(void *dst, const void *src, unsigned int n);
+void *func_005A48D8(void *dst, int c, unsigned int n);
 
-struct func_00543338_temp_s0 {
+struct NetRecord {
     char pad0[0x2C];
-    s32 unk2C;
+    u8 *key; /* 0x2C: 64-byte buffer */
 };
 
-s32 func_00543338(s32 arg0, s32 arg1, s32 arg2) {
-    char *temp_s0;
+NetRecord *func_00538988(s32 id) throw();
+s32 func_005428E8(const u8 *buf) throw();
 
-    temp_s0 = func_00538988();
-    if (arg2 != 0) {
-        if ((temp_s0 != NULL) && (func_005428E8(((struct func_00543338_temp_s0 *)temp_s0)->unk2C) == 0)) {
-            memcpy(arg2, ((struct func_00543338_temp_s0 *)temp_s0)->unk2C, 0x40);
+s32 func_00543338(s32 id, s32 arg1, u8 *out) {
+    NetRecord *rec;
+
+    rec = func_00538988(id);
+    if (out != 0) {
+        if (rec != 0 && func_005428E8(rec->key) == 0) {
+            func_005A4724(out, rec->key, 0x40);
             return 0;
         }
-        func_005A48D8(arg2, 0, 0x40);
-        goto block_6;
+        func_005A48D8(out, 0, 0x40);
     }
-block_6:
     return -1;
 }
 
