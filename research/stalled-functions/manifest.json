@@ -1470,7 +1470,10 @@
         "resolved": true
       },
       "accepted_source": "src/func_00447DD0.cpp",
-      "validation": "research/stalled-functions/00447dd0/three-try-2026-10-15/validation.json"
+      "validation": "research/stalled-functions/00447dd0/three-try-2026-10-15/validation.json",
+      "active_registration": false,
+      "accepted_source_history": "7607dcdaf:src/func_00447DD0.cpp",
+      "integration_note": "Removed from active src at user request: active source tree follows upstream exclusively; validation and source history retained."
     },
     {
       "address": "00440FB8",

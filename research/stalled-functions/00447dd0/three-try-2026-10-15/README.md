@@ -7,3 +7,5 @@ Resolved: judge MATCH, full 72-byte span and original full-build hashes verified
 Every try call counts, including preparation and compiler failures. Raw row scores may compare shortened or overlong bodies; none establishes full matching. The existing primary candidate is retained unless explicitly resolved. Sources are byte-for-byte copies of the remote tested files, verified by SHA-256. See the root manifest for original paths and hashes.
 
 Accepted source: [func_00447DD0.cpp](../../../../src/func_00447DD0.cpp). [Validation metadata](validation.json).
+
+Current registration: removed at user request during upstream-only branch cleanup. The accepted source is preserved in Git at `7607dcdaf:src/func_00447DD0.cpp`; the validation above is historical.

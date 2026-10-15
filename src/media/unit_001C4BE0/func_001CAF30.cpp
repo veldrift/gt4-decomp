@@ -6,7 +6,7 @@
 #include <stl_vector.h>
 
 typedef int s32;
-extern "C" void free(int p) throw();
+extern "C" void func_00575DA0(int p) throw();
 typedef unsigned char u8;
 typedef unsigned int u32;
 extern "C" void *func_00575E60(int heap, int size);
@@ -30,7 +30,7 @@ public:
         return n == 0 ? 0 : (T *)func_00575E60(0x40, n * sizeof(T));
     }
     void deallocate(T *p, size_type n) {
-        free((int)p);
+        func_00575DA0((int)p);
     }
     size_type max_size() const throw() { return size_t(-1) / sizeof(T); }
     void construct(T *p, const T &v) { new (p) T(v); }

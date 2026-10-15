@@ -99,3 +99,5 @@ _M_insert_aux__t6vector2Z12Val_00476768Zt9GameAlloc1Z12Val_00476768P12Val_004767
 binary_search__H2ZPCUsZUs_X01X01RCX11_b = 0x006002A0; // type:func
 __lower_bound__H3ZPCUsZUsZi_X01X01RCX11PX21_X01 = 0x006002F8; // type:func
 lexicographical_compare__H2ZPCUsZPCUs_X01X01X11X11_b = 0x005C97E0; // type:func
+insert__t6vector2ZPCUcZt9GameAlloc1ZPCUcPPCUcUiRCPCUc = 0x00609FC8; // type:func
+insert__t6vector2Z2V4Zt5Alloc1Z2V4P2V4UiRC2V4 = 0x005F2C48; // type:func

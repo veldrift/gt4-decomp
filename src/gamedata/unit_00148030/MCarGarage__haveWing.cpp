@@ -1,105 +1,74 @@
 /* compiler: ee-gcc2.96-no-strict-aliasing */
 typedef int s32;
-typedef short s16;
 typedef unsigned int u32;
-struct String_005C2630;
-struct Ref_00309348;
-struct StringRef_00314B20;
-struct ArrayObj_002EEEB0;
-struct Rep_00659FA8;
-struct Heap_00659988 { const char *field_0; };
-extern "C" Heap_00659988 *func_005C11A8();
-extern "C" void func_00326798(void *, s32, s32, const char *);
-extern "C" char *func_005C2560(Rep_00659FA8 *);
-extern "C" u32 func_0057F260(const char *);
-extern "C" void func_003285A8(void *);
-extern "C" void func_003285F8(void *);
-extern "C" char D_0068F788[];
-struct Rep_00659FA8 {
-    s32 length_0, capacity_4, refs_8, selfish_c;
-    char *data() { return (char *)(this+1); }
-    char &operator[](u32 index) { return data()[index]; }
-    char *grab() {
-        if (selfish_c) return func_005C2560(this);
-        ++refs_8;
-        return data();
-    }
-    void release() {
-        if (--refs_8 == 0) {
-            s32 size = capacity_4 + sizeof(Rep_00659FA8);
-            func_00326798(this, size, 4, func_005C11A8()->field_0);
-        }
-    }
-};
-extern Rep_00659FA8 D_00659FA8;
-struct String_005C2630 {
-    char *field_0;
-    Rep_00659FA8 *rep() const { return (Rep_00659FA8 *)field_0 - 1; }
-    u32 length() const { return rep()->length_0; }
-    void terminate() const { (*rep())[length()] = 0; }
-    const char *c_str() const {
-        if (length() == 0) return D_0068F788;
-        terminate();
-        return rep()->data();
-    }
-    String_005C2630 &replace(u32, u32, const char *, u32) __asm__("func_005C2630");
-    String_005C2630() { field_0 = D_00659FA8.grab(); }
-    String_005C2630(const char *value) {
-        field_0 = D_00659FA8.grab();
-        replace(0, (u32)-1, value, func_0057F260(value));
-    }
-    String_005C2630(const String_005C2630 &other) { field_0=other.rep()->grab(); }
-    ~String_005C2630() { rep()->release(); }
-};
-struct Ref_00309348 {
-    void *field_0;
-    Ref_00309348(const Ref_00309348 &) __asm__("func_00309360");
-    ~Ref_00309348() __asm__("func_00309378");
-    Ref_00309348 &operator=(const Ref_00309348 &other) {
-        if (this != &other) {
-            void *value = other.field_0;
-            if (value) func_003285A8(value);
-            if (field_0) func_003285F8(field_0);
-            field_0 = value;
-        }
-        return *this;
-    }
-};
-struct StringRef_00314B20 : public Ref_00309348 {
-    StringRef_00314B20(const String_005C2630 &) __asm__("func_00314B20");
-    ~StringRef_00314B20() __asm__("func_00312318");
-};
-struct GarageRef_0013BDC0 : Ref_00309348 {
-    GarageRef_0013BDC0(void *) __asm__("func_0013BDC0");
-    ~GarageRef_0013BDC0() __asm__("func_0013BD68");
-};
-struct IntegerRef_002FE278 : Ref_00309348 {
-    IntegerRef_002FE278(int) __asm__("func_002FE278");
-    ~IntegerRef_002FE278() __asm__("func_002FC870");
-};
-struct VEntryString_18 { s16 delta_0, index_2; String_005C2630 (*function_4)(void *); };
-struct VObj_At04 { char unknown_00[4]; char *vtable_4; };
-extern "C" void *func_00147D80(void *);
-extern "C" int func_00440A10(void *, const char *);
-extern "C" int func_0057F238(const char *, const char *);
+
+struct Rep { s32 len; s32 cap; s32 ref; s32 sel; };
+struct S00659988 { const char *name; };
+struct Str { char *p; Str(const Str &); ~Str(); const char *c_str(); };
+struct Handle { void *p; char pad[0xC]; };
+union U { Handle h; s32 w[4]; };
+struct VEntry { short delta; short index; Str (*fn)(void *); };
+struct VObj { char pad[4]; VEntry *vtbl; };
+
+extern char D_0068F788[];
 extern char D_0068F798[];
-static inline String_005C2630 text_18(VObj_At04 *object) {
-    VEntryString_18 *entry = (VEntryString_18 *)(object->vtable_4 + 0x18);
-    return entry->function_4((char *)object + entry->delta_0);
-}
-extern "C" void MCarGarage__haveWing(Ref_00309348 *destination, void *context, int count, VObj_At04 **arguments) {
-    if (count > 0) {
-        GarageRef_0013BDC0 garage(context);
-        const char *key = 0;
-        if (arguments[0]) {
-            const char *name;
-            {
-                String_005C2630 text = text_18(arguments[0]);
-                name = text.c_str();
-                key = name;
-            }
-            if (func_0057F238(name, D_0068F798) == 0) key = 0;
-        }
-        *destination = IntegerRef_002FE278(func_00440A10(func_00147D80(garage.field_0), key) != 0);
+
+extern "C" void func_0013BD68(void *arg0, int arg1);
+extern "C" void func_0013BDC0(void *arg0, void *arg1);
+extern "C" int func_00147D80(void *arg0);
+extern "C" void func_002FC870(void *, int);
+extern "C" void func_002FE278(void *, s32);
+extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
+extern "C" void func_003285A8(void *p);
+extern "C" void func_003285F8(void *p);
+extern "C" int func_00440A10(int arg0, const char *arg1);
+extern "C" int func_0057F238(const char *, const char *) throw();
+extern "C" struct S00659988 *func_005C11A8(void);
+
+inline const char *Str::c_str() {
+    Str *s=this;
+    s32 len = ((Rep *)s->p)[-1].len;
+    if (len == 0) {
+        return D_0068F788;
     }
+    s->p[len] = 0;
+    return s->p;
+}
+inline Str::~Str() {
+    Str *s=this;
+    Rep *q = (Rep *)(s->p - 0x10);
+    if (--q->ref == 0) {
+        s32 cap = q->cap + 0x10;
+        func_00326798(q, cap, 4, func_005C11A8()->name);
+    }
+}
+
+struct Val {
+ void *p;
+ Val(const Val &);
+ Val(int) __asm__("func_002FE278");
+ ~Val() __asm__("func_002FC870");
+};
+static inline void assign(void **dst, const Val &v) {
+ if((void *)dst != (void *)&v) {
+  void *p=v.p;
+  if(p) func_003285A8(p);
+  if(*dst) func_003285F8(*dst);
+  *dst=p;
+ }
+}
+extern "C" void MCarGarage__haveWing(void **arg0, void *arg1, s32 arg2, VObj **arg3) {
+ if(arg2>0) {
+  Handle h;
+  const char *sel=0;
+  func_0013BDC0(&h,arg1);
+  VObj *o=*arg3;
+  if(o) {
+   VEntry *e=(VEntry *)((char *)o->vtbl+0x18);
+   sel=e->fn((char *)o+e->delta).c_str();
+   if(func_0057F238(sel,D_0068F798)==0) sel=0;
+  }
+  assign(arg0,Val(func_00440A10(func_00147D80(h.p),sel)!=0));
+  func_0013BD68(&h,2);
+ }
 }

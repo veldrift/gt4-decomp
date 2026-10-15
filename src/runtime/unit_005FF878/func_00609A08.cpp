@@ -4,7 +4,7 @@
 #include <stl_tree.h>
 
 extern "C" void *func_00575E60(int heap, int size);
-extern "C" void free(void *p, int size);
+extern "C" void func_00575DA0(void *p, int size);
 
 
 struct Rep {
@@ -84,7 +84,7 @@ public:
         return (T *)func_00575E60(0x10, n * sizeof(T));
     }
     void deallocate(T *p, size_type n) {
-        free(p, n * sizeof(T));
+        func_00575DA0(p, n * sizeof(T));
     }
     size_type max_size() const throw() { return size_t(-1) / sizeof(T); }
     void construct(T *p, const T &v) { new (p) T(v); }

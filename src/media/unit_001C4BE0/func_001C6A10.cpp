@@ -26,7 +26,7 @@ extern char D_00693D90[];
 extern "C" void func_0057DA20(void *, void *, void *);
 extern "C" void func_004AE230(void *, void *, s32);
 extern "C" void memcpy(s32, s32, s32);
-extern "C" void free(s32);
+extern "C" void func_00575DA0(s32);
 
 struct func_001C6A10_arg0 {
     char pad0[0xBD0];
@@ -51,6 +51,6 @@ extern "C" s32 func_001C6A10(s32 *arg0, void *arg1, s32 arg2) {
     } else {
         v_s1 = -0x1;
     }
-    free(buf5[0]);
+    func_00575DA0(buf5[0]);
     return v_s1;
 }

@@ -55,6 +55,11 @@ What the game code does, as far as the project has established it (each page mar
 - [`knowledge/runtime-types.md`](knowledge/runtime-types.md): the ref-counted string, handles, allocator, STL containers and object layout seen in the matched code.
 - [`knowledge/coverage-map.md`](knowledge/coverage-map.md): what is matched and what is missing, by subsystem; [`knowledge/gt4.md`](knowledge/gt4.md) and [`knowledge/ee-gcc-2.96.md`](knowledge/ee-gcc-2.96.md) cover the compiler side.
 
+## Related projects and native port
+
+- **[GT4 Native](https://github.com/gustavocanepa/gt4-native)** is the separate, experimental source-level PC port built from this matching decompilation. It is **not playable**; matching PS2 code does not automatically run on a modern PC. GT4 Native maintains an automated, pinned-source import and host-compatibility triage pipeline, but imported or link-tested files are not automatically integrated into the runtime.
+- **[GT3 decompilation](https://github.com/gustavocanepa/gt3-decomp)** reconstructs the preceding Gran Turismo engine generation.
+
 ## Credits
 
 Started and maintained by **Gustavo Canepa** ([@gustavocanepa](https://github.com/gustavocanepa)),
@@ -67,6 +72,10 @@ This license covers the tools, documentation and the source code written for thi
 Gran Turismo 4 is a trademark of Sony Interactive Entertainment; this project is not affiliated
 with or endorsed by Sony Interactive Entertainment or Polyphony Digital. It contains no game data,
 and you need your own copy of the game to use it.
+
+## Support
+
+[GitHub Sponsors is active](https://github.com/sponsors/gustavocanepa). Contributions and sponsorship are voluntary; sponsorship does not provide copyrighted game files or guarantee a release.
 
 ## Contributing
 

@@ -105,6 +105,7 @@ stable objects `diff` reads only after every file compiled.
 | `project.py` | reads `project.toml`; loads the executable through its loader (cached) |
 | `match.py` | `asm`/`gnu` views of an original function; `check` compiles and judges a source. The m2c export (`gnu_asm`/`m2c_asm`) prints the mnemonic for the instructions rabbitizer shows as `.word` though valid (`cvt.w.s`, 736 sites: m2c skipped them silently) |
 | `build.py` | full build and SHA-1 comparison with the original; per-function report in `build/full/` |
+| `resolve_symbols.py` | addresses for the symbols matched sources use but the symbol table lacks (soft-float helpers, vtables, mangled members), read back from the original's relocated words; writes `config/resolved_symbols.txt` (rerun after a full build) |
 | `link_diff.py`, `fix_symbols.py` | explain and repair functions that differ after linking |
 | `inventory.py` | function inventory from splat (31,164 functions, pointer-only ones included) |
 | `dedup_all.py` | propagates every matched function to all its copies |

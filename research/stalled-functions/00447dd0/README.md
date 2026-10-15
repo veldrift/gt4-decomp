@@ -13,3 +13,5 @@ Judge scores are raw historical row comparisons and may be shifted or shortened.
 2026-10-15: [Three-try recovery](three-try-2026-10-15/README.md): Resolved: judge MATCH, full 72-byte span and original full-build hashes verified; target explicitly linked.
 
 Accepted source: [func_00447DD0.cpp](../../../src/func_00447DD0.cpp). [Validation metadata](three-try-2026-10-15/validation.json).
+
+Current registration: removed at user request during upstream-only branch cleanup. The accepted source is preserved in Git at `7607dcdaf:src/func_00447DD0.cpp`; the validation above is historical.
