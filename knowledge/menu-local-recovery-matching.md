@@ -7,6 +7,13 @@ pass. SelectBox `002D8C90` has since been supplied by upstream PR 12 and verifie
 over all 168 bytes with explicit full-build `linked` status; five menu targets
 remain unmatched. See [upstream validation](../docs/research/upstream-pr-11-12-validation.md).
 
+TextFace follow-up: [fresh verification](../research/textface-verification/README.md)
+confirms its entire 51-function main range already has matched source, plus
+eleven verified style-support functions. All 62 pass fresh judge checks and
+are linked in the existing full build. Godot's current TextFace stop is its
+explicit host factory allowlist, not a missing matching constructor/copy/reader.
+No Godot changes were made.
+
 Tim requested matching the menu bodies previously recovered for the Godot host,
 starting with Composite. All matching drafts, results and accepted source belong
 in this repository. Leave `gt4-godot` unchanged; do not remove its currently

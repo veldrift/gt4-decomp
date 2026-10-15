@@ -45,4 +45,4 @@ SelectBox came from upstream PR 12 and passed full 168-byte verification and exp
 
 Work was deliberately stopped at Tim's request; this branch is a preservation checkpoint, not a new matching pass. Read the per-target notes and diary before trying a genuinely new hypothesis. Restore a chosen candidate into ignored scratch space before editing/judging; preserve this checkpoint. Raw row scores do not establish complete-body matching. Acceptance still requires unchanged judge MATCH, full body/relocation/padding verification and original full-build hashes with the function explicitly `linked`.
 
-The current Godot menu loader stops at TextFace. TextFace matching is future work, not one of these 17 previously attempted targets. No Godot files are changed by this checkpoint.
+The current Godot menu loader stops at TextFace. A [subsequent verification](../textface-verification/README.md) confirms TextFace already has matched constructor, copy and property bodies; the stop is the host integration gate. TextFace is not one of these 17 stalled targets. No Godot files are changed by this checkpoint.

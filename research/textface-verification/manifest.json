@@ -1,0 +1,312 @@
+[
+  {
+    "address": "002435A0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__rc_class.cpp",
+    "sha256_lf": "33cf8b3eb31ca41b7e2e0f6a133bd9f3d0b709a4fe0b30ea06f2b70effd62585"
+  },
+  {
+    "address": "002435B0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__rc_size.cpp",
+    "sha256_lf": "781f9da4cb3380e07d55c46952272df7dac5b02e1fd35c7fbd34068a7c2a3180"
+  },
+  {
+    "address": "002435B8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002435B8.cpp",
+    "sha256_lf": "1f0828b69ff66267c57fc6148f62b6be2d9a576bda0582d557efa1b6aedd9dcf"
+  },
+  {
+    "address": "002435E0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002435E0.cpp",
+    "sha256_lf": "de2c90fd05f419c81a72da25fef8e972f4c7ab0b1efb65eebc7894e34088f579"
+  },
+  {
+    "address": "00243608",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00243608.cpp",
+    "sha256_lf": "8195a49c5c96801447026fce186c86270ecf16f6d130b5355ed3193987aa9644"
+  },
+  {
+    "address": "00243618",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__GetClassID_00243618.cpp",
+    "sha256_lf": "379826e57a549e3894e126eda0eb69de25b36126e09653b35b2b4bb573b49032"
+  },
+  {
+    "address": "00243628",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__getClassID_00243628.cpp",
+    "sha256_lf": "99d2923f460c4908b5f0181ea2223f793c9029e971bc2b12f15fb00a6158d744"
+  },
+  {
+    "address": "00243650",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__structor_0.cpp",
+    "sha256_lf": "0524620b4f827e84ec1ee72c54e35751f835cac11e405273d0010a847e309321"
+  },
+  {
+    "address": "002436C0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__structor_1.cpp",
+    "sha256_lf": "5c80ec339d67f4c8965d3a304803eaf087b79c7de0159f09a9ca4f5787588425"
+  },
+  {
+    "address": "002437B8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__global_0082F8C8.cpp",
+    "sha256_lf": "ac06ce4575729eb324bc527ac95653bfdd7fb947e99a4a747f31543f973266f4"
+  },
+  {
+    "address": "00243858",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_key.cpp",
+    "sha256_lf": "811da3b0d456fc6a3f382c04f151278f9c470b704863e2e81eed2d0fe54e4966"
+  },
+  {
+    "address": "002438F8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__set_key.cpp",
+    "sha256_lf": "d8350953a4ba747fd6637f3ef951317cf3ccccdcc1a452259e9e86721cccbeb6"
+  },
+  {
+    "address": "00243A68",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_value.cpp",
+    "sha256_lf": "0a76ad84a9bb6cc76c9bd96a9c52a9452d9ee01abfe7628f956c3e59bf0e339f"
+  },
+  {
+    "address": "00243B08",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_text.cpp",
+    "sha256_lf": "b86c4fe85c6ac04ae53a72c09caa81739dd5cc639911d6ec206fe7317a4184c5"
+  },
+  {
+    "address": "00243BF0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__set_text.cpp",
+    "sha256_lf": "4b56481698b900eb18346a28f1bad8ed6473dfaa0509efbfd0ca02d9b7611b31"
+  },
+  {
+    "address": "00243D78",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__getTextSize.cpp",
+    "sha256_lf": "d95af7260d261c750deaf17d757dd47c919a90130a29b4fc6f5591663901b838"
+  },
+  {
+    "address": "00243EA8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__abbreviate.cpp",
+    "sha256_lf": "366a7b7d6a5adf95ebae25402a9b83f23afed2112c908b2d592168b8cb9b8757"
+  },
+  {
+    "address": "00243ED8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_color.cpp",
+    "sha256_lf": "d0b9cb27f69eb6e50db1b837329103ce0d010a528d83210fdff4758d961b9627"
+  },
+  {
+    "address": "00243F70",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__set_color.cpp",
+    "sha256_lf": "1e6af4402a590017748a9669edb76f96de69e3724e2853ee62027feaeb039ed5"
+  },
+  {
+    "address": "00243FE8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_shadow_color.cpp",
+    "sha256_lf": "15fd30a5501237237022133c42df667f5613e248bb98e100f74f92016eae5d9a"
+  },
+  {
+    "address": "00244080",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__set_shadow_color.cpp",
+    "sha256_lf": "7ca06a72c3c030bafb64a1ea52a67774fb1b7862f0c9d02c8e9825d66a82244f"
+  },
+  {
+    "address": "002440E8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_align.cpp",
+    "sha256_lf": "d5c1c7de05dbc940f77fad4590c1b99c499f9c784a9e321afcbf92401453df71"
+  },
+  {
+    "address": "00244258",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_scale_x.cpp",
+    "sha256_lf": "3ce121671ee6e0f04afffba479e105490f56815eb17996142544550e63384022"
+  },
+  {
+    "address": "00244340",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_scale_y.cpp",
+    "sha256_lf": "f4fca499cd8cf64e9377885180ca372de3d84537c5952d64b4796d2ded92f8a4"
+  },
+  {
+    "address": "00244428",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__get_proportional.cpp",
+    "sha256_lf": "ad34cff2a147b8a08e55dd4021c277cb925dd44c12d013b747f9fcdf132e1bfb"
+  },
+  {
+    "address": "00244518",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MTextFace__adjustScale.cpp",
+    "sha256_lf": "fa60e43ee52483c99fe86c42ac9f67fb27057aeae95d305b7d3f469744c6ac6b"
+  },
+  {
+    "address": "00244548",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00244548.cpp",
+    "sha256_lf": "7fc8babee3819c2d7869747c89fde1268bc61e73ad7135e358c1f3ee2f14c541"
+  },
+  {
+    "address": "002450A0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__setColor.cpp",
+    "sha256_lf": "3d1dc454e386cab60143e5608e23a9b45f95e987e570e9524255736347a7b730"
+  },
+  {
+    "address": "002450C0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__virtual_57.c",
+    "sha256_lf": "dd8be9ef97978adbf90f38417c64c4927f69e4a6dec2f2e29aac752c93a869da"
+  },
+  {
+    "address": "002450C8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__virtual_55.c",
+    "sha256_lf": "ddb20ae7ebc554adee2eef4a3ae6191c6e35645a4dd2b900818a1c083348ce55"
+  },
+  {
+    "address": "002450D0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002450D0.cpp",
+    "sha256_lf": "deb3b69e42fb716b76e4829d007114bd005a33d5a248771ac109e8ad99bd763d"
+  },
+  {
+    "address": "002450E8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002450E8.cpp",
+    "sha256_lf": "9dd8c8d9f9c7f3262cff3839f6243a7c66f7e2bf01152014eae0832f4e791e7a"
+  },
+  {
+    "address": "00245240",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245240.cpp",
+    "sha256_lf": "a16ed8070dd80b78f09ce4fd157892745acdc85d0dd4121ff6acfa311107f89f"
+  },
+  {
+    "address": "00245270",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245270.cpp",
+    "sha256_lf": "caa2e9b8d4eb54d71fcba3ba9f062d7c4b50b2dfd5fa04a55a642e5e8dc95f92"
+  },
+  {
+    "address": "002452A8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002452A8.cpp",
+    "sha256_lf": "3a6c1f840b7ce92a19fd9adf7a5566147de343d61a37ed8a6ccd2c75298d8016"
+  },
+  {
+    "address": "00245408",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245408.cpp",
+    "sha256_lf": "b7b577cda7a7e0e36275996f3a45be431a558d59fa34c618955503e82448e111"
+  },
+  {
+    "address": "00245568",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245568.c",
+    "sha256_lf": "93a21705a2bf302105ff7b3e39e674f2822b38ea857f4c3fa48999e1581692b2"
+  },
+  {
+    "address": "002455C0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002455C0.cpp",
+    "sha256_lf": "f980df6370d1a66d8899fe065cc31e9460757c2930f58307b42b4dbd39b36212"
+  },
+  {
+    "address": "00245658",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245658.cpp",
+    "sha256_lf": "5e47bfbe93fcaf8c16876b046fb15d716f346e37e65d3424fe839db0324bdf96"
+  },
+  {
+    "address": "002457E8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002457E8.cpp",
+    "sha256_lf": "c6e395b4d77105502d09a5e1e3d1d484945ba6fb2f065ca084e06b12ffe23df6"
+  },
+  {
+    "address": "00245890",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245890.cpp",
+    "sha256_lf": "01f2b0c6d3684f348fbc54461df2fb6c8191b38393c2f1975e3540e21d97b060"
+  },
+  {
+    "address": "002458A8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__virtual_63.cpp",
+    "sha256_lf": "0c249c6789c9e441dc0b4eae8c3a6bcaa2eb515ea82d4bcc26633b83e2dd7cd0"
+  },
+  {
+    "address": "00245950",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__virtual_91.c",
+    "sha256_lf": "992bcb0d06bb9c276b8f2fc4eccfecf97694438dacc3a211a90cbf1f0c63b94c"
+  },
+  {
+    "address": "002459A8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002459A8.cpp",
+    "sha256_lf": "eba982668191b96b520f2319e435bab05c9fa0c3d2063fceabc2b7ceb1d33f36"
+  },
+  {
+    "address": "00245A28",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245A28.cpp",
+    "sha256_lf": "bd8d011c5863177acf0524b9fdebb1ed5564796a1760b1a79144b5e07b4b577a"
+  },
+  {
+    "address": "00245B48",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245B48.cpp",
+    "sha256_lf": "305e9ec21eb978ddbd2b2fe77e12cafb9712f3516a23e20718464c803c5131b1"
+  },
+  {
+    "address": "00245C90",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00245C90.cpp",
+    "sha256_lf": "9c81120dc69cceeb5f437badb5c94821913b9cd302702e97eb8e652d8b3a37a2"
+  },
+  {
+    "address": "00246208",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__virtual_70.cpp",
+    "sha256_lf": "0014a2be25c5bb7ff32792704f69afd25fce68075a7cac48182749e3e5ea4121"
+  },
+  {
+    "address": "002463A0",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MintReader__structor_4.cpp",
+    "sha256_lf": "77068feafbf40d48fb637b215cd8a87d385f358d5ddc73c1e7c5d522f0564d6c"
+  },
+  {
+    "address": "00246770",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/mTextFace__deepCopy.cpp",
+    "sha256_lf": "5ea456ae4670b75af0d1592743075b467b84b7a60bea898d320e5f5c756e5c3b"
+  },
+  {
+    "address": "00246818",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00246818.cpp",
+    "sha256_lf": "dca9d3bb49af4f6251a45beaa8804f1201fecf48775f6968fcdeb40a94e54643"
+  },
+  {
+    "address": "00246F18",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00246F18.cpp",
+    "sha256_lf": "167d3a892c83e1a315aa566a644646de2dabaecc7574263f4c817f738c00e68c"
+  },
+  {
+    "address": "00246F38",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00246F38.cpp",
+    "sha256_lf": "823c8846c931347052be78d93cc9c120db0c2f207237a912b07825798909e6e6"
+  },
+  {
+    "address": "00246F58",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00246F58.cpp",
+    "sha256_lf": "235d0b64e50d683d5568fe64f47b8aa2614899bf101d4b6e0342e8344c608b07"
+  },
+  {
+    "address": "00247060",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00247060.cpp",
+    "sha256_lf": "b6bb2ad24db0b49e8ad48af4fac05aa6ddc01cb32e4484c501f68b92e8f373b3"
+  },
+  {
+    "address": "002471E8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002471E8.cpp",
+    "sha256_lf": "efc99e38be2824e5af98064d51a5e696bfd08961593b063a519f45b911de2770"
+  },
+  {
+    "address": "002472B8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002472B8.cpp",
+    "sha256_lf": "13c1321697eed313206c0fb19eb54b183540898fc3db0552b0dec28f65f4d157"
+  },
+  {
+    "address": "00247428",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00247428.cpp",
+    "sha256_lf": "a49c9ea1c993e6fccd5017c7a53a34010f6b19facb4250db64fcaef797a61f51"
+  },
+  {
+    "address": "00247448",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_00247448.cpp",
+    "sha256_lf": "c0f23a74d9be8214b7e7b30f84c23ff3c029ccd860c49513745a3c5880d182a4"
+  },
+  {
+    "address": "002475D8",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/func_002475D8.cpp",
+    "sha256_lf": "44a001f52f8fb02d69d5000d06fac05684bc56c48d13c61792b01f043f527ae7"
+  },
+  {
+    "address": "00247768",
+    "path": "src/ui/MintReader_MstringReader_mTextFace/MboolReader__structor_7.cpp",
+    "sha256_lf": "e62ad20d444c4c3631663aa8ef07e81684066f07636570e442ac6815e13a70a6"
+  },
+  {
+    "address": "00248398",
+    "path": "src/ui/unit_00248398/func_00248398.cpp",
+    "sha256_lf": "29c97d4ad6a7c560020c032e029c84ea3e440aa92b463bfbfc46bcf3d12003e1"
+  }
+]

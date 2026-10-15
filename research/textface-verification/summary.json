@@ -1,0 +1,30 @@
+{
+  "main_textface_functions": 51,
+  "support_functions": 11,
+  "judge_matches": 62,
+  "direct_resolved_bodies": 61,
+  "literal_resolved_bodies": 1,
+  "linked_in_existing_full_build": 62,
+  "existing_full_build_generated": "2026-10-15T02:55:04Z",
+  "text_sha1": "28422e7e20a6298224294255355487b9a22cef31",
+  "data_sha1": "c28c833f9716467545bf362f321e9acc876c3603",
+  "new_matches": 0,
+  "source_changes": 0,
+  "properties": {
+    "00699088": "key",
+    "00699098": "text",
+    "00699160": "blend",
+    "006991B8": "text_color",
+    "006991C8": "font",
+    "006991D0": "multiline",
+    "006991E0": "equalized",
+    "006991F0": "aligned",
+    "006991F8": "parse_enable",
+    "00699208": "align",
+    "00699210": "clut",
+    "00699218": "scale_x",
+    "00699220": "scale_y",
+    "00699228": "shadow",
+    "00699230": "shadow_color"
+  }
+}
