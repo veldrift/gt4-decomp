@@ -203,6 +203,25 @@ original has `$v0` = `$v0` was in use or conflicting at that point; `$a2` for a 
   emission order inside one call, so the residual is in how the value reached its register
   (open).
 
+#### EE argument-bank order and ignored constructor results
+
+PickUpEnemyCars (`001308C8`, 2026-10-14) recovered its last seven instruction
+differences without changing registers or adding instructions. The baseline
+qsort/lower-search copy order was already wrong in sched1. Its string
+label/length pair was correct before sched2, which reversed it because the
+length copy had one more dependent. Modeling the ignored pointer results of
+the native reference constructors restored v0 output dependencies and fixed
+that pair (7 -> 5). Inspect actual pass dumps rather than assuming all copy
+residuals are decided by the same pass.
+
+The recursive search's integer arguments use a0/a1/a2 and its float argument
+uses f12. Declaring the float first preserves the EE call ABI but changes RTL
+argument births, fixing the lower-search pair and preceding qsort copy order
+(5 -> MATCH, 487 instructions). Float position among integer parameters is
+therefore a source-signature ambiguity worth checking when the ABI is already
+correct. Evidence and before/after dumps: `build/pickup-rtl/`; details in
+`knowledge/cardata-next-ten-recovery.md`.
+
 ### 7. Delay-slot filler choices and branch-likely
 - Pass: reorg.c. `fill_simple_delay_slots` first (an insn from before the branch, or after it for
   non-jumps), then `fill_eager_delay_slots` for conditional jumps: it takes from the target thread

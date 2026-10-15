@@ -305,3 +305,60 @@ path has no separate return-value assignment. Callers use the returned value,
 so a void signature would be incorrect. Missing-return hypotheses were kept
 as diagnostic drafts only; neither those nor fully defined false-return forms
 match. No source with an ambiguous fallthrough return was promoted.
+
+## PickUpEnemyCars scheduling recovery
+
+The scheduling-RTL investigation closes the remaining seven differences at
+`001308C8`: MATCH for all 487 instructions, with 1,948 body bytes in a
+1,952-byte span. Direct object verification finds exactly one function,
+resolves every relocation, and reproduces every original body word. The
+canonical source is `src/gamedata/unit_0012D680/MCarData__PickUpEnemyCars.cpp`.
+
+The baseline has the correct registers and instruction set. The qsort and
+lower-search argument order is already established by sched1 and retained
+by sched2. The string label/length pair is reversed specifically by sched2:
+the length copy has one more dependent than the label copy. These are not
+delay-slot mistakes. The verbose scheduler's dependency tables explain why
+mere statement rearrangements did not fix them.
+
+| Reconstruction | Differing instructions |
+| --- | ---: |
+| Guarded candidate loop and nonthrowing qsort baseline | 7 / 487 |
+| Model ignored pointer results of native reference constructors | 5 / 487 |
+| Declare the binary-search helper with its float argument first | 0 / 487 |
+
+The string, integer, and array reference constructors at `00314B20`,
+`002FE278`, and `002EFBF0` were declared as void functions in the old draft.
+Modeling their ignored constructor pointer results restores explicit v0
+output dependencies. This corrects the relative priorities of the label
+copy into a3 and the length copy into t0 before string replacement.
+
+For `00130618`, the EE ABI assigns integer and floating-point arguments to
+independent banks. Both `search(entries, low, high, score)` and
+`search(score, entries, low, high)` use a0/a1/a2 for the first three integer
+arguments and f12 for the score. The float-first source declaration changes
+RTL argument births and dependencies without changing the executable call
+ABI. It recovers both the lower-bound subtraction/base-copy order and the
+preceding qsort argument order. This is evidence for the float-first source
+signature, although the executable alone cannot distinguish equivalent
+parameter orders in separate argument banks. The existing recovered callee
+does not need to change.
+
+Merging the score variable, adding pure/nothrow search metadata, and modeling
+the append result did not improve the five-difference draft. Seven new source
+hypotheses and one direct-verification record are appended to the diary.
+The worker interface also accepts the final source under `func_001308C8`;
+the named source path is retained. Dumps from every compiler pass, verbose
+dependency/priority tables, judged drafts, and proof are under ignored
+`build/pickup-rtl/`. Source audit: 28,336 unique addresses, no duplicates or
+orphans.
+
+The full build at `2026-10-15T00:51:49Z` passes `.text OK` and `.data OK`,
+with original hashes `28422e7e20a6298224294255355487b9a22cef31` and
+`c28c833f9716467545bf362f321e9acc876c3603`, respectively. PickUpEnemyCars is
+`linked` from source. There are 28,336 unique source addresses and 27,635
+linked functions, with no duplicate or orphan sources. Evidence is saved in
+`build/pickup-rtl/full-report.json`, `full-build.log`, and `proof.json`.
+The next-ten contribution count is now 26 new matches overall, including
+15 CarData-related functions/helpers. Thirteen CarData-related functions
+still lack source: the engine-curve method and twelve support helpers.
