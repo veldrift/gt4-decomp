@@ -2,7 +2,13 @@
 
 Branch: `feat/stalled-functions`. Base: `4f078903c394e62356ef035d1abbcec2c5eb5f37` (the locally validated upstream PR 11/12 integration).
 
-This checkpoint preserves all 18 targets in our recent stalled scope (17 remain unmatched; `00447DD0` is now resolved): twelve CarData functions and six menu functions. It does not inventory every unmatched function in the game. The existing matched source, tools and PR integration are inherited from the base. No unmatched candidate is registered under `src/`.
+This checkpoint preserves all 18 targets in our recent stalled scope (17 remain unmatched; `00447DD0` is locally resolved and archived, not present upstream): twelve CarData functions and six menu functions. It does not inventory every unmatched function in the game. The existing matched source, tools and PR integration are inherited from the base. No unmatched candidate is registered under `src/`.
+
+## Latest upstream check — 2026-10-15
+
+Checked freshly fetched upstream `69c3585cf` (PR #13 merge). **None of these 18 checkpoint addresses has a registered source upstream.** The 17 unresolved functions remain on the work list. `00447DD0` is a locally validated, archived match; it is not an upstream contribution or an active source registration.
+
+The check resolves source names through the repository's address mapping, so it covers named functions as well as `func_ADDR` filenames. [Per-address audit](upstream-audit-2026-10-15.json). This is a source-registration audit, not a new compiler or full-build validation.
 
 ## Target list
 
@@ -18,7 +24,7 @@ This checkpoint preserves all 18 targets in our recent stalled scope (17 remain 
 | `00449AF8` | CarData | Table lookup helper | [Notes and candidates](00449af8/README.md) |
 | `00443518` | CarData | Language-table loading | [Notes and candidates](00443518/README.md) |
 | `00445B88` | CarData | Specification comparison | [Notes and candidates](00445b88/README.md) |
-| `00447DD0` (resolved) | CarData | DisabledInfo searchInfo / identifier conversion | [Notes and candidates](00447dd0/README.md) |
+| `00447DD0` (local match; archived) | CarData | DisabledInfo searchInfo / identifier conversion | [Notes and candidates](00447dd0/README.md) |
 | `00440FB8` | CarData | Randomization bounds helper | [Notes and candidates](00440fb8/README.md) |
 | `00207590` | Menu | Composite property reader | [Notes and candidates](00207590/README.md) |
 | `00233E38` | Menu | RootWindow property reader | [Notes and candidates](00233e38/README.md) |

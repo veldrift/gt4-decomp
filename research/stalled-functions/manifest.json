@@ -1,7 +1,7 @@
 {
   "base_commit": "4f078903c394e62356ef035d1abbcec2c5eb5f37",
   "branch": "feat/stalled-functions",
-  "scope": "18 checkpoint targets: 17 unresolved and 1 resolved in the three-try recovery pass",
+  "scope": "18 checkpoint targets: 17 unresolved and 1 locally resolved archived match; none registered upstream as of 2026-10-15",
   "targets": [
     {
       "address": "00148B60",
@@ -201,7 +201,10 @@
         "diary": "research/stalled-functions/00148b60/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00148b60/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00449190",
@@ -353,7 +356,10 @@
         "diary": "research/stalled-functions/00449190/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00449190/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00449F80",
@@ -469,7 +475,10 @@
         "diary": "research/stalled-functions/00449f80/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00449f80/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "004490F8",
@@ -615,7 +624,10 @@
         "diary": "research/stalled-functions/004490f8/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/004490f8/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "004478F8",
@@ -767,7 +779,10 @@
         "diary": "research/stalled-functions/004478f8/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/004478f8/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00448B48",
@@ -925,7 +940,10 @@
         "diary": "research/stalled-functions/00448b48/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00448b48/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "0043BBC0",
@@ -1053,7 +1071,10 @@
         "diary": "research/stalled-functions/0043bbc0/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/0043bbc0/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00449AF8",
@@ -1133,7 +1154,10 @@
         "diary": "research/stalled-functions/00449af8/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00449af8/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00443518",
@@ -1261,7 +1285,10 @@
         "diary": "research/stalled-functions/00443518/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00443518/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00445B88",
@@ -1371,7 +1398,10 @@
         "diary": "research/stalled-functions/00445b88/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00445b88/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00447DD0",
@@ -1473,7 +1503,10 @@
       "validation": "research/stalled-functions/00447dd0/three-try-2026-10-15/validation.json",
       "active_registration": false,
       "accepted_source_history": "7607dcdaf:src/func_00447DD0.cpp",
-      "integration_note": "Removed from active src at user request: active source tree follows upstream exclusively; validation and source history retained."
+      "integration_note": "Removed from active src at user request: active source tree follows upstream exclusively; validation and source history retained.",
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00440FB8",
@@ -1589,7 +1622,10 @@
         "diary": "research/stalled-functions/00440fb8/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00440fb8/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00207590",
@@ -1705,7 +1741,10 @@
         "diary": "research/stalled-functions/00207590/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00207590/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "00233E38",
@@ -1803,7 +1842,10 @@
         "diary": "research/stalled-functions/00233e38/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/00233e38/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "002A29F0",
@@ -1883,7 +1925,10 @@
         "diary": "research/stalled-functions/002a29f0/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/002a29f0/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "002A38A0",
@@ -1981,7 +2026,10 @@
         "diary": "research/stalled-functions/002a38a0/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/002a38a0/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "0020EEB8",
@@ -2049,7 +2097,10 @@
         "diary": "research/stalled-functions/0020eeb8/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/0020eeb8/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     },
     {
       "address": "002B7310",
@@ -2355,7 +2406,10 @@
         "diary": "research/stalled-functions/002b7310/three-try-2026-10-15/attempts.jsonl",
         "events": "research/stalled-functions/002b7310/three-try-2026-10-15/judge-events.jsonl",
         "report": "docs/research/stalled-three-try-recovery.md"
-      }
+      },
+      "upstream_status": "no registered source",
+      "upstream_checked_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+      "upstream_checked_date": "2026-10-15"
     }
   ],
   "resolved_previous_targets": [
@@ -2390,5 +2444,15 @@
     "report": "docs/research/stalled-three-try-recovery.md",
     "resolved": 1,
     "unresolved": 17
+  },
+  "latest_upstream_audit": {
+    "checked_date": "2026-10-15",
+    "upstream_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+    "targets_checked": 18,
+    "upstream_registered_matches": 0,
+    "locally_resolved_archived": 1,
+    "unresolved": 17,
+    "method": "Fetched upstream; verified source tree and symbol-address resolver inputs equal upstream/master; resolved every checkpoint address via project.sources(), including named and generic source files. No compiler hypotheses or full build were run.",
+    "report": "research/stalled-functions/upstream-audit-2026-10-15.json"
   }
 }

@@ -1,6 +1,6 @@
 # 00447DD0 - DisabledInfo searchInfo / identifier conversion
 
-Status: **resolved**. Group: CarData.
+Status: **locally resolved; archived, not registered upstream**. Group: CarData.
 
 The three-try pass corrected the zero-high-half return path and passed full validation. Earlier failed history remains below.
 

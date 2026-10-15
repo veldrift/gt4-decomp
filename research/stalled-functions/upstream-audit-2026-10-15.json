@@ -1,0 +1,119 @@
+{
+  "checked_date": "2026-10-15",
+  "upstream_commit": "69c3585cff2a48f98c6cc9c2c495012d28c022cd",
+  "targets_checked": 18,
+  "upstream_registered_matches": 0,
+  "locally_resolved_archived": 1,
+  "unresolved": 17,
+  "method": "Fetched upstream; verified source tree and symbol-address resolver inputs equal upstream/master; resolved every checkpoint address via project.sources(), including named and generic source files. No compiler hypotheses or full build were run.",
+  "targets": [
+    {
+      "address": "00148B60",
+      "role": "Engine curve data",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00449190",
+      "role": "DatabaseTable searchNumber",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00449F80",
+      "role": "Byte getter",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "004490F8",
+      "role": "Table initialization",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "004478F8",
+      "role": "Tuner-code extraction",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00448B48",
+      "role": "Specification copy",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "0043BBC0",
+      "role": "Packed controls / selector update",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00449AF8",
+      "role": "Table lookup helper",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00443518",
+      "role": "Language-table loading",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00445B88",
+      "role": "Specification comparison",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00447DD0",
+      "role": "DisabledInfo searchInfo / identifier conversion",
+      "upstream_source": null,
+      "checkpoint_status": "resolved"
+    },
+    {
+      "address": "00440FB8",
+      "role": "Randomization bounds helper",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00207590",
+      "role": "Composite property reader",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "00233E38",
+      "role": "RootWindow property reader",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "002A29F0",
+      "role": "ImageFace property reader",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "002A38A0",
+      "role": "ImageFace pattern coordinates",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "0020EEB8",
+      "role": "Layout tokenizer",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    },
+    {
+      "address": "002B7310",
+      "role": "Localized literal text setter",
+      "upstream_source": null,
+      "checkpoint_status": "unmatched"
+    }
+  ]
+}
