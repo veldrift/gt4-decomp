@@ -1,70 +1,102 @@
 /* compiler: ee-gcc2.96-no-strict-aliasing */
-struct Rep { int len, cap, ref, sel; };
-struct Str { char *p; char pad[12]; };
-union U { Str s; void *h[4]; };
-struct Heap { const char *name; };
-struct VEntry { short delta, index; void (*fn)(void *,void *); };
-struct Obj { int word; char *vt; };
-extern Rep D_00659FA8;
-extern char D_0068E7F8[], D_0068E848[];
-extern "C" Heap *func_005C11A8();
-extern "C" void func_00326798(void *,int,int,const char *);
-extern "C" char *func_005C2560(Rep *);
-extern "C" int func_0057F260(const char *) throw();
-extern "C" void func_005C2630(void *,unsigned int,unsigned int,const char *,unsigned int);
-extern "C" void func_00314B20(void *,void *);
-extern "C" void func_00312318(void *,int);
+typedef int s32;
+typedef short s16;
+typedef unsigned int u32;
+struct String_005C2630;
+struct Ref_00309348;
+struct StringRef_00314B20;
+struct ArrayObj_002EEEB0;
+struct Rep_00659FA8;
+struct Heap_00659988 { const char *field_0; };
+extern "C" Heap_00659988 *func_005C11A8();
+extern "C" void func_00326798(void *, s32, s32, const char *);
+extern "C" char *func_005C2560(Rep_00659FA8 *);
+extern "C" u32 func_0057F260(const char *);
 extern "C" void func_003285A8(void *);
 extern "C" void func_003285F8(void *);
-extern "C" int func_00448AD0(const char *,void *);
-extern "C" int func_00447CA0(long long,char *);
-static inline Rep *rep(Str *s) { return (Rep *)s->p - 1; }
-static inline char *data(Rep *r) { return (char *)(r+1); }
-static inline int length(Str *s) { return rep(s)->len; }
-static inline void terminate(Str *s) { data(rep(s))[length(s)] = 0; }
-static inline const char *c_str(Str *s) {
-    if (length(s)==0) return D_0068E7F8;
-    terminate(s);
-    return data(rep(s));
-}
-static inline void release(Str *s) {
-    Rep *r=rep(s);
-    if (--r->ref == 0) {
-        int size = r->cap+16;
-        func_00326798(r,size,4,func_005C11A8()->name);
+extern "C" char D_0068E7F8[];
+struct Rep_00659FA8 {
+    s32 length_0, capacity_4, refs_8, selfish_c;
+    char *data() { return (char *)(this+1); }
+    char &operator[](u32 index) { return data()[index]; }
+    char *grab() {
+        if (selfish_c) return func_005C2560(this);
+        ++refs_8;
+        return data();
     }
+    void release() {
+        if (--refs_8 == 0) {
+            s32 size = capacity_4 + sizeof(Rep_00659FA8);
+            func_00326798(this, size, 4, func_005C11A8()->field_0);
+        }
+    }
+};
+extern Rep_00659FA8 D_00659FA8;
+struct String_005C2630 {
+    char *field_0;
+    Rep_00659FA8 *rep() const { return (Rep_00659FA8 *)field_0 - 1; }
+    u32 length() const { return rep()->length_0; }
+    void terminate() const { (*rep())[length()] = 0; }
+    const char *c_str() const {
+        if (length() == 0) return D_0068E7F8;
+        terminate();
+        return rep()->data();
+    }
+    String_005C2630 &replace(u32, u32, const char *, u32) __asm__("func_005C2630");
+    String_005C2630() { field_0 = D_00659FA8.grab(); }
+    String_005C2630(const char *value) {
+        field_0 = D_00659FA8.grab();
+        replace(0, (u32)-1, value, func_0057F260(value));
+    }
+    String_005C2630(const String_005C2630 &other) { field_0=other.rep()->grab(); }
+    ~String_005C2630() { rep()->release(); }
+};
+struct Ref_00309348 {
+    void *field_0;
+    Ref_00309348(const Ref_00309348 &) __asm__("func_00309360");
+    ~Ref_00309348() __asm__("func_00309378");
+    Ref_00309348 &operator=(const Ref_00309348 &other) {
+        if (this != &other) {
+            void *value = other.field_0;
+            if (value) func_003285A8(value);
+            if (field_0) func_003285F8(field_0);
+            field_0 = value;
+        }
+        return *this;
+    }
+};
+struct StringRef_00314B20 : public Ref_00309348 {
+    StringRef_00314B20(const String_005C2630 &) __asm__("func_00314B20");
+    ~StringRef_00314B20() __asm__("func_00312318");
+};
+typedef long long s64;
+struct CodeInfo_00448B48 {
+    s64 field_00, field_08, field_10, field_18, field_20, field_28;
+    unsigned char field_30;
+    s64 field_38, field_40;
+};
+struct VEntryString_18 { s16 delta_0, index_2; String_005C2630 (*function_4)(void *); };
+struct VObj_At04 { char unknown_00[4]; char *vtable_4; };
+extern "C" s32 func_00448AD0(const char *, CodeInfo_00448B48 *);
+extern "C" s32 func_00447CA0(s64, char *);
+extern char D_0068E848[];
+static inline String_005C2630 text_18(VObj_At04 *object) {
+    VEntryString_18 *entry = (VEntryString_18 *)(object->vtable_4 + 0x18);
+    return entry->function_4((char *)object + entry->delta_0);
 }
-static inline void empty(Str *s) {
- Rep *r=&D_00659FA8; char *p;
- if(r->sel) p=func_005C2560(r);
- else { r->ref=r->ref+1; p=(char *)(r+1); }
- s->p=p;
-}
-static inline void vcall(void *ret,Obj *o) {
- VEntry *e=(VEntry *)(o->vt+0x18); e->fn(ret,(char *)o+e->delta);
-}
-#define ASSIGN() if(dst!=u.h) { newVal=u.h[0]; if(newVal)func_003285A8(newVal); oldVal=*dst; if(oldVal)func_003285F8(oldVal); *dst=newVal; } func_00312318(&u,2)
-extern "C" void MCarData__GetDirtCarCode(void **dst,int count,Obj **args) {
- U u; long long record[10];
- union Work { char buf[0x90]; struct { char spare[16]; Str s; } e; } work;
- Str a,b; Str *ps;
- void *newVal,*oldVal;
- if(count>0) {
-  vcall(&u,*args);
-  const char *label=c_str(&u.s); release(&u.s);
-  if(func_00448AD0(label,record)) {
-   char *buf=work.buf;
-   if(func_00447CA0(record[7],buf)) {
-    ps=&a; empty(ps); func_005C2630(ps,0,-1,buf,func_0057F260(buf));
-    func_00314B20(&u,ps); ASSIGN(); release(ps);
-   } else {
-    ps=&b; empty(ps); func_005C2630(ps,0,-1,label,func_0057F260(label));
-    func_00314B20(&u,ps); ASSIGN(); release(ps);
-   }
-  } else {
-   const char *text=D_0068E848; ps=&work.e.s;
-   empty(ps); func_005C2630(ps,0,-1,text,func_0057F260(text));
-   func_00314B20(&u,ps); ASSIGN(); release(ps);
-  }
- }
+extern "C" void MCarData__GetDirtCarCode(Ref_00309348 *destination, s32 count, VObj_At04 **arguments) {
+    if (count > 0) {
+        const char *name = text_18(arguments[0]).c_str();
+        CodeInfo_00448B48 info;
+        if (func_00448AD0(name, &info)) {
+            char mapped_code[0x80];
+            if (func_00447CA0(info.field_38, mapped_code)) {
+                *destination = StringRef_00314B20(mapped_code);
+            } else {
+                *destination = StringRef_00314B20(name);
+            }
+        } else {
+            *destination = StringRef_00314B20(D_0068E848);
+        }
+    }
 }

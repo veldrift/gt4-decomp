@@ -1,8 +1,11 @@
-/* compiler: ee-gcc2.96-no-strict-aliasing */
-struct Block { char b[11]; };
-extern "C" void func_005A48D8(void *, int, unsigned);
-extern "C" void *func_0043C608(void *s, void *d) {
-    func_005A48D8(d, 0, 12);
-    *(Block *)d = *(const Block *)((char *)s + 16);
-    return (char *)d + 12;
+struct __attribute__((packed)) Packet {
+    unsigned long word;
+    signed char byte8, byte9, byteA;
+};
+struct Source { char unknown[0x10]; Packet packet; };
+extern "C" void *func_005A48D8(void *, int, unsigned int);
+extern "C" char *func_0043C608(Source *source, char *destination) {
+    func_005A48D8(destination, 0, 12);
+    *(Packet *)destination = source->packet;
+    return destination + 12;
 }
