@@ -1,0 +1,36 @@
+enum Comparison { Different=0, Equal=1 };
+struct Info { unsigned long words[4]; }; struct Row { unsigned long words[26]; }; struct Input { unsigned long words[33]; }; extern char D_006235A8[];
+extern "C" int func_00443ED0(void*,unsigned long,void*);
+extern "C" int func_00443F40(void*,unsigned long);
+extern "C" Comparison func_00445B88(Input *input) {
+ Info info;func_00443ED0(D_006235A8,input->words[0],&info);
+ if(info.words[0]==(unsigned long)-1)return Different;
+ if(!func_00443F40(D_006235A8,info.words[0]))return Different;
+ Row row;func_00443ED0(D_006235A8,info.words[0],&row);
+ if(input->words[4]!=row.words[0])return Different;
+ if(input->words[5]!=row.words[1])return Different;
+ if(input->words[6]!=row.words[5])return Different;
+ if(input->words[7]!=row.words[11])return Different;
+ if(input->words[8]!=row.words[9])return Different;
+ if(input->words[9]!=row.words[10])return Different;
+ if(input->words[10]!=row.words[2])return Different;
+ if(input->words[11]!=row.words[23])return Different;
+ if(input->words[14]!=row.words[8])return Different;
+ if(input->words[15]!=row.words[7])return Different;
+ if(input->words[16]!=row.words[6])return Different;
+ if(input->words[17]!=row.words[14])return Different;
+ if(input->words[18]!=row.words[15])return Different;
+ if(input->words[19]!=row.words[16])return Different;
+ if(input->words[20]!=row.words[17])return Different;
+ if(input->words[21]!=row.words[12])return Different;
+ if(input->words[22]!=row.words[13])return Different;
+ if(input->words[23]!=row.words[21])return Different;
+ if(input->words[24]!=row.words[20])return Different;
+ if(input->words[25]!=row.words[22])return Different;
+ if(input->words[26]!=row.words[19])return Different;
+ if(input->words[27]!=row.words[18])return Different;
+ if(input->words[28]!=row.words[3])return Different;
+ if(input->words[29]!=row.words[4])return Different;
+ if(input->words[31]==(unsigned long)-1) { if(input->words[32]!=(unsigned long)-1)return Different; }
+return Different;
+}

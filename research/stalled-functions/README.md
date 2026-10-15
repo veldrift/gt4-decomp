@@ -2,7 +2,7 @@
 
 Branch: `feat/stalled-functions`. Base: `4f078903c394e62356ef035d1abbcec2c5eb5f37` (the locally validated upstream PR 11/12 integration).
 
-This checkpoint preserves all 18 targets in our recent stalled scope: twelve CarData functions and six menu functions. It does not inventory every unmatched function in the game. The existing matched source, tools and PR integration are inherited from the base. No unmatched candidate is registered under `src/`.
+This checkpoint preserves all 18 targets in our recent stalled scope (17 remain unmatched; `00447DD0` is now resolved): twelve CarData functions and six menu functions. It does not inventory every unmatched function in the game. The existing matched source, tools and PR integration are inherited from the base. No unmatched candidate is registered under `src/`.
 
 ## Target list
 
@@ -18,7 +18,7 @@ This checkpoint preserves all 18 targets in our recent stalled scope: twelve Car
 | `00449AF8` | CarData | Table lookup helper | [Notes and candidates](00449af8/README.md) |
 | `00443518` | CarData | Language-table loading | [Notes and candidates](00443518/README.md) |
 | `00445B88` | CarData | Specification comparison | [Notes and candidates](00445b88/README.md) |
-| `00447DD0` | CarData | DisabledInfo searchInfo / identifier conversion | [Notes and candidates](00447dd0/README.md) |
+| `00447DD0` (resolved) | CarData | DisabledInfo searchInfo / identifier conversion | [Notes and candidates](00447dd0/README.md) |
 | `00440FB8` | CarData | Randomization bounds helper | [Notes and candidates](00440fb8/README.md) |
 | `00207590` | Menu | Composite property reader | [Notes and candidates](00207590/README.md) |
 | `00233E38` | Menu | RootWindow property reader | [Notes and candidates](00233e38/README.md) |
@@ -44,7 +44,7 @@ SelectBox came from upstream PR 12 and passed full 168-byte verification and exp
 
 ## Resuming
 
-Work was deliberately stopped at Tim's request; this branch is a preservation checkpoint, not a new matching pass. Read the per-target notes and diary before trying a genuinely new hypothesis. Restore a chosen candidate into ignored scratch space before editing/judging; preserve this checkpoint. Raw row scores do not establish complete-body matching. Acceptance still requires unchanged judge MATCH, full body/relocation/padding verification and original full-build hashes with the function explicitly `linked`.
+The latest authorized three-try pass is complete. This branch preserves both the resolved function and the remaining stalled work. Read the per-target notes and diary before trying a genuinely new hypothesis. Restore a chosen candidate into ignored scratch space before editing/judging; preserve this checkpoint. Raw row scores do not establish complete-body matching. Acceptance still requires unchanged judge MATCH, full body/relocation/padding verification and original full-build hashes with the function explicitly `linked`.
 
 The current Godot menu loader stops at TextFace. TextFace matching is future work, not one of these 17 previously attempted targets. No Godot files are changed by this checkpoint.
 
@@ -55,3 +55,5 @@ The current Godot menu loader stops at TextFace. TextFace matching is future wor
 2026-10-15: [Localized text sibling/header investigation](../../docs/research/localized-text-constructor-siblings.md) verified three partial siblings and compared RTL, then pinned the upstream-era headers. No new target attempt or integration; best remains 2/104.
 
 2026-10-15: [Complete used header-chain experiment](../../docs/research/localized-text-header-chain.md) validates the literal sibling with resolved references, but the target produces exactly the same 416 bytes and 19 relocations as the retained best (2/104). Three unsuccessful hypotheses counted conservatively, below the ten-failure limit; no promotion or integration. Sources and notices are retained under 002b7310/header-chain/.
+
+2026-10-15: [Three-try recovery across all 18 targets](../../docs/research/stalled-three-try-recovery.md): 52 try calls, including one source-name rejection and one compiler failure. `00447DD0` matched on its first try and passed complete span/relocation/padding checks, original text/data hashes and explicit linked status. The other 17 remain unmatched, each with three calls preserved. No push or viewer integration.

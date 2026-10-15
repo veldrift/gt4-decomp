@@ -1,16 +1,16 @@
 {
   "base_commit": "4f078903c394e62356ef035d1abbcec2c5eb5f37",
   "branch": "feat/stalled-functions",
-  "scope": "12 remaining CarData targets and 6 remaining menu targets",
+  "scope": "18 checkpoint targets: 17 unresolved and 1 resolved in the three-try recovery pass",
   "targets": [
     {
       "address": "00148B60",
       "group": "CarData",
       "role": "Engine curve data",
       "status": "unmatched",
-      "blocker": "Graph-loop guards, count lifetimes and scheduling remain unresolved. Also retain engine-zero-likely.cpp for complementary diagnostics.",
+      "blocker": "Countdown variant ties the previous 32/340 result; an extra inner loop guard and branch/register differences remain.",
       "primary_candidate": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-order.cpp",
-      "attempt_records": 27,
+      "attempt_records": 30,
       "candidates": [
         {
           "original_path": "build/cardata-finish/00148b60-component.cpp",
@@ -161,18 +161,56 @@
           "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-zero-likely.cpp",
           "sha256": "5737402340efcbedc6ec4cca941f979966d05b58f941cdf8bf131cf0248bfca8",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00148b60-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00148b60-h1.cpp",
+          "path": "research/stalled-functions/00148b60/three-try-2026-10-15/00148b60-h1.cpp",
+          "sha256": "8954a2ac17a952c63144b7dfdefed74116f0cc4d2de127b85aa8df7fbb0fcf95",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "8954a2ac17a952c63144b7dfdefed74116f0cc4d2de127b85aa8df7fbb0fcf95"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00148b60-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00148b60-h2.cpp",
+          "path": "research/stalled-functions/00148b60/three-try-2026-10-15/00148b60-h2.cpp",
+          "sha256": "cf335a6cdd91cfeb6924d89174d2296e0a13864519869ee4ae0d8bc6e6d96938",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "cf335a6cdd91cfeb6924d89174d2296e0a13864519869ee4ae0d8bc6e6d96938"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00148b60-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00148b60-h3.cpp",
+          "path": "research/stalled-functions/00148b60/three-try-2026-10-15/00148b60-h3.cpp",
+          "sha256": "6d4d717cd052fb5ed51675f813d968a5fe2a9fbd62400d89fc9cf71827ffca8f",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "6d4d717cd052fb5ed51675f813d968a5fe2a9fbd62400d89fc9cf71827ffca8f"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00148b60/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00148b60/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00449190",
       "group": "CarData",
       "role": "DatabaseTable searchNumber",
       "status": "unmatched",
-      "blocker": "10/31 raw rows differ from high-bound / row-result register exchange; address-add operand order is corrected.",
+      "blocker": "Native-width bounds and loop-carried midpoint did not beat the old candidate. H1 was rejected for the retained semantic function name before compilation; H2 corrected that preparation error.",
       "primary_candidate": "research/stalled-functions/00449190/candidates/build/cardata-new-shapes/search-guarded-offset.cpp",
-      "attempt_records": 23,
+      "attempt_records": 26,
       "candidates": [
         {
           "original_path": "build/cardata-continue/search-data-member.cpp",
@@ -275,18 +313,56 @@
           "path": "research/stalled-functions/00449190/candidates/build/cardata-remaining/search-wrapper-nogcse.cpp",
           "sha256": "0ddec4e82e160fc510164e52eb462849b6cc739c78841abe828cbfe2fff9ec6c",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449190-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449190-h1.cpp",
+          "path": "research/stalled-functions/00449190/three-try-2026-10-15/00449190-h1.cpp",
+          "sha256": "f624585b5afb8785c759563059e3d8c6a507de1f8f41d19dcc518ba28f1a71e2",
+          "judged_in_diary": true,
+          "result": "no-compile",
+          "lf_normalized_sha256": "f624585b5afb8785c759563059e3d8c6a507de1f8f41d19dcc518ba28f1a71e2"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449190-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449190-h2.cpp",
+          "path": "research/stalled-functions/00449190/three-try-2026-10-15/00449190-h2.cpp",
+          "sha256": "f2dfbe508f90cb1e645a19e7cb04bf64815149f0bf91df43d5ff27a167516282",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "f2dfbe508f90cb1e645a19e7cb04bf64815149f0bf91df43d5ff27a167516282"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449190-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449190-h3.cpp",
+          "path": "research/stalled-functions/00449190/three-try-2026-10-15/00449190-h3.cpp",
+          "sha256": "815ab9ceb5564e6c05797f2b68a2d76c9062a343683d04237335e80074f66aea",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "815ab9ceb5564e6c05797f2b68a2d76c9062a343683d04237335e80074f66aea"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00449190/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00449190/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00449F80",
       "group": "CarData",
       "role": "Byte getter",
       "status": "unmatched",
-      "blocker": "Native widening / sign-extension pair remains unresolved; 2/5 raw differing rows.",
+      "blocker": "Native-width bitfield and volatile-byte access did not recover the missing extension. TI-mode return was rejected by the compiler. Full body remains shorter than the inventory.",
       "primary_candidate": "research/stalled-functions/00449f80/candidates/build/cardata-new-shapes/byte-inline-signed-getter.cpp",
-      "attempt_records": 17,
+      "attempt_records": 20,
       "candidates": [
         {
           "original_path": "build/cardata-continue/byte-bitfield.cpp",
@@ -353,18 +429,56 @@
           "path": "research/stalled-functions/00449f80/candidates/build/cardata-remaining/byte-sdk-profile.cpp",
           "sha256": "9d323baf163514da08eee790146c221d32ad97528e7e2bd825fe63a3b673a640",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449f80-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449f80-h1.cpp",
+          "path": "research/stalled-functions/00449f80/three-try-2026-10-15/00449f80-h1.cpp",
+          "sha256": "c02bd2c698a2c1230df0c676cddbb1a0d10b307accc20aabd36ebd4baaec3ffa",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "c02bd2c698a2c1230df0c676cddbb1a0d10b307accc20aabd36ebd4baaec3ffa"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449f80-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449f80-h2.cpp",
+          "path": "research/stalled-functions/00449f80/three-try-2026-10-15/00449f80-h2.cpp",
+          "sha256": "54e4cb3ec736fb136a3f40cdfe424413aa1bed63965742db13627667f1641234",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "54e4cb3ec736fb136a3f40cdfe424413aa1bed63965742db13627667f1641234"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449f80-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449f80-h3.cpp",
+          "path": "research/stalled-functions/00449f80/three-try-2026-10-15/00449f80-h3.cpp",
+          "sha256": "79a5ac46279ded7446921fb2e4e6846da7f990d47d9f6e5985d94313ac52ed8e",
+          "judged_in_diary": true,
+          "result": "no-compile",
+          "lf_normalized_sha256": "79a5ac46279ded7446921fb2e4e6846da7f990d47d9f6e5985d94313ac52ed8e"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00449f80/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00449f80/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "004490F8",
       "group": "CarData",
       "role": "Table initialization",
       "status": "unmatched",
-      "blocker": "Table base lifetime, allocation and initialization scheduling remain unresolved.",
+      "blocker": "End-store ownership and Section value-object helpers did not recover the missing instruction/scheduling context.",
       "primary_candidate": "research/stalled-functions/004490f8/candidates/build/cardata-remaining/table-inline-records.cpp",
-      "attempt_records": 21,
+      "attempt_records": 24,
       "candidates": [
         {
           "original_path": "build/cardata-continue/table-default-accessors.cpp",
@@ -461,18 +575,56 @@
           "path": "research/stalled-functions/004490f8/candidates/build/cardata-remaining/table-section-scope.cpp",
           "sha256": "51b02c11288dbb2346697bb73c84738a978f568459f1ea5c373b1c7013daac93",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/004490f8-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/004490f8-h1.cpp",
+          "path": "research/stalled-functions/004490f8/three-try-2026-10-15/004490f8-h1.cpp",
+          "sha256": "bc5ad76281642c7ca2a5f9c0c39e425acfb89b858e41b8813f57aab100a32ec7",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "bc5ad76281642c7ca2a5f9c0c39e425acfb89b858e41b8813f57aab100a32ec7"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/004490f8-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/004490f8-h2.cpp",
+          "path": "research/stalled-functions/004490f8/three-try-2026-10-15/004490f8-h2.cpp",
+          "sha256": "67518db0d6762698089054a61f315387320c4451efc0822d6bec1308684faa65",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "67518db0d6762698089054a61f315387320c4451efc0822d6bec1308684faa65"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/004490f8-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/004490f8-h3.cpp",
+          "path": "research/stalled-functions/004490f8/three-try-2026-10-15/004490f8-h3.cpp",
+          "sha256": "2e5702d0f403275a303c3dd83886bb8a11ea963c78ecf090bc2ac7e2168606d9",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "2e5702d0f403275a303c3dd83886bb8a11ea963c78ecf090bc2ac7e2168606d9"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/004490f8/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/004490f8/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "004478F8",
       "group": "CarData",
       "role": "Tuner-code extraction",
       "status": "unmatched",
-      "blocker": "Loop shape, exit scheduling and native row-fetch allocation remain unresolved.",
+      "blocker": "Fixed-end iteration, narrow index and cached-byte loop forms did not solve index/count allocation and loop structure.",
       "primary_candidate": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-native-fetch-nothrow.cpp",
-      "attempt_records": 22,
+      "attempt_records": 25,
       "candidates": [
         {
           "original_path": "build/cardata-continue/tuner-inline-byte.cpp",
@@ -575,18 +727,56 @@
           "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-preincrement-condition.cpp",
           "sha256": "947f9f38c8ea155aeefc14b1bfc2200605ab894605059a5e641dc881c3fd88ca",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/004478f8-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/004478f8-h1.cpp",
+          "path": "research/stalled-functions/004478f8/three-try-2026-10-15/004478f8-h1.cpp",
+          "sha256": "2f2a6f6935fb0193ca9c70210986b522bec8b6a47c56a4545bbfe830abb93ebd",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "2f2a6f6935fb0193ca9c70210986b522bec8b6a47c56a4545bbfe830abb93ebd"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/004478f8-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/004478f8-h2.cpp",
+          "path": "research/stalled-functions/004478f8/three-try-2026-10-15/004478f8-h2.cpp",
+          "sha256": "991cb60182f931d3185507284b834fbd918e83c79e77d8293cd7a657acd80c4c",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "991cb60182f931d3185507284b834fbd918e83c79e77d8293cd7a657acd80c4c"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/004478f8-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/004478f8-h3.cpp",
+          "path": "research/stalled-functions/004478f8/three-try-2026-10-15/004478f8-h3.cpp",
+          "sha256": "231cf3ea22086b45fc59f06761cb9443988634d31ed9f40e67fe9548293fca1e",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "231cf3ea22086b45fc59f06761cb9443988634d31ed9f40e67fe9548293fca1e"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/004478f8/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/004478f8/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00448B48",
       "group": "CarData",
       "role": "Specification copy",
       "status": "unmatched",
-      "blocker": "Retained 9/51 raw residual includes query-result / redundant-zero control flow.",
+      "blocker": "C frontend and assignment-member reconstruction retain 9/51 differences; shared boolean return is worse.",
       "primary_candidate": "research/stalled-functions/00448b48/candidates/build/cardata-new-shapes/copy-native-expected-status.cpp",
-      "attempt_records": 22,
+      "attempt_records": 25,
       "candidates": [
         {
           "original_path": "build/cardata-continue/copy-early-failure.cpp",
@@ -695,18 +885,56 @@
           "path": "research/stalled-functions/00448b48/candidates/build/cardata-remaining/copy-switch-status.cpp",
           "sha256": "79603c926a3404d1843debdcb11da9559e9d27ad550bb994c8461e1b5714e21c",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00448b48-h1.c",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00448b48-h1.c",
+          "path": "research/stalled-functions/00448b48/three-try-2026-10-15/00448b48-h1.c",
+          "sha256": "d1ae2de2028a89d9f8d6147a85d30c554bf2e6adcfcb14c627b34cadd30e51f6",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "d1ae2de2028a89d9f8d6147a85d30c554bf2e6adcfcb14c627b34cadd30e51f6"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00448b48-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00448b48-h2.cpp",
+          "path": "research/stalled-functions/00448b48/three-try-2026-10-15/00448b48-h2.cpp",
+          "sha256": "789007d696ac167d64a85b2a84f69369d1aec27a2b1a7be4689e27c7821ad37f",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "789007d696ac167d64a85b2a84f69369d1aec27a2b1a7be4689e27c7821ad37f"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00448b48-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00448b48-h3.cpp",
+          "path": "research/stalled-functions/00448b48/three-try-2026-10-15/00448b48-h3.cpp",
+          "sha256": "eedeb02d26429b32922f637c7fd37bff11639db8f7732549b0a0af14669fac50",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "eedeb02d26429b32922f637c7fd37bff11639db8f7732549b0a0af14669fac50"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00448b48/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00448b48/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "0043BBC0",
       "group": "CarData",
       "role": "Packed controls / selector update",
       "status": "unmatched",
-      "blocker": "Correct Knobs subobject at Controls+4, count at Knobs+2; clamp/store scheduling and allocation remain unresolved.",
+      "blocker": "The member setter improves the retained 140/313 raw score to 136/313; the missing historical 20-difference candidate is still unavailable. Full matching remains unresolved.",
       "primary_candidate": "research/stalled-functions/0043bbc0/candidates/build/cardata-new-shapes/packed-native-knobs.cpp",
-      "attempt_records": 16,
+      "attempt_records": 19,
       "candidates": [
         {
           "original_path": "build/cardata-continue/packed-clamp.cpp",
@@ -785,18 +1013,56 @@
           "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-parallel-sol/0043bbc0-reference-cap.cpp",
           "sha256": "72e644bf551597d6f6f7ef024e17db716002dc87f78645eb5574f04b1b57892f",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/0043bbc0-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/0043bbc0-h1.cpp",
+          "path": "research/stalled-functions/0043bbc0/three-try-2026-10-15/0043bbc0-h1.cpp",
+          "sha256": "1cccfe0cfe79ce1d03bf6d094b74afe23b13e9828d0ae50e16b4b7b18000d445",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "1cccfe0cfe79ce1d03bf6d094b74afe23b13e9828d0ae50e16b4b7b18000d445"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/0043bbc0-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/0043bbc0-h2.cpp",
+          "path": "research/stalled-functions/0043bbc0/three-try-2026-10-15/0043bbc0-h2.cpp",
+          "sha256": "3a3840e0fd915ea0d10dcd20c007d6ea783791161abaf6b2f6c0d7cf32d008a6",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "3a3840e0fd915ea0d10dcd20c007d6ea783791161abaf6b2f6c0d7cf32d008a6"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/0043bbc0-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/0043bbc0-h3.cpp",
+          "path": "research/stalled-functions/0043bbc0/three-try-2026-10-15/0043bbc0-h3.cpp",
+          "sha256": "149c412d60584874e713dadc2601d6dd9e79226939d37ecc46832f8c6240b1d2",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "149c412d60584874e713dadc2601d6dd9e79226939d37ecc46832f8c6240b1d2"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/0043bbc0/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/0043bbc0/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00449AF8",
       "group": "CarData",
       "role": "Table lookup helper",
       "status": "unmatched",
-      "blocker": "Offset induction and native lookup scheduling remain unresolved.",
+      "blocker": "Direct address arithmetic and guarded record iteration still differ structurally; some candidates have shortened bodies.",
       "primary_candidate": "research/stalled-functions/00449af8/candidates/build/cardata-new-shapes/lookup-unsigned-wide-offset.cpp",
-      "attempt_records": 10,
+      "attempt_records": 13,
       "candidates": [
         {
           "original_path": "build/cardata-continue/lookup-enum-index.cpp",
@@ -827,18 +1093,56 @@
           "path": "research/stalled-functions/00449af8/candidates/build/cardata-new-shapes/lookup-wide-offset.cpp",
           "sha256": "17669d50133e7a236be4765e2103b06df43a9f8e2a944335b691edf1dba71be7",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449af8-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449af8-h1.cpp",
+          "path": "research/stalled-functions/00449af8/three-try-2026-10-15/00449af8-h1.cpp",
+          "sha256": "885640ab8511dc4493872b8f8ebe8dc8fa2609ad114ab47ae2e1aa1f8244549a",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "885640ab8511dc4493872b8f8ebe8dc8fa2609ad114ab47ae2e1aa1f8244549a"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449af8-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449af8-h2.cpp",
+          "path": "research/stalled-functions/00449af8/three-try-2026-10-15/00449af8-h2.cpp",
+          "sha256": "9c6411047841a70670ef13c741cbb66a2df02d75958333d201178b3b7ad375ac",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "9c6411047841a70670ef13c741cbb66a2df02d75958333d201178b3b7ad375ac"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00449af8-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00449af8-h3.cpp",
+          "path": "research/stalled-functions/00449af8/three-try-2026-10-15/00449af8-h3.cpp",
+          "sha256": "dc4905dc1273fc74a41f6881cd3b0c352c7307f6b16a229a235ed212195c8149",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "dc4905dc1273fc74a41f6881cd3b0c352c7307f6b16a229a235ed212195c8149"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00449af8/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00449af8/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00443518",
       "group": "CarData",
       "role": "Language-table loading",
       "status": "unmatched",
-      "blocker": "59/148 raw differing rows; secondary offset scope improved, directory lifetime and register/scheduling recovery remain open.",
+      "blocker": "Typed Directory layout and LanguageNames member wrapper remain 59/148; selected-language helper is worse.",
       "primary_candidate": "research/stalled-functions/00443518/candidates/build/cardata-new-shapes/load-guarded-offset-lifetime.cpp",
-      "attempt_records": 16,
+      "attempt_records": 19,
       "candidates": [
         {
           "original_path": "build/cardata-new-shapes/load-guarded-offset-lifetime.cpp",
@@ -917,18 +1221,56 @@
           "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-secondary-snapshot.cpp",
           "sha256": "c848c18e22e237b557cc4cd8e685e2b90924c070139bc0c2276a00aab5b34373",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00443518-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00443518-h1.cpp",
+          "path": "research/stalled-functions/00443518/three-try-2026-10-15/00443518-h1.cpp",
+          "sha256": "bd1b22dc3f6aa84121e88971afd07c0013a128e453c35c698e97b4782dc53315",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "bd1b22dc3f6aa84121e88971afd07c0013a128e453c35c698e97b4782dc53315"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00443518-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00443518-h2.cpp",
+          "path": "research/stalled-functions/00443518/three-try-2026-10-15/00443518-h2.cpp",
+          "sha256": "0a1f53a1d6a3005875c8d99dafbd509ce14cd03f3a5d9fc9a02e73ca9ac2b739",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "0a1f53a1d6a3005875c8d99dafbd509ce14cd03f3a5d9fc9a02e73ca9ac2b739"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00443518-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00443518-h3.cpp",
+          "path": "research/stalled-functions/00443518/three-try-2026-10-15/00443518-h3.cpp",
+          "sha256": "f79eaf9469b44a4aad3196df7f7e109ee15341075c9c14028d57862ba61b0b9a",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "f79eaf9469b44a4aad3196df7f7e109ee15341075c9c14028d57862ba61b0b9a"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00443518/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00443518/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00445B88",
       "group": "CarData",
       "role": "Specification comparison",
       "status": "unmatched",
-      "blocker": "24 native field pairs recovered; sentinel return/control flow remains unresolved. Undefined-return experiments are diagnostic only.",
+      "blocker": "Volatile source reads, one nonthrowing declaration and explicit comparison enum all retain 111/128. No undefined return fallthrough was promoted.",
       "primary_candidate": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-defined-sentinel.cpp",
-      "attempt_records": 13,
+      "attempt_records": 16,
       "candidates": [
         {
           "original_path": "build/cardata-untouched/compare-bool-callee.cpp",
@@ -989,18 +1331,56 @@
           "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-verified-fields.cpp",
           "sha256": "b203d55d299376557b503ccd373307eed6c19c0dfa87ef4ef1c81a53ccfe1e19",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00445b88-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00445b88-h1.cpp",
+          "path": "research/stalled-functions/00445b88/three-try-2026-10-15/00445b88-h1.cpp",
+          "sha256": "bb2eda812b5e54d38832e609b10a03ebf67627648372be0f80e7c098d447e52d",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "bb2eda812b5e54d38832e609b10a03ebf67627648372be0f80e7c098d447e52d"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00445b88-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00445b88-h2.cpp",
+          "path": "research/stalled-functions/00445b88/three-try-2026-10-15/00445b88-h2.cpp",
+          "sha256": "a804b7688c48bd8ff3178fc66f1caa0123a5e78c4d56c4b5a926e3e9883a36b7",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "a804b7688c48bd8ff3178fc66f1caa0123a5e78c4d56c4b5a926e3e9883a36b7"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00445b88-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00445b88-h3.cpp",
+          "path": "research/stalled-functions/00445b88/three-try-2026-10-15/00445b88-h3.cpp",
+          "sha256": "2d650f604065105ac3118e8408cdf3fed6dd7e6702e4765cc3d35d99b8d31413",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "2d650f604065105ac3118e8408cdf3fed6dd7e6702e4765cc3d35d99b8d31413"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00445b88/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00445b88/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00447DD0",
       "group": "CarData",
       "role": "DisabledInfo searchInfo / identifier conversion",
-      "status": "unmatched",
-      "blocker": "5/17 raw differing rows remain; aggregate input / profile alternatives did not improve.",
+      "status": "resolved",
+      "blocker": "Resolved: return original identifier on zero-high-half path; unchanged judge MATCH, full72-byte span, original image hashes and explicit linked status verified.",
       "primary_candidate": "research/stalled-functions/00447dd0/candidates/build/cardata-remaining/code-nsa-nosib.cpp",
-      "attempt_records": 17,
+      "attempt_records": 18,
       "candidates": [
         {
           "original_path": "build/cardata-more/00447dd0.cpp",
@@ -1061,22 +1441,45 @@
           "path": "research/stalled-functions/00447dd0/candidates/build/cardata-remaining/code-nsa-nosib.cpp",
           "sha256": "00743982c7e1dd1bbfd01ac03e774332e134ad591f80bd28f6b14f6efe6f8eef",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00447dd0-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00447dd0-h1.cpp",
+          "path": "research/stalled-functions/00447dd0/three-try-2026-10-15/00447dd0-h1.cpp",
+          "sha256": "0874886a7de82cd1275e2c51fe915eedadeee1765542d477782335db92a918bb",
+          "judged_in_diary": true,
+          "result": "match",
+          "lf_normalized_sha256": "0874886a7de82cd1275e2c51fe915eedadeee1765542d477782335db92a918bb"
         }
       ],
       "unavailable_or_nonlocal_source_paths": [
         "build/scratch/opus3/m447dd0.cpp",
         "build/scratch/regmap/dd0p.cpp",
         "build/scratch/regmap/ns1/00447DD0_nosched1.cpp"
-      ]
+      ],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 1,
+        "diary": "research/stalled-functions/00447dd0/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00447dd0/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md",
+        "resolved": true
+      },
+      "accepted_source": "src/func_00447DD0.cpp",
+      "validation": "research/stalled-functions/00447dd0/three-try-2026-10-15/validation.json"
     },
     {
       "address": "00440FB8",
       "group": "CarData",
       "role": "Randomization bounds helper",
       "status": "unmatched",
-      "blocker": "33/92 raw differing rows; pointer view improves score but introduces stack pointer storage and larger frame.",
+      "blocker": "Reference-member bounds, reference-returning accessors and default compiler context remain 33/92.",
       "primary_candidate": "research/stalled-functions/00440fb8/candidates/build/cardata-parallel-sol/00440fb8-pointer-view.cpp",
-      "attempt_records": 12,
+      "attempt_records": 15,
       "candidates": [
         {
           "original_path": "build/cardata-finish/00440fb8-limits.cpp",
@@ -1143,18 +1546,56 @@
           "path": "research/stalled-functions/00440fb8/candidates/build/cardata-post-sync/00440fb8-table.cpp",
           "sha256": "52856be2493d14ac9438697612d92b49b3158805c2f9484a73fd1ea732d19dea",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00440fb8-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00440fb8-h1.cpp",
+          "path": "research/stalled-functions/00440fb8/three-try-2026-10-15/00440fb8-h1.cpp",
+          "sha256": "e1904e7e03db2967888f53d1fe6a620ac3f0a2683828bd63ee30d9c84f3e14c8",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "e1904e7e03db2967888f53d1fe6a620ac3f0a2683828bd63ee30d9c84f3e14c8"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00440fb8-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00440fb8-h2.cpp",
+          "path": "research/stalled-functions/00440fb8/three-try-2026-10-15/00440fb8-h2.cpp",
+          "sha256": "5b1e7b46ef649110a55b919d48e16023eae7c8417fd30279611400d40c9b42a0",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "5b1e7b46ef649110a55b919d48e16023eae7c8417fd30279611400d40c9b42a0"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00440fb8-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00440fb8-h3.cpp",
+          "path": "research/stalled-functions/00440fb8/three-try-2026-10-15/00440fb8-h3.cpp",
+          "sha256": "e45c0013dc55e3da743ee22fdf993fb7ce49f3b96731bd0196a7762393834389",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "e45c0013dc55e3da743ee22fdf993fb7ce49f3b96731bd0196a7762393834389"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00440fb8/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00440fb8/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00207590",
       "group": "Menu",
       "role": "Composite property reader",
       "status": "unmatched",
-      "blocker": "828 emitted bytes vs 840 original; return island and final refcount branch differ. Shifted matching runs do not prove a full match.",
+      "blocker": "Native-width return and normalized predicate fail to recover the missing return-island word; helper lifetime form retains 16/209.",
       "primary_candidate": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_best.cpp",
-      "attempt_records": 12,
+      "attempt_records": 15,
       "candidates": [
         {
           "original_path": "build/menu-composite-sol/00207590_best.cpp",
@@ -1221,18 +1662,56 @@
           "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v9.cpp",
           "sha256": "de7d11c4e541f5f2d3cd6e05859669c9ee98a58b8e1b7110f112ba3e5b29234d",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00207590-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00207590-h1.cpp",
+          "path": "research/stalled-functions/00207590/three-try-2026-10-15/00207590-h1.cpp",
+          "sha256": "ffe273d9d726fb2c6500e7b3e9ac0f791efff29423e12c46a53c10fc40019c23",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "ffe273d9d726fb2c6500e7b3e9ac0f791efff29423e12c46a53c10fc40019c23"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00207590-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00207590-h2.cpp",
+          "path": "research/stalled-functions/00207590/three-try-2026-10-15/00207590-h2.cpp",
+          "sha256": "9acf3463060b09c363fa8635fecec071a61fc8aed0395d169b3f8de796c9ad4d",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "9acf3463060b09c363fa8635fecec071a61fc8aed0395d169b3f8de796c9ad4d"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00207590-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00207590-h3.cpp",
+          "path": "research/stalled-functions/00207590/three-try-2026-10-15/00207590-h3.cpp",
+          "sha256": "e643991ee0d96c265835c9463af526d2dc1388f0a017ab3545003ff591872a18",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "e643991ee0d96c265835c9463af526d2dc1388f0a017ab3545003ff591872a18"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00207590/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00207590/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "00233E38",
       "group": "Menu",
       "role": "RootWindow property reader",
       "status": "unmatched",
-      "blocker": "109/469 compared words; frame A0 vs B0 and callback storage/lifetimes differ. Original final omitted word is zero padding.",
+      "blocker": "Scoped string names retain frame A0; POD callback copies create frame D0 and extra words. Real object lifetimes/stack placement remain unresolved.",
       "primary_candidate": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_cbslots.cpp",
-      "attempt_records": 22,
+      "attempt_records": 25,
       "candidates": [
         {
           "original_path": "build/menu-root-luna/00233e38_cbslots.cpp",
@@ -1281,18 +1760,56 @@
           "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_variant2.cpp",
           "sha256": "1377f386ca10c339409281b6040e966700aa8e86927ff642b91762dda6b383e4",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00233e38-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00233e38-h1.cpp",
+          "path": "research/stalled-functions/00233e38/three-try-2026-10-15/00233e38-h1.cpp",
+          "sha256": "7094057f771923fdd3fdd9b8979c9b42304797c313aa529b9158b6f2c6028fe2",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "7094057f771923fdd3fdd9b8979c9b42304797c313aa529b9158b6f2c6028fe2"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00233e38-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00233e38-h2.cpp",
+          "path": "research/stalled-functions/00233e38/three-try-2026-10-15/00233e38-h2.cpp",
+          "sha256": "77e040bed005baeb60b01651430a7deb7b7ff708c574ddb585a37b9644a3e257",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "77e040bed005baeb60b01651430a7deb7b7ff708c574ddb585a37b9644a3e257"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/00233e38-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/00233e38-h3.cpp",
+          "path": "research/stalled-functions/00233e38/three-try-2026-10-15/00233e38-h3.cpp",
+          "sha256": "c37d9eb0122c0f856d6465498b6941d9ceb277d7ef279d9a4f823b0890d01e21",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "c37d9eb0122c0f856d6465498b6941d9ceb277d7ef279d9a4f823b0890d01e21"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/00233e38/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/00233e38/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "002A29F0",
       "group": "Menu",
       "role": "ImageFace property reader",
       "status": "unmatched",
-      "blocker": "2484 emitted bytes vs 2744 original. Vector-object alternative 2524 bytes also fails. Recover actual object lifetimes, not artificial frame padding.",
+      "blocker": "Real vector-header and list-callback aggregates repair unsafe independent-local layout assumptions but do not recover frame110 or complete body; single empty-Rep base also falls short.",
       "primary_candidate": "research/stalled-functions/002a29f0/candidates/build/menu-image-luna/attempt3.cpp",
-      "attempt_records": 5,
+      "attempt_records": 8,
       "candidates": [
         {
           "original_path": "build/menu-image-luna/002a29f0-attempt1.cpp",
@@ -1323,18 +1840,56 @@
           "path": "research/stalled-functions/002a29f0/candidates/build/menu-image-luna/attempt4.cpp",
           "sha256": "bad37e589f49cb5f138829da28f199e06c7b7f9cd4ef47ff6941e5de39e95675",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002a29f0-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002a29f0-h1.cpp",
+          "path": "research/stalled-functions/002a29f0/three-try-2026-10-15/002a29f0-h1.cpp",
+          "sha256": "ca360fff766073acef0c6cc8dd38314b4195ad5cb5db6dc56bf4cdaadb136117",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "39aa59553cec0bc5d4a98eed583201a7c947ad03d852916fe38882a58b4b56a5"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002a29f0-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002a29f0-h2.cpp",
+          "path": "research/stalled-functions/002a29f0/three-try-2026-10-15/002a29f0-h2.cpp",
+          "sha256": "a15bf911a35a58eeb4e195236126b9174cb6ad510014484e995cbc6c39a1f7e6",
+          "judged_in_diary": true,
+          "result": "no-change",
+          "lf_normalized_sha256": "d43a9a9d22050b49887360db4250bbbc132f270ad7420910abb492319614f2b1"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002a29f0-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002a29f0-h3.cpp",
+          "path": "research/stalled-functions/002a29f0/three-try-2026-10-15/002a29f0-h3.cpp",
+          "sha256": "25c3397d1b40f7c0cc31e04460501ce8eb7f7e58776aeacebad8855589d6c0e5",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "c9bee88ad9eac74dde31da95d690fe483645ac0e169c6df91200b65a26f09172"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/002a29f0/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/002a29f0/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "002A38A0",
       "group": "Menu",
       "role": "ImageFace pattern coordinates",
       "status": "unmatched",
-      "blocker": "280 emitted bytes vs 312 original, with nonzero omitted tail. Post-lock reloads, product copies and stores differ.",
+      "blocker": "Embedded UV setters recover frame30 but not corner address generation; native coordinate wrappers spill heavily.",
       "primary_candidate": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-reciprocals-first.cpp",
-      "attempt_records": 11,
+      "attempt_records": 14,
       "candidates": [
         {
           "original_path": "build/menu-pattern-luna/002a38a0-lock-alias.cpp",
@@ -1383,18 +1938,56 @@
           "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-y-first.cpp",
           "sha256": "dcf8d290a149b1fbb06fbd64e63e9dd0d8be57a1bb73ead03f7962f6d3ba2839",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002a38a0-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002a38a0-h1.cpp",
+          "path": "research/stalled-functions/002a38a0/three-try-2026-10-15/002a38a0-h1.cpp",
+          "sha256": "be4de30bb8d3bb6e3862e9d934d1ddda393a36b153577a0af57b1a66a22224ff",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "be4de30bb8d3bb6e3862e9d934d1ddda393a36b153577a0af57b1a66a22224ff"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002a38a0-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002a38a0-h2.cpp",
+          "path": "research/stalled-functions/002a38a0/three-try-2026-10-15/002a38a0-h2.cpp",
+          "sha256": "922dedf5e988bc6afca1f8f7cb31645da9db6adbefc4546de8de13bccd4ce0e0",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "922dedf5e988bc6afca1f8f7cb31645da9db6adbefc4546de8de13bccd4ce0e0"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002a38a0-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002a38a0-h3.cpp",
+          "path": "research/stalled-functions/002a38a0/three-try-2026-10-15/002a38a0-h3.cpp",
+          "sha256": "3deae4c4e946ec80874120af96f58eabfb6cb1e0a965c750f321f6c2fc812da7",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "3deae4c4e946ec80874120af96f58eabfb6cb1e0a965c750f321f6c2fc812da7"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/002a38a0/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/002a38a0/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "0020EEB8",
       "group": "Menu",
       "role": "Layout tokenizer",
       "status": "unmatched",
-      "blocker": "2864 emitted bytes vs 3104 original. Shortened comparison is not complete coverage; emitted pushback control flow differs.",
+      "blocker": "String member operations slightly change the raw score but remain 60 words short; native-width character locals overshoot, nogcse does not recover the body.",
       "primary_candidate": "research/stalled-functions/0020eeb8/candidates/build/menu-token-luna/0020eeb8_h02.cpp",
-      "attempt_records": 3,
+      "attempt_records": 6,
       "candidates": [
         {
           "original_path": "build/menu-token-luna/0020eeb8_h01.cpp",
@@ -1413,18 +2006,56 @@
           "path": "research/stalled-functions/0020eeb8/candidates/build/menu-token-luna/0020eeb8_h03.cpp",
           "sha256": "a9d55a92072974a5074e458f9462f589c5f45ae1bc04bf996ed37a95aa70b182",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/stalled-three-evidence/0020eeb8-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/0020eeb8-h1.cpp",
+          "path": "research/stalled-functions/0020eeb8/three-try-2026-10-15/0020eeb8-h1.cpp",
+          "sha256": "d625ea852a2ce22269abf6eb0ca0ce8d600e294c787cac3eee6be540f9427e04",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "018c25cf940d8f1b5d8c312b85df8a0dbc9576098dcd7e8a9766e5a8a6368062"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/0020eeb8-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/0020eeb8-h2.cpp",
+          "path": "research/stalled-functions/0020eeb8/three-try-2026-10-15/0020eeb8-h2.cpp",
+          "sha256": "dd256f5b016b1fe54d577cf36d657f9d7775c2fe7fd1ca796dc998e38df856b5",
+          "judged_in_diary": true,
+          "result": "differs",
+          "lf_normalized_sha256": "b2796e4d541d68b26586023fa9da2f49b975b8d517b7a268d5bfce6479ee3ceb"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/0020eeb8-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/0020eeb8-h3.cpp",
+          "path": "research/stalled-functions/0020eeb8/three-try-2026-10-15/0020eeb8-h3.cpp",
+          "sha256": "1eed6ab4e1a06bd6dd14515eb52a8f32f29aea6cac3ccc121fc57ea5373ec354",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "76fcb5ae0e77e7d1f270a8e099721cc101e9f6ba60dadc9954ab1b36a08fb77d"
         }
       ],
-      "unavailable_or_nonlocal_source_paths": []
+      "unavailable_or_nonlocal_source_paths": [],
+      "scratch_paths": [
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
+      ],
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/0020eeb8/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/0020eeb8/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
+      }
     },
     {
       "address": "002B7310",
       "group": "Menu",
       "role": "Localized literal text setter",
       "status": "unmatched",
-      "blocker": "Two adjacent load/literal-low instructions remain swapped (2/104). Complete used upstream-era header chain matches the sibling but emits the same 416 bytes and 19 relocations as baseline on target; original translation-unit scheduling context remains unknown.",
+      "blocker": "Lock guard, conditional-expression cleanup and default-length constructor all regress. Keep prior 2/104 candidate; original scheduling context remains missing.",
       "primary_candidate": "research/stalled-functions/002b7310/best.cpp",
-      "attempt_records": 38,
+      "attempt_records": 41,
       "candidates": [
         {
           "original_path": "drafts/002b7310/002b7310_00b83c2667bb4440.cpp",
@@ -1654,6 +2285,33 @@
           "judged_in_diary": true,
           "verdict": "no-change",
           "address": "002b7310"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002b7310-h1.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002b7310-h1.cpp",
+          "path": "research/stalled-functions/002b7310/three-try-2026-10-15/002b7310-h1.cpp",
+          "sha256": "4ef6d79e76c86bf19bf4e2cce3709682536206418d820e499a516bf5f0686cfa",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "85723228543a344433b4a1aa5d138630411f2cabdb5b2c0816eea7daa6564718"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002b7310-h2.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002b7310-h2.cpp",
+          "path": "research/stalled-functions/002b7310/three-try-2026-10-15/002b7310-h2.cpp",
+          "sha256": "44ff1b664826cb71e85d18844d14d0aba0bb171d4b244b78933de18ff873e646",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "c2e0ec7017d443d39258d9775ed5db78f75a0ac6aa65241d607dca0bc7608eb6"
+        },
+        {
+          "original_path": "build/stalled-three-evidence/002b7310-h3.cpp",
+          "remote_path": "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/002b7310-h3.cpp",
+          "path": "research/stalled-functions/002b7310/three-try-2026-10-15/002b7310-h3.cpp",
+          "sha256": "a9e752f08b759c377519643332b894ccca7b0315b69a340d190efddca694b357",
+          "judged_in_diary": true,
+          "result": "worse",
+          "lf_normalized_sha256": "3d7c5e1f621b158d5384ea9ca33d13cef2281dc4a895bce75a4e3bd9e26a5cc6"
         }
       ],
       "missing_sources": [
@@ -1671,7 +2329,9 @@
         "build/localized-text-sibling-evidence/",
         "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-sibling/",
         "build/localized-text-header-evidence/",
-        "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-header/"
+        "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-header/",
+        "build/stalled-three-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/stalled-three/"
       ],
       "research_notes": [
         "docs/research/localized-text-constructor-siblings.md",
@@ -1685,6 +2345,13 @@
         "target_event": "research/stalled-functions/002b7310/header-chain/judge-events.jsonl",
         "diary": "research/stalled-functions/002b7310/header-chain/attempts.jsonl",
         "new_target_matches": 0
+      },
+      "three_try_pass": {
+        "date": "2026-10-15",
+        "judge_invocations": 3,
+        "diary": "research/stalled-functions/002b7310/three-try-2026-10-15/attempts.jsonl",
+        "events": "research/stalled-functions/002b7310/three-try-2026-10-15/judge-events.jsonl",
+        "report": "docs/research/stalled-three-try-recovery.md"
       }
     }
   ],
@@ -1707,5 +2374,18 @@
       "source": "src/gamedata/unit_00148030/MCarGarage__buildGearRatioData.cpp",
       "status": "registered source; excluded from stalled queue"
     }
-  ]
+  ],
+  "latest_recovery_pass": {
+    "date": "2026-10-15",
+    "targets": 18,
+    "judge_invocations": 52,
+    "source_name_rejections": 1,
+    "compiler_failures": 1,
+    "compiled_comparisons": 50,
+    "judge_matches": 1,
+    "validation": "full72-byte span, all relocations, original full-build hashes, explicit linked target, zero duplicate/orphan sources, and29123 build inputs verified",
+    "report": "docs/research/stalled-three-try-recovery.md",
+    "resolved": 1,
+    "unresolved": 17
+  }
 }

@@ -25,7 +25,7 @@ Ignored viewer logs: `local-data/menu/localized-text-build.log`, `localized-text
 Read the diary and candidates before a newly authorized bounded pass. Inspect the retained RTL scheduling block for the constructor; avoid repeating constructor body/member initialization, default-then-assign, const literal, strict-aliasing/default, Rep member grab, nsa-nosib, or unsigned/bool Rep type variants. Default-then-assign was 48/104, not an improvement. Do not force assembly or alter judge/compiler flags. Acceptance still requires `swarm.py try` MATCH, complete relocated-body/padding proof, original full-build text/data hashes and explicit `functions["002b7310"] == "linked"`.
 
 
-## Second bounded pass — 2026-10-15
+## Second bounded pass â€” 2026-10-15
 
 User explicitly authorized another ten-hypothesis pass. **No improvement: best remains 2/104; no MATCH or TextFace integration.** New checks covered constructor-to-assignment inline nesting, nogcse profile, a real member-function target, explicit temporary/literal locals, clone throw() context, early-return grab with explicit ref count, a selfish read written before literal preparation, a volatile selfish-field diagnostic, value-return target diagnostic and the same literal address expressed from its known pool base. Nogcse regressed to 105/108; all other checks retained the same adjacent mismatch. Rejected volatile/value-return forms are retained as failed diagnostics, not accepted source proposals.
 
@@ -43,3 +43,5 @@ Ten further novel hypotheses failed; best remains 2/104. See [third-pass evidenc
 ## Matched sibling and header investigation - 2026-10-15
 
 Verified partial siblings 0021FC78, 00212DD0 and 002DA400 and compared their compiler dumps. The closest copy-assignment sibling takes runtime text; the literal siblings have different pre-branch pointer preparation. Inspected upstream basic_string headers at the documented 2000-10-03 date. See [research findings](../../../docs/research/localized-text-constructor-siblings.md). No new target hypothesis was judged; best remains 2/104 and the exact Sony/game header context remains unverified.
+
+2026-10-15: [Three-try recovery](three-try-2026-10-15/README.md): Lock guard, conditional-expression cleanup and default-length constructor all regress. Keep prior 2/104 candidate; original scheduling context remains missing.
