@@ -40,6 +40,9 @@ function counts only when the judge says MATCH and the full build still hashes l
   "what you changed and why" --result match|differs|worse|no-change|no-compile|abandoned --diff N
   --of M [--file PATH] [--compiler NAME] --who YOUR_NAME`. One line per idea, specific enough that the
   next agent can tell whether its idea is the same. knowledge/attempts.jsonl is versioned.
+- On deferral, the coordinator must preserve candidates, diary and blockers on
+  `feat/stalled-functions`, following the standing checkpoint rule in `AGENTS.md`.
+  Workers report evidence paths; the coordinator handles branch updates.
 
 ## Tools by purpose (details in TOOLS.md)
 - Drafts: `cpu_solve.py` (m2c with EE register names, compile_fix, variants, `--context types`),
