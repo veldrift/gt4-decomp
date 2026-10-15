@@ -1,0 +1,40 @@
+{
+  "address": "00447DD0",
+  "inventory_bytes": 72,
+  "function_bytes": 68,
+  "emitted_text_bytes": 68,
+  "trailing_original_zero_bytes": 4,
+  "relocation_count": 3,
+  "unresolved_relocations": 0,
+  "full_span_matches": true,
+  "source_sha256": "0874886a7de82cd1275e2c51fe915eedadeee1765542d477782335db92a918bb",
+  "full_build": {
+    "generated": "2026-10-15T16:19:19Z",
+    "commit": null,
+    "dirty": true,
+    "partial": false,
+    "sources": 28435,
+    "orphan_sources": [],
+    "duplicate_sources": {},
+    "text_sha1": "28422e7e20a6298224294255355487b9a22cef31",
+    "data_sha1": "c28c833f9716467545bf362f321e9acc876c3603",
+    "text_matches": true,
+    "data_matches": true,
+    "linked_functions": 27721,
+    "target_status": "linked",
+    "target_linked_bytes": 68
+  },
+  "input_parity": {
+    "checked_files": 29123,
+    "comparison": "SHA-256 after CRLF-to-LF normalization",
+    "different_or_missing": [],
+    "extra_sources": []
+  },
+  "provenance": {
+    "validated_commit": "7607dcdaf",
+    "validated_branch": "feat/stalled-functions",
+    "transfer_destination": "feat/matched-functions",
+    "transfer_source_lf_sha256": "0874886a7de82cd1275e2c51fe915eedadeee1765542d477782335db92a918bb",
+    "note": "Full-build evidence below was generated on the stalled-branch snapshot before transfer; no new full-build claim for the destination branch."
+  }
+}
