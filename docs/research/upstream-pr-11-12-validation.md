@@ -50,6 +50,14 @@ every new source participated:
 | `00485368` | Unmapped mangled STL vector `insert` symbol |
 | `003323B0` | Unmapped mangled STL vector `insert` symbol |
 
+The two switch functions emit dispatch tables with 15 and 14 `.rel.rodata`
+relocations into `.text`, respectively. The current build only admits own
+`.rodata` without such relocations. The two vector callers instead emit mangled
+references despite their source's assembly-label declarations. Their intended
+helper targets, `00609FC8` and `005F2C48`, are confirmed by the original call
+instructions. The precise reason the specialization labels are not used was not
+isolated; no compiler-behavior claim or source repair is implied.
+
 These are full-link limitations, not observed syntax/compiler failures or
 instruction-judge differences. No candidate sources or judge/compiler flags
 were changed to conceal or bypass them. PR 12's description reports a stronger
