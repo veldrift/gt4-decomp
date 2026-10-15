@@ -1,5 +1,11 @@
 # CarData continuation on next-ten
 
+Current checkpoint: [stalled matching functions](../research/stalled-functions/README.md)
+on `feat/stalled-functions` preserves all twelve remaining CarData targets,
+available candidate sources and per-target diary snapshots in Git. Earlier
+sections below are chronological: tuner-list and gear-ratio functions now have
+registered source and are excluded from that remaining queue.
+
 Date: 2026-10-14. Branch: `feat/gamedata-tooling-next-ten`.
 
 All other local branch tips were merged into this branch. This includes the

@@ -1,5 +1,12 @@
 # Menu recovery matching continuation
 
+Current checkpoint: [stalled matching functions](../research/stalled-functions/README.md)
+on `feat/stalled-functions` preserves candidate sources and per-target diary
+snapshots in Git. The six-target results below describe the earlier bounded
+pass. SelectBox `002D8C90` has since been supplied by upstream PR 12 and verified
+over all 168 bytes with explicit full-build `linked` status; five menu targets
+remain unmatched. See [upstream validation](../docs/research/upstream-pr-11-12-validation.md).
+
 Tim requested matching the menu bodies previously recovered for the Godot host,
 starting with Composite. All matching drafts, results and accepted source belong
 in this repository. Leave `gt4-godot` unchanged; do not remove its currently

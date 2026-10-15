@@ -1,0 +1,1441 @@
+{
+  "base_commit": "4f078903c394e62356ef035d1abbcec2c5eb5f37",
+  "branch": "feat/stalled-functions",
+  "scope": "12 remaining CarData targets and 5 remaining menu targets",
+  "targets": [
+    {
+      "address": "00148B60",
+      "group": "CarData",
+      "role": "Engine curve data",
+      "status": "unmatched",
+      "blocker": "Graph-loop guards, count lifetimes and scheduling remain unresolved. Also retain engine-zero-likely.cpp for complementary diagnostics.",
+      "primary_candidate": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-order.cpp",
+      "attempt_records": 27,
+      "candidates": [
+        {
+          "original_path": "build/cardata-finish/00148b60-component.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-finish/00148b60-component.cpp",
+          "sha256": "1034f50830432db4cc6e3bea411768455651150f0ca7416c422037d031a6ce2b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00148b60-default.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-finish/00148b60-default.cpp",
+          "sha256": "21e18c43cd3b2809a00505391da923e9bc92516405505689737d6f8aee56dd92",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00148b60-graphs.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-finish/00148b60-graphs.cpp",
+          "sha256": "175fe5d4baa4211027677a4a107e179e87dc862aab7fca4889daddf268fb9557",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00148b60-lookup.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-finish/00148b60-lookup.cpp",
+          "sha256": "21ab7ff8bc367e214563888c6d9b6ef19ff7746d6d9c55135b934ee38cde8353",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00148b60-loop.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-finish/00148b60-loop.cpp",
+          "sha256": "7a2cb84f64258b41daed5c6ef2161342af3ced5f7fbfa75a9f24477fa7bf0733",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00148b60-order.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-finish/00148b60-order.cpp",
+          "sha256": "a1046257202c07ad4e5241b2ea3cde14b3626e3173964fed575c282297e1857c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00148b60-scopes.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-finish/00148b60-scopes.cpp",
+          "sha256": "fb72c28e03685cc14ce8981f9554544a95db3c34be88c6f62a9ab5189420537e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00148b60.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-finish/00148b60.cpp",
+          "sha256": "b73e4af45122f52c6fd7f312b9991118d0716a65821b443be72b17ce21474303",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/engine-zero-case.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-new-shapes/engine-zero-case.cpp",
+          "sha256": "d392e4949b6cc927ee9be95e9b03aef5395072d532a91090db0b503e30a02daa",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-parallel-sol/00148b60-indexed-loop.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-parallel-sol/00148b60-indexed-loop.cpp",
+          "sha256": "b0512af15152e19f92f26c187863c1bc28511018ebb6ca35913035fa2ed56c32",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-parallel-sol/00148b60-subscript-nothrow.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-parallel-sol/00148b60-subscript-nothrow.cpp",
+          "sha256": "dcab87a42721b4c9ebe33c84d12d52c31393bb470264af150f45c2085c19421e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-parallel-sol/second-pass/00148b60-expect-int-test.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-parallel-sol/second-pass/00148b60-expect-int-test.cpp",
+          "sha256": "400df22dcc7bff95f85a2c29f4c5d954036c3aaec59596c2ff611d4ba6370d5b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-parallel-sol/second-pass/00148b60-natural-while.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-parallel-sol/second-pass/00148b60-natural-while.cpp",
+          "sha256": "69f56d8d592cabad4dd7061ab5ab651079031ecb67dfede82a80153496854066",
+          "judged_in_diary": false
+        },
+        {
+          "original_path": "build/cardata-post-sync/00148b60-allocator.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-post-sync/00148b60-allocator.cpp",
+          "sha256": "6577bef0e65731b7ec9e202ee627f910b55ddf2e1e952e643fa09b9bcc778cdf",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-post-sync/00148b60-nosib.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-post-sync/00148b60-nosib.cpp",
+          "sha256": "559f2ea230c959b6f2c4fb421c4d4308763d56143482669bc69293c0c4efd05b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-post-sync/00148b60-output.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-post-sync/00148b60-output.cpp",
+          "sha256": "8cbb52e58e74524af0ee08fc167dbef8e156df9898f82583fc68b64cca8494d3",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-expected-count-value.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-expected-count-value.cpp",
+          "sha256": "fe92ded0a9c47f9a12c3474e03601cdbe79110b1fd1e8988cc97fcc442b38bd7",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-expected-predicate.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-expected-predicate.cpp",
+          "sha256": "a21f4e400097c45fb3f1d45a115811e30aef3ae8b8961c402df8070a8a534429",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-indexed-do.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-indexed-do.cpp",
+          "sha256": "8058601d5f5347bc10287c9971f0a1efdc31a79f4436afe27f7f77597ba1e19d",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-loop-invariants.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-loop-invariants.cpp",
+          "sha256": "49ee830be992c531b6e65eb102e508e6fe776204a2afad5d3722bf7701874853",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-native-count.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-native-count.cpp",
+          "sha256": "0c8d669a527c2e2f8cc8c56612c57d4933a20ee3567e9c50d90c53005b540864",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-order.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-order.cpp",
+          "sha256": "a1046257202c07ad4e5241b2ea3cde14b3626e3173964fed575c282297e1857c",
+          "judged_in_diary": false
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-positive-count.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-positive-count.cpp",
+          "sha256": "ec64173f7de77875823a1c5588dbb238315d66c3d7f85f0e550efa1394ac3960",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-unsigned-index.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-unsigned-index.cpp",
+          "sha256": "0b62bf787b6cb14f769db6ec3db0675c4f471080161c5753b8667dd33e72382a",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/engine-zero-likely.cpp",
+          "path": "research/stalled-functions/00148b60/candidates/build/cardata-remaining/engine-zero-likely.cpp",
+          "sha256": "5737402340efcbedc6ec4cca941f979966d05b58f941cdf8bf131cf0248bfca8",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00449190",
+      "group": "CarData",
+      "role": "DatabaseTable searchNumber",
+      "status": "unmatched",
+      "blocker": "10/31 raw rows differ from high-bound / row-result register exchange; address-add operand order is corrected.",
+      "primary_candidate": "research/stalled-functions/00449190/candidates/build/cardata-new-shapes/search-guarded-offset.cpp",
+      "attempt_records": 23,
+      "candidates": [
+        {
+          "original_path": "build/cardata-continue/search-data-member.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-continue/search-data-member.cpp",
+          "sha256": "739d33c5f5d1c70682f9811ae9062394ba08f55fb30d6d2412566acf6b2f9994",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/search-data-nogcse.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-continue/search-data-nogcse.cpp",
+          "sha256": "ff3b900edf5f81d410647edb715e8fc83ee74252562ab051837a6d8ed10b08ed",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/search-data-nsa.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-continue/search-data-nsa.cpp",
+          "sha256": "d2b9de4dd05a027c16e12e294dc175c79a541b2f41c6ac176b8d51ab1c1cdc15",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/search-data-volatile.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-continue/search-data-volatile.cpp",
+          "sha256": "b427e752c8e5547d41db2892f7c88cd7de66fad6263bef16aae3a6cfa766c6c3",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/search-long-index.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-continue/search-long-index.cpp",
+          "sha256": "65f2debb471b1efe32fe756207b29393677b79b404f500d8f34c39069326ec88",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/search-reference.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-continue/search-reference.cpp",
+          "sha256": "763828e4502fae71aaf7fe1cd737fbc570390825fee44d4831c211440e561562",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/search-volatile-count.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-continue/search-volatile-count.cpp",
+          "sha256": "478a394cef1d93d59eb3b3d224740d924e1c37703ea01ca1a9224f3954901e3d",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-more/00449190.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-more/00449190.cpp",
+          "sha256": "1ba3b374e44e5e189df1ca01f49df943bf8ee6ad00597fd77e66e4177ab2ec7e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/search-conditional-result.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-new-shapes/search-conditional-result.cpp",
+          "sha256": "c5b35cdac937112e2169e3e88192bafe87503f9ec5aaa1b7682e7d95c55afa57",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/search-guarded-offset.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-new-shapes/search-guarded-offset.cpp",
+          "sha256": "f3e1daa453289844b3315b08f8e20b459af9d05123518b1fdfcb8ea8249156cb",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/search-native-number.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-new-shapes/search-native-number.cpp",
+          "sha256": "cc642bac14d934e6dc4de4cd4de76025805b9dbbbce0fedb5001e597774b714a",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/search-offset-before-base.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-new-shapes/search-offset-before-base.cpp",
+          "sha256": "15db745c6e717f769167a541f48405bdd0a6ee4c9e76a8280eb64e985353fab5",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/search-sentinel-before-mid.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-new-shapes/search-sentinel-before-mid.cpp",
+          "sha256": "3452561fa88d320520dc5ed1d0c4a372aedb04b57911e276f4b5ea8087ef60da",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/search-address-first.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-remaining/search-address-first.cpp",
+          "sha256": "90e13d5007791379fd3342d6b765df26b510e4c16d6b14c57928f9a3784d79d2",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/search-direct-returns.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-remaining/search-direct-returns.cpp",
+          "sha256": "119a5ba4bb4bf34dc8f3f8da3bb3f57513e4a33c8a1e5ccc9bfbc67ba82d1389",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/search-reference-result.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-remaining/search-reference-result.cpp",
+          "sha256": "5d2877583d45eee200edc779838a2521e6d1eeef87bf2d7a5cc3f63aebed352f",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/search-wrapper-nogcse.cpp",
+          "path": "research/stalled-functions/00449190/candidates/build/cardata-remaining/search-wrapper-nogcse.cpp",
+          "sha256": "0ddec4e82e160fc510164e52eb462849b6cc739c78841abe828cbfe2fff9ec6c",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00449F80",
+      "group": "CarData",
+      "role": "Byte getter",
+      "status": "unmatched",
+      "blocker": "Native widening / sign-extension pair remains unresolved; 2/5 raw differing rows.",
+      "primary_candidate": "research/stalled-functions/00449f80/candidates/build/cardata-new-shapes/byte-inline-signed-getter.cpp",
+      "attempt_records": 17,
+      "candidates": [
+        {
+          "original_path": "build/cardata-continue/byte-bitfield.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-continue/byte-bitfield.cpp",
+          "sha256": "ccd83be43e55c8ed57a1df3fd500f4d5295706fde87d8c69bc050170d1a07ed8",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/byte-enum-signed.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-continue/byte-enum-signed.cpp",
+          "sha256": "177f2b109efe4447a4baa338b5870675ab26388dfebc1897dcaac5dec8209f5c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/byte-union.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-continue/byte-union.cpp",
+          "sha256": "4b8a326e622c0c10e81e000b1148f18f35c02eddf2e90e4b24a9751c25a91f1b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00449f80.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-finish/00449f80.cpp",
+          "sha256": "a8a5569af2183bac17853a41428ea1a2583c3418a8b6612cc1959461d0039752",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/byte-aggregate-return.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-native-pass/byte-aggregate-return.cpp",
+          "sha256": "6a5b59d3e7a11cca7865b8a139f9ed7ef0c868dc88e5c6bc52d211bb782f301c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/byte-native-value.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-native-pass/byte-native-value.cpp",
+          "sha256": "b75ca039776a21b17944e9ae781518715ffb554b3dc1ce77ce4ed62f8bba561e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/byte-unsigned-aggregate.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-native-pass/byte-unsigned-aggregate.cpp",
+          "sha256": "4a62e96f2733c2d414b6e8d904118e0f51ee0eea4c6cee2300261ee6db03a6aa",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/byte-inline-signed-getter.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-new-shapes/byte-inline-signed-getter.cpp",
+          "sha256": "f36ea7e30e28356845b351670874d51f5e7c9eb54a7840efd13bcc834a8609aa",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/byte-signed-mask.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-new-shapes/byte-signed-mask.cpp",
+          "sha256": "84da5fe372a58b8591ac033f9cbaf0ac17425b35ccc64dda89bbaca503b41c07",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/byte-c-promotion.c",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-remaining/byte-c-promotion.c",
+          "sha256": "f8d3f68d120a0903df888e4000f5067e731d08e864d85491e1afd64a49343f84",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/byte-sdk-profile.cpp",
+          "path": "research/stalled-functions/00449f80/candidates/build/cardata-remaining/byte-sdk-profile.cpp",
+          "sha256": "9d323baf163514da08eee790146c221d32ad97528e7e2bd825fe63a3b673a640",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "004490F8",
+      "group": "CarData",
+      "role": "Table initialization",
+      "status": "unmatched",
+      "blocker": "Table base lifetime, allocation and initialization scheduling remain unresolved.",
+      "primary_candidate": "research/stalled-functions/004490f8/candidates/build/cardata-remaining/table-inline-records.cpp",
+      "attempt_records": 21,
+      "candidates": [
+        {
+          "original_path": "build/cardata-continue/table-default-accessors.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-continue/table-default-accessors.cpp",
+          "sha256": "6bddef017a853b3d90bfd3ace2d3c449f8cbb4f906dfed9b7c27bc11969ef609",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/table-entry-snapshot.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-continue/table-entry-snapshot.cpp",
+          "sha256": "1da05998d2ad58bd730c15240b17030e2af2a53e712318dfbd5181de7197aceb",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/table-header-accessors.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-continue/table-header-accessors.cpp",
+          "sha256": "e639cd77c936402a3c6fa4af5d4ac898ef2158e06001598793a82c65c16a6a15",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/table-native-flags.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-continue/table-native-flags.cpp",
+          "sha256": "553c52a119830060d202427992817e9b82801d0f79ae86758456f27b1ad9332c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/table-native-intbase.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-continue/table-native-intbase.cpp",
+          "sha256": "ffe66d052842d2aec54b7ca6e8cc2aedbb797c0640ebaa321b7fb7c6e6838d51",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/table-native-member.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-continue/table-native-member.cpp",
+          "sha256": "fcedb3eb22e849085f3878a446165448695ec442d9a7bfe4e71a1e128758980f",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/004490f8-nsa.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-finish/004490f8-nsa.cpp",
+          "sha256": "15de0eed137cbe07475f2b00bc8fcd01ec9c33ec9020f31854bb386383f1a59c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/004490f8.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-finish/004490f8.cpp",
+          "sha256": "b10738ed50ed7052910dbc0edc074e306eccf27e1b40b2f092f834d44820e8d5",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/table-char-cursor.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-native-pass/table-char-cursor.cpp",
+          "sha256": "bc7b21657ff030d388dadbb4088bb06c6ea851943ccf9a45806eda92af2dfa86",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/table-hidden-result.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-native-pass/table-hidden-result.cpp",
+          "sha256": "2007d94d00d1362b2ff054a7b0c5e6ab435cf0d223817970c524304597eb228b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/table-shared-cursor.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-native-pass/table-shared-cursor.cpp",
+          "sha256": "617b177f3ea83c3ea49f4b32e264d0dcd27e708e9bbecb225de2b50faad8598e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-post-sync/004490f8-order.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-post-sync/004490f8-order.cpp",
+          "sha256": "561dd1c195bc0aafc22a7aec7175d4e65a369ba75a45abf87dbe7b4e877f6ae3",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-post-sync/004490f8-return.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-post-sync/004490f8-return.cpp",
+          "sha256": "4271112fbef1d2158a7ea946f6bbaaf8f547236f64756db35da9a31747acb6a5",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/table-inline-records.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-remaining/table-inline-records.cpp",
+          "sha256": "6f067efe9fb6fd877d3ce05631b5471bf20d5aad50d13dfdd04aba9b26f9c654",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/table-no-gcse.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-remaining/table-no-gcse.cpp",
+          "sha256": "12e0aa35504cec359b779fc5455d9ed55e44e8b4be4db93d680f709492e8cea4",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/table-section-scope.cpp",
+          "path": "research/stalled-functions/004490f8/candidates/build/cardata-remaining/table-section-scope.cpp",
+          "sha256": "51b02c11288dbb2346697bb73c84738a978f568459f1ea5c373b1c7013daac93",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "004478F8",
+      "group": "CarData",
+      "role": "Tuner-code extraction",
+      "status": "unmatched",
+      "blocker": "Loop shape, exit scheduling and native row-fetch allocation remain unresolved.",
+      "primary_candidate": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-native-fetch-nothrow.cpp",
+      "attempt_records": 22,
+      "candidates": [
+        {
+          "original_path": "build/cardata-continue/tuner-inline-byte.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-continue/tuner-inline-byte.cpp",
+          "sha256": "a21eeae4da1f3fdc384f2948ab8dda3781e0a635f87fce9f7b864ccc652150fc",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/tuner-loop-exit.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-continue/tuner-loop-exit.cpp",
+          "sha256": "9da8f8b93ec4b586141391e90c9d540c9e58eee78dbe76d619aab24c74b4630e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/tuner-native-copy.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-continue/tuner-native-copy.cpp",
+          "sha256": "0908caec9f40384259e10ac3bd0ce170b41e3f60685b53132920988bcf9c825b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/tuner-pointer-output.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-continue/tuner-pointer-output.cpp",
+          "sha256": "ad93510ce86c310e0f83faff401e12fbd14ac2f8861b0d2178a2ad2021847b82",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/tuner-short-circuit.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-continue/tuner-short-circuit.cpp",
+          "sha256": "f06b4a0f0befbd892bfe2448cf2e9729a2058c587f34a3ebafa4f6b46f51b8df",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/004478f8-nsa.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-finish/004478f8-nsa.cpp",
+          "sha256": "117047ef2b51fae50f1da0a668f3a58ebdb8cc2f9c2ddbbde3f11e98c23e65ad",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/004478f8-packed.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-finish/004478f8-packed.cpp",
+          "sha256": "9bc5129f8c3de116b33b198fc20d00b1e831da71a1b0fb3530b7cb80fed0c308",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/004478f8.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-finish/004478f8.cpp",
+          "sha256": "54e650e2de382a2db14b1bcc6cedc1c5272b7bb71c2ca59050c3b8a99e722b15",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-more/004478f8.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-more/004478f8.cpp",
+          "sha256": "8f282851cde8490f2704f0779a7dc42f5fec75237a503fba6542d6b36c06c96b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/tuner-bound-loop-early-returns.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-bound-loop-early-returns.cpp",
+          "sha256": "3babacf3b6b8bc33bf02dc7b55ecf9403c7a5e1839c823f7b788c503a69bff8b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/tuner-direct-exit-returns.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-direct-exit-returns.cpp",
+          "sha256": "4dcd996f266debd56b4fd4e6ae2bcb63039e392d85ce394fcd2ba1cc269fd7a4",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/tuner-explicit-first-byte.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-explicit-first-byte.cpp",
+          "sha256": "3c85fec825e8e746ef47aa4fd4ba452bc9f57ce68b7f34ce63b859ca3b554498",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/tuner-infinite-top-checks.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-infinite-top-checks.cpp",
+          "sha256": "6d2b453b7cb35fa80491bead55891a927abbc6027fa7065f34f30213fbea4a0e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/tuner-native-fetch-nothrow.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-native-fetch-nothrow.cpp",
+          "sha256": "8fb7cf2361f72e0b36454a6c1dacb50ca81c1318f178e06daa74b535d53e7479",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/tuner-no-gcse.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-no-gcse.cpp",
+          "sha256": "bc58c967655afcd563e94c7a62c3aeed39c4a509105607a97b5dbe94932ad08e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/tuner-postincrement-read.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-postincrement-read.cpp",
+          "sha256": "d1f3d9c074046f151eee261e0c48bf215f7c9936e3fd6c03d650a7f1bee96e7f",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/tuner-preincrement-condition.cpp",
+          "path": "research/stalled-functions/004478f8/candidates/build/cardata-new-shapes/tuner-preincrement-condition.cpp",
+          "sha256": "947f9f38c8ea155aeefc14b1bfc2200605ab894605059a5e641dc881c3fd88ca",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00448B48",
+      "group": "CarData",
+      "role": "Specification copy",
+      "status": "unmatched",
+      "blocker": "Retained 9/51 raw residual includes query-result / redundant-zero control flow.",
+      "primary_candidate": "research/stalled-functions/00448b48/candidates/build/cardata-new-shapes/copy-native-expected-status.cpp",
+      "attempt_records": 22,
+      "candidates": [
+        {
+          "original_path": "build/cardata-continue/copy-early-failure.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-continue/copy-early-failure.cpp",
+          "sha256": "d74ad8cbd5ab76de80e0649f34be5715666355170582ec658d12bd3268406b15",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/copy-early-nothrow.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-continue/copy-early-nothrow.cpp",
+          "sha256": "a2bc582ccab9a3cc57ec6db8bc2905b97489cf84da9b16d41855e9207a358336",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/copy-scoped-queries.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-continue/copy-scoped-queries.cpp",
+          "sha256": "00a228ecc518f71859646d90d79b84b69206319b802fe36f6daa6583bff0f31c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00448b48-branches.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-finish/00448b48-branches.cpp",
+          "sha256": "bf9b1a079381c66ceef12c4da49d6cff733216c25d25930e377b3349598d6b53",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00448b48-helper.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-finish/00448b48-helper.cpp",
+          "sha256": "9a423b6c002cb9c66e3bdf956d3a7ff8a99712197756d8a02ba5b249cfd3bc8d",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00448b48-integer.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-finish/00448b48-integer.cpp",
+          "sha256": "a012da815025ff4b7959ca1216168f31c3dfa32c47c5c18c4b6986128cba1ff6",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00448b48-result.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-finish/00448b48-result.cpp",
+          "sha256": "ddbdd2eb0c578440116e17ed811dc1745a9ed3c8a5a16c71151f7b7879816613",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00448b48-state.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-finish/00448b48-state.cpp",
+          "sha256": "5cf3de033fa8f6d6482b8711063ecc1505409b3d75c170470b83fa08a35cc2c2",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00448b48-table.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-finish/00448b48-table.cpp",
+          "sha256": "67640503544afde13cb5b9a3ac5a31a6ff71134c2253b6ca574d71ccbb890b11",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00448b48.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-finish/00448b48.cpp",
+          "sha256": "fbdfd4ff3b0682b05eb65c5e58b9384cefa32eba99a32f8a7c0b1023204c738d",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/copy-expected-query.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-new-shapes/copy-expected-query.cpp",
+          "sha256": "46753043dd97adc6e870f9128f94f68f669ca16ffeaf9262d724c2d5fa80ec59",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/copy-native-expected-status.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-new-shapes/copy-native-expected-status.cpp",
+          "sha256": "dab648af7b7ff33fce2bfff2ebdc2ac86d347d67a7b23323010910e27fd6f882",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/copy-inline-conversion.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-remaining/copy-inline-conversion.cpp",
+          "sha256": "979199ef9ee3bd1d427a7c476b6f49538b6b26008c1c83af1a15f459efb6567f",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/copy-int-return.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-remaining/copy-int-return.cpp",
+          "sha256": "5500badca2535230199a6db10cf5006da4d1641ea94b26c711aad8f08aba0b72",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/copy-int-status-return.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-remaining/copy-int-status-return.cpp",
+          "sha256": "a492d2f0afde093ee93bff711bfc369d435be0292b0f7a71d87f837da960a234",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/copy-no-gcse.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-remaining/copy-no-gcse.cpp",
+          "sha256": "582c3017bd30925258f4a98ef8cb3e2f50515747b3485821ba2e8792945f47ca",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/copy-nsa-nosib.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-remaining/copy-nsa-nosib.cpp",
+          "sha256": "8ba10959985b060dde3399b88c013b70f789263d35d91c43a9a5206c79137734",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/copy-switch-status.cpp",
+          "path": "research/stalled-functions/00448b48/candidates/build/cardata-remaining/copy-switch-status.cpp",
+          "sha256": "79603c926a3404d1843debdcb11da9559e9d27ad550bb994c8461e1b5714e21c",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "0043BBC0",
+      "group": "CarData",
+      "role": "Packed controls / selector update",
+      "status": "unmatched",
+      "blocker": "Correct Knobs subobject at Controls+4, count at Knobs+2; clamp/store scheduling and allocation remain unresolved.",
+      "primary_candidate": "research/stalled-functions/0043bbc0/candidates/build/cardata-new-shapes/packed-native-knobs.cpp",
+      "attempt_records": 16,
+      "candidates": [
+        {
+          "original_path": "build/cardata-continue/packed-clamp.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-clamp.cpp",
+          "sha256": "84ba47982da9f5e435b09bdd56a758e72665ed27cc7c6f3cc015766e39aa6d8c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-direct-axes.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-direct-axes.cpp",
+          "sha256": "3ee28a29132ddfebe489620b7a6e8cada8c45f6900de5ff01f459694f63d0470",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-flag-accessor.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-flag-accessor.cpp",
+          "sha256": "d568fbf1e0f7dde3f1e4f277936e075362ba8e662ee975d6bb7c5d542515f785",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-mutable-clamp.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-mutable-clamp.cpp",
+          "sha256": "24c046bdb5c3e2a01f8e55ef35e6f01a182d4eedf947a685d6fccb5bd9390409",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-native-context.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-native-context.cpp",
+          "sha256": "557b916eb6cb1abfc94aca05b51ae6b0db263430d0e7dfe182a0133043d058ab",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-percent-boundary.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-percent-boundary.cpp",
+          "sha256": "c73ee2d870539758500a7cb5bdaf9991847a5cb6f5cb9846ddefcaa377d600a6",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-reference-clamp.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-reference-clamp.cpp",
+          "sha256": "8f6443b6dfb049c12e5826176fc3072dd060a4dc5c3e5c1bfeaf290a025e921a",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-result-limit.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-result-limit.cpp",
+          "sha256": "55878e416539c62f01fcf85fca07c4c8558cab52862b669638193a9453e29697",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-scoped-switch-axes.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-scoped-switch-axes.cpp",
+          "sha256": "0dddbb53ad48b23a11840c277d731a552f4da4b5b77fd635f8d7fa53bba4caec",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/packed-separate-percent-result.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-continue/packed-separate-percent-result.cpp",
+          "sha256": "ff2b767a57c9c16af11cf5cec75ece35a374eacb7c09ac8325721f8783be4268",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/packed-native-knobs.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-new-shapes/packed-native-knobs.cpp",
+          "sha256": "6e3ba0d4ec80accfc5e77e182c1e88ae9d97d085452fb1c3f42508a8513c862b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-parallel-sol/0043bbc0-layout-baseline.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-parallel-sol/0043bbc0-layout-baseline.cpp",
+          "sha256": "646c0ca97834506aeb4ae56c324b804aba550617361ee25dd28a7b9e983b7550",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-parallel-sol/0043bbc0-reference-cap.cpp",
+          "path": "research/stalled-functions/0043bbc0/candidates/build/cardata-parallel-sol/0043bbc0-reference-cap.cpp",
+          "sha256": "72e644bf551597d6f6f7ef024e17db716002dc87f78645eb5574f04b1b57892f",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00449AF8",
+      "group": "CarData",
+      "role": "Table lookup helper",
+      "status": "unmatched",
+      "blocker": "Offset induction and native lookup scheduling remain unresolved.",
+      "primary_candidate": "research/stalled-functions/00449af8/candidates/build/cardata-new-shapes/lookup-unsigned-wide-offset.cpp",
+      "attempt_records": 10,
+      "candidates": [
+        {
+          "original_path": "build/cardata-continue/lookup-enum-index.cpp",
+          "path": "research/stalled-functions/00449af8/candidates/build/cardata-continue/lookup-enum-index.cpp",
+          "sha256": "b896e8a83b59f304976d89638e43d2d2a8701ceb3c9b80e587d03ff2e8468119",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/lookup-row-value.cpp",
+          "path": "research/stalled-functions/00449af8/candidates/build/cardata-continue/lookup-row-value.cpp",
+          "sha256": "0c787d23cceae652983ffeb04e703422778442de288cef0d871fc87c6ab043ee",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-continue/lookup-row-view.cpp",
+          "path": "research/stalled-functions/00449af8/candidates/build/cardata-continue/lookup-row-view.cpp",
+          "sha256": "39ce5776e2c9269501d290d4d95bdfd6a7b819746c2aa21f10d9b5c08a8651b8",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/lookup-unsigned-wide-offset.cpp",
+          "path": "research/stalled-functions/00449af8/candidates/build/cardata-new-shapes/lookup-unsigned-wide-offset.cpp",
+          "sha256": "095e9ea58c34ce4f4fd193f881f707e7bb0225c0e5cc329b86e2cc77cd07c3f8",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/lookup-wide-offset.cpp",
+          "path": "research/stalled-functions/00449af8/candidates/build/cardata-new-shapes/lookup-wide-offset.cpp",
+          "sha256": "17669d50133e7a236be4765e2103b06df43a9f8e2a944335b691edf1dba71be7",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00443518",
+      "group": "CarData",
+      "role": "Language-table loading",
+      "status": "unmatched",
+      "blocker": "59/148 raw differing rows; secondary offset scope improved, directory lifetime and register/scheduling recovery remain open.",
+      "primary_candidate": "research/stalled-functions/00443518/candidates/build/cardata-new-shapes/load-guarded-offset-lifetime.cpp",
+      "attempt_records": 16,
+      "candidates": [
+        {
+          "original_path": "build/cardata-new-shapes/load-guarded-offset-lifetime.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-new-shapes/load-guarded-offset-lifetime.cpp",
+          "sha256": "0b114181336f73fea89de18e89df0cfb89239f5401b8375e96c5a346d4abe985",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/load-native-member.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-new-shapes/load-native-member.cpp",
+          "sha256": "667277a5c375720dd0f0abc14d0fd6d0b8827f2e6c0715a7cfe274a2a973b47c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-new-shapes/load-pure-compare.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-new-shapes/load-pure-compare.cpp",
+          "sha256": "19e8dd971fdd30db1762c74d6bea8a90857b59d3e56cf29a02b98bd66cd726b2",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-const-tables.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-const-tables.cpp",
+          "sha256": "fd005c89af2d5f25d2e4b8e4567ca1258579530b601b2010b4197c751ba8ca1b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-guarded-tables.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-guarded-tables.cpp",
+          "sha256": "379117b1e04d98ada097dd3ac233effdf4fbe1d02a4b5a97b04dde8f53294ed1",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-language-helper.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-language-helper.cpp",
+          "sha256": "17f65f547ff49825d6a81a3c7569a5e49bdcce4fa7421a8de3511558795bba72",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-native-context.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-native-context.cpp",
+          "sha256": "529280c93aedef42b732f12a13e397c35b0e2180e15d52d90beca594831220d7",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-native-paths.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-native-paths.cpp",
+          "sha256": "ee78f5bc820d8b7701d9ed3c22dc46c95fccefbf6e690bf8499e536fef83afde",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-nothrow-compare.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-nothrow-compare.cpp",
+          "sha256": "80d5a9849f4b99837feb8fffc07fa3e89d06e1e5292070e0901d6a40bedda3d7",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-primary-name-cursor.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-primary-name-cursor.cpp",
+          "sha256": "61352aa8bc9609125a5ba1501af7fc96aea2a7a7855f1f1ea8ab6a5081130553",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-retained-directory.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-retained-directory.cpp",
+          "sha256": "c095774fe6acdb3003587b39b0d09431ce095126e63c91d95f8f70f1d20d7adb",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-secondary-directory.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-secondary-directory.cpp",
+          "sha256": "b93dd090faef8b82ae5bf62b299cdd0e20c7ac2b4359b7d356be87e60d8179ab",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/load-secondary-snapshot.cpp",
+          "path": "research/stalled-functions/00443518/candidates/build/cardata-untouched/load-secondary-snapshot.cpp",
+          "sha256": "c848c18e22e237b557cc4cd8e685e2b90924c070139bc0c2276a00aab5b34373",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00445B88",
+      "group": "CarData",
+      "role": "Specification comparison",
+      "status": "unmatched",
+      "blocker": "24 native field pairs recovered; sentinel return/control flow remains unresolved. Undefined-return experiments are diagnostic only.",
+      "primary_candidate": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-defined-sentinel.cpp",
+      "attempt_records": 13,
+      "candidates": [
+        {
+          "original_path": "build/cardata-untouched/compare-bool-callee.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-bool-callee.cpp",
+          "sha256": "9f844589e7b691bc2ca12a5dfba828ba829265ebffab2ec789011941d24b7c8b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-defined-sentinel.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-defined-sentinel.cpp",
+          "sha256": "79417b73cadd65cce0a3a9d5aa8c3e02d874341785845a8d6772ef39e10a33d8",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-explicit-false.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-explicit-false.cpp",
+          "sha256": "e97a5dbf7fc927ecd2058d3bea065aef727e6c402beee0f0e5c9224bc186e8b7",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-fallthrough.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-fallthrough.cpp",
+          "sha256": "9b3df8a9120cea4e55221db801dd459018c207b1b85fcc9fc30cff36c2346b60",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-native-bool.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-native-bool.cpp",
+          "sha256": "78b4d003dba7fe2f1ebb89cc3009e5518529b3e2228422f5378d87a9b1535c34",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-native-long.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-native-long.cpp",
+          "sha256": "0d9652a17bc1c61d0148ee0b08b4ac6a4336e4effd7de32c5ada525269f3b784",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-native-unsigned.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-native-unsigned.cpp",
+          "sha256": "9f74f1c7e1017ef7967b305523f66295eb5394534746e8ac52b376af59eaa61e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-positive-query.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-positive-query.cpp",
+          "sha256": "39091dead37de6e25f372a7c66f54d765543f216c1be6b97b2823d22dc533211",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-verified-fallthrough.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-verified-fallthrough.cpp",
+          "sha256": "cd8e455b506cf1de7a7ffbbfe892f07e76ec518a5500ed95669f5994f93a773e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-untouched/compare-verified-fields.cpp",
+          "path": "research/stalled-functions/00445b88/candidates/build/cardata-untouched/compare-verified-fields.cpp",
+          "sha256": "b203d55d299376557b503ccd373307eed6c19c0dfa87ef4ef1c81a53ccfe1e19",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00447DD0",
+      "group": "CarData",
+      "role": "DisabledInfo searchInfo / identifier conversion",
+      "status": "unmatched",
+      "blocker": "5/17 raw differing rows remain; aggregate input / profile alternatives did not improve.",
+      "primary_candidate": "research/stalled-functions/00447dd0/candidates/build/cardata-remaining/code-nsa-nosib.cpp",
+      "attempt_records": 17,
+      "candidates": [
+        {
+          "original_path": "build/cardata-more/00447dd0.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-more/00447dd0.cpp",
+          "sha256": "178db5eb934b5d97aacd286a18599ac9d0d46f269b9b6a7f40985e48f0b7d939",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/code-kind-early-returns.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-native-pass/code-kind-early-returns.cpp",
+          "sha256": "8a632b07ec44a9b836721e8846d3586874bb01753a2e0c17033fb3ac914f4ade",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/code-kind-status64.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-native-pass/code-kind-status64.cpp",
+          "sha256": "359f7159a51e1cff719db67e63d423bbc9d876a568ec759c2ba2627a76cbd2cd",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/code-native-kind32.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-native-pass/code-native-kind32.cpp",
+          "sha256": "800b75d56ce602a106ded5437723920ee1c36196d838a3ddfa8fe3fbe814ddb3",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/code-row-nothrow.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-native-pass/code-row-nothrow.cpp",
+          "sha256": "bf7cd46da635f04b161f525e491627b8fdc18b8c463d5a0ddbfd1cb9a050ff69",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/code-unused-kind-bool.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-native-pass/code-unused-kind-bool.cpp",
+          "sha256": "79ea50ca7b4113a7dd8a1e1db18e6e46bde8c533dd0fc0cbaf3dd824dac39455",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/code-unused-kind-status.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-native-pass/code-unused-kind-status.cpp",
+          "sha256": "c886668308aad3473c4bab0c0d3816d284b642138b7d1ed4e284d8a4bd6570a7",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-post-sync/00447dd0.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-post-sync/00447dd0.cpp",
+          "sha256": "64b3f072bae27880193fc432116d8b4be86f1eca8c4a6bf4c930726398bcd850",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/code-aggregate-input.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-remaining/code-aggregate-input.cpp",
+          "sha256": "a8877dff09b271710adc8c13cebddc13472117e1c5a11bb7153e1ed52660fc08",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-remaining/code-nsa-nosib.cpp",
+          "path": "research/stalled-functions/00447dd0/candidates/build/cardata-remaining/code-nsa-nosib.cpp",
+          "sha256": "00743982c7e1dd1bbfd01ac03e774332e134ad591f80bd28f6b14f6efe6f8eef",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": [
+        "build/scratch/opus3/m447dd0.cpp",
+        "build/scratch/regmap/dd0p.cpp",
+        "build/scratch/regmap/ns1/00447DD0_nosched1.cpp"
+      ]
+    },
+    {
+      "address": "00440FB8",
+      "group": "CarData",
+      "role": "Randomization bounds helper",
+      "status": "unmatched",
+      "blocker": "33/92 raw differing rows; pointer view improves score but introduces stack pointer storage and larger frame.",
+      "primary_candidate": "research/stalled-functions/00440fb8/candidates/build/cardata-parallel-sol/00440fb8-pointer-view.cpp",
+      "attempt_records": 12,
+      "candidates": [
+        {
+          "original_path": "build/cardata-finish/00440fb8-limits.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-finish/00440fb8-limits.cpp",
+          "sha256": "b37a17a84701a7868622a7a2bc99ebc4c6d7644529151b721711820918bd01bb",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00440fb8-nogcse.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-finish/00440fb8-nogcse.cpp",
+          "sha256": "476fde27fd5a0cf667508c0681df51bddda663b4db37eb97865deed79377744f",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00440fb8-reference.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-finish/00440fb8-reference.cpp",
+          "sha256": "5387c783a6d8cc0d05dbb09a608aae28dc52db697c3734ab08eb45f77dcda837",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-finish/00440fb8.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-finish/00440fb8.cpp",
+          "sha256": "fad68fdde6d1d956a5bbcc422bed3165a55707194cfa9fe33f3d7222d733db9c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/random-float-first.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-native-pass/random-float-first.cpp",
+          "sha256": "9566099e2538626d6fffa1021d689324031ebe13f4c6b074e183fbf8ad5a175d",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/random-high-first-copy.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-native-pass/random-high-first-copy.cpp",
+          "sha256": "d8b125e0b2b906c3d358bb553bbe57a74b58990c03aa2afb01c960fc5a1794ba",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-native-pass/random-native-bounds-copy.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-native-pass/random-native-bounds-copy.cpp",
+          "sha256": "c4f5cdb4c57125bbe731e561cbf71ff74eebc23dcf9eda25920128b24e0f6367",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-parallel-sol/00440fb8-pointer-view.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-parallel-sol/00440fb8-pointer-view.cpp",
+          "sha256": "9a8ea1f7acaf235bd7f7fac75d764eb0853da56870157dd62e9caf89515b4055",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-parallel-sol/00440fb8-reference-outputs.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-parallel-sol/00440fb8-reference-outputs.cpp",
+          "sha256": "723ff3a684286d6ef5f8783a701c67fe199df4c95359f1bb90f5dbc8bac099b1",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-post-sync/00440fb8-array.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-post-sync/00440fb8-array.cpp",
+          "sha256": "f1ed17d70e5540492bdf0af97b53d8e925fc98e0349ad48a02f2d65b6ef4ce32",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/cardata-post-sync/00440fb8-table.cpp",
+          "path": "research/stalled-functions/00440fb8/candidates/build/cardata-post-sync/00440fb8-table.cpp",
+          "sha256": "52856be2493d14ac9438697612d92b49b3158805c2f9484a73fd1ea732d19dea",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00207590",
+      "group": "Menu",
+      "role": "Composite property reader",
+      "status": "unmatched",
+      "blocker": "828 emitted bytes vs 840 original; return island and final refcount branch differ. Shifted matching runs do not prove a full match.",
+      "primary_candidate": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_best.cpp",
+      "attempt_records": 12,
+      "candidates": [
+        {
+          "original_path": "build/menu-composite-sol/00207590_best.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_best.cpp",
+          "sha256": "64bdbf7c3c4e7c2e380566971756c948db05e0258da231cf7c60006335e14c37",
+          "judged_in_diary": false
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v1.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v1.cpp",
+          "sha256": "e13113a32bef276bae06ed7ac79008babff8444ce19ffae0879032d0ba1e4994",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v10.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v10.cpp",
+          "sha256": "64e880399327b89fed47c3964c8d1d2b46110c1e9574fd3c5aa00b71166b7cc2",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v2.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v2.cpp",
+          "sha256": "b5b8e37008be01480e909c7d3bca619e4bc3b00e33b3834da2c13f4db9d20642",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v3.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v3.cpp",
+          "sha256": "065a7df1729dac291e2c84fb80eb38371b4426dfaad3ce074f7941ca817f33cf",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v4.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v4.cpp",
+          "sha256": "8b782e8b5dabc199d0b232604297460695c8c74be886c2c493916ba5ae8a2155",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v5.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v5.cpp",
+          "sha256": "bdd58be2e9abbf42d01e406d6273fd2c1ff63a53be25261dc9a9f38d3700c18c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v6.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v6.cpp",
+          "sha256": "71fa4990ce8ebafdc2f1b0646a20feec7d1cd319ed2283d39bb940295a45f875",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v7.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v7.cpp",
+          "sha256": "3b4c9af55717875627199755ca6e11909a2d12faad915f01c4d0308027619570",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v8.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v8.cpp",
+          "sha256": "23a382bfb65110de81f6aca47a3c75ad777fccd7bdff7a3547c432ff82830d52",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-composite-sol/00207590_v9.cpp",
+          "path": "research/stalled-functions/00207590/candidates/build/menu-composite-sol/00207590_v9.cpp",
+          "sha256": "de7d11c4e541f5f2d3cd6e05859669c9ee98a58b8e1b7110f112ba3e5b29234d",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "00233E38",
+      "group": "Menu",
+      "role": "RootWindow property reader",
+      "status": "unmatched",
+      "blocker": "109/469 compared words; frame A0 vs B0 and callback storage/lifetimes differ. Original final omitted word is zero padding.",
+      "primary_candidate": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_cbslots.cpp",
+      "attempt_records": 22,
+      "candidates": [
+        {
+          "original_path": "build/menu-root-luna/00233e38_cbslots.cpp",
+          "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_cbslots.cpp",
+          "sha256": "8b849b893cecb8015711e6e17bba80d83e0b295ed8a1d67eb2c5362b064f35c9",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-root-luna/00233e38_raii.cpp",
+          "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_raii.cpp",
+          "sha256": "46f262a7a689695015e3dee9a9e58e8b64eaa25015001804f394ffad2a69452e",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-root-luna/00233e38_returncb.cpp",
+          "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_returncb.cpp",
+          "sha256": "29c15d083606aefc0c0bd68d1cd7b840b8b1499c1712e1bdf376c6bbd578c8ee",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-root-luna/00233e38_returncb_scoped.cpp",
+          "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_returncb_scoped.cpp",
+          "sha256": "77a1fb408571699db5744ea94403fe8369a86d4cc658569f4b3a4525b6f12a2f",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-root-luna/00233e38_revised.cpp",
+          "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_revised.cpp",
+          "sha256": "4eaef6ec7bc13cf020afcccb13283f5cd3810952e350cf8fd45af54388e387a9",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-root-luna/00233e38_strslot.cpp",
+          "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_strslot.cpp",
+          "sha256": "d5778b4de44b2f2c2553ce780074129b87aefdbfbdec4271a5175322d08f07ab",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-root-luna/00233e38_variant1.cpp",
+          "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_variant1.cpp",
+          "sha256": "3c3d0d17becfaf7df2e36265aad8bf522bdcab93bddd7cf13e61fc4e95babb91",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-root-luna/00233e38_variant2.cpp",
+          "path": "research/stalled-functions/00233e38/candidates/build/menu-root-luna/00233e38_variant2.cpp",
+          "sha256": "1377f386ca10c339409281b6040e966700aa8e86927ff642b91762dda6b383e4",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "002A29F0",
+      "group": "Menu",
+      "role": "ImageFace property reader",
+      "status": "unmatched",
+      "blocker": "2484 emitted bytes vs 2744 original. Vector-object alternative 2524 bytes also fails. Recover actual object lifetimes, not artificial frame padding.",
+      "primary_candidate": "research/stalled-functions/002a29f0/candidates/build/menu-image-luna/attempt3.cpp",
+      "attempt_records": 5,
+      "candidates": [
+        {
+          "original_path": "build/menu-image-luna/002a29f0-attempt1.cpp",
+          "path": "research/stalled-functions/002a29f0/candidates/build/menu-image-luna/002a29f0-attempt1.cpp",
+          "sha256": "0f6885b120fa7deb2ef62556e2a266874981855d1c4557f9bc5d1a9767541530",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-image-luna/002a29f0-attempt2.cpp",
+          "path": "research/stalled-functions/002a29f0/candidates/build/menu-image-luna/002a29f0-attempt2.cpp",
+          "sha256": "8e4a569b7809d8e51f81c8bc0312c1fb1d75989bbdebbe2de02730b048450bb4",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-image-luna/002a29f0-vector-object.candidate.cpp",
+          "path": "research/stalled-functions/002a29f0/candidates/build/menu-image-luna/002a29f0-vector-object.candidate.cpp",
+          "sha256": "b1659bc645c3a21aee4ed766b0ef8333baeeeaeb73e536a5b3af9ab1b63d97fe",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-image-luna/attempt3.cpp",
+          "path": "research/stalled-functions/002a29f0/candidates/build/menu-image-luna/attempt3.cpp",
+          "sha256": "4eb8a283df56383c23ec469b7ef2242eb77573f9c72f28c4beed09764fa08bcf",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-image-luna/attempt4.cpp",
+          "path": "research/stalled-functions/002a29f0/candidates/build/menu-image-luna/attempt4.cpp",
+          "sha256": "bad37e589f49cb5f138829da28f199e06c7b7f9cd4ef47ff6941e5de39e95675",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "002A38A0",
+      "group": "Menu",
+      "role": "ImageFace pattern coordinates",
+      "status": "unmatched",
+      "blocker": "280 emitted bytes vs 312 original, with nonzero omitted tail. Post-lock reloads, product copies and stores differ.",
+      "primary_candidate": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-reciprocals-first.cpp",
+      "attempt_records": 11,
+      "candidates": [
+        {
+          "original_path": "build/menu-pattern-luna/002a38a0-lock-alias.cpp",
+          "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-lock-alias.cpp",
+          "sha256": "1966d1f9634ebab48d40240e3127da085c279716b11b9d888866b1e63f0579da",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-pattern-luna/002a38a0-pair-temps.cpp",
+          "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-pair-temps.cpp",
+          "sha256": "d8a4ef5249321beae0c483c3cf4d6565137cc64f6de56bfaba8fa8267e86347c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-pattern-luna/002a38a0-reciprocals-first.cpp",
+          "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-reciprocals-first.cpp",
+          "sha256": "1dc13c78fdbb1e8d3b07ebeb893a7b13424576b319172d539bd1e9f4a6d46110",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-pattern-luna/002a38a0-reused-pair.cpp",
+          "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-reused-pair.cpp",
+          "sha256": "47e1e4fae1d23b6efa7f27782e83cac979a85d3544b77d3107bb1f60775f496a",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-pattern-luna/002a38a0-union-access.cpp",
+          "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-union-access.cpp",
+          "sha256": "63a41e6f8397ff81ceaf32b08c8c2536647c3bfc383280f2581c45d26b597081",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-pattern-luna/002a38a0-vec-layout.cpp",
+          "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-vec-layout.cpp",
+          "sha256": "027261836e124ff64c4d2c40f38e5ecbf176abf7942f1acc3643d6ed951e00a4",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-pattern-luna/002a38a0-vectors.cpp",
+          "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-vectors.cpp",
+          "sha256": "b9a0c9e98c7e8b3bfed46f4d036a39bcd581f0b004a683e05a9a65ae64c31d82",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-pattern-luna/002a38a0-y-first.cpp",
+          "path": "research/stalled-functions/002a38a0/candidates/build/menu-pattern-luna/002a38a0-y-first.cpp",
+          "sha256": "dcf8d290a149b1fbb06fbd64e63e9dd0d8be57a1bb73ead03f7962f6d3ba2839",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "0020EEB8",
+      "group": "Menu",
+      "role": "Layout tokenizer",
+      "status": "unmatched",
+      "blocker": "2864 emitted bytes vs 3104 original. Shortened comparison is not complete coverage; emitted pushback control flow differs.",
+      "primary_candidate": "research/stalled-functions/0020eeb8/candidates/build/menu-token-luna/0020eeb8_h02.cpp",
+      "attempt_records": 3,
+      "candidates": [
+        {
+          "original_path": "build/menu-token-luna/0020eeb8_h01.cpp",
+          "path": "research/stalled-functions/0020eeb8/candidates/build/menu-token-luna/0020eeb8_h01.cpp",
+          "sha256": "31a98cc2cf1bca3f4ed16283a3c777387fcb4219d2bee18ceeecafe3ef1fc1fd",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-token-luna/0020eeb8_h02.cpp",
+          "path": "research/stalled-functions/0020eeb8/candidates/build/menu-token-luna/0020eeb8_h02.cpp",
+          "sha256": "83aca976b70a8a2e32e5b38e6b93ed65f7de5c23747eaf47a50d0d8a937edb8c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "build/menu-token-luna/0020eeb8_h03.cpp",
+          "path": "research/stalled-functions/0020eeb8/candidates/build/menu-token-luna/0020eeb8_h03.cpp",
+          "sha256": "a9d55a92072974a5074e458f9462f589c5f45ae1bc04bf996ed37a95aa70b182",
+          "judged_in_diary": true
+        }
+      ],
+      "unavailable_or_nonlocal_source_paths": []
+    }
+  ],
+  "resolved_previous_targets": [
+    {
+      "address": "002D8C90",
+      "role": "SelectBox constructor",
+      "source": "src/ui/mSelectBox/mSelectBox__structor_0.cpp",
+      "status": "registered source; excluded from stalled queue"
+    },
+    {
+      "address": "00140FA8",
+      "role": "Garage tuner list",
+      "source": "src/gamedata/unit_0013B5F8/MCarGarage__getTunerList.cpp",
+      "status": "registered source; excluded from stalled queue"
+    },
+    {
+      "address": "00148940",
+      "role": "Garage gear-ratio data",
+      "source": "src/gamedata/unit_00148030/MCarGarage__buildGearRatioData.cpp",
+      "status": "registered source; excluded from stalled queue"
+    }
+  ]
+}
