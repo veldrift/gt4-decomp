@@ -226,3 +226,31 @@ copies and that both that copyright notice and this permission notice appear in 
 documentation. Hewlett-Packard Company and Silicon Graphics make no representations about the
 suitability of this software for any purpose. It is provided "as is" without express or implied
 warranty.
+
+## GNU basic_string header-chain research
+
+The diagnostic candidates under `research/stalled-functions/002b7310/header-chain/`
+adapt the used inline chain from `libstdc++/std/bastring.h`, `bastring.cc` and
+`straits.h` at upstream GCC commit `7e51098e709b1248a2334b7a19b6d27e6ce88cfc`
+(2000-10-03). They are research candidates, not newly accepted game functions.
+See `docs/research/localized-text-header-chain.md` for adapters and limitations.
+
+Copyright (C) 1994, 1995, 1999 Free Software Foundation (bastring.h).
+Copyright (C) 1994, 1999, 2000 Free Software Foundation (bastring.cc).
+Copyright (C) 1994, 2000 Free Software Foundation (straits.h).
+Written by Jason Merrill based upon the specification by Takanori Adachi in
+ANSI X3J16/94-0013R2.
+
+These files are part of the GNU ANSI C++ Library, distributed under the GNU
+General Public License, version 2 or (at your option) any later version, without
+any warranty, including merchantability or fitness for a particular purpose.
+The GPL version 2 text is retained in that candidate directory's `COPYING`.
+The source notices include this special exception:
+
+> As a special exception, if you link this library with files
+> compiled with a GNU compiler to produce an executable, this does not cause
+> the resulting executable to be covered by the GNU General Public License.
+> This exception does not however invalidate any other reasons why
+> the executable file might be covered by the GNU General Public License.
+
+Upstream source: https://github.com/gcc-mirror/gcc/tree/7e51098e709b1248a2334b7a19b6d27e6ce88cfc/libstdc%2B%2B/std

@@ -1422,9 +1422,9 @@
       "group": "Menu",
       "role": "Localized literal text setter",
       "status": "unmatched",
-      "blocker": "Three bounded passes exhausted ten novel hypotheses each; best remains 2/104 at 002B7358/002B735C. Pass3 isolated sched1/sched2 address pairing and later delay-slot movement: base-storage form moves literal past load only by losing saved this (12/104). No MATCH, src promotion, full linked-image acceptance or viewer integration.",
+      "blocker": "Two adjacent load/literal-low instructions remain swapped (2/104). Complete used upstream-era header chain matches the sibling but emits the same 416 bytes and 19 relocations as baseline on target; original translation-unit scheduling context remains unknown.",
       "primary_candidate": "research/stalled-functions/002b7310/best.cpp",
-      "attempt_records": 37,
+      "attempt_records": 38,
       "candidates": [
         {
           "original_path": "drafts/002b7310/002b7310_00b83c2667bb4440.cpp",
@@ -1622,6 +1622,38 @@
           "sha256": "35be31943e21ed543437d450eb6418f76519d88b8a7f7790b4e0f2c0a7708361",
           "judged_in_diary": true,
           "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-header/sibling-h1.cpp",
+          "path": "research/stalled-functions/002b7310/header-chain/sibling-h1.cpp",
+          "sha256": "7227251eb7a946de72d12c044cc1f90cee592a576e69f5db93871d2c8b45af41",
+          "judged_in_diary": true,
+          "verdict": "open",
+          "address": "002da400"
+        },
+        {
+          "original_path": "build/swarm/localized-text-header/sibling-h2.cpp",
+          "path": "research/stalled-functions/002b7310/header-chain/sibling-h2.cpp",
+          "sha256": "25d4f3d140e42c78e14b12bd0c9cbf7cf842886a2217806a65e947e1a741d4e2",
+          "judged_in_diary": true,
+          "verdict": "open",
+          "address": "002da400"
+        },
+        {
+          "original_path": "build/swarm/localized-text-header/sibling-h3.cpp",
+          "path": "research/stalled-functions/002b7310/header-chain/sibling-h3.cpp",
+          "sha256": "4d8fd6a976022f00d5d5f0f801d34b84505a538272a41e55b2308523643af06f",
+          "judged_in_diary": true,
+          "verdict": "match",
+          "address": "002da400"
+        },
+        {
+          "original_path": "build/swarm/localized-text-header/target-h1.cpp",
+          "path": "research/stalled-functions/002b7310/header-chain/target-h1.cpp",
+          "sha256": "24ff74721bc9b6038d3927c9f2e20228f84c8246f94495b0c06a9a2972f732c4",
+          "judged_in_diary": true,
+          "verdict": "no-change",
+          "address": "002b7310"
         }
       ],
       "missing_sources": [
@@ -1637,11 +1669,23 @@
         "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-pass3/",
         "build/localized-text-pass3-evidence/",
         "build/localized-text-sibling-evidence/",
-        "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-sibling/"
+        "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-sibling/",
+        "build/localized-text-header-evidence/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-header/"
       ],
       "research_notes": [
-        "docs/research/localized-text-constructor-siblings.md"
-      ]
+        "docs/research/localized-text-constructor-siblings.md",
+        "docs/research/localized-text-header-chain.md"
+      ],
+      "header_chain_pass": {
+        "target_judge_invocations": 1,
+        "control_checks": 3,
+        "unsuccessful_hypotheses": 3,
+        "failure_limit": 10,
+        "target_event": "research/stalled-functions/002b7310/header-chain/judge-events.jsonl",
+        "diary": "research/stalled-functions/002b7310/header-chain/attempts.jsonl",
+        "new_target_matches": 0
+      }
     }
   ],
   "resolved_previous_targets": [
