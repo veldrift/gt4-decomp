@@ -33,3 +33,8 @@ The original first-pass `best.cpp` remains primary. Distinct judged drafts and j
 
 
 Second-pass validation: strict viewer build passed again with `MENU_VM_PROOF_OK`; both original layout probes exited 1. Arcade accepted TopRoot, MethodRoot and PregridRoot (3/17); Boot accepted LoadRoot and MovieRoot (2/6). OptionPopup and LanguageRoot still stop at the explicit `002B7310` integration gate. Ignored current logs are `local-data/menu/localized-text-pass2-{build,arcade,boot}.log` in the viewer. This pass did not expose a later blocker on those pages.
+
+
+## Third bounded pass - 2026-10-15
+
+Ten further novel hypotheses failed; best remains 2/104. See [third-pass evidence](PASS3.md) for all hypotheses, scheduler versus delay-slot findings, retained source hashes and the remaining missing evidence. Eleven judge events include one corrected source-preparation compile failure. No MATCH, source promotion, viewer integration or new full-image validation occurred. Unchanged viewer suites were not rerun.

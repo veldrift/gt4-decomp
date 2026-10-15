@@ -1422,9 +1422,9 @@
       "group": "Menu",
       "role": "Localized literal text setter",
       "status": "unmatched",
-      "blocker": "Two adjacent constructor instructions at 002B7358/002B735C remain reversed after two bounded passes of ten novel hypotheses each; best 2/104. No src promotion, strict linked-body proof or host integration.",
+      "blocker": "Three bounded passes exhausted ten novel hypotheses each; best remains 2/104 at 002B7358/002B735C. Pass3 isolated sched1/sched2 address pairing and later delay-slot movement: base-storage form moves literal past load only by losing saved this (12/104). No MATCH, src promotion, full linked-image acceptance or viewer integration.",
       "primary_candidate": "research/stalled-functions/002b7310/best.cpp",
-      "attempt_records": 25,
+      "attempt_records": 37,
       "candidates": [
         {
           "original_path": "drafts/002b7310/002b7310_00b83c2667bb4440.cpp",
@@ -1545,16 +1545,97 @@
           "path": "research/stalled-functions/002b7310/candidates/002b7310_fe8d49c580a062e9.cpp",
           "sha256": "cf0e78c93191a8098560b12a3b1c3bc7841461e2af183e39b88b362464329ae1",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h01.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h01.cpp",
+          "sha256": "90bfcc152caf23c1e663ec78c2e84e5164c757a7bc97b3e4a20f308dff51d266",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h02.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h02.cpp",
+          "sha256": "b6b08a7c9f8bc503f9e618c853b9d1602601435bc6e8777fc2789aa12464cc53",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h03.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h03.cpp",
+          "sha256": "bc483b02ddc6943c76f3561a145b034359f83bace943069d3fb631d27ff70bfb",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h04-fixed.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h04-fixed.cpp",
+          "sha256": "4cbd90225a9428f9e839e001425e70932fb33b1423bdd70bb4fea994174c135b",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h04.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h04.cpp",
+          "sha256": "5c4f5292b65e0396535254b80a7fc93e3390387f71647b97e01f4f0e8f25ec06",
+          "judged_in_diary": true,
+          "verdict": "no-compile"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h05.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h05.cpp",
+          "sha256": "2ed3e876463891d3a558e19c0f9f7a40abc733600f93efbc494af1cab81eed34",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h06.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h06.cpp",
+          "sha256": "405dc6b508afe605d81a71d53cd4ecf62bf9b4c8bb0b47bf451b793d2470d551",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h07.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h07.cpp",
+          "sha256": "38b2087e12ffb26c339b7a29172894e78738b6df90f71ffb140f94511f11f8ec",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h08.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h08.cpp",
+          "sha256": "06d5b0fe0acf5aa4641645c824d5a60dea6caeb86fbfbc3ff4f3034fd2ceac69",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h09.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h09.cpp",
+          "sha256": "36d89e32612d2cf7ca687a7142a3d2ad8e109759d597aa3396c95bab91e8f7b0",
+          "judged_in_diary": true,
+          "verdict": "differs"
+        },
+        {
+          "original_path": "build/swarm/localized-text-pass3/h10.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/pass3/h10.cpp",
+          "sha256": "35be31943e21ed543437d450eb6418f76519d88b8a7f7790b4e0f2c0a7708361",
+          "judged_in_diary": true,
+          "verdict": "differs"
         }
       ],
       "missing_sources": [
-        "Prior s1 third-try draft (best12), build/swarm/s1, not found in inspected local/remote stores"
+        "Prior s1 third-try draft (best12), build/swarm/s1, not found in inspected local/remote stores",
+        "Original constructor/header translation-unit context and original compiler RTL are unavailable; no source-level cause of the exact original schedule is established."
       ],
       "scratch_paths": [
         "build/swarm/localized-text/",
         "/home/dev/gt4-localized-text-matching/build/swarm/localized-text/",
         "build/localized-text-evidence/",
-        "build/localized-text-pass2-evidence/"
+        "build/localized-text-pass2-evidence/",
+        "build/swarm/localized-text-pass3/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/localized-text-pass3/",
+        "build/localized-text-pass3-evidence/"
       ]
     }
   ],

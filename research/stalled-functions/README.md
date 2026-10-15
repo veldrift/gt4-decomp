@@ -49,3 +49,5 @@ Work was deliberately stopped at Tim's request; this branch is a preservation ch
 The current Godot menu loader stops at TextFace. TextFace matching is future work, not one of these 17 previously attempted targets. No Godot files are changed by this checkpoint.
 
 2026-10-15: TextFace/VBox host loading has advanced since the historical checkpoint above. Its current localized-literal gate is `002B7310`, preserved here after a bounded Sony-compiler recovery pass. See the target notes for current probe results.
+
+2026-10-15, third localized-literal pass: ten further novel hypotheses failed; best remains 2/104. The checkpoint preserves eleven source/judge events, including one corrected preparation compile failure. Compiler dumps distinguish the baseline scheduling decision from the misleading load-order improvement caused by delay-slot movement in the base-class experiment. No source promotion, viewer integration or new linked-image validation occurred; see [the detailed evidence and remaining uncertainty](002b7310/PASS3.md).
