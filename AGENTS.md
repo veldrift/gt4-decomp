@@ -6,6 +6,28 @@ is ee-gcc 2.9 C). A function is done only when `python3 tools/swarm.py try` prin
 If your prompt starts with `Matcher worker`, the rest of this file is your whole job. Otherwise
 read CLAUDE.md first.
 
+## Preserve stalled matching work
+
+Whenever a matching function is deferred because progress has stalled or the
+attempt budget is exhausted, the coordinator must checkpoint its work on
+`feat/stalled-functions` before closing the matching pass. This is standing
+authorization for local branch updates and commits; pushing still requires
+authorization covering that branch.
+
+- Preserve retained candidate sources, the per-function attempt diary, current
+  blocker, tried hypotheses, original scratch paths and any missing evidence.
+  Update `research/stalled-functions/README.md` and `manifest.json` on that branch;
+  preserve candidate file hashes and distinguish judged from unjudged drafts.
+- Keep unmatched candidates outside `src/`. Do not include game data, raw binary
+  dumps, compiler caches or credentials. Preserve existing work and history;
+  checkpoint copies rather than deleting the working drafts.
+- Transfer only relevant research changes, not unrelated feature commits. Do not
+  overwrite a newer checkpoint. When a target later matches, mark it resolved
+  and link its accepted source and validation while retaining the failed history.
+- Workers report deferrals and evidence paths to the coordinator; they do not
+  switch branches, commit, or bypass the worker restrictions below. Coordinators
+  must not switch a shared checkout while workers are editing it.
+
 ## Matcher worker
 
 Your prompt gives a worker name `W`, a tries budget and a batch: a JSON object with function
