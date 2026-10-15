@@ -1422,9 +1422,9 @@
       "group": "Menu",
       "role": "Localized literal text setter",
       "status": "unmatched",
-      "blocker": "Two adjacent constructor instructions at 002B7358/002B735C are scheduled in reverse order; 104 emitted words, best 2 differing. Ten new hypotheses exhausted; no src promotion, strict linked-body proof or host integration.",
+      "blocker": "Two adjacent constructor instructions at 002B7358/002B735C remain reversed after two bounded passes of ten novel hypotheses each; best 2/104. No src promotion, strict linked-body proof or host integration.",
       "primary_candidate": "research/stalled-functions/002b7310/best.cpp",
-      "attempt_records": 14,
+      "attempt_records": 25,
       "candidates": [
         {
           "original_path": "drafts/002b7310/002b7310_00b83c2667bb4440.cpp",
@@ -1485,6 +1485,66 @@
           "path": "research/stalled-functions/002b7310/candidates/002b7310_a539aef727efc50e.cpp",
           "sha256": "57fb5942dcdc60835d1893317d5a9f33eaee291d49c532a623453707a65b4857",
           "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_0ec61c6fbc33b1c7.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_0ec61c6fbc33b1c7.cpp",
+          "sha256": "77bf7b938baa6ad2f93df1de616ed5adfb50b758bf7b45518f201314556b4e81",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_1bce7a0a61c9c657.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_1bce7a0a61c9c657.cpp",
+          "sha256": "821d764df8bde1b4b2e1df5b66b6826982492178b02dd3f16d1e731e65bb193c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_295d12406be048ed.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_295d12406be048ed.cpp",
+          "sha256": "3b04066783bbecf5b54d38b0b2b92dd09d694ffdf090896171c8ad7e41156c96",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_4708f443747359b2.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_4708f443747359b2.cpp",
+          "sha256": "7a3a038a6a2f7ec3156eba1c56d317e0a1ba8eed5a466b11dbe96ed41ec3654c",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_5520877e3e96580d.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_5520877e3e96580d.cpp",
+          "sha256": "a434de050bad23d85ca6565dccdefae3554cc01fd26dad913e7cbb96e620924d",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_813a385dcfad0354.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_813a385dcfad0354.cpp",
+          "sha256": "26c04371abf40b41e08245262d1cf70b7daa8c47e764fe8c71da11602b83233d",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_aa8ebcee72322e07.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_aa8ebcee72322e07.cpp",
+          "sha256": "b5683901dfce03aefaca5b0a98f6faf75908d93d7d8df9a92fd3882229c1b861",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_eac297999c906e04.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_eac297999c906e04.cpp",
+          "sha256": "15f08361a7e297e3c55f9ca631326a7c31da38b6146af8e608a75e366ea9ac83",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_eb55697b29de0c65.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_eb55697b29de0c65.cpp",
+          "sha256": "e8e033efaca48c65ffca883151bddff869ce359efc40124fa85e005906a93bca",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_fe8d49c580a062e9.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_fe8d49c580a062e9.cpp",
+          "sha256": "cf0e78c93191a8098560b12a3b1c3bc7841461e2af183e39b88b362464329ae1",
+          "judged_in_diary": true
         }
       ],
       "missing_sources": [
@@ -1493,7 +1553,8 @@
       "scratch_paths": [
         "build/swarm/localized-text/",
         "/home/dev/gt4-localized-text-matching/build/swarm/localized-text/",
-        "build/localized-text-evidence/"
+        "build/localized-text-evidence/",
+        "build/localized-text-pass2-evidence/"
       ]
     }
   ],
