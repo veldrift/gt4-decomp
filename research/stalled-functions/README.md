@@ -2,7 +2,7 @@
 
 Branch: `feat/stalled-functions`. Base: `4f078903c394e62356ef035d1abbcec2c5eb5f37` (the locally validated upstream PR 11/12 integration).
 
-This checkpoint preserves all 17 targets in our recent stalled scope: twelve CarData functions and five menu functions. It does not inventory every unmatched function in the game. The existing matched source, tools and PR integration are inherited from the base. No unmatched candidate is registered under `src/`.
+This checkpoint preserves all 18 targets in our recent stalled scope: twelve CarData functions and six menu functions. It does not inventory every unmatched function in the game. The existing matched source, tools and PR integration are inherited from the base. No unmatched candidate is registered under `src/`.
 
 ## Target list
 
@@ -24,6 +24,7 @@ This checkpoint preserves all 17 targets in our recent stalled scope: twelve Car
 | `00233E38` | Menu | RootWindow property reader | [Notes and candidates](00233e38/README.md) |
 | `002A29F0` | Menu | ImageFace property reader | [Notes and candidates](002a29f0/README.md) |
 | `002A38A0` | Menu | ImageFace pattern coordinates | [Notes and candidates](002a38a0/README.md) |
+| `002B7310` | Menu | Localized literal text setter | [Notes and candidates](002b7310/README.md) |
 | `0020EEB8` | Menu | Layout tokenizer | [Notes and candidates](0020eeb8/README.md) |
 
 ## What is preserved
@@ -46,3 +47,5 @@ SelectBox came from upstream PR 12 and passed full 168-byte verification and exp
 Work was deliberately stopped at Tim's request; this branch is a preservation checkpoint, not a new matching pass. Read the per-target notes and diary before trying a genuinely new hypothesis. Restore a chosen candidate into ignored scratch space before editing/judging; preserve this checkpoint. Raw row scores do not establish complete-body matching. Acceptance still requires unchanged judge MATCH, full body/relocation/padding verification and original full-build hashes with the function explicitly `linked`.
 
 The current Godot menu loader stops at TextFace. TextFace matching is future work, not one of these 17 previously attempted targets. No Godot files are changed by this checkpoint.
+
+2026-10-15: TextFace/VBox host loading has advanced since the historical checkpoint above. Its current localized-literal gate is `002B7310`, preserved here after a bounded Sony-compiler recovery pass. See the target notes for current probe results.

@@ -1,7 +1,7 @@
 {
   "base_commit": "4f078903c394e62356ef035d1abbcec2c5eb5f37",
   "branch": "feat/stalled-functions",
-  "scope": "12 remaining CarData targets and 5 remaining menu targets",
+  "scope": "12 remaining CarData targets and 6 remaining menu targets",
   "targets": [
     {
       "address": "00148B60",
@@ -1416,6 +1416,85 @@
         }
       ],
       "unavailable_or_nonlocal_source_paths": []
+    },
+    {
+      "address": "002B7310",
+      "group": "Menu",
+      "role": "Localized literal text setter",
+      "status": "unmatched",
+      "blocker": "Two adjacent constructor instructions at 002B7358/002B735C are scheduled in reverse order; 104 emitted words, best 2 differing. Ten new hypotheses exhausted; no src promotion, strict linked-body proof or host integration.",
+      "primary_candidate": "research/stalled-functions/002b7310/best.cpp",
+      "attempt_records": 14,
+      "candidates": [
+        {
+          "original_path": "drafts/002b7310/002b7310_00b83c2667bb4440.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_00b83c2667bb4440.cpp",
+          "sha256": "67d3beb12e16a44ca87cb433057cf16b4ee31c726f6b81b85aa886c514bd814a",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_0147518946c33a50.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_0147518946c33a50.cpp",
+          "sha256": "3a09e4779f326347e141d15454178fd13df709c530272b979b71028cf6603e0b",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_31566e65a7b25914.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_31566e65a7b25914.cpp",
+          "sha256": "679c1b8fc1e5d6b124852bfebdc7ac6b36d4831db8566f9e39713c3864cf2645",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_3e8c54a3ef6266d2.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_3e8c54a3ef6266d2.cpp",
+          "sha256": "d3df9419765ad7edfa441089e55e119aea2a97179b91caa76d6252a37619a63d",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_642b2e184bb7fca7.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_642b2e184bb7fca7.cpp",
+          "sha256": "14f941e7e9324f33004ba41f7825b562db23c2b41d3c18e03f4aa86f6a226b41",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_87431784f9bfc01a.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_87431784f9bfc01a.cpp",
+          "sha256": "f23bb016ed77b546473d75bdd295a8b9ee23a91842da3525552222af25c3d138",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_8e50d6917369e756.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_8e50d6917369e756.cpp",
+          "sha256": "de8a147e9087e8310fdc033dda97a0a52fe8d6a11380bffdac93cb146c021e57",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_9a735a3026983ab7.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_9a735a3026983ab7.cpp",
+          "sha256": "68e66c6cce752d57d920099d393e8a961fa801c1609d0e0021b50e7a0a2dd156",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_9c9c66aae9ac0bbb.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_9c9c66aae9ac0bbb.cpp",
+          "sha256": "f74c0063339680ed0cfe4ea5ba7534c4dda64cfda3b0bc125571fd0141d3eb47",
+          "judged_in_diary": true
+        },
+        {
+          "original_path": "drafts/002b7310/002b7310_a539aef727efc50e.cpp",
+          "path": "research/stalled-functions/002b7310/candidates/002b7310_a539aef727efc50e.cpp",
+          "sha256": "57fb5942dcdc60835d1893317d5a9f33eaee291d49c532a623453707a65b4857",
+          "judged_in_diary": true
+        }
+      ],
+      "missing_sources": [
+        "Prior s1 third-try draft (best12), build/swarm/s1, not found in inspected local/remote stores"
+      ],
+      "scratch_paths": [
+        "build/swarm/localized-text/",
+        "/home/dev/gt4-localized-text-matching/build/swarm/localized-text/",
+        "build/localized-text-evidence/"
+      ]
     }
   ],
   "resolved_previous_targets": [
