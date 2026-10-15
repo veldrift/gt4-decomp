@@ -1,5 +1,5 @@
 /* compiler: ee-gcc2.96-stl */
-void free(void *) throw();
+void func_00575DA0(void *) throw();
 #include <stl_algobase.h>
 #include <stl_alloc.h>
 #include <stl_construct.h>
@@ -28,7 +28,7 @@ public:
     T *allocate(size_type n, const void * = 0) {
         return n == 0 ? 0 : (T *)func_00575E60(0x10, n * sizeof(T));
     }
-    void deallocate(T *p, size_type n) { free(p); }
+    void deallocate(T *p, size_type n) { func_00575DA0(p); }
     size_type max_size() const throw() { return size_t(-1) / sizeof(T); }
     void construct(T *p, const T &v) { new (p) T(v); }
     void destroy(T *p) { p->~T(); }

@@ -3,7 +3,7 @@
 it really matched, release, repeat.
 
     codex_worker.py W --tier T [--certified] [--whole] [--batches 2] [--count N] [--minutes 45]
-                      [--model gpt-6.1-sol] [--effort high]
+                      [--model gpt-6-luna] [--effort low]
 
 The worker's rules are AGENTS.md ("Matcher worker"), which Codex reads by itself; the per-function
 guidance is `swarm.py prompt` (predicted unit context, retry report). To steer a worker, edit
@@ -60,8 +60,8 @@ def main():
     ap.add_argument("--batches", type=int, default=2)
     ap.add_argument("--count", type=int)
     ap.add_argument("--minutes", type=int, default=45, help="time limit of one batch")
-    ap.add_argument("--model", default="gpt-6.1-sol")
-    ap.add_argument("--effort", default="high")
+    ap.add_argument("--model", default="gpt-6-luna")
+    ap.add_argument("--effort", default="low")
     a = ap.parse_args()
     w, out = a.worker, os.path.join(OUT, a.worker)
     os.makedirs(out, exist_ok=True)

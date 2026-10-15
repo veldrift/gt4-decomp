@@ -1,69 +1,85 @@
 /* compiler: ee-gcc2.96-no-strict-aliasing */
 typedef int s32;
 typedef short s16;
-typedef unsigned int u32;
-struct Rep_00659FA8;
-struct Heap_00659988 { const char *field_0; };
-extern "C" Heap_00659988 *func_005C11A8();
-extern "C" void func_00326798(void *, s32, s32, const char *);
-extern "C" char *func_005C2560(Rep_00659FA8 *);
-extern "C" char D_00692090[];
-struct Rep_00659FA8 {
-    s32 length_0, capacity_4, refs_8, selfish_c;
-    char *data() { return (char *)(this + 1); }
-    char &operator[](u32 index) { return data()[index]; }
-    char *grab() {
-        if (selfish_c) return func_005C2560(this);
-        ++refs_8;
-        return data();
-    }
-    void release() {
-        if (--refs_8 == 0) {
-            s32 size = capacity_4 + sizeof(Rep_00659FA8);
-            func_00326798(this, size, 4, func_005C11A8()->field_0);
-        }
-    }
+
+struct Rep {
+    s32 len;
+    s32 cap;
+    s32 ref;
+    s32 sel;
 };
-struct String_005C2630 {
-    char *field_0;
-    Rep_00659FA8 *rep() const { return (Rep_00659FA8 *)field_0 - 1; }
-    u32 length() const { return rep()->length_0; }
-    void terminate() const { (*rep())[length()] = 0; }
-    const char *c_str() const {
-        if (length() == 0) return D_00692090;
-        terminate();
-        return rep()->data();
-    }
-    String_005C2630(const String_005C2630 &other) { field_0 = other.rep()->grab(); }
-    ~String_005C2630() { rep()->release(); }
+
+struct S00659988 {
+    const char *name;
 };
-struct VEntryString_18 { s16 delta_0, index_2; String_005C2630 (*function_4)(void *); };
-struct VObj_At04 {
-    s32 field_0;
-    virtual void slot_08();
-    virtual void slot_10();
-    virtual String_005C2630 slot_18();
+
+struct Str {
+    char *p;
+    char pad[0xC];
 };
-struct VObj_At0C { char unknown_0[0xc]; char *vtable_c; };
-struct Arg_00191648 { char unknown_0[8]; VObj_At04 *field_8; VObj_At04 *field_c; };
-extern "C" VObj_At0C *func_001908C0(void *, Arg_00191648 *);
+
+struct VEntryV {
+    s16 delta;
+    s16 index;
+    void (*fn)(void *, void *);
+};
+
+struct VObj {
+    char pad[4];
+    char *vtbl;
+};
+
+struct Arg {
+    char pad[8];
+    VObj *a;
+    VObj *b;
+};
+
+extern char D_00692090[];
+
+extern "C" s32 func_001908C0(s32 a, void *b) throw();
+extern "C" void func_00326798(void *p, s32 size, s32 align, const char *name);
 extern "C" s32 func_004382F8(const char *);
-extern "C" void func_00438588(VObj_At0C *, const char *, s32);
-static inline String_005C2630 vcall18(VObj_At04 *object) {
-    return object->slot_18();
+extern "C" s32 func_00438588(s32, const char *, s32);
+extern "C" struct S00659988 *func_005C11A8(void);
+
+static inline void str_release(Str *s) {
+    Rep *q = (Rep *)(s->p - 0x10);
+    if (--q->ref == 0) {
+        s32 size = q->cap + 0x10;
+        func_00326798(q, size, 4, func_005C11A8()->name);
+    }
 }
-static inline const char *name_18(VObj_At04 *object) {
-    String_005C2630 text = object->slot_18();
-    return text.c_str();
+
+static inline void vcall18(Str *ret, VObj *o) {
+    VEntryV *e = (VEntryV *)(o->vtbl + 0x18);
+    e->fn(ret, (char *)o + e->delta);
 }
-extern "C" void func_00191648(void *arg0, void *context, s32 count, Arg_00191648 *arguments) {
-    if (count >= 4) {
-        VObj_At0C *object = func_001908C0(context, arguments);
-        if (object) {
-            const char *name = name_18(arguments->field_8);
-            const char *value = name_18(arguments->field_c);
-            s32 key = func_004382F8(value);
-            func_00438588(object, name, key);
-        }
+
+static inline Rep *str_rep(Str *s) { return (Rep *)s->p - 1; }
+static inline char *rep_data(Rep *r) { return (char *)(r + 1); }
+static inline s32 str_length(Str *s) { return str_rep(s)->len; }
+static inline void str_terminate(Str *s) { rep_data(str_rep(s))[str_length(s)] = 0; }
+static inline const char *c_str(Str *s) {
+    if (str_length(s) == 0) return D_00692090;
+    str_terminate(s);
+    return rep_data(str_rep(s));
+}
+
+extern "C" void MOption__setButtonConfig(s32 arg0, s32 arg1, s32 arg2, Arg *arg3) {
+    if (arg2 < 4) return;
+    {
+        Str sp0;
+        s32 h = func_001908C0(arg1, arg3);
+        const char *c1;
+        const char *c2;
+        if (h == 0) return;
+        vcall18(&sp0, arg3->a);
+        c1 = c_str(&sp0);
+        str_release(&sp0);
+        vcall18(&sp0, arg3->b);
+        c2 = c_str(&sp0);
+        str_release(&sp0);
+        func_00438588(h, c1, func_004382F8(c2));
     }
 }

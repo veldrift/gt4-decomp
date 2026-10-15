@@ -26,16 +26,16 @@ to the other (`tools/crossgame.py`).
 - A first pilot matched 13 of 20 randomly picked functions by hand; see [PILOT.md](PILOT.md).
 - 14% of the functions are exact copies of another; one match settles a whole group.
 <!-- progress:start -->
-- **Progress (October 2026, commit `4d7efb6e9652`): 28,325 of 30,962 functions match (91.5%), 74.3% of the code bytes; 84.6% of the sources are clean.**
-  Clean source: 84.6% of the 28,325 function sources are free of m2c
+- **Progress (October 2026): 28,429 of 30,962 functions match (91.8%), 75.2% of the code bytes; 84.6% of the sources are clean.**
+  Clean source: 84.6% of the 28,429 function sources are free of m2c
   macros, raw offset casts, temp_/var_ names and pasted headers (`tools/clean_report.py`).
   The live numbers are on the `progress` branch (objdiff report format); this paragraph is written by
   `tools/update_readme.py` from `progress/report.json`, never by hand.
 - **The full build reproduces the original executable** (both loaded segments, SHA-1 checked):
-  27,688 functions, 70.4% of the code bytes, are linked from C/C++
+  27,788 functions, 71.2% of the code bytes, are linked from C/C++
   source at their original addresses, and the rest is assembled from splat's disassembly of your own
-  executable. 29,002 of 2,664,152 data bytes (1.09%; `.data` plus `.bss`)
-  are the constants of 1,167 functions, placed from source at their original addresses.
+  executable. 29,013 of 2,664,152 data bytes (1.09%; `.data` plus `.bss`)
+  are the constants of 1,168 functions, placed from source at their original addresses.
   202 functions that were hand-written assembly in the original are listed in
   [`config/asm_functions.txt`](config/asm_functions.txt) and not counted.
 <!-- progress:end -->
@@ -55,6 +55,11 @@ What the game code does, as far as the project has established it (each page mar
 - [`knowledge/runtime-types.md`](knowledge/runtime-types.md): the ref-counted string, handles, allocator, STL containers and object layout seen in the matched code.
 - [`knowledge/coverage-map.md`](knowledge/coverage-map.md): what is matched and what is missing, by subsystem; [`knowledge/gt4.md`](knowledge/gt4.md) and [`knowledge/ee-gcc-2.96.md`](knowledge/ee-gcc-2.96.md) cover the compiler side.
 
+## Related projects and native port
+
+- **[GT4 Native](https://github.com/gustavocanepa/gt4-native)** is the separate, experimental source-level PC port built from this matching decompilation. It is **not playable**; matching PS2 code does not automatically run on a modern PC. GT4 Native maintains an automated, pinned-source import and host-compatibility triage pipeline, but imported or link-tested files are not automatically integrated into the runtime.
+- **[GT3 decompilation](https://github.com/gustavocanepa/gt3-decomp)** reconstructs the preceding Gran Turismo engine generation.
+
 ## Credits
 
 Started and maintained by **Gustavo Canepa** ([@gustavocanepa](https://github.com/gustavocanepa)),
@@ -67,6 +72,10 @@ This license covers the tools, documentation and the source code written for thi
 Gran Turismo 4 is a trademark of Sony Interactive Entertainment; this project is not affiliated
 with or endorsed by Sony Interactive Entertainment or Polyphony Digital. It contains no game data,
 and you need your own copy of the game to use it.
+
+## Support
+
+[GitHub Sponsors is active](https://github.com/sponsors/gustavocanepa). Contributions and sponsorship are voluntary; sponsorship does not provide copyrighted game files or guarantee a release.
 
 ## Contributing
 

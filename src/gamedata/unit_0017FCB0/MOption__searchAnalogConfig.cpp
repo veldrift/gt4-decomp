@@ -98,7 +98,7 @@ static inline s32 vcall28(VObj_At0C *object, s32 index) {
     VEntryIndex *entry=(VEntryIndex *)(object->vtable_c+0x28);
     return entry->function_4((char *)object+entry->delta_0,index);
 }
-extern "C" void func_00191078(Ref_00309348 *destination, void *context, s32 count, Arg_00191078 *arguments) {
+extern "C" void MOption__searchAnalogConfig(Ref_00309348 *destination, void *context, s32 count, Arg_00191078 *arguments) {
     if (count >= 3) {
         VObj_At0C *object = func_001908C0(context, arguments);
         if (object) {

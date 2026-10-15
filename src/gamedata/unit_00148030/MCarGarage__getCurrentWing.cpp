@@ -79,7 +79,7 @@ extern "C" s64 func_00440AF0(void *);
 extern "C" void func_00446EF8(s64, char *);
 extern char D_0068F798[];
 extern "C" void *func_005A48D8(void *, int, u32);
-extern "C" void func_0014E1C8(Ref_00309348 *destination, void *context, int count) {
+extern "C" void MCarGarage__getCurrentWing(Ref_00309348 *destination, void *context, int count) {
     if (count > 0) {
         s64 id;
         {
@@ -93,3 +93,5 @@ extern "C" void func_0014E1C8(Ref_00309348 *destination, void *context, int coun
         *destination = StringRef_00314B20(name);
     }
 }
+
+
