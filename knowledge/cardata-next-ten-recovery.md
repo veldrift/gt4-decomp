@@ -411,3 +411,89 @@ source. There are 27,636 linked functions. Evidence is saved in
 Next-ten now contains 27 new matches overall, including 16 CarData-related
 functions/helpers. Twelve still lack source in that tracked scope: the
 engine-curve method and eleven support helpers.
+
+## Remaining-target continuation and parallel source review
+
+The fresh continuation verified a clean local baseline at `a6b8ea410` and
+reused the approved matching snapshot after checking for competing builds.
+All 28,337 local and remote sources have the same normalized content digest:
+`409a311846536df072d730037db8720e2cf90b703c63e0bea4f7735514481c2b`.
+All twelve tracked remaining targets still lack source. No source, compiler,
+header, or matching-tool changes were made in this pass.
+
+Thirty-two original-compiler checks across eight targets produced no MATCH.
+One check was an unchanged draft caused by a failed newline-sensitive edit;
+the corrected hypothesis was judged separately. Thirty-three append-only
+diary records preserve every check and the engine-method deferral. A separate
+GPT-6.1-Sol chat prepared six candidates for the engine, packed selector, and
+randomization helpers; this continuation judged all six. Its local review and
+candidate explanations remain under `build/cardata-parallel-sol/`; complete
+verdicts, additional drafts, and compiler diagnostics are under
+`build/cardata-remaining/`.
+
+`00449190` now has an eleven-difference, 31-instruction draft with the original
+loop structure and guard reloads, without a volatile count. The important
+combination is the original DatabaseTable wrapper/accessor nesting with the
+existing `nogcse` profile, rather than a search method directly on TableData.
+The allocator gives the row-result pseudo a2 (priority 12,000, eight references
+over twenty instructions) ahead of the high-bound pseudo a3 (10,434, eight over
+twenty-three); the original uses the opposite homes. A reversed address-add
+operand is the only other residual. Direct accessor returns add a branch;
+reference outputs materialize a stack slot. Explicit integer address arithmetic
+does not reverse the addition. See `search-wrapper-nogcse.cpp` and
+`search-alloc.txt` in the new evidence directory.
+
+The engine method reached its ten-new-hypothesis limit. Indexed signed loops
+produce a full-span 340-instruction comparison with 34 differing rows, but add
+an unwanted second count test to each graph. They are not an accepted recovery.
+The original direct-loop draft already has the correct loop registers and body
+instructions. Its main displacement starts when reorg steals the end-RPM load
+into the zero-count branch slot, shortening each graph. Predicting raw count
+zero with `__builtin_expect(count, 0)` instead selects the original array-argument
+copy from the skip path and reproduces the loop instruction sequence, but adds
+a saved expected-count pseudo, expands the stack, and still misses header
+alignment. Native-long counts, an early expected-value assignment, and a boolean
+predicate do not remove that pseudo. Keep the direct-loop baseline and
+`engine-zero-likely.cpp` as complementary diagnostics; do not report either as
+matching on the basis of a shortened common prefix.
+
+The parallel review also identified a concrete packed-control layout correction:
+the embedded knob object starts at controls+4, while its count is at controls+6,
+not controls+4. Corrected-layout and reference-cap candidates still fail the
+judge. The randomization pointer-view candidate has 33 differing rows versus
+the scalar draft's 52, but introduces a stack-resident pointer and a larger
+frame, so it is not a native-layout match. The byte getter, identifier converter,
+table initializer, and specification-copy alternatives did not improve their
+retained baselines; all remain outside `src/`.
+
+Contribution counts remain 27 new matches overall and 16 CarData-related,
+with twelve CarData targets remaining. Since source content is unchanged, the
+native-pass full build remains the latest applicable validation: 27,636 linked,
+original text/data hashes, no duplicate or orphan sources. No new full build,
+commit, push, or pull request was performed for this unmatched pass.
+
+## Final bounded follow-up; stopped at Tim's request
+
+Further original-compiler checks produced no MATCH. SearchNumber's guarded
+byte-offset scope fixes the address-add operand order; its closest current
+candidate is `build/cardata-new-shapes/search-guarded-offset.cpp`, ten of
+31 rows different solely from the high-bound/row-result a2/a3 exchange.
+The corrected native Knobs subobject at Controls+4 reads its count at Knobs+2
+without retaining the parent pointer; `packed-native-knobs.cpp` differs in
+140 of313 rows. Loader secondary-offset computation inside the successful
+predicate scope improves the retained-directory candidate to59 of148 rows;
+the pure strcmp declaration and actual Database member definition do not help.
+New tuner exit/peeling, byte widening and lookup offset hypotheses all fail.
+
+The parallel Sol investigation identifies the engine's extra expected-count
+value precisely: expansion produces two DI sign-extension pseudos from the
+SI count; GCSE PRE shares the first across the second graph guard, extending
+its life across six calls and allocating s5. It is not created by reorg.
+Its numbered evidence and two proposed candidates are under
+`build/cardata-parallel-sol/second-pass/`. On Tim's instruction to make one
+last attempt and stop, only `00148b60-expect-int-test.cpp` was judged:
+325 of343 rows differ. The natural-while candidate remains unjudged.
+No source was promoted and no full build, commit or push was performed.
+All judgments are appended to the diary; new verdicts are retained under
+`build/cardata-new-shapes/`. Counts remain27 new overall,16 CarData-related,
+and twelve remaining. Work is stopped at Tim's explicit request.
