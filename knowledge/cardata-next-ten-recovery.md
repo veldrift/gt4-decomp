@@ -362,3 +362,52 @@ linked functions, with no duplicate or orphan sources. Evidence is saved in
 The next-ten contribution count is now 26 new matches overall, including
 15 CarData-related functions/helpers. Thirteen CarData-related functions
 still lack source: the engine-curve method and twelve support helpers.
+
+## Disabled-car query recovery
+
+`SPEC_DATABASE__IsDisabledCar` at `00448C10` now passes the exact judge for
+35 instructions: 140 body bytes in a 144-byte span. Direct resolved-object
+proof finds one function, no unresolved relocations, and every original body
+word reproduced. Its source is
+`src/race/unit_004271E8/SPEC_DATABASE__IsDisabledCar.cpp`, using the existing
+`ee-gcc2.96-nsa-nosib` profile.
+
+The earlier conclusion that searchInfo cannot have a second kind argument
+because it does not read incoming a1 was too strong. An unused formal is not
+observable in the callee. A caller-compatible declaration taking identifier
+and kind, combined with an inline conversion scope, recovers the original
+identifier copy and the shared a1 constant `0x26`. The callee implementation
+does not need to change. This is an inferred source signature, not independent
+proof of an original parameter name or declaration.
+
+That reconstruction differs in only five instructions. Naming the signed32
+number extracted from the converted identifier before the final query moves
+the mask's RTL expansion ahead of the global table base. This restores both
+the original mask/address order and the empty conditional branch slot, closing
+all five differences. The matched source neither needs a volatile global nor
+additional nothrow declarations. Those alternatives, a signed64 query result,
+and a different alias profile did not match.
+
+Four other helpers were investigated with fresh type/ABI hypotheses. The
+paired identifier conversion remains five differences away in its head, with
+the same seventeen-instruction body length and an exact tail. Randomization
+still needs the duplicated bounds pointer; copied value objects introduce
+stack traffic. The table parser's hidden-result hypothesis requires extra
+copy/return machinery absent in the original, and a shared advancing cursor
+shortens its body incorrectly. Small aggregate returns for the byte getter
+do not recover its extra sign-extension pair. No such draft was promoted.
+
+Twenty-two judged source hypotheses, one mechanical compile failure, direct
+verification, and three deferrals were appended as twenty-seven diary records.
+Drafts, detailed comparisons, baseline query RTL, and direct proof are under
+ignored `build/cardata-native-pass/`. Source audit finds 28,337 unique addresses
+and no duplicate or orphan source files.
+
+The full build at `2026-10-15T01:06:26Z` passes `.text OK` and `.data OK`,
+with original hashes `28422e7e20a6298224294255355487b9a22cef31` and
+`c28c833f9716467545bf362f321e9acc876c3603`. IsDisabledCar is `linked` from
+source. There are 27,636 linked functions. Evidence is saved in
+`build/cardata-native-pass/full-report.json`, `full-build.log`, and `proof.json`.
+Next-ten now contains 27 new matches overall, including 16 CarData-related
+functions/helpers. Twelve still lack source in that tracked scope: the
+engine-curve method and eleven support helpers.
